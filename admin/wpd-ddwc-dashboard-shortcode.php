@@ -116,6 +116,9 @@ function wpd_ddwc_dashboard_shortcode() {
 					if ( isset( $order_billing_phone ) ) {
 						echo "<a href='tel:" . $order_billing_phone . "' class='button wpd-ddwc-button customer'>Call Customer</a> ";
 					}
+					/**
+					 * @todo change this to a phone number in the Settings, or don't display if it's not set.
+					 */
 					echo "<a href='tel:" . $order_billing_phone . "' class='button wpd-ddwc-button dispatch'>Call Dispatch</a>";
 					echo "</p>";
 
@@ -304,10 +307,9 @@ function wpd_ddwc_dashboard_shortcode() {
 							$order_shipping_country    = $order_data['shipping']['country'];
 
 							echo "<tr>";
+
 							//print_r( $order_data );
-							/**
-							 * @todo change out the URL to 
-							 */
+
 							echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
 							echo "<td>" . $order_date_created . "</td>";
 							echo "<td>" . wc_get_order_status_name( $order_status ) . "</td>";
@@ -326,7 +328,8 @@ function wpd_ddwc_dashboard_shortcode() {
 				}
 			} else {
 				/**
-				 * @todo Wrap this in a check from Settings page to turn on/off open applications.
+				 * @todo Check the Settings page to show/hide applications for users who
+				 * 	     are not Drivers. And also let the admin customize title/text/button/etc.
 				 */
 				$duh = "<h3 class='wpd-ddwc'>Driver Application</h3><p>Some info here about applying to become a driver, which fires off an email to the administrator(s).</p><p><a href='#' class='button'>Apply Now</a>";
 				return $duh;
