@@ -150,10 +150,10 @@ function wpd_ddwc_dashboard_shortcode() {
 
 							$sku   = $product->get_sku();
 							$name  = $product->get_name();
-							$price = $currency_symbol . $product->get_price();
+							$price = $product->get_price();
 							$qtty  = $quantity;
 
-							echo "<tr><td>" . $product_id . "</td><td>" . $name . "</td><td>" . $qtty . "</td><td>" . $price . "</td></tr>";
+							echo "<tr><td>" . $product_id . "</td><td>" . $name . "</td><td>" . $qtty . "</td><td>" . $currency_symbol . ( $qtty * $price ). "</td></tr>";
 						}
 					} else {
 						// echo "DUHHHHHHHHHH";
@@ -201,7 +201,7 @@ function wpd_ddwc_dashboard_shortcode() {
 					width="600"
 					height="450"
 					frameborder="0" style="border:0"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHwe3ruGgTT5B68fImihAv9ediR_THNIQ
+					src="https://www.google.com/maps/embed/v1/place?key=KEY_GOES_HERE
 					  &q=' . $order_billing_address_1 . ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . '" allowfullscreen>
 				  	</iframe>';
 
@@ -331,8 +331,6 @@ function wpd_ddwc_dashboard_shortcode() {
 				 * @todo Check the Settings page to show/hide applications for users who
 				 * 	     are not Drivers. And also let the admin customize title/text/button/etc.
 				 */
-				$duh = "<h3 class='wpd-ddwc'>Driver Application</h3><p>Some info here about applying to become a driver, which fires off an email to the administrator(s).</p><p><a href='#' class='button'>Apply Now</a>";
-				return $duh;
 			}
 
 		} else {
