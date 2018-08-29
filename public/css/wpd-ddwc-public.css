@@ -1,0 +1,33 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+table.wpd-ddwc-dashboard {
+    border: 1px solid #DDD;
+}
+
+table.wpd-ddwc-dashboard thead {
+    background: #f1f1f1;
+    font-weight: 700;
+}
+
+table.wpd-ddwc-dashboard td {
+    padding: 10px;
+}
+
+table.wpd-ddwc-dashboard tr {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+table.wpd-ddwc-dashboard tr:last-child {
+    border-bottom: 0;
+}
+
+.wpd-ddwc-dashboard tbody {
+    font-size: 14px;
+}
+
+h3.wpd-ddwc {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
