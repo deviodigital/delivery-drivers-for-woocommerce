@@ -2,41 +2,41 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
-table.wpd-ddwc-dashboard {
+table.ddwc-dashboard {
     border: 1px solid #DDD;
 }
 
-table.wpd-ddwc-dashboard thead {
+table.ddwc-dashboard thead {
     background: #f1f1f1;
     font-weight: 700;
 }
 
-table.wpd-ddwc-dashboard td {
+table.ddwc-dashboard td {
     padding: 10px;
 }
 
-table.wpd-ddwc-dashboard tr {
+table.ddwc-dashboard tr {
     border-bottom: 1px solid #f1f1f1;
 }
 
-table.wpd-ddwc-dashboard tr:last-child {
+table.ddwc-dashboard tr:last-child {
     border-bottom: 0;
 }
 
-.wpd-ddwc-dashboard tbody {
+.ddwc-dashboard tbody {
     font-size: 14px;
 }
 
-h3.wpd-ddwc {
+h3.ddwc {
     margin-top: 0;
     margin-bottom: 12px;
 }
 
-h3.wpd-ddwc {
+h3.ddwc {
     position: relative;
 }
 
-h3.wpd-ddwc span {
+h3.ddwc span {
     background: transparent;
     border-radius: 3px;
     border: 1px solid #454545;
@@ -52,7 +52,19 @@ h3.wpd-ddwc span {
     text-transform: uppercase;
 }
 
-h3.wpd-ddwc span.completed {
+h3.ddwc span.completed {
     border-color: #76bd1d;
     color: #76bd1d;
+}
+
+h3.ddwc span.out-for-delivery {
+    color: #56A8C7;
+    border-color: #56A8C7;
+}
+
+h3.ddwc span.cancelled,
+h3.ddwc span.refunded,
+h3.ddwc span.failed {
+    color: #C94C42;
+    border-color: #C94C42;
 }

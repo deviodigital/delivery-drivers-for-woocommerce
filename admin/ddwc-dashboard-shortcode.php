@@ -6,10 +6,10 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/admin
+ * @package    DDWC
+ * @subpackage DDWC/admin
  */
-function wpd_ddwc_dashboard_shortcode() {
+function ddwc_dashboard_shortcode() {
 
 	// Check if user is logged in.
 	if ( is_user_logged_in() ) {
@@ -28,6 +28,9 @@ function wpd_ddwc_dashboard_shortcode() {
 			if ( in_array( 'driver', $user_roles, true ) ) {
 
 				// Display order info if ?orderid is set.
+				/**
+				 * @todo add a check to this to make sure the Driver ID is attached to the orderid.
+				 */
 				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) ) {
 
 					// Update order status if marked OUT FOR DELIVERY by Driver.
@@ -102,10 +105,10 @@ function wpd_ddwc_dashboard_shortcode() {
 					$order_shipping_postcode   = $order_data['shipping']['postcode'];
 					$order_shipping_country    = $order_data['shipping']['country'];
 
-					echo "<div class='wpd-ddwc-orders'>";
+					echo "<div class='ddwc-orders'>";
 
 					if ( isset( $order_id ) ) {
-						echo "<h3 class='wpd-ddwc'>Order #" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
+						echo "<h3 class='ddwc'>Order #" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
 					}
 
 					if ( isset( $order_date_created ) ) {
@@ -114,21 +117,21 @@ function wpd_ddwc_dashboard_shortcode() {
 
 					echo "<p>";
 					if ( isset( $order_billing_phone ) ) {
-						echo "<a href='tel:" . $order_billing_phone . "' class='button wpd-ddwc-button customer'>Call Customer</a> ";
+						echo "<a href='tel:" . $order_billing_phone . "' class='button ddwc-button customer'>Call Customer</a> ";
 					}
 
 					/**
 					 * Display a button to call the dispatch number if it's set in the Settings page.
 					 */
 					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
-						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button wpd-ddwc-button dispatch'>Call Dispatch</a>";
+						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button ddwc-button dispatch'>Call Dispatch</a>";
 					}
 
 					echo "</p>";
 
 					echo "<h4>Order Items</h4>";
 
-					echo "<table class='wpd-ddwc-dashboard'>";
+					echo "<table class='ddwc-dashboard'>";
 					echo "<thead><tr><td>ID</td><td>Product</td><td>Qty</td><td>Total</td></tr></thead>";
 					echo "<tbody>";
 
@@ -210,10 +213,10 @@ function wpd_ddwc_dashboard_shortcode() {
 
 					if ( $order_status == 'driver-assigned' ) {
 						echo "<h4>Change Status</h4>";
-						echo '<form method="post"><input type="hidden" name="outfordelivery" value="out-for-delivery" /><input type="submit" value="Out for Delivery" />' . wp_nonce_field( 'wpd_ddwc_out_for_delivery_nonce_action', 'wpd_ddwc_out_for_delivery_nonce_field' ) . '</form>';
+						echo '<form method="post"><input type="hidden" name="outfordelivery" value="out-for-delivery" /><input type="submit" value="Out for Delivery" />' . wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 					} elseif ( $order_status == 'out-for-delivery' ) {
 						echo "<h4>Change Status</h4>";
-						echo '<form method="post"><input type="hidden" name="ordercompleted" value="completed" /><input type="submit" value="Completed" />' . wp_nonce_field( 'wpd_ddwc_order_completed_nonce_action', 'wpd_ddwc_order_completed_nonce_field' ) . '</form>';
+						echo '<form method="post"><input type="hidden" name="ordercompleted" value="completed" /><input type="submit" value="Completed" />' . wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 					} else {
 						// Do nothing.
 					}
@@ -228,7 +231,7 @@ function wpd_ddwc_dashboard_shortcode() {
 						'post_type'      => 'shop_order',
 						'posts_per_page' => -1,
 						'post_status'    => 'any',
-						'meta_key'       => 'wpd_ddwc_driver_id',
+						'meta_key'       => 'ddwc_driver_id',
 						'meta_value'     => $user_id
 					);
 					
@@ -241,8 +244,8 @@ function wpd_ddwc_dashboard_shortcode() {
 					 * If Orders have Driver ID attached
 					 */
 					if ( $assigned_orders ) {
-						echo "<h3 class='wpd-ddwc assigned-orders'>Assigned Orders</h3>";
-						echo "<table class='wpd-ddwc-dashboard'>";
+						echo "<h3 class='ddwc assigned-orders'>Assigned Orders</h3>";
+						echo "<table class='ddwc-dashboard'>";
 						echo "<thead><tr><td>ID</td><td>Date</td><td>Status</td><td>Total</td></tr></thead>";
 						echo "<tbody>";
 						foreach ( $assigned_orders as $driver_order ) {
@@ -343,4 +346,4 @@ function wpd_ddwc_dashboard_shortcode() {
 		wp_login_form();
 	}
 }
-add_shortcode( 'wpd_ddwc_dashboard', 'wpd_ddwc_dashboard_shortcode' );
+add_shortcode( 'ddwc_dashboard', 'ddwc_dashboard_shortcode' );

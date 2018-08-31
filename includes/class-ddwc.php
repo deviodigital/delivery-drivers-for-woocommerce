@@ -9,8 +9,8 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/includes
+ * @package    DDWC
+ * @subpackage DDWC/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/includes
+ * @package    DDWC
+ * @subpackage DDWC/includes
  * @author     WP Dispensary <deviodigital@gmail.com>
  */
-class WPD_DDWC {
+class DDWC {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class WPD_DDWC {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      WPD_DDWC_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Delivery_Drivers_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -72,7 +72,7 @@ class WPD_DDWC {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'wpd-ddwc';
+		$this->plugin_name = 'ddwc';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class WPD_DDWC {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - WPD_DDWC_Loader. Orchestrates the hooks of the plugin.
-	 * - WPD_DDWC_i18n. Defines internationalization functionality.
-	 * - WPD_DDWC_Admin. Defines all hooks for the admin area.
-	 * - WPD_DDWC_Public. Defines all hooks for the public side of the site.
+	 * - Delivery_Drivers_Loader. Orchestrates the hooks of the plugin.
+	 * - Delivery_Drivers_i18n. Defines internationalization functionality.
+	 * - Delivery_Drivers_Admin. Defines all hooks for the admin area.
+	 * - Delivery_Drivers_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,58 +103,58 @@ class WPD_DDWC {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wpd-ddwc-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ddwc-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wpd-ddwc-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ddwc-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wpd-ddwc-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ddwc-admin.php';
 
 		/**
 		 * The file responsible for defining the Delivery Driver Dashboard Shortcode.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-dashboard-shortcode.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-dashboard-shortcode.php';
 
 		/**
 		 * The file responsible for defining the Delivery Driver Metaboxes.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-metaboxes.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-metaboxes.php';
 
 		/**
 		 * The file responsible for defining the WooCommerce Orders functions.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-woocommerce-orders.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-orders.php';
 
 		/**
 		 * The file responsible for defining the WooCommerce My Account Drivers tab.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-woocommerce-account-tab.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-account-tab.php';
 
 		/**
 		 * The file responsible for defining the WooCommerce Settings page.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-woocommerce-settings.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-settings.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wpd-ddwc-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ddwc-public.php';
 
-		$this->loader = new WPD_DDWC_Loader();
+		$this->loader = new Delivery_Drivers_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the WPD_DDWC_i18n class in order to set the domain and to register the hook
+	 * Uses the Delivery_Drivers_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -162,7 +162,7 @@ class WPD_DDWC {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new WPD_DDWC_i18n();
+		$plugin_i18n = new Delivery_Drivers_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -177,7 +177,7 @@ class WPD_DDWC {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new WPD_DDWC_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Delivery_Drivers_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -193,7 +193,7 @@ class WPD_DDWC {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new WPD_DDWC_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Delivery_Drivers_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -224,7 +224,7 @@ class WPD_DDWC {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    WPD_DDWC_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Delivery_Drivers_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

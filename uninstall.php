@@ -22,7 +22,7 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
+ * @package    DDWC
  */
 
 // If uninstall not called from WordPress, then exit.

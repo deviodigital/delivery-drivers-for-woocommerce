@@ -6,19 +6,23 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/admin
+ * @package    DDWC
+ * @subpackage DDWC/admin
  */
- 
+
+/**
+ * @todo Hide the delivery drivers page from anyone who's not the delivery driver user role.
+ */
+
 /**
  * Register new endpoint to use inside My Account page.
  *
  * @see https://developer.wordpress.org/reference/functions/add_rewrite_endpoint/
  */
-function wpd_ddwc_endpoints() {
+function ddwc_endpoints() {
 	add_rewrite_endpoint( 'driver-dashboard', EP_ROOT | EP_PAGES );
 }
-add_action( 'init', 'wpd_ddwc_endpoints' );
+add_action( 'init', 'ddwc_endpoints' );
 
 /**
  * Add new query var.
@@ -26,18 +30,18 @@ add_action( 'init', 'wpd_ddwc_endpoints' );
  * @param array $vars
  * @return array
  */
-function wpd_ddwc_query_vars( $vars ) {
+function ddwc_query_vars( $vars ) {
 	$vars[] = 'driver-dashboard';
 
 	return $vars;
 }
-add_filter( 'query_vars', 'wpd_ddwc_query_vars', 0 );
+add_filter( 'query_vars', 'ddwc_query_vars', 0 );
 
-function wpd_ddwc_flush_rewrite_rules() {
+function ddwc_flush_rewrite_rules() {
 	add_rewrite_endpoint( 'driver-dashboard', EP_ROOT | EP_PAGES );
 	flush_rewrite_rules();
 }
-register_activation_hook( __FILE__, 'wpd_ddwc_flush_rewrite_rules' );
+register_activation_hook( __FILE__, 'ddwc_flush_rewrite_rules' );
 
 /**
  * Insert the new endpoint into the My Account menu.
@@ -45,7 +49,7 @@ register_activation_hook( __FILE__, 'wpd_ddwc_flush_rewrite_rules' );
  * @param array $items
  * @return array
  */
-function wpd_ddwc_my_account_menu_items( $items ) {
+function ddwc_my_account_menu_items( $items ) {
 	// Remove the logout menu item.
 	$logout = $items['customer-logout'];
 	unset( $items['customer-logout'] );
@@ -58,16 +62,16 @@ function wpd_ddwc_my_account_menu_items( $items ) {
 
 	return $items;
 }
-add_filter( 'woocommerce_account_menu_items', 'wpd_ddwc_my_account_menu_items' );
+add_filter( 'woocommerce_account_menu_items', 'ddwc_my_account_menu_items' );
 
 /**
  * Endpoint HTML content.
  */
-function wpd_ddwc_endpoint_content() {
-	echo do_shortcode( '[wpd_ddwc_dashboard]' );
+function ddwc_endpoint_content() {
+	echo do_shortcode( '[ddwc_dashboard]' );
 }
 
-add_action( 'woocommerce_account_driver-dashboard_endpoint', 'wpd_ddwc_endpoint_content' );
+add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_content' );
 
 /*
  * Change endpoint title.
@@ -75,7 +79,7 @@ add_action( 'woocommerce_account_driver-dashboard_endpoint', 'wpd_ddwc_endpoint_
  * @param string $title
  * @return string
  */
-function wpd_ddwc_endpoint_title( $title ) {
+function ddwc_endpoint_title( $title ) {
 	global $wp_query;
 
 	$is_endpoint = isset( $wp_query->query_vars['driver-dashboard'] );
@@ -84,10 +88,10 @@ function wpd_ddwc_endpoint_title( $title ) {
 		// New page title.
 		$title = __( 'Driver Dashboard', 'woocommerce' );
 
-		remove_filter( 'the_title', 'wpd_ddwc_endpoint_title' );
+		remove_filter( 'the_title', 'ddwc_endpoint_title' );
 	}
 
 	return $title;
 }
 
-add_filter( 'the_title', 'wpd_ddwc_endpoint_title' );
+add_filter( 'the_title', 'ddwc_endpoint_title' );

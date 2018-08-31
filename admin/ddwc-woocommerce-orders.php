@@ -6,14 +6,14 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/admin
+ * @package    DDWC
+ * @subpackage DDWC/admin
  */
 
 /**
  * Registering Out for Delivery post status
  */
-function wpd_ddwc_register_out_for_delivery_order_status() {
+function ddwc_register_out_for_delivery_order_status() {
     register_post_status( 'wc-out-for-delivery', array(
         'label'                     => 'Out for Delivery',
         'public'                    => true,
@@ -23,12 +23,12 @@ function wpd_ddwc_register_out_for_delivery_order_status() {
         'label_count'               => _n_noop( 'Out for Delivery <span class="count">(%s)</span>', 'Out for Delivery <span class="count">(%s)</span>' )
     ) );
 }
-add_action( 'init', 'wpd_ddwc_register_out_for_delivery_order_status' );
+add_action( 'init', 'ddwc_register_out_for_delivery_order_status' );
 
 /**
  * Registering Out for Delivery post status
  */
-function wpd_ddwc_register_driver_assigned_order_status() {
+function ddwc_register_driver_assigned_order_status() {
     register_post_status( 'wc-driver-assigned', array(
         'label'                     => 'Driver Assigned',
         'public'                    => true,
@@ -38,12 +38,12 @@ function wpd_ddwc_register_driver_assigned_order_status() {
         'label_count'               => _n_noop( 'Driver Assigned <span class="count">(%s)</span>', 'Driver Assigned <span class="count">(%s)</span>' )
     ) );
 }
-add_action( 'init', 'wpd_ddwc_register_driver_assigned_order_status' );
+add_action( 'init', 'ddwc_register_driver_assigned_order_status' );
 
 /**
  * Add Out for Delivery Status to list.
  */
-function wpd_ddwc_add_custom_order_statuses( $order_statuses ) {
+function ddwc_add_custom_order_statuses( $order_statuses ) {
 
     $new_order_statuses = array();
 
@@ -59,4 +59,4 @@ function wpd_ddwc_add_custom_order_statuses( $order_statuses ) {
 
     return $new_order_statuses;
 }
-add_filter( 'wc_order_statuses', 'wpd_ddwc_add_custom_order_statuses' );
+add_filter( 'wc_order_statuses', 'ddwc_add_custom_order_statuses' );

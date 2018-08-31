@@ -6,8 +6,8 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/includes
+ * @package    DDWC
+ * @subpackage DDWC/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/includes
+ * @package    DDWC
+ * @subpackage DDWC/includes
  * @author     WP Dispensary <deviodigital@gmail.com>
  */
-class WPD_DDWC_Deactivator {
+class Delivery_Drivers_Deactivator {
 
 	/**
 	 * Short Description. (use period)

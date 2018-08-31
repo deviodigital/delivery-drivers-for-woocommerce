@@ -6,8 +6,8 @@
  * @link       https://www.wpdispensary.com
  * @since      1.0.0
  *
- * @package    WPD_DDWC
- * @subpackage WPD_DDWC/admin
+ * @package    DDWC
+ * @subpackage DDWC/admin
  */
 
 /**
@@ -42,7 +42,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 	* @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
 	*/
 	public static function add_settings_tab( $settings_tabs ) {
-	   $settings_tabs['ddwc'] = __( 'Delivery Drivers', 'wpd-ddwc' );
+	   $settings_tabs['ddwc'] = __( 'Delivery Drivers', 'ddwc' );
 	   return $settings_tabs;
 	}
 	/**
@@ -91,23 +91,23 @@ class Delivery_Drivers_WooCommerce_Settings {
 		$settings = array(
 			// Section title.
 			'ddwc_settings_section_title' => array(
-			   'name' => __( 'Delivery Drivers', 'wpd-ddwc' ),
+			   'name' => __( 'Delivery Drivers', 'ddwc' ),
 			   'type' => 'title',
 			   'desc' => 'Brought to you by <a href="http://www.deviodigital.com" target="_blank">Devio Digital</a>',
 			   'id'   => 'ddwc_settings_section_title'
 			),
             // Dispatch phone number.
             'dispatch_phone_number' => array(
-                'name' => __( 'Dispatch phone number', 'wpd-ddwc' ),
+                'name' => __( 'Dispatch phone number', 'ddwc' ),
                 'type' => 'text',
-                'desc' => __( 'Allow your drivers to call if they have questions about an order.', 'wpd-ddwc' ),
+                'desc' => __( 'Allow your drivers to call if they have questions about an order.', 'ddwc' ),
                 'id'   => 'ddwc_settings_dispatch_phone_number'
             ),
             // Google Maps API key.
             'google_maps_api_key' => array(
-                'name' => __( 'Google Maps API key', 'wpd-ddwc' ),
+                'name' => __( 'Google Maps API key', 'ddwc' ),
                 'type' => 'text',
-                'desc' => __( 'Add a map to the order directions for your drivers.', 'wpd-ddwc' ),
+                'desc' => __( 'Add a map to the order directions for your drivers.', 'ddwc' ),
                 'id'   => 'ddwc_settings_google_maps_api_key'
             ),
 			// Section End.
