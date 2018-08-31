@@ -118,8 +118,13 @@ function wpd_ddwc_dashboard_shortcode() {
 					}
 					/**
 					 * @todo change this to a phone number in the Settings, or don't display if it's not set.
+					 * Display a button to call the dispatch number if it's set in the Settings page.
 					 */
 					echo "<a href='tel:" . $order_billing_phone . "' class='button wpd-ddwc-button dispatch'>Call Dispatch</a>";
+					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
+						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button wpd-ddwc-button dispatch'>Call Dispatch</a>";
+					}
+
 					echo "</p>";
 
 					echo "<h4>Order Items</h4>";
