@@ -137,6 +137,11 @@ class WPD_DDWC {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-woocommerce-account-tab.php';
 
 		/**
+		 * The file responsible for defining the WooCommerce Settings page.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wpd-ddwc-woocommerce-settings.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
