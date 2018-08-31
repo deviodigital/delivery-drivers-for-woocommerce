@@ -334,10 +334,12 @@ function ddwc_dashboard_shortcode() {
 					}
 				}
 			} else {
-				/**
-				 * @todo Check the Settings page to show/hide applications for users who
-				 * 	     are not Drivers. And also let the admin customize title/text/button/etc.
-				 */
+
+				// Set the Access Denied page text.
+				$access_denied = "<h3 class='ddwc access-denied'>Access Denied</h3><p>Sorry, but you are not able to view this page.</p>";
+
+				// Return the Access Denied text, filtered.
+				return apply_filters( 'ddwc_access_denied', $access_denied );
 			}
 
 		} else {
