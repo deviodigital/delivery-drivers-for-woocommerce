@@ -116,11 +116,10 @@ function wpd_ddwc_dashboard_shortcode() {
 					if ( isset( $order_billing_phone ) ) {
 						echo "<a href='tel:" . $order_billing_phone . "' class='button wpd-ddwc-button customer'>Call Customer</a> ";
 					}
+
 					/**
-					 * @todo change this to a phone number in the Settings, or don't display if it's not set.
 					 * Display a button to call the dispatch number if it's set in the Settings page.
 					 */
-					echo "<a href='tel:" . $order_billing_phone . "' class='button wpd-ddwc-button dispatch'>Call Dispatch</a>";
 					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
 						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button wpd-ddwc-button dispatch'>Call Dispatch</a>";
 					}
@@ -200,15 +199,14 @@ function wpd_ddwc_dashboard_shortcode() {
 					echo "</p>"; // end billing address
 
 					/**
-					 * @todo Wrap this in a check for the website owner's API KEY in the Settings page
+					 * Display a Google Map with the customers address if an API key is added to 
+					 * the WooCommerce Settings page.
 					 */
-					echo '<iframe
-					width="600"
-					height="450"
-					frameborder="0" style="border:0"
-					src="https://www.google.com/maps/embed/v1/place?key=KEY_GOES_HERE
+					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
+						echo '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '
 					  &q=' . $order_billing_address_1 . ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . '" allowfullscreen>
 				  	</iframe>';
+					}
 
 					if ( $order_status == 'driver-assigned' ) {
 						echo "<h4>Change Status</h4>";
