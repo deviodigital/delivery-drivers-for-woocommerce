@@ -105,7 +105,7 @@ function wpd_ddwc_dashboard_shortcode() {
 					echo "<div class='wpd-ddwc-orders'>";
 
 					if ( isset( $order_id ) ) {
-						echo "<h3 class='wpd-ddwc'>Order #" . $order_id . "</h3>";
+						echo "<h3 class='wpd-ddwc'>Order #" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
 					}
 
 					if ( isset( $order_date_created ) ) {
