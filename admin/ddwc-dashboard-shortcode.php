@@ -27,11 +27,12 @@ function ddwc_dashboard_shortcode() {
 			// Check if the role you're interested in, is present in the array.
 			if ( in_array( 'driver', $user_roles, true ) ) {
 
-				// Display order info if ?orderid is set.
-				/**
-				 * @todo add a check to this to make sure the Driver ID is attached to the orderid.
-				 */
 				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) ) {
+					$driver_id = get_post_meta( $_GET['orderid'], 'ddwc_driver_id', true );
+				}
+
+				// Display order info if ?orderid is set.
+				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) && ( $driver_id == $user_id ) ) {
 
 					// Update order status if marked OUT FOR DELIVERY by Driver.
 					if ( isset( $_POST['outfordelivery'] ) ) {
