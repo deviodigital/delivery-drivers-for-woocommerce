@@ -3,14 +3,14 @@
 /**
  * The plugin bootstrap file
  *
- * @link              https://www.wpdispensary.com
+ * @link              http://www.deviodigital.com
  * @since             1.0.0
  * @package           DDWC
  *
  * @wordpress-plugin
  * Plugin Name:       Delivery Drivers for WooCommerce
- * Plugin URI:        https://www.wpdispensary.com
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin URI:        http://www.deviodigital.com
  * Version:           1.0.0
  * Author:            WP Dispensary
  * Author URI:        https://www.wpdispensary.com

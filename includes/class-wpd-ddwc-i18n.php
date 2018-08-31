@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC

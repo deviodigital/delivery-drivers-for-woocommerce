@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC

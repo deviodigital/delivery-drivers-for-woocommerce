@@ -3,7 +3,7 @@
 /**
  * WooCommerce Account Tab - Drivers
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC

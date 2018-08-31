@@ -3,7 +3,7 @@
 /**
  * Custom functions for Wommerce Orders
  *
- * @link       https://www.wpdispensary.com
+ * @link       http://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC
