@@ -9,11 +9,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Delivery Drivers for WooCommerce
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Plugin URI:        http://www.deviodigital.com
+ * Description:       Driver management for delivery services
  * Version:           1.0.0
- * Author:            WP Dispensary
- * Author URI:        https://www.wpdispensary.com
+ * Author:            Devio Digital
+ * Author URI:        http://www.deviodigital.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       ddwc
