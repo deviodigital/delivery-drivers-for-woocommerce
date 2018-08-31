@@ -31,3 +31,28 @@ h3.wpd-ddwc {
     margin-top: 0;
     margin-bottom: 12px;
 }
+
+h3.wpd-ddwc {
+    position: relative;
+}
+
+h3.wpd-ddwc span {
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid #454545;
+    color: #454545;
+    display: inline-block;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 0px;
+    padding: 6px 10px;
+    position: absolute;
+    top: 6px;
+    text-transform: uppercase;
+}
+
+h3.wpd-ddwc span.completed {
+    border-color: #76bd1d;
+    color: #76bd1d;
+}
