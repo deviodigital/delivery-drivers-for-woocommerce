@@ -331,6 +331,9 @@ function ddwc_dashboard_shortcode() {
 						}
 						echo "</tbody>";
 						echo "</table>";
+					} else {
+						echo "<h3 class='ddwc assigned-orders'>Assigned Orders</h3>";
+						echo "<p>You do not have any assigned orders.</p>";
 					}
 				}
 			} else {
