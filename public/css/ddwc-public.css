@@ -42,13 +42,12 @@ h3.ddwc span {
     border: 1px solid #454545;
     color: #454545;
     display: inline-block;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 16px;
     margin-left: 10px;
     margin-top: 0px;
-    padding: 6px 10px;
+    padding: 6px 12px;
     position: absolute;
-    top: 6px;
+    top: 0;
     text-transform: uppercase;
 }
 
@@ -67,4 +66,23 @@ h3.ddwc span.refunded,
 h3.ddwc span.failed {
     color: #C94C42;
     border-color: #C94C42;
+}
+
+/* Button Defaults */
+
+a.button.ddwc-button {
+    background: #222;
+    padding: 0.75em 2em;
+    border-radius: 3px;
+    color: #FFF;
+    font-weight: 600;
+}
+
+a.button.ddwc-button:hover,
+a.button.ddwc-button:focus,
+a.button.ddwc-button:active {
+    background: #767676;
+    color: #ffffff;
+    border: 0;
+    box-shadow: none;
 }
