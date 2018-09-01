@@ -13,9 +13,9 @@
 /**
  * WP Dispensary Details Settings
  *
- * Related to WooCOmmerce Settings API.
+ * Related to WooCommerce Settings API.
  *
- * @since  1.1
+ * @since  1.0
  */
 class Delivery_Drivers_WooCommerce_Settings {
 	/**

@@ -50,14 +50,12 @@ register_activation_hook( __FILE__, 'ddwc_flush_rewrite_rules' );
  * @return array
  */
 function ddwc_my_account_menu_items( $items ) {
-	// Remove the logout menu item.
+	// Remove the customer-logout menu item.
 	$logout = $items['customer-logout'];
 	unset( $items['customer-logout'] );
-
-	// Insert your custom endpoint.
+	// Insert the driver-dashboard endpoint.
 	$items['driver-dashboard'] = __( 'Delivery Drivers', 'woocommerce' );
-
-	// Insert back the logout item.
+	// Insert back the customer-logout item.
 	$items['customer-logout'] = $logout;
 
 	return $items;
