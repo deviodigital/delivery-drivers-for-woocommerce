@@ -21,6 +21,13 @@ Driver management for delivery services who use WooCommerce.
 1. Go to `Settings -> Permalinks` and re-save the page
 1. Pat yourself on the back for a job well done :)
 
+== Screenshots ==
+
+1. Delivery Drivers WooCommerce Settings page
+3. Orders page, showing two new statuses (Driver Assigned & Out for Delivery)
+3. Driver dashboard, displaying all assigned orders (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
+4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
+
 == Changelog ==
 
 = 1.0 =
