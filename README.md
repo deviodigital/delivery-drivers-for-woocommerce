@@ -1,16 +1,6 @@
-=== Delivery Drivers for WooCommerce ===
-Contributors: deviodigital, wpdispensary
-Donate link: http://www.deviodigital.com
-Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
-Requires at least: 3.0.1
-Tested up to: 4.9.8
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# Delivery Drivers for WooCommerce
 
-Streamline your mobile workforce and increase your bottom line.
-
-== Description ==
+Brought to you by [Devio Digital](https://deviodigital.com)
 
 ## Manage your mobile workforce
 
@@ -51,22 +41,3 @@ Once the driver has been added to your userlist, you can then edit your orders a
 Give your drivers the ability to view their assigned orders, mark an order as `out for delivery` and `complete` after the order has been delivered.
 
 With these capabilities passed along to your drivers, you now have additional time free to manage other areas of your business.
-
-== Installation ==
-
-1. In your dashboard, go to `Plugins -> Add New`
-1. Search for `Delivery Drivers` and Install this plugin
-1. Go to `Settings -> Permalinks` and re-save the page
-1. Pat yourself on the back for a job well done :)
-
-== Screenshots ==
-
-1. Delivery Drivers WooCommerce Settings page
-2. Orders page, showing two new statuses (Driver Assigned & Out for Delivery)
-3. Driver dashboard, displaying all assigned orders (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
-4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
-
-== Changelog ==
-
-= 1.0 =
-* Initial release
