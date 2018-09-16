@@ -11,10 +11,6 @@
  */
 
 /**
- * @todo Hide the delivery drivers page from anyone who's not the delivery driver user role.
- */
-
-/**
  * Register new endpoint to use inside My Account page.
  *
  * @see https://developer.wordpress.org/reference/functions/add_rewrite_endpoint/
