@@ -3,17 +3,17 @@
 /**
  * The plugin bootstrap file
  *
- * @link              http://www.deviodigital.com
+ * @link              https://www.deviodigital.com
  * @since             1.0.0
  * @package           DDWC
  *
  * @wordpress-plugin
  * Plugin Name:       Delivery Drivers for WooCommerce
- * Plugin URI:        http://www.deviodigital.com
+ * Plugin URI:        https://www.deviodigital.com
  * Description:       Driver management for delivery services
  * Version:           1.0.0
  * Author:            Devio Digital
- * Author URI:        http://www.deviodigital.com
+ * Author URI:        https://www.deviodigital.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       ddwc

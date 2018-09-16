@@ -1,6 +1,6 @@
 === Delivery Drivers for WooCommerce ===
 Contributors: deviodigital, wpdispensary
-Donate link: http://www.deviodigital.com
+Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 4.9.8

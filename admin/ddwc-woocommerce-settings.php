@@ -3,7 +3,7 @@
 /**
  * Custom functions for Wommerce Settings
  *
- * @link       http://www.deviodigital.com
+ * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC
@@ -93,7 +93,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 			'ddwc_settings_section_title' => array(
 			   'name' => __( 'Delivery Drivers', 'ddwc' ),
 			   'type' => 'title',
-			   'desc' => 'Brought to you by <a href="http://www.deviodigital.com" target="_blank">Devio Digital</a>',
+			   'desc' => 'Brought to you by <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>',
 			   'id'   => 'ddwc_settings_section_title'
 			),
             // Dispatch phone number.

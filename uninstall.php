@@ -19,7 +19,7 @@
  * For more information, see the following discussion:
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
- * @link       http://www.deviodigital.com
+ * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC
