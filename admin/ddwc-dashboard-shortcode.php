@@ -38,15 +38,14 @@ function ddwc_dashboard_shortcode() {
 					if ( isset( $_POST['outfordelivery'] ) ) {
 						$order = wc_get_order( $_GET['orderid'] );
 						$order->update_status( "out-for-delivery" );
-						/**
-						 * @todo add wp mail form here to email customer and let them know their order is out for delivery.
-						 */
+						do_action( 'ddwc_email_customer_order_status_out_for_delivery' );
 					}
 
 					// Update order status if marked COMPLETED by Driver.
 					if ( isset( $_POST['ordercompleted'] ) ) {
 						$order = wc_get_order( $_GET['orderid'] );
 						$order->update_status( "completed" );
+						do_action( 'ddwc_email_admin_order_status_completed' );
 					}
 
 					// Get an instance of the WC_Order object
