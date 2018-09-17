@@ -22,7 +22,7 @@ Once the driver has been added to your userlist, you can edit orders and assign 
 
 ### Driver capabilites
 
-Give your drivers the ability to view their assigned orders, mark an order as `out for delivery` and then `complete` after the order has been delivered.
+Give your drivers the ability to view their assigned orders, mark an order as `Out for Delivery` and then `Completed` after the order has been delivered.
 
 With these capabilities passed along to your drivers, you now have additional time free to manage other areas of your business.
 
@@ -41,3 +41,7 @@ Below are a few examples of delivery services that can benefit from the **Delive
 * Cleaning
 * Laundry
 * ... and more!
+
+## Changelog
+
+View [CHANGELOG.md](https://github.com/robertdevore/delivery-drivers-for-woocommerce/blob/master/CHANGELOG.md)
