@@ -1,6 +1,6 @@
 ![Delivery Drivers for WooCommerce](https://robertdevore.com/wp-content/uploads/2018/09/ddwc-logo.png)
 
-Brought to you by [Devio Digital](https://deviodigital.com)
+Brought to you by [Devio Digital](https://deviodigital.com) - [Release Notes](https://robertdevore.com/delivery-drivers-for-woocommerce/)
 
 ## Manage your mobile workforce
 

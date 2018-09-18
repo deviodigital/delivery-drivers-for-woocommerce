@@ -14,7 +14,7 @@ Streamline your mobile workforce and increase your bottom line.
 
 ## Manage your mobile workforce
 
-Delivery Drivers for WooCommerce offers better driver management for all delivery services who use WooCommerce.
+[Delivery Drivers for WooCommerce](https://robertdevore.com/delivery-drivers-for-woocommerce/) offers better driver management for all delivery services who use WooCommerce.
 
 Your business benefits from this plugin by giving your drivers the ability to easily connect with both the customer of the order and your dispatch center.
 
