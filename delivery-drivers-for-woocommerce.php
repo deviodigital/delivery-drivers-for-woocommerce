@@ -75,3 +75,23 @@ function run_ddwc() {
 
 }
 run_ddwc();
+
+/**
+ * Add settings link on plugin page
+ *
+ * @since 1.0.3
+ * @param array $links an array of links related to the plugin.
+ * @return array updatead array of links related to the plugin.
+ */
+function ddwc_settings_link( $links ) {
+	$pro_link      = '<a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">Go Pro</a>';
+	$settings_link = '<a href="admin.php?page=wc-settings&tab=ddwc">Settings</a>';
+
+	array_unshift( $links, $settings_link );
+	array_unshift( $links, $pro_link );
+	return $links;
+}
+
+$pluginname = plugin_basename( __FILE__ );
+
+add_filter( "plugin_action_links_$pluginname", 'ddwc_settings_link' );
