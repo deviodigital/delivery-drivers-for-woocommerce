@@ -171,6 +171,8 @@ function ddwc_dashboard_shortcode() {
 
 					echo "<h4>Delivery Address</h4>";
 
+					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
+
 					echo "<p>";
 
 					if ( isset( $order_billing_first_name ) ) {
@@ -200,7 +202,7 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					echo "</p>"; // end billing address
-
+				}
 					/**
 					 * Display a Google Map with the customers address if an API key is added to 
 					 * the WooCommerce Settings page.
