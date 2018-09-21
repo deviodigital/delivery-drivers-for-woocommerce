@@ -91,7 +91,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 		$settings = array(
 			// Section title.
 			'ddwc_settings_section_title' => array(
-			   'name' => __( 'Delivery Drivers', 'ddwc' ),
+			   'name' => __( 'Delivery Drivers for WooCommerce', 'ddwc' ),
 			   'type' => 'title',
 			   'desc' => 'Brought to you by <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>',
 			   'id'   => 'ddwc_settings_section_title'
