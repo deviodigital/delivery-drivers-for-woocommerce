@@ -52,7 +52,7 @@ function ddwc_add_custom_order_statuses( $order_statuses ) {
         $new_order_statuses[ $key ] = $status;
 
         if ( 'wc-processing' === $key ) {
-            $new_order_statuses['wc-driver-assigned'] = 'Driver Assigned';
+            $new_order_statuses['wc-driver-assigned']  = 'Driver Assigned';
             $new_order_statuses['wc-out-for-delivery'] = 'Out for Delivery';
         }
     }

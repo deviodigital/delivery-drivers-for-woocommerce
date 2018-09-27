@@ -91,10 +91,10 @@ class Delivery_Drivers_WooCommerce_Settings {
 		$settings = array(
 			// Section title.
 			'ddwc_settings_section_title' => array(
-			   'name' => __( 'Delivery Drivers for WooCommerce', 'ddwc' ),
-			   'type' => 'title',
-			   'desc' => 'Brought to you by <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>',
-			   'id'   => 'ddwc_settings_section_title'
+			    'name' => __( 'Delivery Drivers for WooCommerce', 'ddwc' ),
+			    'type' => 'title',
+			    'desc' => 'Brought to you by <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>',
+			    'id'   => 'ddwc_settings_section_title'
 			),
             // Dispatch phone number.
             'dispatch_phone_number' => array(
@@ -112,8 +112,8 @@ class Delivery_Drivers_WooCommerce_Settings {
             ),
 			// Section End.
 			'section_end' => array(
-			   'type' => 'sectionend',
-			   'id'   => 'ddwc_settings_section_end'
+			    'type' => 'sectionend',
+			    'id'   => 'ddwc_settings_section_end'
 			),
 		);
 		return apply_filters( 'ddwc_woocommerce_settings', $settings );
@@ -121,4 +121,3 @@ class Delivery_Drivers_WooCommerce_Settings {
 	}
 }
 Delivery_Drivers_WooCommerce_Settings::init();
-
