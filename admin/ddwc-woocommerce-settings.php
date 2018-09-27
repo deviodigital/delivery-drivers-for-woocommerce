@@ -1,21 +1,13 @@
 <?php
 
 /**
- * Custom functions for Wommerce Settings
+ * Custom Class for Woocommerce Settings
  *
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC
  * @subpackage DDWC/admin
- */
-
-/**
- * WP Dispensary Details Settings
- *
- * Related to WooCommerce Settings API.
- *
- * @since  1.0
  */
 class Delivery_Drivers_WooCommerce_Settings {
 	/**

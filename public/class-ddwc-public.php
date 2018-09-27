@@ -3,22 +3,15 @@
 /**
  * The public-facing functionality of the plugin.
  *
+ * Defines the plugin name, version, and two examples hooks for how to
+ * enqueue the public-facing stylesheet and JavaScript.
+ * 
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
  * @package    DDWC
  * @subpackage DDWC/public
- */
-
-/**
- * The public-facing functionality of the plugin.
- *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the public-facing stylesheet and JavaScript.
- *
- * @package    DDWC
- * @subpackage DDWC/public
- * @author     WP Dispensary <deviodigital@gmail.com>
+ * @author     Devio Digital <deviodigital@gmail.com>
  */
 class Delivery_Drivers_Public {
 
