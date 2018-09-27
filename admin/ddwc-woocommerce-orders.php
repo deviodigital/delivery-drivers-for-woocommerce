@@ -15,7 +15,7 @@
  */
 function ddwc_register_out_for_delivery_order_status() {
     register_post_status( 'wc-out-for-delivery', array(
-        'label'                     => 'Out for Delivery',
+        'label'                     => __( 'Out for Delivery', 'ddwc' ),
         'public'                    => true,
         'show_in_admin_status_list' => true,
         'show_in_admin_all_list'    => true,
@@ -30,7 +30,7 @@ add_action( 'init', 'ddwc_register_out_for_delivery_order_status' );
  */
 function ddwc_register_driver_assigned_order_status() {
     register_post_status( 'wc-driver-assigned', array(
-        'label'                     => 'Driver Assigned',
+        'label'                     => __( 'Driver Assigned', 'ddwc' ),
         'public'                    => true,
         'show_in_admin_status_list' => true,
         'show_in_admin_all_list'    => true,
