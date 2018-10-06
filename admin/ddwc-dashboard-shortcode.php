@@ -108,31 +108,31 @@ function ddwc_dashboard_shortcode() {
 					echo "<div class='ddwc-orders'>";
 
 					if ( isset( $order_id ) ) {
-						echo "<h3 class='ddwc'>Order #" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
+						echo "<h3 class='ddwc'>" . __( "Order #", "ddwc" ) . "" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
 					}
 
 					if ( isset( $order_date_created ) ) {
-						echo "<p><strong>Date:</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
+						echo "<p><strong>" . __( "Date:", "ddwc" ) . "</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
 					}
 
 					echo "<p>";
 					if ( isset( $order_billing_phone ) ) {
-						echo "<a href='tel:" . $order_billing_phone . "' class='button ddwc-button customer'>Call Customer</a> ";
+						echo "<a href='tel:" . $order_billing_phone . "' class='button ddwc-button customer'>" . __( "Call Customer", "ddwc" ) . "</a> ";
 					}
 
 					/**
 					 * Display a button to call the dispatch number if it's set in the Settings page.
 					 */
 					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
-						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button ddwc-button dispatch'>Call Dispatch</a>";
+						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button ddwc-button dispatch'>" . __( "Call Dispatch", "ddwc" ) . "</a>";
 					}
 
 					echo "</p>";
 
-					echo "<h4>Order Items</h4>";
+					echo "<h4>" . __( "Order items", "ddwc" ) . "</h4>";
 
 					echo "<table class='ddwc-dashboard'>";
-					echo "<thead><tr><td>ID</td><td>Product</td><td>Qty</td><td>Total</td></tr></thead>";
+					echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 					echo "<tbody>";
 
 					// get an instance of the WC_Order object
@@ -169,7 +169,7 @@ function ddwc_dashboard_shortcode() {
 					echo "</tbody>";
 					echo "</table>";
 
-					echo "<h4>Delivery Address</h4>";
+					echo "<h4>" . __( "Delivery Address", "ddwc" ) . "</h4>";
 
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 
@@ -214,10 +214,10 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					if ( $order_status == 'driver-assigned' ) {
-						echo "<h4>Change Status</h4>";
+						echo "<h4>" . __( "Change Status", "ddwc" ) . "</h4>";
 						echo '<form method="post"><input type="hidden" name="outfordelivery" value="out-for-delivery" /><input type="submit" value="Out for Delivery" />' . wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 					} elseif ( $order_status == 'out-for-delivery' ) {
-						echo "<h4>Change Status</h4>";
+						echo "<h4>" . __( "Change Status", "ddwc" ) . "</h4>";
 						echo '<form method="post"><input type="hidden" name="ordercompleted" value="completed" /><input type="submit" value="Completed" />' . wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 					} else {
 						// Do nothing.
@@ -248,7 +248,7 @@ function ddwc_dashboard_shortcode() {
 					if ( $assigned_orders ) {
 						echo "<h3 class='ddwc assigned-orders'>Assigned Orders</h3>";
 						echo "<table class='ddwc-dashboard'>";
-						echo "<thead><tr><td>ID</td><td>Date</td><td>Status</td><td>Total</td></tr></thead>";
+						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date:", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 						echo "<tbody>";
 						foreach ( $assigned_orders as $driver_order ) {
 
@@ -333,14 +333,14 @@ function ddwc_dashboard_shortcode() {
 						echo "</tbody>";
 						echo "</table>";
 					} else {
-						echo "<h3 class='ddwc assigned-orders'>Assigned Orders</h3>";
-						echo "<p>You do not have any assigned orders.</p>";
+						echo "<h3 class='ddwc assigned-orders'>" . __( "Assigned Orders", "ddwc" ) . "</h3>";
+						echo "<p>" . __( "You do not currently have any assigned orders.", "ddwc" ) . "</p>";
 					}
 				}
 			} else {
 
 				// Set the Access Denied page text.
-				$access_denied = "<h3 class='ddwc access-denied'>Access Denied</h3><p>Sorry, but you are not able to view this page.</p>";
+				$access_denied = "<h3 class='ddwc access-denied'>" . __( "Access Denied", "ddwc" ) . "</h3><p>" . __( "Sorry, but you are not able to view this page.", "ddwc" ) . "</p>";
 
 				// Return the Access Denied text, filtered.
 				return apply_filters( 'ddwc_access_denied', $access_denied );
