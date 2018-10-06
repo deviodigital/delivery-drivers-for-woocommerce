@@ -14,16 +14,6 @@ Time saved is money earned.
 
 The Delivery Drivers for WooCommerce plugin helps your business by reducing paperwork, communications and other manual tasks that eat up your time.
 
-## Pro Features
-
-[Delivery Drivers for WooCommerce Pro](https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro/) includes the following additional features:
-
-* Auto-assign drivers when an order is submitted
-* Accept driver applications from the Driver Dashboard
-* Email driver when they've been assigned a new order
-* Email customer when the driver marks an order as "Out for Delivery"
-* Email administrator when the driver marks an order as "Completed"
-
 ### Manage your drivers
 
 This plugin gives you the ability to add new users with the designated `Driver` role to your WordPress site.
@@ -51,6 +41,16 @@ Below are a few examples of delivery services that can benefit from the **Delive
 * Cleaning
 * Laundry
 * ... and more!
+
+## Pro Features
+
+[Delivery Drivers for WooCommerce Pro](https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro/) includes the following additional features:
+
+* Auto-assign drivers when an order is submitted
+* Accept driver applications from the Driver Dashboard
+* Email driver when they've been assigned a new order
+* Email customer when the driver marks an order as "Out for Delivery"
+* Email administrator when the driver marks an order as "Completed"
 
 ## Changelog
 
