@@ -86,7 +86,9 @@ function ddwc_settings_link( $links ) {
 	$settings_link = '<a href="admin.php?page=wc-settings&tab=ddwc">Settings</a>';
 
 	array_unshift( $links, $settings_link );
-	array_unshift( $links, $pro_link );
+	if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
+		array_unshift( $links, $pro_link );
+	}
 	return $links;
 }
 
