@@ -30,3 +30,23 @@
 	 */
 
 })( jQuery );
+
+jQuery(document).ready(function ($) {
+    // Checkbox click
+    $(".ddwc-hide-completed").click(function() {
+        var checked = true;
+         
+        // Checking Checkbox state
+        if ($(this).is(":checked")) {
+            checked = true;
+        } else {
+            checked = false;
+		}
+
+		if (checked) {
+			$("table.ddwc-dashboard tr td:contains('Completed')").parent().hide();
+		} else {
+			$("table.ddwc-dashboard tr td:contains('Completed')").parent().show();
+		}
+	});
+});

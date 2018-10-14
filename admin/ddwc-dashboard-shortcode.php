@@ -247,6 +247,7 @@ function ddwc_dashboard_shortcode() {
 					 */
 					if ( $assigned_orders ) {
 						echo "<h3 class='ddwc assigned-orders'>Assigned Orders</h3>";
+						echo "<div class='ddwc-display-options'><input type='checkbox' class='ddwc-hide-completed' value='name' /> " . __( "Hide completed orders", "ddwc" ) . "</div>";
 						echo "<table class='ddwc-dashboard'>";
 						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date:", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 						echo "<tbody>";

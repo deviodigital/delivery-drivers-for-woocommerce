@@ -86,3 +86,12 @@ a.button.ddwc-button:active {
     border: 0;
     box-shadow: none;
 }
+
+.ddwc-display-options {
+    font-size: 14px;
+    float: left;
+    line-height: 1;
+    margin-bottom: 12px;
+    padding: 5px;
+    width: 100%;
+}
