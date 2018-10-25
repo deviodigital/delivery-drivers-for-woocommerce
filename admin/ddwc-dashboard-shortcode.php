@@ -135,6 +135,7 @@ function ddwc_dashboard_shortcode() {
 					echo "<thead><tr><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 					echo "<tbody>";
 
+					do_action( 'ddwc_driver_dashboard_order_table_tbody_top' );
 
 					// get an instance of the WC_Order object.
 					$order_items     = wc_get_order( $_GET['orderid'] );
@@ -168,6 +169,8 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					echo "<tr class='order-total'><td colspan='2'><strong>" . __( 'Order total', 'ddwc' ) . "</strong></td><td class'total'>" . $currency_symbol . $order_total . "</td></tr>";
+
+					do_action( 'ddwc_driver_dashboard_order_table_tbody_bottom' );
 
 					echo "</tbody>";
 					echo "</table>";
