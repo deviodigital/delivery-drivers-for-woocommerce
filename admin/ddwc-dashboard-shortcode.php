@@ -135,11 +135,10 @@ function ddwc_dashboard_shortcode() {
 					echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 					echo "<tbody>";
 
-					// get an instance of the WC_Order object
-					$order_items = wc_get_order( $_GET['orderid'] );
 
-					$currency_code = $order_items->get_currency();
-
+					// get an instance of the WC_Order object.
+					$order_items     = wc_get_order( $_GET['orderid'] );
+					$currency_code   = $order_items->get_currency();
 					$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
 
 					// print_r ( $order_items );
@@ -163,7 +162,7 @@ function ddwc_dashboard_shortcode() {
 							echo "<tr><td>" . $product_id . "</td><td>" . $name . "</td><td>" . $qtty . "</td><td>" . $currency_symbol . ( $qtty * $price ). "</td></tr>";
 						}
 					} else {
-						// echo "DUHHHHHHHHHH";
+						// Do nothing.
 					}
 
 					echo "</tbody>";
@@ -173,36 +172,36 @@ function ddwc_dashboard_shortcode() {
 
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 
-					echo "<p>";
+						echo "<p>";
 
-					if ( isset( $order_billing_first_name ) ) {
-						echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
+						if ( isset( $order_billing_first_name ) ) {
+							echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
+						}
+
+						if ( isset( $order_shipping_address_1 ) ) {
+							echo $order_shipping_address_1 . ' ';
+						} elseif ( isset( $order_billing_address_1 ) ) {
+							echo $order_billing_address_1 . ' ';
+						} else {
+							// Do nothing.
+						}
+
+						if ( isset( $order_shipping_address_2 ) ) {
+							echo $order_shipping_address_2 . '<br />';
+						} elseif ( isset( $order_billing_address_2 ) ) {
+							echo $order_billing_address_2 . '<br />';
+						} else {
+							// Do nothing.
+						}
+
+						if ( isset( $order_shipping_city ) ) {
+							echo $order_shipping_city . ', ' . $order_shipping_state . ' ' . $order_shipping_postcode;
+						} else {
+							echo $order_billing_city . ', ' . $order_billing_state . ' ' . $order_billing_postcode;
+						}
+
+						echo "</p>"; // end billing address
 					}
-
-					if ( isset( $order_shipping_address_1 ) ) {
-						echo $order_shipping_address_1 . ' ';
-					} elseif ( isset( $order_billing_address_1 ) ) {
-						echo $order_billing_address_1 . ' ';
-					} else {
-						// Do nothing.
-					}
-
-					if ( isset( $order_shipping_address_2 ) ) {
-						echo $order_shipping_address_2 . '<br />';
-					} elseif ( isset( $order_billing_address_2 ) ) {
-						echo $order_billing_address_2 . '<br />';
-					} else {
-						// Do nothing.
-					}
-
-					if ( isset( $order_shipping_city ) ) {
-						echo $order_shipping_city . ', ' . $order_shipping_state . ' ' . $order_shipping_postcode;
-					} else {
-						echo $order_billing_city . ', ' . $order_billing_state . ' ' . $order_billing_postcode;
-					}
-
-					echo "</p>"; // end billing address
-				}
 					/**
 					 * Display a Google Map with the customers address if an API key is added to 
 					 * the WooCommerce Settings page.
