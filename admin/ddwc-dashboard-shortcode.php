@@ -132,7 +132,7 @@ function ddwc_dashboard_shortcode() {
 					echo "<h4>" . __( "Order details", "ddwc" ) . "</h4>";
 
 					echo "<table class='ddwc-dashboard'>";
-					echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
+					echo "<thead><tr><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 					echo "<tbody>";
 
 
@@ -154,16 +154,20 @@ function ddwc_dashboard_shortcode() {
 							$quantity = $item_product->get_quantity();
 							//print_r( $product );
 
-							$sku   = $product->get_sku();
-							$name  = $product->get_name();
-							$price = $product->get_price();
-							$qtty  = $quantity;
+							$sku         = $product->get_sku();
+							$name        = $product->get_name();
+							$price       = $product->get_price();
+							$qtty        = $quantity;
+							$qtty_price  = $qtty * $price;
+							$total_price = number_format( $qtty_price, 2 );
 
-							echo "<tr><td>" . $product_id . "</td><td>" . $name . "</td><td>" . $qtty . "</td><td>" . $currency_symbol . ( $qtty * $price ). "</td></tr>";
+							echo "<tr><td>" . $name . "</td><td>" . $qtty . "</td><td>" . $currency_symbol . $total_price . "</td></tr>";
 						}
 					} else {
 						// Do nothing.
 					}
+
+					echo "<tr class='order-total'><td colspan='2'><strong>" . __( 'Order total', 'ddwc' ) . "</strong></td><td class'total'>" . $currency_symbol . $order_total . "</td></tr>";
 
 					echo "</tbody>";
 					echo "</table>";
