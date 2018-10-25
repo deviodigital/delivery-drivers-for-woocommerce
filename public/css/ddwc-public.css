@@ -23,6 +23,10 @@ table.ddwc-dashboard tr:last-child {
     border-bottom: 0;
 }
 
+table.ddwc-dashboard tr.order-total {
+    background: #f1f1f1;
+}
+
 .ddwc-dashboard tbody {
     font-size: 14px;
 }
