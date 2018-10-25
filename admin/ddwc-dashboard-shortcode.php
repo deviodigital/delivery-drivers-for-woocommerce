@@ -112,7 +112,7 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					if ( isset( $order_date_created ) ) {
-						echo "<p><strong>" . __( "Date:", "ddwc" ) . "</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
+						echo "<p><strong>" . __( "Date", "ddwc" ) . ":</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
 					}
 
 					echo "<p>";
@@ -129,7 +129,7 @@ function ddwc_dashboard_shortcode() {
 
 					echo "</p>";
 
-					echo "<h4>" . __( "Order items", "ddwc" ) . "</h4>";
+					echo "<h4>" . __( "Order details", "ddwc" ) . "</h4>";
 
 					echo "<table class='ddwc-dashboard'>";
 					echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
@@ -249,7 +249,7 @@ function ddwc_dashboard_shortcode() {
 						echo "<h3 class='ddwc assigned-orders'>Assigned Orders</h3>";
 						echo "<div class='ddwc-display-options'><input type='checkbox' class='ddwc-hide-completed' value='name' /> " . __( "Hide completed orders", "ddwc" ) . "</div>";
 						echo "<table class='ddwc-dashboard'>";
-						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date:", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
+						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 						echo "<tbody>";
 						foreach ( $assigned_orders as $driver_order ) {
 
