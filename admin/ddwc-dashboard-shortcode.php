@@ -242,7 +242,7 @@ function ddwc_dashboard_shortcode() {
 						'meta_key'       => 'ddwc_driver_id',
 						'meta_value'     => $user_id
 					);
-					
+
 					/**
 					 * Get Orders with Driver ID attached
 					 */
@@ -259,18 +259,17 @@ function ddwc_dashboard_shortcode() {
 						echo "<tbody>";
 						foreach ( $assigned_orders as $driver_order ) {
 
-							// Get an instance of the WC_Order object
+							// Get an instance of the WC_Order object.
 							$order = wc_get_order( $driver_order->ID );
 
-							$order_data = $order->get_data(); // The Order data		
+							$order_data = $order->get_data(); // The Order data.
 
-							//print_r( $order_data );
+							// print_r( $order_data );
 
-							$currency_code = $order_data['currency'];
-
+							$currency_code   = $order_data['currency'];
 							$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
 
-							//print_r( $order_data );
+							// print_r( $order_data );
 
 							$order_id                   = $order_data['id'];
 							$order_parent_id            = $order_data['parent_id'];
@@ -323,7 +322,7 @@ function ddwc_dashboard_shortcode() {
 
 							echo "<tr>";
 
-							//print_r( $order_data );
+							// print_r( $order_data );
 
 							echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
 							echo "<td>" . $order_date_created . "</td>";
