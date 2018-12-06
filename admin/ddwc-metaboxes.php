@@ -20,7 +20,7 @@
 function ddwc_metaboxes() {
 	add_meta_box(
 		'ddwc_metaboxes',
-		__( 'Delivery Driver', 'wp-dispensary' ),
+		__( 'Delivery Driver', 'ddwc' ),
 		'ddwc_build',
 		'shop_order',
 		'side',
