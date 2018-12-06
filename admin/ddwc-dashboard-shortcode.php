@@ -181,8 +181,12 @@ function ddwc_dashboard_shortcode() {
 
 						echo "<p>";
 
-						if ( isset( $order_billing_first_name ) ) {
+						if ( isset( $order_shipping_first_name ) ) {
+							echo $order_shipping_first_name . " " . $order_shipping_last_name . "<br />";
+						} elseif ( isset( $order_billing_first_name ) ) {
 							echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
+						} else {
+							// Do nothing.
 						}
 
 						if ( isset( $order_shipping_address_1 ) ) {
