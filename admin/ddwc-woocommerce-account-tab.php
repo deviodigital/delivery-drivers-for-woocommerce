@@ -76,19 +76,11 @@ add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_cont
  * @param string $title
  * @return string
  */
-function ddwc_endpoint_title( $title ) {
-	global $wp_query;
+function ddwc_endpoint_title( $title, $id ) {
 
-	$is_endpoint = isset( $wp_query->query_vars['driver-dashboard'] );
-
-	if ( $is_endpoint && ! is_admin() && is_main_query() && in_the_loop() && is_account_page() ) {
-		// New page title.
-		$title = __( 'Driver Dashboard', 'woocommerce' );
-
-		remove_filter( 'the_title', 'ddwc_endpoint_title' );
+	if ( is_wc_endpoint_url( 'driver-dashboard' ) && in_the_loop() ) {
+		$title = "Driver Dashboard";
 	}
-
 	return $title;
 }
-
-add_filter( 'the_title', 'ddwc_endpoint_title' );
+add_filter( 'the_title', 'ddwc_endpoint_title', 10, 2 );
