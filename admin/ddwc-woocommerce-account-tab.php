@@ -25,13 +25,15 @@ add_action( 'init', 'ddwc_endpoints' );
  *
  * @param array $vars
  * @return array
+ * 
+ * @since 1.2
  */
-function ddwc_query_vars( $vars ) {
-	$vars[] = 'driver-dashboard';
-
-	return $vars;
-}
-add_filter( 'query_vars', 'ddwc_query_vars', 0 );
+add_filter( 'woocommerce_get_query_vars', function ( $vars ) {
+    foreach ( ['driver-dashboard'] as $e ) {
+        $vars[$e] = $e;
+    }
+    return $vars;
+} );
 
 function ddwc_flush_rewrite_rules() {
 	add_rewrite_endpoint( 'driver-dashboard', EP_ROOT | EP_PAGES );
