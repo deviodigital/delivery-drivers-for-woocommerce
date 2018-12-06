@@ -45,7 +45,15 @@ function ddwc_build() {
 
 	/** Echo Delivery Driver Metabox Input Field */
 	echo '<div class="ddwc-driver-box">';
-	wp_dropdown_users( array( 'show_option_none' => __( 'Assign a driver' ), 'role' => 'driver', 'name' => 'ddwc_driver_id', 'id' => 'ddwc_driver_id', 'selected' => $ddwc_driver_id, 'class' => 'widefat', 'show' => 'display_name_with_login' ) );
+	wp_dropdown_users( array(
+		'show_option_none' => __( 'Assign a driver' ),
+		'role'             => 'driver',
+		'name'             => 'ddwc_driver_id',
+		'id'               => 'ddwc_driver_id',
+		'selected'         => $ddwc_driver_id,
+		'class'            => 'widefat',
+		'show'             => 'display_name_with_login'
+	) );
 	echo '</div>';
 
 }
