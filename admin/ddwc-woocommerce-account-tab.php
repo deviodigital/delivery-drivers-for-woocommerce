@@ -35,6 +35,7 @@ add_filter( 'woocommerce_get_query_vars', function ( $vars ) {
     return $vars;
 } );
 
+// Flush rewrite rules.
 function ddwc_flush_rewrite_rules() {
 	add_rewrite_endpoint( 'driver-dashboard', EP_ROOT | EP_PAGES );
 	flush_rewrite_rules();
@@ -48,8 +49,9 @@ register_activation_hook( __FILE__, 'ddwc_flush_rewrite_rules' );
  * @return array
  */
 function ddwc_my_account_menu_items( $items ) {
-	// Remove the customer-logout menu item.
+	// Get customer-logout menu item.
 	$logout = $items['customer-logout'];
+	// Remove the customer-logout menu item.
 	unset( $items['customer-logout'] );
 	// Insert the driver-dashboard endpoint.
 	$items['driver-dashboard'] = __( 'Delivery Drivers', 'woocommerce' );
@@ -66,7 +68,6 @@ add_filter( 'woocommerce_account_menu_items', 'ddwc_my_account_menu_items' );
 function ddwc_endpoint_content() {
 	echo do_shortcode( '[ddwc_dashboard]' );
 }
-
 add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_content' );
 
 /*
