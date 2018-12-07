@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.2
+* Bug fix for driver-dashboard query vars in `admin/ddwc-woocommerce-account-tab.php`
+* Updated `the_title` to say **Driver Dashboard** for driver-dashboard page in `admin/ddwc-woocommerce-account-tab.php`
+* Updated code to display customer name in driver dadhboard in `admin/ddwc-dashboard-shortcode.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* Various code updates and general code cleanup throughout multiple files
+
 ### 1.1
 * Added checkbox for drivers to hide completed orders from assigned orders table in `admin/ddwc-dashboard-shortcode.php`
 * Added checkbox for drivers to hide completed orders from assigned orders table in `public/js/ddwc-public.js`
