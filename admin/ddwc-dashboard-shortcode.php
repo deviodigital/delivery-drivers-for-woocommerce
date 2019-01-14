@@ -115,6 +115,15 @@ function ddwc_dashboard_shortcode() {
 						echo "<p><strong>" . __( "Date", "ddwc" ) . ":</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
 					}
 
+					// Get payment gateway details.
+					$payment_gateway = wc_get_payment_gateway_by_order( $order_id );
+
+					// Display payment method details.
+					if ( isset( $payment_gateway ) ) {
+						echo "<p><strong>" . __( 'Payment', 'ddwc' ) . ":</strong> " . $payment_gateway->title . "</p>";
+					}
+
+					// Display a button to call the customers phone number.
 					echo "<p>";
 					if ( isset( $order_billing_phone ) ) {
 						echo "<a href='tel:" . $order_billing_phone . "' class='button ddwc-button customer'>" . __( "Call Customer", "ddwc" ) . "</a> ";
