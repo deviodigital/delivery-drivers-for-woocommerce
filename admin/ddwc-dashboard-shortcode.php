@@ -107,10 +107,12 @@ function ddwc_dashboard_shortcode() {
 
 					echo "<div class='ddwc-orders'>";
 
+					// Display order number.
 					if ( isset( $order_id ) ) {
 						echo "<h3 class='ddwc'>" . __( "Order #", "ddwc" ) . "" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
 					}
 
+					// Display order date.
 					if ( isset( $order_date_created ) ) {
 						echo "<p><strong>" . __( "Date", "ddwc" ) . ":</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
 					}
@@ -129,9 +131,7 @@ function ddwc_dashboard_shortcode() {
 						echo "<a href='tel:" . $order_billing_phone . "' class='button ddwc-button customer'>" . __( "Call Customer", "ddwc" ) . "</a> ";
 					}
 
-					/**
-					 * Display a button to call the dispatch number if it's set in the Settings page.
-					 */
+					// Display a button to call the dispatch number if it's set in the Settings page. 
 					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
 						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button ddwc-button dispatch'>" . __( "Call Dispatch", "ddwc" ) . "</a>";
 					}
@@ -190,34 +190,34 @@ function ddwc_dashboard_shortcode() {
 
 						echo "<p>";
 
-						if ( isset( $order_shipping_first_name ) ) {
+						if ( '' !== $order_shipping_first_name ) {
 							echo $order_shipping_first_name . " " . $order_shipping_last_name . "<br />";
-						} elseif ( isset( $order_billing_first_name ) ) {
+						} elseif ( '' !== $order_billing_first_name ) {
 							echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
 						} else {
 							// Do nothing.
 						}
 
-						if ( isset( $order_shipping_address_1 ) ) {
+						if ( '' !== $order_shipping_address_1 ) {
 							echo $order_shipping_address_1 . ' ';
-						} elseif ( isset( $order_billing_address_1 ) ) {
+						} elseif ( '' !== $order_billing_address_1 ) {
 							echo $order_billing_address_1 . ' ';
 						} else {
 							// Do nothing.
 						}
 
-						if ( isset( $order_shipping_address_2 ) ) {
-							echo $order_shipping_address_2 . '<br />';
-						} elseif ( isset( $order_billing_address_2 ) ) {
-							echo $order_billing_address_2 . '<br />';
+						if ( '' !== $order_shipping_address_2 ) {
+							echo $order_shipping_address_2;
+						} elseif ( '' !== $order_billing_address_2 ) {
+							echo $order_billing_address_2;
 						} else {
 							// Do nothing.
 						}
 
-						if ( isset( $order_shipping_city ) ) {
-							echo $order_shipping_city . ', ' . $order_shipping_state . ' ' . $order_shipping_postcode;
+						if (  '' !== $order_shipping_city ) {
+							echo '<br />' . $order_shipping_city . ', ' . $order_shipping_state . ' ' . $order_shipping_postcode;
 						} else {
-							echo $order_billing_city . ', ' . $order_billing_state . ' ' . $order_billing_postcode;
+							echo '<br />' . $order_billing_city . ', ' . $order_billing_state . ' ' . $order_billing_postcode;
 						}
 
 						echo "</p>"; // end billing address
