@@ -65,7 +65,7 @@ function ddwc_dashboard_shortcode() {
 					$order_payment_method       = $order_data['payment_method'];
 					$order_payment_method       = $order_data['payment_method'];
 
-					$order_date_created   = $order_data['date_created']->date('m-d');
+					$order_date_created   = $order_data['date_created']->date('m-d-y');
 					$order_time_created   = $order_data['date_created']->date('h:i a');
 
 					## CART INFORMATION:
