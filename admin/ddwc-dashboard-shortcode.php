@@ -112,19 +112,6 @@ function ddwc_dashboard_shortcode() {
 						echo "<h3 class='ddwc'>" . __( "Order #", "ddwc" ) . "" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
 					}
 
-					// Display order date.
-					if ( isset( $order_date_created ) ) {
-						echo "<p><strong>" . __( "Date", "ddwc" ) . ":</strong> " . $order_date_created . " - " . $order_time_created . "</p>";
-					}
-
-					// Get payment gateway details.
-					$payment_gateway = wc_get_payment_gateway_by_order( $order_id );
-
-					// Display payment method details.
-					if ( isset( $payment_gateway ) ) {
-						echo "<p><strong>" . __( 'Payment', 'ddwc' ) . ":</strong> " . $payment_gateway->title . "</p>";
-					}
-
 					// Display a button to call the customers phone number.
 					echo "<p>";
 					if ( isset( $order_billing_phone ) ) {
@@ -139,6 +126,32 @@ function ddwc_dashboard_shortcode() {
 					echo "</p>";
 
 					echo "<h4>" . __( "Order details", "ddwc" ) . "</h4>";
+
+					// Get payment gateway details.
+					$payment_gateway = wc_get_payment_gateway_by_order( $order_id );
+
+					echo "<table class='ddwc-dashboard'>";
+					echo "<tbody>";
+					// Display customer.
+					if ( '' !== $order_shipping_first_name ) {
+						echo "<tr><td><strong>" . __( "Customer", "ddwc" ) . "</strong></td><td>" . $order_shipping_first_name . " " . $order_shipping_last_name . "</td></tr>";
+					} elseif ( '' !== $order_billing_first_name ) {
+						echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
+					} else {
+						// Do nothing.
+					}
+					// Display payment method details.
+					if ( isset( $payment_gateway ) ) {
+						echo "<tr><td><strong>" . __( 'Payment method', 'ddwc' ) . "</strong></td><td>" . $payment_gateway->title . "</td></tr>";
+					}
+					// Display order date.
+					if ( isset( $order_date_created ) ) {
+						echo "<tr><td><strong>" . __( "Order date", "ddwc" ) . "</strong></td><td>" . $order_date_created . " - " . $order_time_created . "</td></tr>";
+					}
+					echo "</tbody>";
+					echo "</table>";
+
+					//echo "<h4>" . __( "Order items", "ddwc" ) . "</h4>";
 
 					echo "<table class='ddwc-dashboard'>";
 					echo "<thead><tr><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
@@ -177,6 +190,7 @@ function ddwc_dashboard_shortcode() {
 						// Do nothing.
 					}
 
+					echo "<tr class='delivery-charge'><td colspan='2'><strong>" . __( 'Delivery', 'ddwc' ) . "</strong></td><td class'total'>" . $currency_symbol . $order_shipping_total . "</td></tr>";
 					echo "<tr class='order-total'><td colspan='2'><strong>" . __( 'Order total', 'ddwc' ) . "</strong></td><td class'total'>" . $currency_symbol . $order_total . "</td></tr>";
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_bottom' );
@@ -189,14 +203,6 @@ function ddwc_dashboard_shortcode() {
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 
 						echo "<p>";
-
-						if ( '' !== $order_shipping_first_name ) {
-							echo $order_shipping_first_name . " " . $order_shipping_last_name . "<br />";
-						} elseif ( '' !== $order_billing_first_name ) {
-							echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
-						} else {
-							// Do nothing.
-						}
 
 						if ( '' !== $order_shipping_address_1 ) {
 							echo $order_shipping_address_1 . ' ';
