@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    DDWC
  * @subpackage DDWC/includes
- * @author     WP Dispensary <deviodigital@gmail.com>
+ * @author     Devio Digital <deviodigital@gmail.com>
  */
 class Delivery_Drivers_i18n {
 

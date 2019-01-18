@@ -12,6 +12,8 @@
 
 /**
  * Registering Out for Delivery post status
+ * 
+ * @since 1.0
  */
 function ddwc_register_out_for_delivery_order_status() {
     register_post_status( 'wc-out-for-delivery', array(
@@ -26,7 +28,9 @@ function ddwc_register_out_for_delivery_order_status() {
 add_action( 'init', 'ddwc_register_out_for_delivery_order_status' );
 
 /**
- * Registering Out for Delivery post status
+ * Registering Driver Assigned post status
+ * 
+ * @since 1.0
  */
 function ddwc_register_driver_assigned_order_status() {
     register_post_status( 'wc-driver-assigned', array(
@@ -41,7 +45,13 @@ function ddwc_register_driver_assigned_order_status() {
 add_action( 'init', 'ddwc_register_driver_assigned_order_status' );
 
 /**
- * Add Out for Delivery Status to list.
+ * Add Custom Statuses to the order status list.
+ *
+ * @param array $order_statuses
+ *
+ * @return array
+ * 
+ * @since 1.0
  */
 function ddwc_add_custom_order_statuses( $order_statuses ) {
 
