@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.0
-Stable tag: 1.2
+Tested up to: 5.0.3
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,16 @@ Below are a few examples of delivery services that can benefit from the **Delive
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 
 == Changelog ==
+
+= 1.3 =
+* Added payment gateway info to order details in `admin/ddwc-dashboard-shortcode.php`
+* Added year to the order date displayed with order details in `admin/ddwc-dashboard-shortcode.php`
+* Bugfix shipping/billing address display in order details in `admin/ddwc-dashboard-shortcode.php`
+* Updated Order Details title bottom margin in `public/css/ddwc-public.css`
+* Updated CSS to include new class name for delivery charge in `public/css/ddwc-public.css`
+* Updated order details display style and content in `admin/ddwc-dashboard-shortcode.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* Various code cleanup and doc updates throughout multiple files
 
 = 1.2 =
 * Bug fix for driver-dashboard query vars in `admin/ddwc-woocommerce-account-tab.php`
