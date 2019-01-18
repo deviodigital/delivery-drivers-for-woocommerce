@@ -54,7 +54,7 @@ function ddwc_my_account_menu_items( $items ) {
 	// Remove the customer-logout menu item.
 	unset( $items['customer-logout'] );
 	// Insert the driver-dashboard endpoint.
-	$items['driver-dashboard'] = __( 'Delivery Drivers', 'woocommerce' );
+	$items['driver-dashboard'] = __( 'Delivery Drivers', 'ddwc' );
 	// Insert back the customer-logout item.
 	$items['customer-logout'] = $logout;
 
@@ -79,7 +79,7 @@ add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_cont
 function ddwc_endpoint_title( $title, $id ) {
 
 	if ( is_wc_endpoint_url( 'driver-dashboard' ) && in_the_loop() ) {
-		$title = "Driver Dashboard";
+		$title = __( 'Driver Dashboard', 'ddwc' );
 	}
 	return $title;
 }

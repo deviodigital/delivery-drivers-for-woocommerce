@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2018-12-07 15:32-0500\n"
-"PO-Revision-Date: 2018-12-07 15:32-0500\n"
+"POT-Creation-Date: 2019-01-17 23:02-0500\n"
+"PO-Revision-Date: 2019-01-17 23:01-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,79 +21,94 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/ddwc-dashboard-shortcode.php:111
+#: admin/ddwc-dashboard-shortcode.php:112
 msgid "Order #"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:115
-#: admin/ddwc-dashboard-shortcode.php:262
-msgid "Date"
-msgstr ""
-
-#: admin/ddwc-dashboard-shortcode.php:120
+#: admin/ddwc-dashboard-shortcode.php:118
 msgid "Call Customer"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:127
+#: admin/ddwc-dashboard-shortcode.php:123
 msgid "Call Dispatch"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:132
+#: admin/ddwc-dashboard-shortcode.php:128
 msgid "Order details"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:135
+#: admin/ddwc-dashboard-shortcode.php:137
+msgid "Customer"
+msgstr ""
+
+#: admin/ddwc-dashboard-shortcode.php:145
+msgid "Payment method"
+msgstr ""
+
+#: admin/ddwc-dashboard-shortcode.php:149
+msgid "Order date"
+msgstr ""
+
+#: admin/ddwc-dashboard-shortcode.php:157
 msgid "Product"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:135
+#: admin/ddwc-dashboard-shortcode.php:157
 msgid "Qty"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:135
-#: admin/ddwc-dashboard-shortcode.php:262
+#: admin/ddwc-dashboard-shortcode.php:157
+#: admin/ddwc-dashboard-shortcode.php:277
 msgid "Total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:171
+#: admin/ddwc-dashboard-shortcode.php:193
+msgid "Delivery"
+msgstr ""
+
+#: admin/ddwc-dashboard-shortcode.php:194
 msgid "Order total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:178
+#: admin/ddwc-dashboard-shortcode.php:201
 msgid "Delivery Address"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:227
-#: admin/ddwc-dashboard-shortcode.php:230
+#: admin/ddwc-dashboard-shortcode.php:242
+#: admin/ddwc-dashboard-shortcode.php:245
 msgid "Change Status"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:259
-#: admin/ddwc-dashboard-shortcode.php:346
+#: admin/ddwc-dashboard-shortcode.php:274
+#: admin/ddwc-dashboard-shortcode.php:361
 msgid "Assigned Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:260
+#: admin/ddwc-dashboard-shortcode.php:275
 msgid "Hide completed orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:262
+#: admin/ddwc-dashboard-shortcode.php:277
 msgid "ID"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:262
+#: admin/ddwc-dashboard-shortcode.php:277
+msgid "Date"
+msgstr ""
+
+#: admin/ddwc-dashboard-shortcode.php:277
 msgid "Status"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:347
+#: admin/ddwc-dashboard-shortcode.php:362
 msgid "You do not currently have any assigned orders."
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:353
+#: admin/ddwc-dashboard-shortcode.php:368
 msgid "Access Denied"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:353
+#: admin/ddwc-dashboard-shortcode.php:368
 msgid "Sorry, but you are not able to view this page."
 msgstr ""
 
@@ -110,22 +125,26 @@ msgstr ""
 msgid "Delivery Drivers"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:18
+#: admin/ddwc-woocommerce-account-tab.php:82
+msgid "Driver Dashboard"
+msgstr ""
+
+#: admin/ddwc-woocommerce-orders.php:20
 msgid "Out for Delivery"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:23
+#: admin/ddwc-woocommerce-orders.php:25
 #, php-format
 msgid "Out for Delivery <span class=\"count\">(%s)</span>"
 msgid_plural "Out for Delivery <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/ddwc-woocommerce-orders.php:33
+#: admin/ddwc-woocommerce-orders.php:37
 msgid "Driver Assigned"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:38
+#: admin/ddwc-woocommerce-orders.php:42
 #, php-format
 msgid "Driver Assigned <span class=\"count\">(%s)</span>"
 msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"
@@ -157,6 +176,14 @@ msgstr ""
 
 #: admin/ddwc-woocommerce-settings.php:102
 msgid "Add a map to the order directions for your drivers."
+msgstr ""
+
+#: delivery-drivers-for-woocommerce.php:85
+msgid "Go Pro"
+msgstr ""
+
+#: delivery-drivers-for-woocommerce.php:86
+msgid "Settings"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

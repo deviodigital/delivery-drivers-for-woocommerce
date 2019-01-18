@@ -46,7 +46,7 @@ function ddwc_build() {
 	/** Echo Delivery Driver Metabox Input Field */
 	echo '<div class="ddwc-driver-box">';
 	wp_dropdown_users( array(
-		'show_option_none' => __( 'Assign a driver' ),
+		'show_option_none' => __( 'Assign a driver', 'ddwc' ),
 		'role'             => 'driver',
 		'name'             => 'ddwc_driver_id',
 		'id'               => 'ddwc_driver_id',
