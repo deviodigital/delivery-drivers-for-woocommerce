@@ -342,19 +342,26 @@ function ddwc_dashboard_shortcode() {
 							$order_shipping_postcode   = $order_data['shipping']['postcode'];
 							$order_shipping_country    = $order_data['shipping']['country'];
 
-							echo "<tr>";
+							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status ) {
+								echo "<tr>";
 
-							// print_r( $order_data );
+								// print_r( $order_data );
 
-							echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
-							echo "<td>" . $order_date_created . "</td>";
-							echo "<td>" . wc_get_order_status_name( $order_status ) . "</td>";
+								echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
+								echo "<td>" . $order_date_created . "</td>";
+								echo "<td>" . wc_get_order_status_name( $order_status ) . "</td>";
 
-							if ( isset( $order_total ) ) {
-								echo "<td>"  . $currency_symbol . $order_total . "</td>";
-							} else {
-								echo "<td>-</td>";
+								if ( isset( $order_total ) ) {
+									echo "<td>"  . $currency_symbol . $order_total . "</td>";
+								} else {
+									echo "<td>-</td>";
+								}
+
+								echo "</tr>";
 							}
+						}
+						echo "</tbody>";
+						echo "</table>";
 
 						do_action( 'ddwc_assigned_orders_table_after' );
 
