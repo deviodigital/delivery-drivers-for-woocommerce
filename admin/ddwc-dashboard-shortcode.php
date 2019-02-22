@@ -19,9 +19,10 @@ function ddwc_dashboard_shortcode() {
 		// Get the user object.
 		$user_meta = get_userdata( $user_id );
 
-		// Get all the user roles as an array.
+		// If user_id doesn't equal zero.
 		if ( 0 != $user_id ) {
 
+			// Get all the user roles as an array.
 			$user_roles = $user_meta->roles;
 
 			// Check if the role you're interested in, is present in the array.
@@ -136,7 +137,7 @@ function ddwc_dashboard_shortcode() {
 					if ( '' !== $order_shipping_first_name ) {
 						echo "<tr><td><strong>" . __( "Customer", "ddwc" ) . "</strong></td><td>" . $order_shipping_first_name . " " . $order_shipping_last_name . "</td></tr>";
 					} elseif ( '' !== $order_billing_first_name ) {
-						echo $order_billing_first_name . " " . $order_billing_last_name . "<br />";
+						echo "<tr><td><strong>" . __( "Customer", "ddwc" ) . "</strong></td><td>" . $order_billing_first_name . " " . $order_billing_last_name . "</td></tr>";
 					} else {
 						// Do nothing.
 					}
