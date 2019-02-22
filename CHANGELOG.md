@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.4
+* Added 2 new action hooks for the Assigned Orders table in `admin/ddwc-dashboard-shortcode.php`
+* Added Completed Orders table to Driver Dashboard in `admin/ddwc-dashboard-shortcode.php`
+* Added 2 new action hooks for the Completed Orders table in `admin/ddwc-dashboard-shortcode.php`
+* Updated My Account tab text to Driver Dashboard in `admin/ddwc-woocommerce-account-tab.php`
+* Updated billing name in the order details view with table codes in `admin/ddwc-dashboard-shortcode.php`
+* Updated Assigned Orders table display options and details in `admin/ddwc-dashboard-shortcode.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+
 ### 1.3
 * Added payment gateway info to order details in `admin/ddwc-dashboard-shortcode.php`
 * Added year to the order date displayed with order details in `admin/ddwc-dashboard-shortcode.php`
