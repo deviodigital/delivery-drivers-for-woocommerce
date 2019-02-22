@@ -54,7 +54,7 @@ function ddwc_my_account_menu_items( $items ) {
 	// Remove the customer-logout menu item.
 	unset( $items['customer-logout'] );
 	// Insert the driver-dashboard endpoint.
-	$items['driver-dashboard'] = __( 'Delivery Drivers', 'ddwc' );
+	$items['driver-dashboard'] = __( 'Driver Dashboard', 'ddwc' );
 	// Insert back the customer-logout item.
 	$items['customer-logout'] = $logout;
 
