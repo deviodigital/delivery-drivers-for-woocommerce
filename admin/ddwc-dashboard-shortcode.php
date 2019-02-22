@@ -273,7 +273,9 @@ function ddwc_dashboard_shortcode() {
 					 */
 					if ( $assigned_orders ) {
 						echo "<h3 class='ddwc assigned-orders'>" . __( 'Assigned Orders', 'ddwc' ) . "</h3>";
-						echo "<div class='ddwc-display-options'><input type='checkbox' class='ddwc-hide-completed' value='name' /> " . __( "Hide completed orders", "ddwc" ) . "</div>";
+
+						do_action( 'ddwc_assigned_orders_table_before' );
+
 						echo "<table class='ddwc-dashboard'>";
 						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
 						echo "<tbody>";
@@ -353,6 +355,9 @@ function ddwc_dashboard_shortcode() {
 							} else {
 								echo "<td>-</td>";
 							}
+
+						do_action( 'ddwc_assigned_orders_table_after' );
+
 
 							echo "</tr>";
 						}
