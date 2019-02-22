@@ -365,6 +365,7 @@ function ddwc_dashboard_shortcode() {
 
 						do_action( 'ddwc_assigned_orders_table_after' );
 
+						echo "<h4 class='ddwc assigned-orders'>" . __( 'Completed Orders', 'ddwc' ) . "</h4>";
 
 						do_action( 'ddwc_completed_orders_table_before' );
 
@@ -454,6 +455,9 @@ function ddwc_dashboard_shortcode() {
 						}
 						echo "</tbody>";
 						echo "</table>";
+
+						do_action( 'ddwc_completed_orders_table_after' );
+
 					} else {
 						echo "<h3 class='ddwc assigned-orders'>" . __( "Assigned Orders", "ddwc" ) . "</h3>";
 						echo "<p>" . __( "You do not currently have any assigned orders.", "ddwc" ) . "</p>";
