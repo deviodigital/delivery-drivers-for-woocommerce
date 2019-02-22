@@ -366,7 +366,91 @@ function ddwc_dashboard_shortcode() {
 						do_action( 'ddwc_assigned_orders_table_after' );
 
 
-							echo "</tr>";
+						do_action( 'ddwc_completed_orders_table_before' );
+
+						echo "<table class='ddwc-dashboard'>";
+						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
+						echo "<tbody>";
+						foreach ( $assigned_orders as $driver_order ) {
+
+							// Get an instance of the WC_Order object.
+							$order = wc_get_order( $driver_order->ID );
+
+							$order_data = $order->get_data(); // The Order data.
+
+							// print_r( $order_data );
+
+							$currency_code   = $order_data['currency'];
+							$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
+
+							// print_r( $order_data );
+
+							$order_id                   = $order_data['id'];
+							$order_parent_id            = $order_data['parent_id'];
+							$order_status               = $order_data['status'];
+							$order_currency             = $order_data['currency'];
+							$order_version              = $order_data['version'];
+							$order_payment_method       = $order_data['payment_method'];
+							$order_payment_method_title = $order_data['payment_method_title'];
+							$order_payment_method       = $order_data['payment_method'];
+							$order_payment_method       = $order_data['payment_method'];
+
+							$order_date_created   = $order_data['date_created']->date('m-d-Y');
+
+							## CART INFORMATION:
+
+							$order_discount_total = $order_data['discount_total'];
+							$order_discount_tax   = $order_data['discount_tax'];
+							$order_shipping_total = $order_data['shipping_total'];
+							$order_shipping_tax   = $order_data['shipping_tax'];
+							$order_cart_tax       = $order_data['cart_tax'];
+							$order_total          = $order_data['total'];
+							$order_total_tax      = $order_data['total_tax'];
+							$order_customer_id    = $order_data['customer_id'];
+
+							## BILLING INFORMATION:
+
+							$order_billing_first_name = $order_data['billing']['first_name'];
+							$order_billing_last_name  = $order_data['billing']['last_name'];
+							$order_billing_company    = $order_data['billing']['company'];
+							$order_billing_address_1  = $order_data['billing']['address_1'];
+							$order_billing_address_2  = $order_data['billing']['address_2'];
+							$order_billing_city       = $order_data['billing']['city'];
+							$order_billing_state      = $order_data['billing']['state'];
+							$order_billing_postcode   = $order_data['billing']['postcode'];
+							$order_billing_country    = $order_data['billing']['country'];
+							$order_billing_email      = $order_data['billing']['email'];
+							$order_billing_phone      = $order_data['billing']['phone'];
+
+							## SHIPPING INFORMATION:
+
+							$order_shipping_first_name = $order_data['shipping']['first_name'];
+							$order_shipping_last_name  = $order_data['shipping']['last_name'];
+							$order_shipping_company    = $order_data['shipping']['company'];
+							$order_shipping_address_1  = $order_data['shipping']['address_1'];
+							$order_shipping_address_2  = $order_data['shipping']['address_2'];
+							$order_shipping_city       = $order_data['shipping']['city'];
+							$order_shipping_state      = $order_data['shipping']['state'];
+							$order_shipping_postcode   = $order_data['shipping']['postcode'];
+							$order_shipping_country    = $order_data['shipping']['country'];
+
+							if ( 'completed' === $order_status ) {
+								echo "<tr>";
+
+								// print_r( $order_data );
+
+								echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
+								echo "<td>" . $order_date_created . "</td>";
+								echo "<td>" . wc_get_order_status_name( $order_status ) . "</td>";
+
+								if ( isset( $order_total ) ) {
+									echo "<td>"  . $currency_symbol . $order_total . "</td>";
+								} else {
+									echo "<td>-</td>";
+								}
+
+								echo "</tr>";
+							}
 						}
 						echo "</tbody>";
 						echo "</table>";
