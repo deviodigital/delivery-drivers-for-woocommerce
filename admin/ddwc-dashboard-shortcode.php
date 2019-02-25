@@ -106,57 +106,57 @@ function ddwc_dashboard_shortcode() {
 					$order_shipping_postcode   = $order_data['shipping']['postcode'];
 					$order_shipping_country    = $order_data['shipping']['country'];
 
-					echo "<div class='ddwc-orders'>";
+					echo '<div class="ddwc-orders">';
 
 					// Display order number.
 					if ( isset( $order_id ) ) {
-						echo "<h3 class='ddwc'>" . __( "Order #", "ddwc" ) . "" . $order_id .  " <span class='" . $order_status . "'>" . wc_get_order_status_name( $order_status ) . "</span></h3>";
+						echo '<h3 class="ddwc">' . __( 'Order #', 'ddwc' ) . $order_id . ' <span class="' . $order_status . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
 					}
 
 					// Display a button to call the customers phone number.
-					echo "<p>";
+					echo '<p>';
 					if ( isset( $order_billing_phone ) ) {
-						echo "<a href='tel:" . $order_billing_phone . "' class='button ddwc-button customer'>" . __( "Call Customer", "ddwc" ) . "</a> ";
+						echo '<a href="tel:' . $order_billing_phone . '" class="button ddwc-button customer">' . __( 'Call Customer', 'ddwc' ) . '</a> ';
 					}
 
 					// Display a button to call the dispatch number if it's set in the Settings page. 
 					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
-						echo "<a href='tel:" . get_option( 'ddwc_settings_dispatch_phone_number' ) . "' class='button ddwc-button dispatch'>" . __( "Call Dispatch", "ddwc" ) . "</a>";
+						echo '<a href="tel:' . get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . __( 'Call Dispatch', 'ddwc' ) . '</a>';
 					}
 
-					echo "</p>";
+					echo '</p>';
 
-					echo "<h4>" . __( "Order details", "ddwc" ) . "</h4>";
+					echo '<h4>' . __( 'Order details', 'ddwc' ) . '</h4>';
 
 					// Get payment gateway details.
 					$payment_gateway = wc_get_payment_gateway_by_order( $order_id );
 
-					echo "<table class='ddwc-dashboard'>";
-					echo "<tbody>";
+					echo '<table class="ddwc-dashboard">';
+					echo '<tbody>';
 					// Display customer.
 					if ( '' !== $order_shipping_first_name ) {
-						echo "<tr><td><strong>" . __( "Customer", "ddwc" ) . "</strong></td><td>" . $order_shipping_first_name . " " . $order_shipping_last_name . "</td></tr>";
+						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_shipping_first_name . ' ' . $order_shipping_last_name . '</td></tr>';
 					} elseif ( '' !== $order_billing_first_name ) {
-						echo "<tr><td><strong>" . __( "Customer", "ddwc" ) . "</strong></td><td>" . $order_billing_first_name . " " . $order_billing_last_name . "</td></tr>";
+						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_billing_first_name . ' ' . $order_billing_last_name . '</td></tr>';
 					} else {
 						// Do nothing.
 					}
 					// Display payment method details.
 					if ( isset( $payment_gateway ) ) {
-						echo "<tr><td><strong>" . __( 'Payment method', 'ddwc' ) . "</strong></td><td>" . $payment_gateway->title . "</td></tr>";
+						echo '<tr><td><strong>' . __( 'Payment method', 'ddwc' ) . '</strong></td><td>' . $payment_gateway->title . '</td></tr>';
 					}
 					// Display order date.
 					if ( isset( $order_date_created ) ) {
-						echo "<tr><td><strong>" . __( "Order date", "ddwc" ) . "</strong></td><td>" . $order_date_created . " - " . $order_time_created . "</td></tr>";
+						echo '<tr><td><strong>' . __( 'Order date', 'ddwc' ) . '</strong></td><td>' . $order_date_created . ' - ' . $order_time_created . '</td></tr>';
 					}
-					echo "</tbody>";
-					echo "</table>";
+					echo '</tbody>';
+					echo '</table>';
 
-					//echo "<h4>" . __( "Order items", "ddwc" ) . "</h4>";
+					//echo '<h4>' . __( "Order items", 'ddwc' ) . '</h4>';
 
-					echo "<table class='ddwc-dashboard'>";
-					echo "<thead><tr><td>" . __( "Product", "ddwc" ) . "</td><td>" . __( "Qty", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
-					echo "<tbody>";
+					echo '<table class="ddwc-dashboard">';
+					echo '<thead><tr><td>' . __( 'Product', 'ddwc' ) . '</td><td>' . __( 'Qty', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
+					echo '<tbody>';
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_top' );
 
@@ -185,25 +185,25 @@ function ddwc_dashboard_shortcode() {
 							$qtty_price  = $qtty * $price;
 							$total_price = number_format( $qtty_price, 2 );
 
-							echo "<tr><td>" . $name . "</td><td>" . $qtty . "</td><td>" . $currency_symbol . $total_price . "</td></tr>";
+							echo '<tr><td>' . $name . '</td><td>' . $qtty . '</td><td>' . $currency_symbol . $total_price . '</td></tr>';
 						}
 					} else {
 						// Do nothing.
 					}
 
-					echo "<tr class='delivery-charge'><td colspan='2'><strong>" . __( 'Delivery', 'ddwc' ) . "</strong></td><td class'total'>" . $currency_symbol . $order_shipping_total . "</td></tr>";
-					echo "<tr class='order-total'><td colspan='2'><strong>" . __( 'Order total', 'ddwc' ) . "</strong></td><td class'total'>" . $currency_symbol . $order_total . "</td></tr>";
+					echo '<tr class="delivery-charge"><td colspan="2"><strong>' . __( 'Delivery', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . $order_shipping_total . '</td></tr>';
+					echo '<tr class="order-total"><td colspan="2"><strong>' . __( 'Order total', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . $order_total . '</td></tr>';
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_bottom' );
 
 					echo "</tbody>";
 					echo "</table>";
 
-					echo "<h4>" . __( "Delivery Address", "ddwc" ) . "</h4>";
+					echo '<h4>' . __( 'Delivery Address', 'ddwc' ) . '</h4>';
 
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 
-						echo "<p>";
+						echo '<p>';
 
 						if ( '' !== $order_shipping_address_1 ) {
 							echo $order_shipping_address_1 . ' ';
@@ -227,7 +227,7 @@ function ddwc_dashboard_shortcode() {
 							echo '<br />' . $order_billing_city . ', ' . $order_billing_state . ' ' . $order_billing_postcode;
 						}
 
-						echo "</p>"; // end billing address
+						echo '</p>'; // end billing address
 					}
 					/**
 					 * Display a Google Map with the customers address if an API key is added to 
@@ -240,15 +240,15 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					if ( $order_status == 'driver-assigned' ) {
-						echo "<h4>" . __( "Change Status", "ddwc" ) . "</h4>";
+						echo '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
 						echo '<form method="post"><input type="hidden" name="outfordelivery" value="out-for-delivery" /><input type="submit" value="Out for Delivery" />' . wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 					} elseif ( $order_status == 'out-for-delivery' ) {
-						echo "<h4>" . __( "Change Status", "ddwc" ) . "</h4>";
+						echo '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
 						echo '<form method="post"><input type="hidden" name="ordercompleted" value="completed" /><input type="submit" value="Completed" />' . wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 					} else {
 						// Do nothing.
 					}
-					echo "</div>";
+					echo '</div>';
 
 				} else {
 
@@ -272,13 +272,13 @@ function ddwc_dashboard_shortcode() {
 					 * If Orders have Driver ID attached
 					 */
 					if ( $assigned_orders ) {
-						echo "<h3 class='ddwc assigned-orders'>" . __( 'Assigned Orders', 'ddwc' ) . "</h3>";
+						echo '<h3 class="ddwc assigned-orders">' . __( 'Assigned Orders', 'ddwc' ) . '</h3>';
 
 						do_action( 'ddwc_assigned_orders_table_before' );
 
-						echo "<table class='ddwc-dashboard'>";
-						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
-						echo "<tbody>";
+						echo '<table class="ddwc-dashboard">';
+						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
+						echo '<tbody>';
 						foreach ( $assigned_orders as $driver_order ) {
 
 							// Get an instance of the WC_Order object.
@@ -343,35 +343,35 @@ function ddwc_dashboard_shortcode() {
 							$order_shipping_country    = $order_data['shipping']['country'];
 
 							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status ) {
-								echo "<tr>";
+								echo '<tr>';
 
 								// print_r( $order_data );
 
-								echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
-								echo "<td>" . $order_date_created . "</td>";
-								echo "<td>" . wc_get_order_status_name( $order_status ) . "</td>";
+								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . $driver_order->ID . '</a></td>';
+								echo '<td>' . $order_date_created . '</td>';
+								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
 								if ( isset( $order_total ) ) {
-									echo "<td>"  . $currency_symbol . $order_total . "</td>";
+									echo '<td>'  . $currency_symbol . $order_total . '</td>';
 								} else {
-									echo "<td>-</td>";
+									echo '<td>-</td>';
 								}
 
-								echo "</tr>";
+								echo '</tr>';
 							}
 						}
-						echo "</tbody>";
-						echo "</table>";
+						echo '</tbody>';
+						echo '</table>';
 
 						do_action( 'ddwc_assigned_orders_table_after' );
 
-						echo "<h4 class='ddwc assigned-orders'>" . __( 'Completed Orders', 'ddwc' ) . "</h4>";
+						echo '<h4 class="ddwc assigned-orders">' . __( 'Completed Orders', 'ddwc' ) . '</h4>';
 
 						do_action( 'ddwc_completed_orders_table_before' );
 
-						echo "<table class='ddwc-dashboard'>";
-						echo "<thead><tr><td>" . __( "ID", "ddwc" ) . "</td><td>" . __( "Date", "ddwc" ) . "</td><td>" . __( "Status", "ddwc" ) . "</td><td>" . __( "Total", "ddwc" ) . "</td></tr></thead>";
-						echo "<tbody>";
+						echo '<table class="ddwc-dashboard">';
+						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
+						echo '<tbody>';
 						foreach ( $assigned_orders as $driver_order ) {
 
 							// Get an instance of the WC_Order object.
@@ -436,25 +436,25 @@ function ddwc_dashboard_shortcode() {
 							$order_shipping_country    = $order_data['shipping']['country'];
 
 							if ( 'completed' === $order_status ) {
-								echo "<tr>";
+								echo '<tr>';
 
 								// print_r( $order_data );
 
-								echo "<td><a href='?orderid=" . $driver_order->ID . "'>" . $driver_order->ID . "</a></td>";
-								echo "<td>" . $order_date_created . "</td>";
-								echo "<td>" . wc_get_order_status_name( $order_status ) . "</td>";
+								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . $driver_order->ID . '</a></td>';
+								echo '<td>' . $order_date_created . '</td>';
+								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
 								if ( isset( $order_total ) ) {
-									echo "<td>"  . $currency_symbol . $order_total . "</td>";
+									echo '<td>'  . $currency_symbol . $order_total . '</td>';
 								} else {
-									echo "<td>-</td>";
+									echo '<td>-</td>';
 								}
 
-								echo "</tr>";
+								echo '</tr>';
 							}
 						}
-						echo "</tbody>";
-						echo "</table>";
+						echo '</tbody>';
+						echo '</table>';
 
 						do_action( 'ddwc_completed_orders_table_after' );
 
@@ -466,7 +466,7 @@ function ddwc_dashboard_shortcode() {
 			} else {
 
 				// Set the Access Denied page text.
-				$access_denied = "<h3 class='ddwc access-denied'>" . __( "Access Denied", "ddwc" ) . "</h3><p>" . __( "Sorry, but you are not able to view this page.", "ddwc" ) . "</p>";
+				$access_denied = '<h3 class="ddwc access-denied">' . __( 'Access Denied', 'ddwc' ) . '</h3><p>' . __( 'Sorry, but you are not able to view this page.', 'ddwc' ) . '</p>';
 
 				// Return the Access Denied text, filtered.
 				return apply_filters( 'ddwc_access_denied', $access_denied );
