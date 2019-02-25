@@ -461,8 +461,10 @@ function ddwc_dashboard_shortcode() {
 						do_action( 'ddwc_completed_orders_table_after' );
 
 					} else {
-						echo "<h3 class='ddwc assigned-orders'>" . __( "Assigned Orders", "ddwc" ) . "</h3>";
-						echo "<p>" . __( "You do not currently have any assigned orders.", "ddwc" ) . "</p>";
+						$empty  = '<h3 class="ddwc assigned-orders">' . __( 'Assigned Orders', 'ddwc' ) . '</h3>';
+						$empty .= '<p>' . __( 'You do not have any assigned orders.', 'ddwc' ) . '</p>';
+
+						echo apply_filters( 'ddwc_assigned_orders_empty', $empty );
 					}
 				}
 			} else {
