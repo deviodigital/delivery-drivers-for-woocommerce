@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.5
+* Added text output if there are no completed orders in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_assigned_orders_empty` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_assigned_orders_empty_after` action hook in empty orders output in `admin/ddwc-dashboard-shortcode.php`
+* General code cleanup throughout multiple files
+
 ### 1.4
 * Added 2 new action hooks for the Assigned Orders table in `admin/ddwc-dashboard-shortcode.php`
 * Added Completed Orders table to Driver Dashboard in `admin/ddwc-dashboard-shortcode.php`

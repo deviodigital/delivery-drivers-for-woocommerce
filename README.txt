@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.0.3
-Stable tag: 1.4
+Tested up to: 5.1
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,12 @@ Below are a few examples of delivery services that can benefit from the **Delive
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 
 == Changelog ==
+
+= 1.5 =
+* Added text output if there are no completed orders in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_assigned_orders_empty` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_assigned_orders_empty_after` action hook in empty orders output in `admin/ddwc-dashboard-shortcode.php`
+* General code cleanup throughout multiple files
 
 = 1.4 =
 * Added 2 new action hooks for the Assigned Orders table in `admin/ddwc-dashboard-shortcode.php`
