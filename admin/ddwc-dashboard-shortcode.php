@@ -465,6 +465,8 @@ function ddwc_dashboard_shortcode() {
 						$empty .= '<p>' . __( 'You do not have any assigned orders.', 'ddwc' ) . '</p>';
 
 						echo apply_filters( 'ddwc_assigned_orders_empty', $empty );
+
+						do_action( 'ddwc_assigned_orders_empty_after' );
 					}
 				}
 			} else {
