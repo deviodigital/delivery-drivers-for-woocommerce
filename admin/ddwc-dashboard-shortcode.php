@@ -451,6 +451,8 @@ function ddwc_dashboard_shortcode() {
 								}
 
 								echo '</tr>';
+							} else {
+								echo '<p>' . __( 'You do not have any completed orders.', 'ddwc' ) . '</p>';
 							}
 						}
 						echo '</tbody>';
