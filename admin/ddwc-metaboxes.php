@@ -41,7 +41,6 @@ function ddwc_build() {
 
 	/** Get the driver data if its already been entered */
 	$ddwc_driver_id = get_post_meta( $post->ID, 'ddwc_driver_id', true );
-	//echo $ddwc_driver_id;
 
 	/** Echo Delivery Driver Metabox Input Field */
 	echo '<div class="ddwc-driver-box">';
@@ -55,6 +54,14 @@ function ddwc_build() {
 		'show'             => 'display_name_with_login'
 	) );
 	echo '</div>';
+
+	// Get driver rating.
+	$ddwc_driver_rating = get_post_meta( $post->ID, 'ddwc_delivery_rating', true );
+
+	// Display driver rating.
+	if ( ! empty( $ddwc_driver_rating ) ) {
+		echo '<p>' . __( 'Delivery rating', 'ddwc' ) . ': ' . $ddwc_driver_rating . ' out of 5 stars</p>';
+	}
 
 }
 

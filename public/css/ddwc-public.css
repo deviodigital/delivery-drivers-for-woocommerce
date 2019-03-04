@@ -100,3 +100,92 @@ a.button.ddwc-button:active {
     padding: 5px;
     width: 100%;
 }
+
+/** Driver Details on Order page */
+
+.ddwc-driver-picture {
+    position: relative;
+    width: 140px;
+    display: inline-block;
+}
+
+button.remove-ddwc-driver-picture {
+    background: #FF0000;
+    border: 0;
+    color: #FFF;
+    border-radius: 50%;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1px;
+    padding: 10px 6.61px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    text-align: center;
+}
+
+button.remove-ddwc-driver-picture:hover {
+    background: #DF0000;
+    color: #FFF;
+}
+
+.ddwc-driver-details {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.ddwc-driver-details img,
+.ddwc-driver-picture img {
+    float: left;
+    height: auto;
+    margin: 0 12px 24px 0 !important;
+    width: 140px;
+}
+
+.ddwc-driver-details h4,
+.ddwc-driver-details p {
+    margin-bottom: 12px !important;
+}
+
+/** Bar Rating */
+
+.br-theme-fontawesome-stars .br-widget {
+    height: 28px;
+    white-space: nowrap;
+}
+.br-theme-fontawesome-stars .br-widget a {
+    font: normal normal normal 20px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    margin-right: 2px;
+}
+.br-theme-fontawesome-stars .br-widget a:after {
+    content: '\f005';
+    color: #d2d2d2;
+}
+.br-theme-fontawesome-stars .br-widget a.br-active:after {
+    color: #EDB867;
+}
+.br-theme-fontawesome-stars .br-widget a.br-selected:after {
+    color: #EDB867;
+}
+.br-theme-fontawesome-stars .br-widget .br-current-rating {
+    display: none;
+}
+.br-theme-fontawesome-stars .br-readonly a {
+    cursor: default;
+}
+@media print {
+    .br-theme-fontawesome-stars .br-widget a:after {
+        content: '\f006';
+        color: black;
+    }
+    .br-theme-fontawesome-stars .br-widget a.br-active:after,
+    .br-theme-fontawesome-stars .br-widget a.br-selected:after {
+        content: '\f005';
+        color: black;
+    }
+}
