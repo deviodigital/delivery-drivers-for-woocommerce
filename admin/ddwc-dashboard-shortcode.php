@@ -154,6 +154,8 @@ function ddwc_dashboard_shortcode() {
 
 					//echo '<h4>' . __( "Order items", 'ddwc' ) . '</h4>';
 
+					do_action( 'ddwc_driver_dashboard_order_table_before' );
+
 					echo '<table class="ddwc-dashboard">';
 					echo '<thead><tr><td>' . __( 'Product', 'ddwc' ) . '</td><td>' . __( 'Qty', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
 					echo '<tbody>';
@@ -198,6 +200,8 @@ function ddwc_dashboard_shortcode() {
 
 					echo "</tbody>";
 					echo "</table>";
+
+					do_action( 'ddwc_driver_dashboard_order_table_after' );
 
 					echo '<h4>' . __( 'Delivery Address', 'ddwc' ) . '</h4>';
 
