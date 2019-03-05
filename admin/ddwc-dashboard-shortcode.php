@@ -54,8 +54,6 @@ function ddwc_dashboard_shortcode() {
 
 					$order_data = $order->get_data(); // The Order data
 
-					//print_r( $order_data );
-
 					$order_id                   = $order_data['id'];
 					$order_parent_id            = $order_data['parent_id'];
 					$order_status               = $order_data['status'];
@@ -152,8 +150,6 @@ function ddwc_dashboard_shortcode() {
 					echo '</tbody>';
 					echo '</table>';
 
-					//echo '<h4>' . __( "Order items", 'ddwc' ) . '</h4>';
-
 					do_action( 'ddwc_driver_dashboard_order_table_before' );
 
 					echo '<table class="ddwc-dashboard">';
@@ -167,8 +163,6 @@ function ddwc_dashboard_shortcode() {
 					$currency_code   = $order_items->get_currency();
 					$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
 
-					// print_r ( $order_items );
-
 					if ( ! empty( $order_items ) ) {
 						// The loop to get the order items which are WC_Order_Item_Product objects since WC 3+
 						foreach( $order_items->get_items() as $item_id=>$item_product ) {
@@ -178,7 +172,6 @@ function ddwc_dashboard_shortcode() {
 							$product  = $item_product->get_product();
 							// Get the product quantity.
 							$quantity = $item_product->get_quantity();
-							//print_r( $product );
 
 							$sku         = $product->get_sku();
 							$name        = $product->get_name();

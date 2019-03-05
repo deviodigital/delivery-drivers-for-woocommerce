@@ -36,6 +36,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 	   $settings_tabs['ddwc'] = __( 'Delivery Drivers', 'ddwc' );
 	   return $settings_tabs;
 	}
+
 	/**
 	 * Uses the WooCommerce admin fields API to output settings via the @see woocommerce_admin_fields() function.
 	 *
@@ -45,6 +46,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 	public static function settings_tab() {
 	   woocommerce_admin_fields( self::get_settings() );
 	}
+
 	/**
 	 * Uses the WooCommerce options API to save settings via the @see woocommerce_update_options() function.
 	 *

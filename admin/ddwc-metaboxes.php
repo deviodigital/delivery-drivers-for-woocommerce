@@ -110,5 +110,4 @@ function ddwc_driver_save_order_details( $post_id, $post ) {
 	}
 
 }
-
 add_action( 'save_post', 'ddwc_driver_save_order_details', 1, 2 ); // Save the custom fields.
