@@ -148,8 +148,6 @@ function ddwc_save_custom_profile_fields( $user_id ) {
 
     /**
      * If the user is a DRIVER, display the driver fields.
-     * 
-     * @since 1.0
      */
     if ( in_array( 'driver', (array) $user->roles ) ) {
 
@@ -160,7 +158,6 @@ function ddwc_save_custom_profile_fields( $user_id ) {
 
         // Remove driver picture from user profile.
         if ( isset( $_POST['remove_driver_picture'] ) ) {
-            // Update user meta.
             update_user_meta( $user_id, 'ddwc_driver_picture', '' );		
         }
 
@@ -181,12 +178,12 @@ function ddwc_save_custom_profile_fields( $user_id ) {
         // Handle the upload.
         $_POST['action'] = 'wp_handle_upload';
 
-        // Get doctor recommendation file upload (if any).
+        // Get driver picture file upload (if any).
         $ddwc_driver_picture = wp_handle_upload( $_FILES['ddwc_driver_picture'], array( 'test_form' => false, 'mimes' => array( 'jpg' => 'image/jpeg', 'gif' => 'image/gif', 'png' => 'image/png', 'jpeg' => 'image/jpeg' ) ) );
 
-        // Take doctor recommendation upload, add to media library.
+        // Take driver picture upload, add to media library.
         if ( isset( $ddwc_driver_picture['file'] ) ) {
-            // Update doctor recommendation meta.
+            // Update driver picture meta.
             update_user_meta( $user_id, 'ddwc_driver_picture', $ddwc_driver_picture, get_user_meta( $user_id, 'ddwc_driver_picture', true ) );
 
             $filename   = $ddwc_driver_picture['file'];
@@ -225,8 +222,6 @@ function ddwc_add_profile_options( $profileuser ) {
 
     /**
      * If the user is a DRIVER, display the driver fields.
-     * 
-     * @since 1.0
      */
     if ( in_array( 'driver', (array) $user->roles ) ) {
     ?>
@@ -300,7 +295,7 @@ function ddwc_add_to_edit_account_form() {
     $user_id = get_current_user_id();
     $user    = get_userdata( $user_id );
 
-    // Save recommendation number.
+    // Save license plate number.
     if ( isset( $_POST['ddwc_driver_license_plate'] ) ) {
         update_user_meta( $user->ID, 'ddwc_driver_license_plate', $_POST['ddwc_driver_license_plate'] );
     }
@@ -308,8 +303,6 @@ function ddwc_add_to_edit_account_form() {
     <?php
     /**
      * If the user is a DRIVER, display the driver fields.
-     * 
-     * @since 1.0
      */
     if ( in_array( 'driver', (array) $user->roles ) ) {
     ?>

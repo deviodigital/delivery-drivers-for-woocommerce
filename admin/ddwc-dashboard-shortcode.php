@@ -32,7 +32,7 @@ function ddwc_dashboard_shortcode() {
 					$driver_id = get_post_meta( $_GET['orderid'], 'ddwc_driver_id', true );
 				}
 
-				// Display order info if ?orderid is set.
+				// Display order info if ?orderid is set and driver is assigned.
 				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) && ( $driver_id == $user_id ) ) {
 
 					// Update order status if marked OUT FOR DELIVERY by Driver.

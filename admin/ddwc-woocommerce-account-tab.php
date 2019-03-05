@@ -70,7 +70,7 @@ function ddwc_endpoint_content() {
 }
 add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_content' );
 
-/*
+/**
  * Change endpoint title.
  *
  * @param string $title
