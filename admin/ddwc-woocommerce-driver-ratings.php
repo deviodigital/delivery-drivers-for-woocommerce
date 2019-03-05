@@ -115,7 +115,13 @@ function ddwc_order_driver_details( $order ) {
         // Do nothing.
     }
 }
-add_action( 'woocommerce_order_details_after_order_table', 'ddwc_order_driver_details' );
+
+// Display Driver Ratings if WooCommerce setting isn't set to NO.
+if ( 'no' !== get_option( 'ddwc_settings_driver_ratings' ) ) {
+    add_action( 'woocommerce_order_details_after_order_table', 'ddwc_order_driver_details' );
+} else {
+    // Do nothing.
+}
 
 /**
  * AJAX function to update the delivery driver's rating on an order.
