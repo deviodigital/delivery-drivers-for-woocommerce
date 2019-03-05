@@ -40,7 +40,7 @@ function ddwc_order_driver_details( $order ) {
     }
 
     // If there's a driver ID attached.
-    if ( '-1' !== $driver_id ) {
+    if ( '-1' !== $driver_id && '' !== $driver_id ) {
 
         $string  = '<div class="ddwc-driver-details">';
         $string .= '<h2>' . __( 'Delivery Driver', 'ddwc' ) . '</h2>';
