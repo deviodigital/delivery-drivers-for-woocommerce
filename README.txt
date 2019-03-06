@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.1
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,23 @@ Below are a few examples of delivery services that can benefit from the **Delive
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 
 == Changelog ==
+
+= 1.6 =
+* Added Delivery Driver details and star ratings on order details page in `includes/class-ddwc.php`
+* Added Delivery Driver details and star ratings on order details page in `admin/ddwc-woocommerce-driver-ratings.php`
+* Added Delivery Driver star ratings CSS in `admin/css/ddwc-public.css`
+* Added Driver rating to Delivery Drivers metabox in `admin/ddwc-metaboxes.php`
+* Added Delivery Driver star ratings JavaScript in `public/class-ddwc-public.php`
+* Added Delivery Driver star ratings JavaScript in `public/js/ddwc-public.php`
+* Added Delivery Driver star ratings CSS in `public/css/ddwc-public.css`
+* Added Driver Ratings option to the DDWC WooCommerce Settings page in `admin/ddwc-woocommerce-settings.php`
+* Added 2 new action hooks in `admin/ddwc-dashboard-shortcode.php`
+* Added new filter for driver login redirect in `admin/ddwc-woocommerce-settings.php`
+* Bugfix removed 'no completed orders' text in `admin/ddwc-dashboard-shortcode.php`
+* WordPress Coding Standards updates in `admin/ddwc-dashboard-shortcode.php`
+* Updated text strings for localization in `admin/ddwc-woocommerce-orders.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
 
 = 1.5 =
 * Added text output if there are no completed orders in `admin/ddwc-dashboard-shortcode.php`
