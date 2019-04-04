@@ -222,6 +222,14 @@ function ddwc_dashboard_shortcode() {
 
 						echo '<p>';
 
+						if ( '' !== $order_shipping_company ) {
+							echo $order_shipping_company . '<br />';
+						} elseif ( '' !== $order_billing_company ) {
+							echo $order_billing_company . '<br />';
+						} else {
+							// Do nothing.
+						}
+
 						if ( '' !== $order_shipping_address_1 ) {
 							echo $order_shipping_address_1 . ' ';
 						} elseif ( '' !== $order_billing_address_1 ) {
