@@ -37,15 +37,35 @@ function ddwc_dashboard_shortcode() {
 
 					// Update order status if marked OUT FOR DELIVERY by Driver.
 					if ( isset( $_POST['outfordelivery'] ) ) {
+						// Get order data.
 						$order = wc_get_order( $_GET['orderid'] );
+
+						// Update order status.
 						$order->update_status( "out-for-delivery" );
+
+						// Add driver note (if added).
+						if ( isset( $_POST['outfordeliverymessage'] ) ) {
+							// The text for the note.
+							$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['outfordeliverymessage'] );
+							// Add the note
+							$order->add_order_note( $note );
+							// Save the data
+							$order->save();
+						}
+
+						// Run additional functions.
 						do_action( 'ddwc_email_customer_order_status_out_for_delivery' );
 					}
 
 					// Update order status if marked COMPLETED by Driver.
 					if ( isset( $_POST['ordercompleted'] ) ) {
+						// Get order data.
 						$order = wc_get_order( $_GET['orderid'] );
+
+						// Update order status.
 						$order->update_status( "completed" );
+
+						// Run additional functions.
 						do_action( 'ddwc_email_admin_order_status_completed' );
 					}
 
