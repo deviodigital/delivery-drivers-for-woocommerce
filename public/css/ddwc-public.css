@@ -189,3 +189,13 @@ button.remove-ddwc-driver-picture:hover {
         color: black;
     }
 }
+
+/** Driver's "Out for Delivery" message to administrators */
+
+input.ddwc-ofdmsg {
+    margin-bottom: 12px;
+}
+
+.ddwc-orders form input[type="submit"].ddwc-changestatus {
+    padding: 0.75em 2em;
+}
