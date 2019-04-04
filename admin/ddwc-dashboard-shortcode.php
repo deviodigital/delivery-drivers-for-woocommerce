@@ -274,7 +274,10 @@ function ddwc_dashboard_shortcode() {
 						echo wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 					} elseif ( 'out-for-delivery' == $order_status ) {
 						echo '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
-						echo '<form method="post"><input type="hidden" name="ordercompleted" value="completed" /><input type="submit" value="Completed" />' . wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
+						echo '<form method="post">';
+						echo '<input type="hidden" name="ordercompleted" value="completed" />';
+						echo '<input type="submit" value="' . __( 'Completed', 'ddwc' ) . '" class="ddwc-change-status" />';
+						echo wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 					} else {
 						// Do nothing.
 					}
