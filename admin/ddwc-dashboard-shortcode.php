@@ -44,7 +44,7 @@ function ddwc_dashboard_shortcode() {
 						$order->update_status( "out-for-delivery" );
 
 						// Add driver note (if added).
-						if ( isset( $_POST['outfordeliverymessage'] ) ) {
+						if ( isset( $_POST['outfordeliverymessage'] ) && ! empty( $_POST['outfordeliverymessage'] ) ) {
 							// The text for the note.
 							$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['outfordeliverymessage'] );
 							// Add the note
