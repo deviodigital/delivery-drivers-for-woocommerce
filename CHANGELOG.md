@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.7
+* Added ability for driver to add a note during the "out for delivery" status change in `admin/ddwc-dashboard-shortcode.php`
+* Added Company name to customer address display in `admin/ddwc-dashboard-shortcode.php`
+* Added CSS for driver's out for delivery message in `public/css/ddwc-public.css`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
+
 ### 1.6
 * Added Delivery Driver details and star ratings on order details page in `includes/class-ddwc.php`
 * Added Delivery Driver details and star ratings on order details page in `admin/ddwc-woocommerce-driver-ratings.php`

@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.1
-Stable tag: 1.6
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,12 @@ Below are a few examples of delivery services that can benefit from the **Delive
 * Email customer when the driver marks an order as "Out for Delivery"
 * Email administrator when the driver marks an order as "Completed"
 
+### Delivery Fees for WooCommerce
+
+Our newest plugin adds a custom shipping method to WooCommerce specifically for delivery services.
+
+Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/delivery-fees-for-woocommerce)
+
 == Installation ==
 
 1. In your dashboard, go to `Plugins -> Add New`
@@ -77,6 +83,13 @@ Below are a few examples of delivery services that can benefit from the **Delive
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 
 == Changelog ==
+
+= 1.7 =
+* Added ability for driver to add a note during the "out for delivery" status change in `admin/ddwc-dashboard-shortcode.php`
+* Added Company name to customer address display in `admin/ddwc-dashboard-shortcode.php`
+* Added CSS for driver's out for delivery message in `public/css/ddwc-public.css`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
 
 = 1.6 =
 * Added Delivery Driver details and star ratings on order details page in `includes/class-ddwc.php`
