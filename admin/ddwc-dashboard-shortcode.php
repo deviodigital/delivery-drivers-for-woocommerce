@@ -259,8 +259,14 @@ function ddwc_dashboard_shortcode() {
 					 * the WooCommerce Settings page.
 					 */
 					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
+						// Use the Shipping address if available.
+						if ( isset( $order_shipping_address_1 ) ) {
+							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode;
+						} else {
+							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode;
+						}
 						echo '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '
-					  &q=' . $order_billing_address_1 . ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . '" allowfullscreen>
+					  &q=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '" allowfullscreen>
 				  	</iframe>';
 					}
 
