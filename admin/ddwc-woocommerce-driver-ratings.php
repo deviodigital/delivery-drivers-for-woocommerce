@@ -64,6 +64,17 @@ function ddwc_order_driver_details( $order ) {
         if ( 'completed' == $order_status ) {
             // Star ratings.
             $string .= __( 'Rate Delivery', 'ddwc' ) . '<br /><select class="driver-rating" id="rating_' . $order_id . '" data-id="rating_' . $order_id . '"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>';
+        } elseif ( 'driver-assigned' == $order_status || 'out-for-delivery' == $order_status ) {
+            // Display driver's phone number.
+            if ( 'no' !== get_option( 'ddwc_settings_driver_phone_number' ) ) {
+                $driver_number = get_user_meta( $driver_id, 'phone_number', true );
+                // Display driver button.
+                if ( $driver_number ) {
+                    $string .= '<a href="tel:' . $driver_number . '" class="button ddwc-button customer">' . __( 'Call Driver', 'ddwc' ) . '</a> ';
+                }
+            } else {
+                // Do nothing.
+            }
         } else {
             // Do nothing.
         }

@@ -114,6 +114,17 @@ class Delivery_Drivers_WooCommerce_Settings {
 					'no'  => 'No',
 				),
             ),
+            // Driver phone number.
+            'driver_phone_number' => array(
+                'name' => __( 'Driver phone number', 'ddwc' ),
+                'type' => 'select',
+                'desc' => __( 'Add a button for customers to call driver in the driver details.', 'ddwc' ),
+				'id'   => 'ddwc_settings_driver_phone_number',
+				'options' => array(
+					'yes' => 'Yes',
+					'no'  => 'No',
+				),
+            ),
 			// Section End.
 			'section_end' => array(
 			    'type' => 'sectionend',
