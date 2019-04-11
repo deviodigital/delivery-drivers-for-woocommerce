@@ -103,7 +103,7 @@ class Delivery_Drivers_WooCommerce_Settings {
                 'desc' => __( 'Add a map to the order directions for your drivers.', 'ddwc' ),
                 'id'   => 'ddwc_settings_google_maps_api_key'
             ),
-            // Google Maps API key.
+            // Driver ratings.
             'driver_ratings' => array(
                 'name' => __( 'Driver Ratings', 'ddwc' ),
                 'type' => 'select',
