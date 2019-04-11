@@ -105,9 +105,9 @@ class Delivery_Drivers_WooCommerce_Settings {
             ),
             // Driver ratings.
             'driver_ratings' => array(
-                'name' => __( 'Driver Ratings', 'ddwc' ),
+                'name' => __( 'Driver ratings', 'ddwc' ),
                 'type' => 'select',
-                'desc' => __( 'Add driver details and delivery star rating to order details page.', 'ddwc' ),
+                'desc' => __( 'Add driver details with delivery star ratings to order details page.', 'ddwc' ),
 				'id'   => 'ddwc_settings_driver_ratings',
 				'options' => array(
 					'yes' => 'Yes',
