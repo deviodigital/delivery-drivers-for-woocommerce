@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.8
+* Added display driver phone number setting in `admin/ddwc-woocommerce-settings.php`
+* Added driver phone number to customer order details in `admin/ddwc-woocommerce-driver-ratings.php`
+* Added (optional) text to out for delivery messsage text in `admin/ddwc-dashboard-shortcode.php`
+* Updated delivery fee to use the proper decimal placement in `admin/ddwc-dashboard-shortcode.php`
+* Updated CSS to include styles for SMS Updates title text on checkout in `public/css/ddwc-public.css`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throuhgout multiple files
+
 ### 1.7
 * Added ability for driver to add a note during the "out for delivery" status change in `admin/ddwc-dashboard-shortcode.php`
 * Added Company name to customer address display in `admin/ddwc-dashboard-shortcode.php`
