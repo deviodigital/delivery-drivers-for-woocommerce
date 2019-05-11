@@ -199,3 +199,10 @@ input.ddwc-ofdmsg {
 .ddwc-orders form input[type="submit"].ddwc-changestatus {
     padding: 0.75em 2em;
 }
+
+/** DDWC Pro SMS Updates title on checkout */
+
+.ddwc-pro-sms-updates h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
