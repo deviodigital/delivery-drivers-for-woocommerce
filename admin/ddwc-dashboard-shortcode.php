@@ -273,7 +273,7 @@ function ddwc_dashboard_shortcode() {
 					if ( 'driver-assigned' == $order_status ) {
 						echo '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
 						echo '<form method="post">';
-						echo '<p><strong>' . __( 'Message for shop manager / administrator', 'ddwc' ) . '</strong></p>';
+						echo '<p><strong>' . __( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
 						echo '<input type="text" name="outfordeliverymessage" value="" placeholder="Add a message to the order" class="ddwc-ofdmsg" />';
 						echo '<input type="hidden" name="outfordelivery" value="out-for-delivery" />';
 						echo '<input type="submit" value="' . __( 'Out for Delivery', 'ddwc' ) . '" class="ddwc-change-status" />';
