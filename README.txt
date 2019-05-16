@@ -58,9 +58,10 @@ Below are a few examples of delivery services that can benefit from the **Delive
 
 * Auto-assign drivers when an order is submitted
 * Accept driver applications from the Driver Dashboard
-* Email driver when they've been assigned a new order
-* Email customer when the driver marks an order as "Out for Delivery"
-* Email administrator when the driver marks an order as "Completed"
+* Integration with [Twilio](https://www.twilio.com) for SMS messages
+* Email/SMS driver when they've been assigned a new order
+* Email/SMS customer when the driver marks an order as "Out for Delivery"
+* Email/SMS administrator when the driver marks an order as "Completed"
 
 ### Delivery Fees for WooCommerce
 
