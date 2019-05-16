@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.8.1
+* Added conditional check for WooCommerce view-order endpoint when loading javascript files on front-end of website in `public/class-ddwc-public.php`
+* Updated script loading to remove unnecessary admin.js file in `admin/class-ddwc-admin.php`
+* Updated text strings for localization in `admin/ddwc-dashboard-shortcode.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throuhgout multiple files
+
 ### 1.8
 * Added display driver phone number setting in `admin/ddwc-woocommerce-settings.php`
 * Added driver phone number to customer order details in `admin/ddwc-woocommerce-driver-ratings.php`
