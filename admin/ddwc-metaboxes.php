@@ -35,14 +35,14 @@ add_action( 'add_meta_boxes', 'ddwc_metaboxes' );
 function ddwc_build() {
 	global $post;
 
-	/** Noncename needed to verify where the data originated */
+	// Noncename needed to verify where the data originated.
 	echo '<input type="hidden" name="ddwc_meta_noncename" id="ddwc_meta_noncename" value="' .
 	wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-	/** Get the driver data if its already been entered */
+	// Get the driver data if its already been entered.
 	$ddwc_driver_id = get_post_meta( $post->ID, 'ddwc_driver_id', true );
 
-	/** Echo Delivery Driver Metabox Input Field */
+	// Echo Delivery Driver Metabox Input Field.
 	echo '<div class="ddwc-driver-box">';
 	wp_dropdown_users( array(
 		'show_option_none' => __( 'Assign a driver', 'ddwc' ),
