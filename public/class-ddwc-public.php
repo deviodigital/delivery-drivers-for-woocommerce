@@ -89,9 +89,12 @@ class Delivery_Drivers_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name . '-star-rating', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ddwc-public.js', array( 'jquery' ), $this->version, false );
-		wp_localize_script( $this->plugin_name, 'WPaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		// Only load scripts on customer order pages.
+		if ( is_wc_endpoint_url( 'view-order' ) ) {
+			wp_enqueue_script( $this->plugin_name . '-star-rating', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js', array( 'jquery' ), $this->version, false );
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ddwc-public.js', array( 'jquery' ), $this->version, false );
+			wp_localize_script( $this->plugin_name, 'WPaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		}
 
 	}
 
