@@ -213,8 +213,8 @@ function ddwc_dashboard_shortcode() {
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_bottom' );
 
-					echo "</tbody>";
-					echo "</table>";
+					echo '</tbody>';
+					echo '</table>';
 
 					do_action( 'ddwc_driver_dashboard_order_table_after' );
 
