@@ -220,42 +220,13 @@ function ddwc_dashboard_shortcode() {
 
 					echo '<h4>' . __( 'Delivery Address', 'ddwc' ) . '</h4>';
 
+					// Display delivery address.
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
-
 						echo '<p>';
-
-						if ( '' !== $order_shipping_company ) {
-							echo $order_shipping_company . '<br />';
-						} elseif ( '' !== $order_billing_company ) {
-							echo $order_billing_company . '<br />';
-						} else {
-							// Do nothing.
-						}
-
-						if ( '' !== $order_shipping_address_1 ) {
-							echo $order_shipping_address_1 . ' ';
-						} elseif ( '' !== $order_billing_address_1 ) {
-							echo $order_billing_address_1 . ' ';
-						} else {
-							// Do nothing.
-						}
-
-						if ( '' !== $order_shipping_address_2 ) {
-							echo $order_shipping_address_2;
-						} elseif ( '' !== $order_billing_address_2 ) {
-							echo $order_billing_address_2;
-						} else {
-							// Do nothing.
-						}
-
-						if (  '' !== $order_shipping_city ) {
-							echo '<br />' . $order_shipping_city . ', ' . $order_shipping_state . ' ' . $order_shipping_postcode;
-						} else {
-							echo '<br />' . $order_billing_city . ', ' . $order_billing_state . ' ' . $order_billing_postcode;
-						}
-
-						echo '</p>'; // end billing address
+						echo $order->get_formatted_shipping_address();
+						echo '</p>';
 					}
+
 					/**
 					 * Display a Google Map with the customers address if an API key is added to 
 					 * the WooCommerce Settings page.
