@@ -317,8 +317,10 @@ function ddwc_dashboard_shortcode() {
 
 						do_action( 'ddwc_assigned_orders_table_before' );
 
+						$total_title = '<td>' . __( 'Total', 'ddwc' ) . '</td>';
+
 						echo '<table class="ddwc-dashboard">';
-						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
+						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_assigned_orders_total_title', $total_title ) . '</tr></thead>';
 						echo '<tbody>';
 						foreach ( $assigned_orders as $driver_order ) {
 
@@ -380,7 +382,8 @@ function ddwc_dashboard_shortcode() {
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
 								if ( isset( $order_total ) ) {
-									echo '<td>'  . $currency_symbol . $order_total . '</td>';
+									$order_total = '<td>'  . $currency_symbol . $order_total . '</td>';
+									echo apply_filters( 'ddwc_driver_dashboard_assigned_orders_total', $order_total );
 								} else {
 									echo '<td>-</td>';
 								}
@@ -397,8 +400,10 @@ function ddwc_dashboard_shortcode() {
 
 						do_action( 'ddwc_completed_orders_table_before' );
 
+						$total_title = '<td>' . __( 'Total', 'ddwc' ) . '</td>';
+
 						echo '<table class="ddwc-dashboard">';
-						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
+						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_completed_orders_total_title', $total_title ) . '</tr></thead>';
 						echo '<tbody>';
 						foreach ( $assigned_orders as $driver_order ) {
 
@@ -454,7 +459,8 @@ function ddwc_dashboard_shortcode() {
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
 								if ( isset( $order_total ) ) {
-									echo '<td>'  . $currency_symbol . $order_total . '</td>';
+									$order_total = '<td>'  . $currency_symbol . $order_total . '</td>';
+									echo apply_filters( 'ddwc_driver_dashboard_completed_orders_total', $order_total );
 								} else {
 									echo '<td>-</td>';
 								}
