@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.2
-Stable tag: 1.8.1
+Tested up to: 5.2.1
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,7 +58,7 @@ Below are a few examples of delivery services that can benefit from the **Delive
 
 * Auto-assign drivers when an order is submitted
 * Accept driver applications from the Driver Dashboard
-* Integration with [Twilio](https://www.twilio.com) for SMS messages
+* Integration with [Twilio](https://www.twilio.com) for SMS messages!
 * Email/SMS driver when they've been assigned a new order
 * Email/SMS customer when the driver marks an order as "Out for Delivery"
 * Email/SMS administrator when the driver marks an order as "Completed"
@@ -84,6 +84,12 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 
 == Changelog ==
+
+= 1.9 =
+* Added 9 new filters for the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+* Updated default address display to use WooCommerce function in `admin/ddwc-dashboard-shortcode.php`
+* Updated address used with Google Maps to include country in `admin/ddwc-dashboard-shortcode.php`
+* General code cleanup throughout multiple files
 
 = 1.8.1 =
 * Added conditional check for WooCommerce view-order endpoint when loading javascript files on front-end of website in `public/class-ddwc-public.php`

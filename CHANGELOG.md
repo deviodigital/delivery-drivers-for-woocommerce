@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.9
+* Added 9 new filters for the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+* Updated default address display to use WooCommerce function in `admin/ddwc-dashboard-shortcode.php`
+* Updated address used with Google Maps to include country in `admin/ddwc-dashboard-shortcode.php`
+* General code cleanup throughout multiple files
+
 ### 1.8.1
 * Added conditional check for WooCommerce view-order endpoint when loading javascript files on front-end of website in `public/class-ddwc-public.php`
 * Updated script loading to remove unnecessary admin.js file in `admin/class-ddwc-admin.php`
