@@ -151,7 +151,8 @@ function ddwc_dashboard_shortcode() {
 					}
 					// Display payment method details.
 					if ( isset( $payment_gateway ) ) {
-						echo '<tr><td><strong>' . __( 'Payment method', 'ddwc' ) . '</strong></td><td>' . $payment_gateway->title . '</td></tr>';
+						$payment_method = '<tr><td><strong>' . __( 'Payment method', 'ddwc' ) . '</strong></td><td>' . $payment_gateway->title . '</td></tr>';
+						echo apply_filters( 'ddwc_driver_dashboard_payment_method', $payment_method );
 					}
 					// Display order date.
 					if ( isset( $order_date_created ) ) {
@@ -162,8 +163,11 @@ function ddwc_dashboard_shortcode() {
 
 					do_action( 'ddwc_driver_dashboard_order_table_before' );
 
+					// Set up total title.
+					$total_title = '<td>' . __( 'Total', 'ddwc' ) . '</td>';
+
 					echo '<table class="ddwc-dashboard">';
-					echo '<thead><tr><td>' . __( 'Product', 'ddwc' ) . '</td><td>' . __( 'Qty', 'ddwc' ) . '</td><td>' . __( 'Total', 'ddwc' ) . '</td></tr></thead>';
+					echo '<thead><tr><td>' . __( 'Product', 'ddwc' ) . '</td><td>' . __( 'Qty', 'ddwc' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_total_title', $total_title ) . '</tr></thead>';
 					echo '<tbody>';
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_top' );
@@ -188,16 +192,24 @@ function ddwc_dashboard_shortcode() {
 							$price       = $product->get_price();
 							$qtty        = $quantity;
 							$qtty_price  = $qtty * $price;
-							$total_price = number_format( $qtty_price, 2 );
+							$price       = '<td>' .$currency_symbol . number_format( $qtty_price, 2 ) . '</td>';
+							$total_price = apply_filters( 'ddwc_driver_dashboard_order_item_price', $price );
 
-							echo '<tr><td>' . $name . '</td><td>' . $qtty . '</td><td>' . $currency_symbol . $total_price . '</td></tr>';
+							echo '<tr><td>' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
 						}
 					} else {
 						// Do nothing.
 					}
 
-					echo '<tr class="delivery-charge"><td colspan="2"><strong>' . __( 'Delivery', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . number_format((float)$order_shipping_total, 2, '.', ',' ) . '</td></tr>';
-					echo '<tr class="order-total"><td colspan="2"><strong>' . __( 'Order total', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . $order_total . '</td></tr>';
+					// Delivery Total.
+					$delivery_total = '<tr class="delivery-charge"><td colspan="2"><strong>' . __( 'Delivery', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . number_format((float)$order_shipping_total, 2, '.', ',' ) . '</td></tr>';
+
+					echo apply_filters( 'ddwc_driver_dashboard_delivery_total', $delivery_total );
+
+					// Order total.
+					$order_total = '<tr class="order-total"><td colspan="2"><strong>' . __( 'Order total', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . $order_total . '</td></tr>';
+
+					echo apply_filters( 'ddwc_driver_dashboard_order_total', $order_total );
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_bottom' );
 
