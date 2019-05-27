@@ -223,7 +223,11 @@ function ddwc_dashboard_shortcode() {
 					// Display delivery address.
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 						echo '<p>';
-						echo $order->get_formatted_shipping_address();
+						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+							echo $order->get_formatted_shipping_address();
+						} else {
+							echo $order->get_formatted_billing_address();
+						}
 						echo '</p>';
 					}
 
