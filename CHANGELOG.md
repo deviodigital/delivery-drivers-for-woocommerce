@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.9.1
+* Bugfix for shipping address check that gets used with Google Maps in `admin/ddwc-dashboard-shortcode.php`
+* Updated delivery address display to display billing address if no shipping address is active in `admin/ddwc-dashboard-shortcode.php`
+
 ### 1.9
 * Added 9 new filters for the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
 * Updated default address display to use WooCommerce function in `admin/ddwc-dashboard-shortcode.php`

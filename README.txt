@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.2.1
-Stable tag: 1.9
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,10 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 
 == Changelog ==
+
+= 1.9.1 =
+* Bugfix for shipping address check that gets used with Google Maps in `admin/ddwc-dashboard-shortcode.php`
+* Updated delivery address display to display billing address if no shipping address is active in `admin/ddwc-dashboard-shortcode.php`
 
 = 1.9 =
 * Added 9 new filters for the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
