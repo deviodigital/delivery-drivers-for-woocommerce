@@ -117,6 +117,13 @@ class DDWC {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ddwc-admin.php';
 
 		/**
+		 * The file responsible for defining the DDWC helper functions
+		 * 
+		 * @since 2.0
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-functions.php';
+
+		/**
 		 * The file responsible for defining the Delivery Driver Dashboard Shortcode.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-dashboard-shortcode.php';
