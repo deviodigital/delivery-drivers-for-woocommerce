@@ -201,10 +201,14 @@ function ddwc_dashboard_shortcode() {
 						// Do nothing.
 					}
 
+					do_action( 'ddwc_driver_dashboard_order_table_tbody_before_delivery' );
+
 					// Delivery Total.
 					$delivery_total = '<tr class="delivery-charge"><td colspan="2"><strong>' . __( 'Delivery', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . number_format((float)$order_shipping_total, 2, '.', ',' ) . '</td></tr>';
 
 					echo apply_filters( 'ddwc_driver_dashboard_delivery_total', $delivery_total );
+
+					do_action( 'ddwc_driver_dashboard_order_table_tbody_before_total' );
 
 					// Order total.
 					$order_total = '<tr class="order-total"><td colspan="2"><strong>' . __( 'Order total', 'ddwc' ) . '</strong></td><td class="total">' . $currency_symbol . $order_total . '</td></tr>';
