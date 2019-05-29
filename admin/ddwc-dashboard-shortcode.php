@@ -35,40 +35,6 @@ function ddwc_dashboard_shortcode() {
 				// Display order info if ?orderid is set and driver is assigned.
 				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) && ( $driver_id == $user_id ) ) {
 
-					// Update order status if marked OUT FOR DELIVERY by Driver.
-					if ( isset( $_POST['outfordelivery'] ) ) {
-						// Get order data.
-						$order = wc_get_order( $_GET['orderid'] );
-
-						// Update order status.
-						$order->update_status( "out-for-delivery" );
-
-						// Add driver note (if added).
-						if ( isset( $_POST['outfordeliverymessage'] ) && ! empty( $_POST['outfordeliverymessage'] ) ) {
-							// The text for the note.
-							$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['outfordeliverymessage'] );
-							// Add the note
-							$order->add_order_note( $note );
-							// Save the data
-							$order->save();
-						}
-
-						// Run additional functions.
-						do_action( 'ddwc_email_customer_order_status_out_for_delivery' );
-					}
-
-					// Update order status if marked COMPLETED by Driver.
-					if ( isset( $_POST['ordercompleted'] ) ) {
-						// Get order data.
-						$order = wc_get_order( $_GET['orderid'] );
-
-						// Update order status.
-						$order->update_status( "completed" );
-
-						// Run additional functions.
-						do_action( 'ddwc_email_admin_order_status_completed' );
-					}
-
 					// Get an instance of the WC_Order object
 					$order = wc_get_order( $_GET['orderid'] );
 
@@ -81,8 +47,6 @@ function ddwc_dashboard_shortcode() {
 					$order_version              = $order_data['version'];
 					$order_payment_method       = $order_data['payment_method'];
 					$order_payment_method_title = $order_data['payment_method_title'];
-					$order_payment_method       = $order_data['payment_method'];
-					$order_payment_method       = $order_data['payment_method'];
 					$order_date_created         = $order_data['date_created']->date('m-d-y');
 					$order_time_created         = $order_data['date_created']->date('h:i a');
 					$order_discount_total       = $order_data['discount_total'];
@@ -258,23 +222,9 @@ function ddwc_dashboard_shortcode() {
 						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address );
 					}
 
-					if ( 'driver-assigned' == $order_status ) {
-						echo '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
-						echo '<form method="post">';
-						echo '<p><strong>' . __( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-						echo '<input type="text" name="outfordeliverymessage" value="" placeholder="' . __( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
-						echo '<input type="hidden" name="outfordelivery" value="out-for-delivery" />';
-						echo '<input type="submit" value="' . __( 'Out for Delivery', 'ddwc' ) . '" class="ddwc-change-status" />';
-						echo wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
-					} elseif ( 'out-for-delivery' == $order_status ) {
-						echo '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
-						echo '<form method="post">';
-						echo '<input type="hidden" name="ordercompleted" value="completed" />';
-						echo '<input type="submit" value="' . __( 'Completed', 'ddwc' ) . '" class="ddwc-change-status" />';
-						echo wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
-					} else {
-						// Do nothing.
-					}
+					// Change status forms.
+					apply_filters( 'ddwc_driver_dashboard_change_status_forms', ddwc_driver_dashboard_change_status_forms() );
+
 					echo '</div>';
 
 				} else {
