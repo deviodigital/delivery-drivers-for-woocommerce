@@ -246,9 +246,11 @@ function ddwc_dashboard_shortcode() {
 						} else {
 							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
 						}
-						echo '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '
-					  &q=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '" allowfullscreen>
-				  	</iframe>';
+						// Create the Google Map.
+						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '&q=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '" allowfullscreen></iframe>';
+
+						// Display the Google Map with delivery address.
+						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address );
 					}
 
 					if ( 'driver-assigned' == $order_status ) {
