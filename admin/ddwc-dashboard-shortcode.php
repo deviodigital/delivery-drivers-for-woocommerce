@@ -224,15 +224,20 @@ function ddwc_dashboard_shortcode() {
 
 					echo '<h4>' . __( 'Delivery Address', 'ddwc' ) . '</h4>';
 
-					// Display delivery address.
+					// Plain text delivery address.
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
-						echo '<p>';
+						$plain_address = '<p>';
 						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
-							echo $order->get_formatted_shipping_address();
+							$plain_address   .= $order->get_formatted_shipping_address();
+							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
 						} else {
-							echo $order->get_formatted_billing_address();
+							$plain_address   .= $order->get_formatted_billing_address();
+							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
 						}
-						echo '</p>';
+						$plain_address .= '</p>';
+
+						// Display the plain text delivery address.
+						echo apply_filters( 'ddwc_delivery_address_plain_text', $plain_address, $delivery_address );
 					}
 
 					/**
