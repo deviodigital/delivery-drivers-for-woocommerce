@@ -144,11 +144,11 @@ Delivery_Drivers_WooCommerce_Settings::init();
  * @param object $user
  * @return string
  */
-	// Get the first of all the roles assigned to the user
-	$role      = $user->roles[0];
 function ddwc_custom_user_redirect( $redirect, $user ) {
+	// Get the first of all the roles assigned to the user.
+	$user_role = $user->roles[0];
 	$dashboard = apply_filters( 'ddwc_driver_dashboard_login_redirect', get_permalink( wc_get_page_id( 'myaccount' ) ) . '/driver-dashboard/' );
-	if ( 'driver' == $role ) {
+	if ( 'driver' == $user_role ) {
 		// Redirect delivery drivers to the dashboard.
 		$redirect = $dashboard;
 	} else {
