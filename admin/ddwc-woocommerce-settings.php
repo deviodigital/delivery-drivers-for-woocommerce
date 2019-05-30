@@ -144,9 +144,9 @@ Delivery_Drivers_WooCommerce_Settings::init();
  * @param object $user
  * @return string
  */
-function wc_custom_user_redirect( $redirect, $user ) {
 	// Get the first of all the roles assigned to the user
 	$role      = $user->roles[0];
+function ddwc_custom_user_redirect( $redirect, $user ) {
 	$dashboard = apply_filters( 'ddwc_driver_dashboard_login_redirect', get_permalink( wc_get_page_id( 'myaccount' ) ) . '/driver-dashboard/' );
 	if ( 'driver' == $role ) {
 		// Redirect delivery drivers to the dashboard.
@@ -157,4 +157,4 @@ function wc_custom_user_redirect( $redirect, $user ) {
 	}
 	return $redirect;
 }
-add_filter( 'woocommerce_login_redirect', 'wc_custom_user_redirect', 10, 2 );
+add_filter( 'woocommerce_login_redirect', 'ddwc_custom_user_redirect', 10, 2 );
