@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The Delivery Driver Dashboard Shortcode.
  *
