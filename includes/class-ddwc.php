@@ -70,7 +70,7 @@ class DDWC {
 		if ( defined( 'DDWC_VERSION' ) ) {
 			$this->version = DDWC_VERSION;
 		} else {
-			$this->version = '1.9.1';
+			$this->version = '2.0';
 		}
 		$this->plugin_name = 'ddwc';
 

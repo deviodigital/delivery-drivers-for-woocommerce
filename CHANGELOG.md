@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.0
+* Added 5 new filters to the driver dashboard shortcode in `admin/ddwc-woocommerce-shortcode.php`
+* Added functions file with two helper functions in `admin/ddwc-functions.php`
+* Updated function name prefix for user login redirect in `admin/ddwc-woocommerce-settings.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
+
 ### 1.9.1
 * Bugfix for shipping address check that gets used with Google Maps in `admin/ddwc-dashboard-shortcode.php`
 * Updated delivery address display to display billing address if no shipping address is active in `admin/ddwc-dashboard-shortcode.php`
