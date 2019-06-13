@@ -68,7 +68,7 @@ add_filter( 'woocommerce_account_menu_items', 'ddwc_my_account_menu_items' );
 function ddwc_endpoint_content() {
 	echo do_shortcode( '[ddwc_dashboard]' );
 }
-add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_content' );
+add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_content', 99, 1 );
 
 /**
  * Change endpoint title.
