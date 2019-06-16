@@ -63,9 +63,15 @@ Below are a few examples of delivery services that can benefit from the **Delive
 * Email/SMS customer when the driver marks an order as "Out for Delivery"
 * Email/SMS administrator when the driver marks an order as "Completed"
 
+### Delivery Times for WooCommerce
+
+Our newest plugin gives you a highly customizable way for your customers to select a delivery date and time during checkout.
+
+Learn more at [Delivery Times for WooCommerce](https://www.wordpress.org/plugins/delivery-times-for-woocommerce)
+
 ### Delivery Fees for WooCommerce
 
-Our newest plugin adds a custom shipping method to WooCommerce specifically for delivery services.
+Our WooCommerce delivery fees plugin adds a custom shipping method to WooCommerce specifically for delivery services.
 
 Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/delivery-fees-for-woocommerce)
 
