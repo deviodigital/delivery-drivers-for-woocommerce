@@ -321,7 +321,7 @@ function ddwc_dashboard_shortcode() {
 
 								if ( isset( $order_total ) ) {
 									$order_total = '<td>'  . $currency_symbol . $order_total . '</td>';
-									echo apply_filters( 'ddwc_driver_dashboard_assigned_orders_total', $order_total );
+									echo apply_filters( 'ddwc_driver_dashboard_assigned_orders_total', $order_total, $driver_order->ID );
 								} else {
 									echo '<td>-</td>';
 								}
@@ -398,7 +398,7 @@ function ddwc_dashboard_shortcode() {
 
 								if ( isset( $order_total ) ) {
 									$order_total = '<td>'  . $currency_symbol . $order_total . '</td>';
-									echo apply_filters( 'ddwc_driver_dashboard_completed_orders_total', $order_total );
+									echo apply_filters( 'ddwc_driver_dashboard_completed_orders_total', $order_total, $driver_order->ID );
 								} else {
 									echo '<td>-</td>';
 								}
