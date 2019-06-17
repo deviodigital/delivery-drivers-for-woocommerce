@@ -81,7 +81,7 @@ function ddwc_dashboard_shortcode() {
 
 					// Display order number.
 					if ( isset( $order_id ) ) {
-						echo '<h3 class="ddwc">' . __( 'Order #', 'ddwc' ) . $order_id . ' <span class="' . $order_status . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
+						echo '<h3 class="ddwc">' . __( 'Order #', 'ddwc' ) . apply_filters( 'ddwc_order_number', $order_id ) . ' <span class="' . $order_status . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
 					}
 
 					// Display a button to call the customers phone number.
@@ -314,7 +314,7 @@ function ddwc_dashboard_shortcode() {
 
 							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status ) {
 								echo '<tr>';
-								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . $driver_order->ID . '</a></td>';
+								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
 								echo '<td>' . $order_date_created . '</td>';
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
@@ -391,7 +391,7 @@ function ddwc_dashboard_shortcode() {
 
 							if ( 'completed' === $order_status ) {
 								echo '<tr>';
-								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . $driver_order->ID . '</a></td>';
+								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
 								echo '<td>' . $order_date_created . '</td>';
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
