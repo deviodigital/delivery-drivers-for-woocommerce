@@ -343,6 +343,7 @@ function ddwc_dashboard_shortcode() {
 						echo '<table class="ddwc-dashboard">';
 						echo '<thead><tr><td>' . __( 'ID', 'ddwc' ) . '</td><td>' . __( 'Date', 'ddwc' ) . '</td><td>' . __( 'Status', 'ddwc' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_completed_orders_total_title', $total_title ) . '</tr></thead>';
 						echo '<tbody>';
+						echo do_action( 'ddwc_driver_dashboard_completed_orders_tbody_top' );
 						foreach ( $assigned_orders as $driver_order ) {
 
 							// Get an instance of the WC_Order object.
@@ -408,7 +409,9 @@ function ddwc_dashboard_shortcode() {
 								// Do nothing.
 							}
 						}
+						echo do_action( 'ddwc_driver_dashboard_completed_orders_tbody_bottom' );
 						echo '</tbody>';
+						echo do_action( 'ddwc_driver_dashboard_completed_orders_after_tbody' );
 						echo '</table>';
 
 						do_action( 'ddwc_completed_orders_table_after' );
