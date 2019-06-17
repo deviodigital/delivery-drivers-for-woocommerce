@@ -199,7 +199,8 @@ function ddwc_dashboard_shortcode() {
 						}
 						$plain_address  .= '</p>';
 						$directions_link = 'https://www.google.com/maps/search/?api=1&query=' . $delivery_address;
-						$plain_address  .= '<a target="_blank" href="' . apply_filters( 'ddwc_delivery_address_directions_link', $directions_link ) . '" class="button">' . __( 'Get Directions', 'ddwc' ) . '</a>';
+						$directions_text = __( 'Get Directions', 'ddwc' );
+						$plain_address  .= '<p><a target="_blank" href="' . apply_filters( 'ddwc_delivery_address_directions_link', $directions_link, $delivery_address ) . '" class="button">' . apply_filters( 'ddwc_delivery_address_directions_text', $directions_text ) . '</a></p>';
 
 						// Display the plain text delivery address.
 						echo apply_filters( 'ddwc_delivery_address_plain_text', $plain_address, $delivery_address );
