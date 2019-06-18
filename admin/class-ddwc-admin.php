@@ -111,7 +111,7 @@ function ddwc_show_custom_delivery_driver_column( $columns ) {
 	$new_columns[ 'shipping_address' ] = $shipping_address;
 
 	// Add shipping address column.
-//	$new_columns[ 'wc_actions' ] = $wc_actions;
+	$new_columns[ 'wc_actions' ] = $wc_actions;
 
 	return $new_columns;
 }
