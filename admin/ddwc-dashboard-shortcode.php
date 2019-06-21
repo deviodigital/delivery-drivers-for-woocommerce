@@ -113,7 +113,7 @@ function ddwc_dashboard_shortcode() {
 						// Do nothing.
 					}
 					// Display payment method details.
-					if ( isset( $payment_gateway ) ) {
+					if ( isset( $payment_gateway ) && FALSE !== $payment_gateway ) {
 						$payment_method = '<tr><td><strong>' . __( 'Payment method', 'ddwc' ) . '</strong></td><td>' . $payment_gateway->title . '</td></tr>';
 						echo apply_filters( 'ddwc_driver_dashboard_payment_method', $payment_method );
 					}
