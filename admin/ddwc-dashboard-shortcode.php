@@ -34,6 +34,25 @@ function ddwc_dashboard_shortcode() {
 				// Display order info if ?orderid is set and driver is assigned.
 				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) && ( $driver_id == $user_id ) ) {
 
+					// The store address.
+					$store_address     = get_option( 'woocommerce_store_address' );
+					$store_address_2   = get_option( 'woocommerce_store_address_2' );
+					$store_city        = get_option( 'woocommerce_store_city' );
+					$store_postcode    = get_option( 'woocommerce_store_postcode' );
+
+					// The store country/state.
+					$store_raw_country = get_option( 'woocommerce_default_country' );
+
+					// Split the store country/state
+					$split_country = explode( ":", $store_raw_country );
+
+					// Store country and state separated
+					$store_country = $split_country[0];
+					$store_state   = $split_country[1];
+
+					// Create store address.
+					$store_address = $store_address .  ' ' . $store_address_2 . ' ' . $store_city . ' ' . $store_state . ' ' . $store_postcode . ' ' . $store_country;
+
 					// Get an instance of the WC_Order object
 					$order = wc_get_order( $_GET['orderid'] );
 
