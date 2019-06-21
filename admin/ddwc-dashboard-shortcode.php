@@ -116,6 +116,45 @@ function ddwc_dashboard_shortcode() {
 
 					echo '</p>';
 
+					echo '<h4>' . __( 'Delivery Address', 'ddwc' ) . '</h4>';
+
+					// Plain text delivery address.
+					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
+						$plain_address = '<p>';
+						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+							$plain_address   .= $order->get_formatted_shipping_address();
+							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
+						} else {
+							$plain_address   .= $order->get_formatted_billing_address();
+							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
+						}
+						$plain_address  .= '</p>';
+						$directions_link = 'https://www.google.com/maps/search/?api=1&query=' . $delivery_address;
+						$directions_text = __( 'Get Directions', 'ddwc' );
+						$plain_address  .= '<p><a target="_blank" href="' . apply_filters( 'ddwc_delivery_address_directions_link', $directions_link, $delivery_address ) . '" class="button">' . apply_filters( 'ddwc_delivery_address_directions_text', $directions_text ) . '</a></p>';
+
+						// Display the plain text delivery address.
+						echo apply_filters( 'ddwc_delivery_address_plain_text', $plain_address, $delivery_address );
+					}
+
+					/**
+					 * Display a Google Map with the customers address if an API key is added to 
+					 * the WooCommerce Settings page.
+					 */
+					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
+						// Use the Shipping address if available.
+						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
+						} else {
+							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
+						}
+						// Create the Google Map.
+						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' . apply_filters( 'ddwc_google_maps_origin_address', $store_address ) . '&destination=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '" allowfullscreen></iframe>';
+
+						// Display the Google Map with delivery address.
+						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address );
+					}
+
 					echo '<h4>' . __( 'Order details', 'ddwc' ) . '</h4>';
 
 					// Get payment gateway details.
@@ -203,45 +242,6 @@ function ddwc_dashboard_shortcode() {
 					echo '</table>';
 
 					do_action( 'ddwc_driver_dashboard_order_table_after' );
-
-					echo '<h4>' . __( 'Delivery Address', 'ddwc' ) . '</h4>';
-
-					// Plain text delivery address.
-					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
-						$plain_address = '<p>';
-						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
-							$plain_address   .= $order->get_formatted_shipping_address();
-							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
-						} else {
-							$plain_address   .= $order->get_formatted_billing_address();
-							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
-						}
-						$plain_address  .= '</p>';
-						$directions_link = 'https://www.google.com/maps/search/?api=1&query=' . $delivery_address;
-						$directions_text = __( 'Get Directions', 'ddwc' );
-						$plain_address  .= '<p><a target="_blank" href="' . apply_filters( 'ddwc_delivery_address_directions_link', $directions_link, $delivery_address ) . '" class="button">' . apply_filters( 'ddwc_delivery_address_directions_text', $directions_text ) . '</a></p>';
-
-						// Display the plain text delivery address.
-						echo apply_filters( 'ddwc_delivery_address_plain_text', $plain_address, $delivery_address );
-					}
-
-					/**
-					 * Display a Google Map with the customers address if an API key is added to 
-					 * the WooCommerce Settings page.
-					 */
-					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
-						// Use the Shipping address if available.
-						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
-							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
-						} else {
-							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
-						}
-						// Create the Google Map.
-						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' . apply_filters( 'ddwc_google_maps_origin_address', $store_address ) . '&destination=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '" allowfullscreen></iframe>';
-
-						// Display the Google Map with delivery address.
-						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address );
-					}
 
 					// Change status forms.
 					apply_filters( 'ddwc_driver_dashboard_change_status_forms', ddwc_driver_dashboard_change_status_forms() );
