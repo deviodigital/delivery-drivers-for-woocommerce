@@ -1,5 +1,20 @@
 # Changelog
 
+### 2.1
+* Added `Delivery Driver` column on WooCommerce `Edit Orders` screen in `admin/class-ddwc-admin.php`
+* Added `Delivery Driver` column jQuery codes in `admin/js/ddwc-admin.js`
+* Added `ddwc_order_number` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_delivery_address_directions_text` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_google_maps_origin_address` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added 3 action hooks in the completed orders table in `admin/ddwc-dashboard-shortcode.php`
+* Updated priority of the ddwc_endpoint_content action in `admin/ddwc-woocommerce-account-tab.php`
+* Updated filters to pass the order ID number in `admin/ddwc-dashboard-shortcode.php`
+* Updated check if payment gateway is not `false` in `admin/ddwc-dashboard-shortcode.php`
+* Updated Google Maps to use Directions API in `admin/ddwc-dashboard-shortcode.php`
+* Updated content display for the driver's order details page in `admin/ddwc-dashboard-shortcode.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
+
 ### 2.0
 * Added 5 new filters to the driver dashboard shortcode in `admin/ddwc-woocommerce-shortcode.php`
 * Added functions file with two helper functions in `admin/ddwc-functions.php`
