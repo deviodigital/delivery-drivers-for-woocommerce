@@ -85,9 +85,10 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 == Screenshots ==
 
 1. Delivery Drivers WooCommerce Settings page
-2. Orders page, showing two new statuses (Driver Assigned & Out for Delivery)
+2. Delivery Driver column added to the Edit Orders screen
 3. Driver dashboard, displaying all assigned orders (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
+5. Delivery Driver information displayed on customer's order details page
 
 == Changelog ==
 
