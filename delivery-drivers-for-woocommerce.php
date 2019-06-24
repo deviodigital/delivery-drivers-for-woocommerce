@@ -74,6 +74,9 @@ function run_ddwc() {
 }
 run_ddwc();
 
+// Create variable for settings link filter.
+$plugin_name = plugin_basename( __FILE__ );
+
 /**
  * Add settings link on plugin page
  *
@@ -91,7 +94,4 @@ function ddwc_settings_link( $links ) {
 	}
 	return $links;
 }
-
-$pluginname = plugin_basename( __FILE__ );
-
-add_filter( "plugin_action_links_$pluginname", 'ddwc_settings_link' );
+add_filter( "plugin_action_links_$plugin_name", 'ddwc_settings_link' );
