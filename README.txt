@@ -89,6 +89,7 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 3. Driver dashboard, displaying all assigned orders (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 5. Delivery Driver information displayed on customer's order details page
+6. Google Maps Directions for delivery driver from Store address to Customer address
 
 == Changelog ==
 
