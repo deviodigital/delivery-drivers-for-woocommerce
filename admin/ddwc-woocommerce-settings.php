@@ -81,12 +81,18 @@ class Delivery_Drivers_WooCommerce_Settings {
 			$pages_array[ $page->ID ] = $page->post_title;
 		}
 
+		if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
+			$go_pro = ' | <a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . __( 'Go Pro', 'ddwc' ) . '</a>';
+		} else {
+			$go_pro = '';
+		}
+
 		$settings = array(
 			// Section title.
 			'ddwc_settings_section_title' => array(
 				'name' => __( 'Delivery Drivers for WooCommerce', 'ddwc' ),
 				'type' => 'title',
-				'desc' => __( 'Brought to you by <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>', 'ddwc' ),
+				'desc' => __( 'Brought to you by', 'ddwc' ) . ' <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>' . $go_pro,
 				'id'   => 'ddwc_settings_section_title'
 			),
 			// Dispatch phone number.
