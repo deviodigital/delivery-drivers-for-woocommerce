@@ -366,7 +366,9 @@ function ddwc_dashboard_shortcode() {
 						foreach ( $assigned_orders as $driver_order ) {
 
 							// Get an instance of the WC_Order object.
-							$order           = wc_get_order( $driver_order->ID );
+							$order = wc_get_order( $driver_order->ID );
+
+							// Get order data.
 							$order_data      = $order->get_data();
 							$currency_code   = $order_data['currency'];
 							$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
