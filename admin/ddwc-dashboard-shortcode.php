@@ -463,7 +463,7 @@ function ddwc_dashboard_shortcode() {
 			// Do nothing.
 		}
 	} else {
-		wp_login_form();
+		apply_filters( 'ddwc_dashboard_login_form', wp_login_form() );
 	}
 }
 add_shortcode( 'ddwc_dashboard', 'ddwc_dashboard_shortcode' );
