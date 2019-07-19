@@ -144,7 +144,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 Delivery_Drivers_WooCommerce_Settings::init();
 
 /**
- * Redirect users to custom URL based on their role after login
+ * Redirect drivers to the Driver Dashboard after login.
  *
  * @param string $redirect
  * @param object $user
@@ -153,14 +153,28 @@ Delivery_Drivers_WooCommerce_Settings::init();
 function ddwc_custom_user_redirect( $redirect, $user ) {
 	// Get the first of all the roles assigned to the user.
 	$user_role = $user->roles[0];
+
+	// Dashboard URL for driver's login redirect.
 	$dashboard = apply_filters( 'ddwc_driver_dashboard_login_redirect', get_permalink( wc_get_page_id( 'myaccount' ) ) . '/driver-dashboard/' );
+
+	// Redirect page ID.
+	$redirect_page_id = url_to_postid( $redirect );
+
+	// Checkout page ID.
+    $checkout_page_id = wc_get_page_id( 'checkout' );
+
+	// Redirect normally if user is on checkout page.
+    if( $redirect_page_id == $checkout_page_id ) {
+        return $redirect;
+	}
+
+	// Redirect delivery drivers to the dashboard.
 	if ( 'driver' == $user_role ) {
-		// Redirect delivery drivers to the dashboard.
 		$redirect = $dashboard;
 	} else {
-		// Redirect any other role to the previous visited page or, if not available, to the home
-		$redirect = wp_get_referer() ? wp_get_referer() : home_url();
+		// Do nothing.
 	}
+
 	return $redirect;
 }
 add_filter( 'woocommerce_login_redirect', 'ddwc_custom_user_redirect', 10, 2 );
