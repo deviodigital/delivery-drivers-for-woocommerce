@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2019-06-21 20:18-0400\n"
-"PO-Revision-Date: 2019-06-21 20:17-0400\n"
+"POT-Creation-Date: 2019-07-21 17:53-0400\n"
+"PO-Revision-Date: 2019-07-21 17:52-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgid "Order total"
 msgstr ""
 
 #: admin/ddwc-dashboard-shortcode.php:273
-#: admin/ddwc-dashboard-shortcode.php:439
+#: admin/ddwc-dashboard-shortcode.php:445
 msgid "Assigned Orders"
 msgstr ""
 
@@ -109,15 +109,15 @@ msgstr ""
 msgid "Completed Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:440
+#: admin/ddwc-dashboard-shortcode.php:446
 msgid "You do not have any assigned orders."
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:450
+#: admin/ddwc-dashboard-shortcode.php:456
 msgid "Access Denied"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:450
+#: admin/ddwc-dashboard-shortcode.php:456
 msgid "Sorry, but you are not able to view this page."
 msgstr ""
 
@@ -154,8 +154,8 @@ msgstr ""
 msgid "Delivery rating"
 msgstr ""
 
-#: admin/ddwc-woocommerce-account-tab.php:57
-#: admin/ddwc-woocommerce-account-tab.php:82
+#: admin/ddwc-woocommerce-account-tab.php:61
+#: admin/ddwc-woocommerce-account-tab.php:87
 msgid "Driver Dashboard"
 msgstr ""
 
@@ -216,54 +216,53 @@ msgstr[1] ""
 msgid "Delivery Drivers"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-#: admin/ddwc-woocommerce-settings.php:87
-msgid "Delivery Drivers for WooCommerce"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:89
-msgid ""
-"Brought to you by <a href=\"https://www.deviodigital.com\" target=\"_blank"
-"\">Devio Digital</a>"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:94
-msgid "Dispatch phone number"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:96
-msgid "Allow your drivers to call if they have questions about an order."
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:101
-msgid "Google Maps API key"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:103
-msgid "Add a map to the order directions for your drivers."
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:108
-msgid "Driver ratings"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:110
-msgid "Add driver details with delivery star ratings to order details page."
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:119
-msgid "Driver phone number"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:121
-msgid "Add a button for customers to call driver in the driver details."
-msgstr ""
-
-#: delivery-drivers-for-woocommerce.php:85
+#: admin/ddwc-woocommerce-settings.php:85
+#: delivery-drivers-for-woocommerce.php:88
 msgid "Go Pro"
 msgstr ""
 
-#: delivery-drivers-for-woocommerce.php:86
+#. Plugin Name of the plugin/theme
+#: admin/ddwc-woocommerce-settings.php:93
+msgid "Delivery Drivers for WooCommerce"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:95
+msgid "Brought to you by"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:100
+msgid "Dispatch phone number"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:102
+msgid "Allow your drivers to call if they have questions about an order."
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:107
+msgid "Google Maps API key"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:109
+msgid "Add a map to the order directions for your drivers."
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:114
+msgid "Driver ratings"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:116
+msgid "Add driver details with delivery star ratings to order details page."
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:125
+msgid "Driver phone number"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:127
+msgid "Add a button for customers to call driver in the driver details."
+msgstr ""
+
+#: delivery-drivers-for-woocommerce.php:89
 msgid "Settings"
 msgstr ""
 
