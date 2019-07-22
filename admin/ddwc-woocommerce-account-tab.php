@@ -55,8 +55,10 @@ function ddwc_my_account_menu_items( $items ) {
 	$logout = $items['customer-logout'];
 	// Remove the customer-logout menu item.
 	unset( $items['customer-logout'] );
+	// Set user roles.
+	$roles = array( 'driver' );
 	// Check user role.
-	if ( in_array( apply_filters( 'ddwc_my_account_check_user_role_array', 'driver' ), (array) $user->roles ) ) {
+	if ( ddwc_check_user_roles( apply_filters( 'ddwc_my_account_check_user_role_array', $roles ) ) ) {
 		// Insert the driver-dashboard endpoint.
 		$items['driver-dashboard'] = apply_filters( 'ddwc_my_account_menu_item_driver_dashboard', __( 'Driver Dashboard', 'ddwc' ) );
 	}
