@@ -49,12 +49,17 @@ register_activation_hook( __FILE__, 'ddwc_flush_rewrite_rules' );
  * @return array
  */
 function ddwc_my_account_menu_items( $items ) {
+	// Get current user.
+	$user = wp_get_current_user();
 	// Get customer-logout menu item.
 	$logout = $items['customer-logout'];
 	// Remove the customer-logout menu item.
 	unset( $items['customer-logout'] );
-	// Insert the driver-dashboard endpoint.
-	$items['driver-dashboard'] = apply_filters( 'ddwc_my_account_menu_item_driver_dashboard', __( 'Driver Dashboard', 'ddwc' ) );
+	// Check user role.
+	if ( in_array( apply_filters( 'ddwc_my_account_check_user_role_array', 'driver' ), (array) $user->roles ) ) {
+		// Insert the driver-dashboard endpoint.
+		$items['driver-dashboard'] = apply_filters( 'ddwc_my_account_menu_item_driver_dashboard', __( 'Driver Dashboard', 'ddwc' ) );
+	}
 	// Insert back the customer-logout item.
 	$items['customer-logout'] = $logout;
 
