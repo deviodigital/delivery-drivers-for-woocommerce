@@ -111,3 +111,35 @@ function ddwc_driver_dashboard_change_status_forms() {
 	echo apply_filters( 'ddwc_driver_dashboard_change_status', $change_status );
 
 }
+
+/**
+ * Checks if a particular user has one or more roles.
+ *
+ * Returns true on first matching role. Returns false if no roles match.
+ *
+ * @uses get_userdata()
+ * @uses wp_get_current_user()
+ *
+ * @param array|string $roles Role name (or array of names).
+ * @param int $user_id (Optional) The ID of a user. Defaults to the current user.
+ * @return bool
+ */
+function ddwc_check_user_roles( $roles, $user_id = null ) {
+
+    if ( is_numeric( $user_id ) )
+        $user = get_userdata( $user_id );
+    else
+        $user = wp_get_current_user();
+
+    if ( empty( $user ) )
+        return false;
+
+    $user_roles = (array) $user->roles;
+
+    foreach ( (array) $roles as $role ) {
+        if ( in_array( $role, $user_roles ) )
+            return true;
+    }
+
+    return false;
+}
