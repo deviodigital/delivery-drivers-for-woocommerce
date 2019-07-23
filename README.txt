@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.2.2
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,18 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 6. Google Maps Directions for delivery driver from Store address to Customer address
 
 == Changelog ==
+
+= 2.2 =
+* Added `ddwc_my_account_menu_item_driver_dashboard` filter in `admin/ddwc-woocommerce-account-tab.php`
+* Added `ddwc_assigned_orders_empty_before` action hook in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_dashboard_login_form` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_my_account_check_user_role_array` filter in `admin/ddwc-woocommerce-account-tab.php`
+* Added `ddwc_check_user_roles` helper function in `admin/ddwc-functions.php`
+* Added `Go Pro` link to DDWC Settings page in `admin/ddwc-woocommerce-settings.php`
+* Bugfix login redirect issues on checkout page in `admin/ddwc-woocommerce-settings.php`
+* Updated user role check to use the new `ddwc_check_user_roles` function in `admin/ddwc-woocommerce-account-tab.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
 
 = 2.1 =
 * Added `Delivery Driver` column on WooCommerce `Edit Orders` screen in `admin/class-ddwc-admin.php`

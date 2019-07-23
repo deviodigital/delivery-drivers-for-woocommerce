@@ -1,5 +1,17 @@
 # Changelog
 
+### 2.2
+* Added `ddwc_my_account_menu_item_driver_dashboard` filter in `admin/ddwc-woocommerce-account-tab.php`
+* Added `ddwc_assigned_orders_empty_before` action hook in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_dashboard_login_form` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_my_account_check_user_role_array` filter in `admin/ddwc-woocommerce-account-tab.php`
+* Added `ddwc_check_user_roles` helper function in `admin/ddwc-functions.php`
+* Added `Go Pro` link to DDWC Settings page in `admin/ddwc-woocommerce-settings.php`
+* Bugfix login redirect issues on checkout page in `admin/ddwc-woocommerce-settings.php`
+* Updated user role check to use the new `ddwc_check_user_roles` function in `admin/ddwc-woocommerce-account-tab.php`
+* Updated `.pot` file with new translation strings in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
+
 ### 2.1
 * Added `Delivery Driver` column on WooCommerce `Edit Orders` screen in `admin/class-ddwc-admin.php`
 * Added `Delivery Driver` column jQuery codes in `admin/js/ddwc-admin.js`
