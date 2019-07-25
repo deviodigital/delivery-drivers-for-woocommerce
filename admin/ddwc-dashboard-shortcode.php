@@ -270,6 +270,9 @@ function ddwc_dashboard_shortcode() {
 					 * If Orders have Driver ID attached
 					 */
 					if ( $assigned_orders ) {
+
+						do_action( 'ddwc_assigned_orders_title_before' );
+
 						echo '<h3 class="ddwc assigned-orders">' . __( 'Assigned Orders', 'ddwc' ) . '</h3>';
 
 						do_action( 'ddwc_assigned_orders_table_before' );
