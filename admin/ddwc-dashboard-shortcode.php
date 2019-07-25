@@ -152,7 +152,7 @@ function ddwc_dashboard_shortcode() {
 						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' . apply_filters( 'ddwc_google_maps_origin_address', $store_address ) . '&destination=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '" allowfullscreen></iframe>';
 
 						// Display the Google Map with delivery address.
-						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address );
+						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address, $store_address );
 					}
 
 					echo '<h4>' . __( 'Order details', 'ddwc' ) . '</h4>';
