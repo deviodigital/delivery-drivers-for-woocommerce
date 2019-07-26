@@ -149,6 +149,19 @@ button.remove-ddwc-driver-picture:hover {
     margin-bottom: 12px !important;
 }
 
+.woocommerce-order-details :last-child,
+table.ddwc-driver-details {
+    margin-bottom: 12px !important;
+}
+
+table.ddwc-driver-details tr {
+    border: 1px solid #ddd;
+}
+
+table.ddwc-driver-details tr td {
+    padding: 10px;
+}
+
 /** Bar Rating */
 
 .br-theme-fontawesome-stars .br-widget {
