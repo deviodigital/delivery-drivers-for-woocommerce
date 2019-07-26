@@ -56,10 +56,6 @@ function ddwc_order_driver_details( $order ) {
         // Driver name.
         $string .= '<h4>' . $driver_meta->user_firstname . ' ' . $driver_meta->user_lastname . '</h4>';
 
-        if ( get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) ) {
-            $string .= '<p>' . __( 'License Plate', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) . '</strong></p>';
-        }
-
         // Display star rating.
         if ( 'completed' == $order_status ) {
             // Star ratings.
@@ -78,6 +74,30 @@ function ddwc_order_driver_details( $order ) {
         } else {
             // Do nothing.
         }
+
+        // Driver details table.
+        $string .= '<table class="ddwc-driver-details"><tbody><tr>';
+
+        // Car color.
+        if ( get_user_meta( $driver_id, 'ddwc_driver_car_color', true ) ) {
+            $string .= '<td>' . __( 'Car Color', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_car_color', true ) . '</strong></td>';
+        } else {
+            // Do nothing.
+        }
+
+        // Car model.
+        if ( get_user_meta( $driver_id, 'ddwc_driver_car_model', true ) ) {
+            $string .= '<td>' . __( 'Car Model', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_car_model', true ) . '</strong></td>';
+        } else {
+            // Do nothing.
+        }
+
+        // Driver License plate.
+        if ( get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) ) {
+            $string .= '<td>' . __( 'License Plate', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) . '</strong></td>';
+        }
+
+        $string .= '</tr></tbody></table>';
 
         $string .= '</div>';
 
@@ -171,6 +191,16 @@ function ddwc_save_custom_profile_fields( $user_id ) {
         // Update license plate number.
         if ( isset( $_POST['ddwc_driver_license_plate'] ) ) {
             update_user_meta( $user_id, 'ddwc_driver_license_plate', $_POST['ddwc_driver_license_plate'] );
+        }
+
+        // Update car model.
+        if ( isset( $_POST['ddwc_driver_car_model'] ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_car_model', $_POST['ddwc_driver_car_model'] );
+        }
+
+        // Update car color.
+        if ( isset( $_POST['ddwc_driver_car_color'] ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_car_color', $_POST['ddwc_driver_car_color'] );
         }
 
         // Remove driver picture from user profile.
@@ -273,6 +303,18 @@ function ddwc_add_profile_options( $profileuser ) {
                 <input class="regular-text" type="text" name="ddwc_driver_license_plate" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_license_plate', true ) ); ?>" />
             </td>
         </tr>
+        <tr>
+            <th scope="row"><?php _e( 'Car Model', 'ddwc' ); ?></th>
+            <td>
+                <input class="regular-text" type="text" name="ddwc_driver_car_model" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_car_model', true ) ); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><?php _e( 'Car Color', 'ddwc' ); ?></th>
+            <td>
+                <input class="regular-text" type="text" name="ddwc_driver_car_color" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_car_color', true ) ); ?>" />
+            </td>
+        </tr>
         </table>
 
     <?php
@@ -350,6 +392,16 @@ function ddwc_add_to_edit_account_form() {
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="reg_ddwc_driver_license_plate"><?php _e( 'License Plate Number', 'ddwc' ); ?></label>
             <input type="text" class="input-text" name="ddwc_driver_license_plate" id="reg_ddwc_driver_license_plate" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_license_plate', true ); ?>" />
+        </p>
+
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="reg_ddwc_driver_car_model"><?php _e( 'Car Model', 'ddwc' ); ?></label>
+            <input type="text" class="input-text" name="ddwc_driver_car_model" id="reg_ddwc_driver_car_model" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_car_model', true ); ?>" />
+        </p>
+
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="reg_ddwc_driver_car_color"><?php _e( 'Car Color', 'ddwc' ); ?></label>
+            <input type="text" class="input-text" name="ddwc_driver_car_color" id="reg_ddwc_driver_car_color" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_car_color', true ); ?>" />
         </p>
 
     </fieldset>
