@@ -203,6 +203,11 @@ function ddwc_save_custom_profile_fields( $user_id ) {
             update_user_meta( $user_id, 'ddwc_driver_car_color', $_POST['ddwc_driver_car_color'] );
         }
 
+        // Update driver availability.
+        if ( isset( $_POST['ddwc_driver_availability'] ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_availability', $_POST['ddwc_driver_availability'] );
+        }
+
         // Remove driver picture from user profile.
         if ( isset( $_POST['remove_driver_picture'] ) ) {
             update_user_meta( $user_id, 'ddwc_driver_picture', '' );		
@@ -313,6 +318,19 @@ function ddwc_add_profile_options( $profileuser ) {
             <th scope="row"><?php _e( 'Car Color', 'ddwc' ); ?></th>
             <td>
                 <input class="regular-text" type="text" name="ddwc_driver_car_color" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_car_color', true ) ); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><?php _e( 'Availability', 'ddwc' ); ?></th>
+            <td>
+                <?php
+                    if ( get_user_meta( $profileuser->ID, 'ddwc_driver_availability', true ) ) {
+                        $checked = 'checked';
+                    } else {
+                        $checked = '';
+                    }
+                ?>
+                <input class="regular-text" type="checkbox" name="ddwc_driver_availability" <?php echo $checked; ?> /> <?php _e( 'Is the driver currently accepting deliveries?', 'ddwc' ); ?>
             </td>
         </tr>
         </table>
