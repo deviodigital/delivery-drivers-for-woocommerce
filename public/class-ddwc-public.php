@@ -94,8 +94,34 @@ class Delivery_Drivers_Public {
 			wp_enqueue_script( $this->plugin_name . '-star-rating', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js', array( 'jquery' ), $this->version, false );
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ddwc-public.js', array( 'jquery' ), $this->version, false );
 			wp_localize_script( $this->plugin_name, 'WPaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		} elseif ( is_wc_endpoint_url( 'driver-dashboard' ) ) {
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ddwc-public.js', array( 'jquery' ), $this->version, false );
+			wp_localize_script( $this->plugin_name, 'WPaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		}
 
 	}
 
 }
+
+/**
+ * Driver availability option on Driver Dashboard
+ *
+ * @since 2.3
+ */
+function ddwc_driver_dashboard_driver_availability() {
+	// Driver availability.
+    if ( get_user_meta( get_current_user_id(), 'ddwc_driver_availability', true ) ) {
+        $checked = 'checked';
+    } else {
+        $checked = '';
+    }
+
+    echo '<div class="ddwc-availability">
+          <h4>' . __( 'Accepting deliveries', 'ddwc' ) . '</h4>
+          <label class="switch">
+            <input id="' . get_current_user_id() . '" type="checkbox" ' . $checked . ' />
+            <span class="slider round"></span>
+          </label>
+          </div>';
+}
+add_action( 'ddwc_assigned_orders_title_before', 'ddwc_driver_dashboard_driver_availability' );

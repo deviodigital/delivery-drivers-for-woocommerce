@@ -219,3 +219,92 @@ input.ddwc-ofdmsg {
     font-size: 24px;
     margin-bottom: 12px;
 }
+
+/** Driver Dashboard - Driver availability */
+
+.ddwc-availability {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    .ddwc-availability {
+        margin-top: 24px;
+    }
+}
+
+.ddwc-availability h4 {
+    font-size: 20px;
+    display: inline-block;
+    line-height: 34px;
+    margin: 0 0 0 5px;
+}
+.ddwc-availability label.switch {
+    float: right;
+    margin-top: 2px;
+}
+
+/* The switch - the box around the slider */
+.ddwc-availability .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.ddwc-availability .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.ddwc-availability .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.ddwc-availability .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.ddwc-availability input:checked + .slider {
+    background-color: #76bd1d;
+}
+
+.ddwc-availability input:focus + .slider {
+    box-shadow: 0 0 1px #76bd1d;
+}
+
+.ddwc-availability input:checked + .slider:before {
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(28px);
+}
+
+/* Rounded sliders */
+.ddwc-availability .switch .slider.round {
+    border-radius: 22px;
+}
+
+.ddwc-availability .switch .slider.round:before {
+    border-radius: 50%;
+}

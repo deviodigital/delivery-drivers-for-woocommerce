@@ -219,3 +219,28 @@ function ddwc_delivery_driver_settings() {
 }
 add_action( 'wp_ajax_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings' );
 //add_action('wp_ajax_nopriv_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings');
+
+/**
+ * AJAX function to update driver availability
+ * 
+ * @since 2.3
+ */
+function ddwc_driver_availability_update() {
+
+	$user_id    = $_POST['user_id'];
+    $meta_value = $_POST['metavalue'];
+
+    if ( 'checked' == $meta_value ) {
+        $new_value = 'on';
+        $old_value = '';
+    } else {
+        $new_value = '';
+        $old_value = 'on';
+    }
+
+    // Update driver availability.
+	update_user_meta( $user_id, 'ddwc_driver_availability', $new_value, $old_value );
+
+}
+add_action( 'wp_ajax_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
+add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
