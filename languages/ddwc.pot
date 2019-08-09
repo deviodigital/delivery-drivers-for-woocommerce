@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2019-07-23 15:15-0400\n"
-"PO-Revision-Date: 2019-07-23 15:14-0400\n"
+"POT-Creation-Date: 2019-08-09 11:50-0400\n"
+"PO-Revision-Date: 2019-08-09 11:50-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -64,8 +64,8 @@ msgid "Order date"
 msgstr ""
 
 #: admin/ddwc-dashboard-shortcode.php:188
-#: admin/ddwc-dashboard-shortcode.php:277
-#: admin/ddwc-dashboard-shortcode.php:360
+#: admin/ddwc-dashboard-shortcode.php:280
+#: admin/ddwc-dashboard-shortcode.php:363
 msgid "Total"
 msgstr ""
 
@@ -85,39 +85,39 @@ msgstr ""
 msgid "Order total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:273
-#: admin/ddwc-dashboard-shortcode.php:445
+#: admin/ddwc-dashboard-shortcode.php:276
+#: admin/ddwc-dashboard-shortcode.php:448
 msgid "Assigned Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:280
-#: admin/ddwc-dashboard-shortcode.php:363
+#: admin/ddwc-dashboard-shortcode.php:283
+#: admin/ddwc-dashboard-shortcode.php:366
 msgid "ID"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:280
-#: admin/ddwc-dashboard-shortcode.php:363
+#: admin/ddwc-dashboard-shortcode.php:283
+#: admin/ddwc-dashboard-shortcode.php:366
 msgid "Date"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:280
-#: admin/ddwc-dashboard-shortcode.php:363
+#: admin/ddwc-dashboard-shortcode.php:283
+#: admin/ddwc-dashboard-shortcode.php:366
 msgid "Status"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:356
+#: admin/ddwc-dashboard-shortcode.php:359
 msgid "Completed Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:446
+#: admin/ddwc-dashboard-shortcode.php:449
 msgid "You do not have any assigned orders."
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:456
+#: admin/ddwc-dashboard-shortcode.php:459
 msgid "Access Denied"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:456
+#: admin/ddwc-dashboard-shortcode.php:459
 msgid "Sorry, but you are not able to view this page."
 msgstr ""
 
@@ -159,38 +159,58 @@ msgstr ""
 msgid "Driver Dashboard"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:60
-msgid "License Plate"
-msgstr ""
-
-#: admin/ddwc-woocommerce-driver-ratings.php:66
+#: admin/ddwc-woocommerce-driver-ratings.php:62
 msgid "Rate Delivery"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:73
+#: admin/ddwc-woocommerce-driver-ratings.php:69
 msgid "Call Driver"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:245
-#: admin/ddwc-woocommerce-driver-ratings.php:327
+#: admin/ddwc-woocommerce-driver-ratings.php:83
+#: admin/ddwc-woocommerce-driver-ratings.php:318
+#: admin/ddwc-woocommerce-driver-ratings.php:421
+msgid "Car Color"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:90
+#: admin/ddwc-woocommerce-driver-ratings.php:312
+#: admin/ddwc-woocommerce-driver-ratings.php:416
+msgid "Car Model"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:97
+msgid "License Plate"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:280
+#: admin/ddwc-woocommerce-driver-ratings.php:387
 msgid "Driver Verification"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:249
+#: admin/ddwc-woocommerce-driver-ratings.php:284
 msgid "Driver Photo"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:264
-#: admin/ddwc-woocommerce-driver-ratings.php:344
+#: admin/ddwc-woocommerce-driver-ratings.php:299
+#: admin/ddwc-woocommerce-driver-ratings.php:404
 msgid "x"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:271
-#: admin/ddwc-woocommerce-driver-ratings.php:351
+#: admin/ddwc-woocommerce-driver-ratings.php:306
+#: admin/ddwc-woocommerce-driver-ratings.php:411
 msgid "License Plate Number"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:329
+#: admin/ddwc-woocommerce-driver-ratings.php:324
+msgid "Availability"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:333
+msgid "Is the driver currently accepting deliveries?"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:389
 msgid "Driver Picture"
 msgstr ""
 
@@ -264,6 +284,10 @@ msgstr ""
 
 #: delivery-drivers-for-woocommerce.php:89
 msgid "Settings"
+msgstr ""
+
+#: public/class-ddwc-public.php:120
+msgid "Accepting deliveries"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
