@@ -225,7 +225,7 @@ function ddwc_save_custom_profile_fields( $user_id ) {
 
         // Remove driver picture from user profile.
         if ( isset( $_POST['remove_driver_picture'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_picture', '' );		
+            update_user_meta( $user_id, 'ddwc_driver_picture', '' );
         }
 
         // If no new files are uploaded, return.
