@@ -1,5 +1,14 @@
 # Changelog
 
+### 2.3
+* Added `$store_address` variable to `ddwc_delivery_address_google_map` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added `ddwc_assigned_orders_title_before` action hook in `admin/ddwc-dashboard-shortcode.php`
+* Added driver availability option to driver dashboard in multiple files throughout the plugin ([commit](https://github.com/deviodigital/delivery-drivers-for-woocommerce/commit/b53400d5d4303ac0f36ef87567885bdd9bd6de19))
+* Added Transportation `Type`, `Model` and `Color` fields to driver details in `admin/ddwc-woocommerce-driver-ratings.php`
+* Added styles to driver details table on customer order page in `public/css/ddwc-public.css`
+* Updated variable names with underscores in `admin/class-ddwc-admin.php`
+* Updated text strings for localization in `languages/ddwc.pot`
+
 ### 2.2
 * Added `ddwc_my_account_menu_item_driver_dashboard` filter in `admin/ddwc-woocommerce-account-tab.php`
 * Added `ddwc_assigned_orders_empty_before` action hook in `admin/ddwc-dashboard-shortcode.php`
