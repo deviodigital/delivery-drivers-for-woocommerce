@@ -78,16 +78,26 @@ function ddwc_order_driver_details( $order ) {
         // Driver details table.
         $string .= '<table class="ddwc-driver-details"><tbody><tr>';
 
-        // Car color.
-        if ( get_user_meta( $driver_id, 'ddwc_driver_car_color', true ) ) {
-            $string .= '<td>' . __( 'Car Color', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_car_color', true ) . '</strong></td>';
+        // Vehicle color.
+        if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) ) {
+            if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
+                $color_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
+            } else {
+                $color_name = __( 'Vehicle Color', 'ddwc' );
+            }
+            $string .= '<td>' . $color_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) . '</strong></td>';
         } else {
             // Do nothing.
         }
 
-        // Car model.
-        if ( get_user_meta( $driver_id, 'ddwc_driver_car_model', true ) ) {
-            $string .= '<td>' . __( 'Car Model', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_car_model', true ) . '</strong></td>';
+        // Vehicle model.
+        if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) ) {
+            if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
+                $model_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
+            } else {
+                $model_name = __( 'Vehicle Model', 'ddwc' );
+            }
+            $string .= '<td>' . $model_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) . '</strong></td>';
         } else {
             // Do nothing.
         }
@@ -193,14 +203,19 @@ function ddwc_save_custom_profile_fields( $user_id ) {
             update_user_meta( $user_id, 'ddwc_driver_license_plate', $_POST['ddwc_driver_license_plate'] );
         }
 
-        // Update car model.
-        if ( isset( $_POST['ddwc_driver_car_model'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_car_model', $_POST['ddwc_driver_car_model'] );
+        // Update transportation type.
+        if ( isset( $_POST['ddwc_driver_transportation_type'] ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_transportation_type', $_POST['ddwc_driver_transportation_type'] );
         }
 
-        // Update car color.
-        if ( isset( $_POST['ddwc_driver_car_color'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_car_color', $_POST['ddwc_driver_car_color'] );
+        // Update vehicle model.
+        if ( isset( $_POST['ddwc_driver_vehicle_model'] ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_vehicle_model', $_POST['ddwc_driver_vehicle_model'] );
+        }
+
+        // Update vehicle color.
+        if ( isset( $_POST['ddwc_driver_vehicle_color'] ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_vehicle_color', $_POST['ddwc_driver_vehicle_color'] );
         }
 
         // Update driver availability.
@@ -309,15 +324,57 @@ function ddwc_add_profile_options( $profileuser ) {
             </td>
         </tr>
         <tr>
-            <th scope="row"><?php _e( 'Car Model', 'ddwc' ); ?></th>
+            <th scope="row"><?php _e( 'Transportation Type', 'ddwc' ); ?></th>
             <td>
-                <input class="regular-text" type="text" name="ddwc_driver_car_model" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_car_model', true ) ); ?>" />
+            <?php
+                // Transportation types.
+                $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( 'Bicycle', 'Car', 'SUV', 'Truck' ) );
+
+                // Loop through types.
+                if ( $transportation_types ) {
+                    printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type">', get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
+                    echo '<option value="">--</option>';
+                    foreach ( $transportation_types as $type ) {
+                        print_r( get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
+                        if ( $type != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
+                            $imagesizeinfo = '';
+                        } else {
+                            $imagesizeinfo = 'selected="selected"';
+                        }
+                        printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $type ), esc_html( $type ) );
+                    }
+                    print( '</select>' );
+                }
+            ?>
+
             </td>
         </tr>
         <tr>
-            <th scope="row"><?php _e( 'Car Color', 'ddwc' ); ?></th>
+            <th scope="row">
+                <?php
+                    if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
+                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
+                    } else {
+                        _e( 'Vehicle Model', 'ddwc' );
+                    }
+                ?>
+            </th>
             <td>
-                <input class="regular-text" type="text" name="ddwc_driver_car_color" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_car_color', true ) ); ?>" />
+                <input class="regular-text" type="text" name="ddwc_driver_vehicle_model" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_vehicle_model', true ) ); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <?php
+                    if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
+                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
+                    } else {
+                        _e( 'Vehicle Color', 'ddwc' );
+                    }
+                ?>
+            </th>
+            <td>
+                <input class="regular-text" type="text" name="ddwc_driver_vehicle_color" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_vehicle_color', true ) ); ?>" />
             </td>
         </tr>
         <tr>
@@ -413,13 +470,53 @@ function ddwc_add_to_edit_account_form() {
         </p>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="reg_ddwc_driver_car_model"><?php _e( 'Car Model', 'ddwc' ); ?></label>
-            <input type="text" class="input-text" name="ddwc_driver_car_model" id="reg_ddwc_driver_car_model" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_car_model', true ); ?>" />
+            <label for="reg_ddwc_driver_transportation_type"><?php _e( 'Transportation Type', 'ddwc' ); ?></label>
+            <?php
+                // Transportation types.
+                $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( 'Bicycle', 'Car', 'SUV', 'Truck' ) );
+
+                // Loop through types.
+                if ( $transportation_types ) {
+                    printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type" class="widefat">', get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
+                    echo '<option value="">--</option>';
+                    foreach ( $transportation_types as $type ) {
+                        print_r( get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
+                        if ( $type != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
+                            $imagesizeinfo = '';
+                        } else {
+                            $imagesizeinfo = 'selected="selected"';
+                        }
+                        printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $type ), esc_html( $type ) );
+                    }
+                    print( '</select>' );
+                }
+            ?>
         </p>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="reg_ddwc_driver_car_color"><?php _e( 'Car Color', 'ddwc' ); ?></label>
-            <input type="text" class="input-text" name="ddwc_driver_car_color" id="reg_ddwc_driver_car_color" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_car_color', true ); ?>" />
+            <label for="reg_ddwc_driver_vehicle_model">
+                <?php
+                    if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
+                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
+                    } else {
+                        _e( 'Vehicle Model', 'ddwc' );
+                    }
+                ?>
+            </label>
+            <input type="text" class="input-text" name="ddwc_driver_vehicle_model" id="reg_ddwc_driver_vehicle_model" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_vehicle_model', true ); ?>" />
+        </p>
+
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="reg_ddwc_driver_vehicle_color">
+            <?php
+                if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
+                    echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
+                } else {
+                    _e( 'Vehicle Color', 'ddwc' );
+                }
+            ?>
+            </label>
+            <input type="text" class="input-text" name="ddwc_driver_vehicle_color" id="reg_ddwc_driver_vehicle_color" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_vehicle_color', true ); ?>" />
         </p>
 
     </fieldset>
