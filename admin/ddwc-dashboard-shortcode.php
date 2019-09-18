@@ -76,8 +76,8 @@ function ddwc_dashboard_shortcode() {
 					$order_version              = $order_data['version'];
 					$order_payment_method       = $order_data['payment_method'];
 					$order_payment_method_title = $order_data['payment_method_title'];
-					$order_date_created         = $order_data['date_created']->date('m-d-y');
-					$order_time_created         = $order_data['date_created']->date('h:i a');
+					$order_date_created         = $order_data['date_created']->date( 'm-d-y' );
+					$order_time_created         = $order_data['date_created']->date( 'h:i a' );
 					$order_discount_total       = $order_data['discount_total'];
 					$order_discount_tax         = $order_data['discount_tax'];
 					$order_shipping_total       = $order_data['shipping_total'];
@@ -312,7 +312,7 @@ function ddwc_dashboard_shortcode() {
 							$order_payment_method_title = $order_data['payment_method_title'];
 							$order_payment_method       = $order_data['payment_method'];
 							$order_payment_method       = $order_data['payment_method'];
-							$order_date_created         = $order_data['date_created']->date('m-d-Y');
+							$order_date_created         = $order_data['date_created']->date( 'm-d-Y' );
 							$order_discount_total       = $order_data['discount_total'];
 							$order_discount_tax         = $order_data['discount_tax'];
 							$order_shipping_total       = $order_data['shipping_total'];
@@ -321,26 +321,6 @@ function ddwc_dashboard_shortcode() {
 							$order_total                = $order_data['total'];
 							$order_total_tax            = $order_data['total_tax'];
 							$order_customer_id          = $order_data['customer_id'];
-							$order_billing_first_name   = $order_data['billing']['first_name'];
-							$order_billing_last_name    = $order_data['billing']['last_name'];
-							$order_billing_company      = $order_data['billing']['company'];
-							$order_billing_address_1    = $order_data['billing']['address_1'];
-							$order_billing_address_2    = $order_data['billing']['address_2'];
-							$order_billing_city         = $order_data['billing']['city'];
-							$order_billing_state        = $order_data['billing']['state'];
-							$order_billing_postcode     = $order_data['billing']['postcode'];
-							$order_billing_country      = $order_data['billing']['country'];
-							$order_billing_email        = $order_data['billing']['email'];
-							$order_billing_phone        = $order_data['billing']['phone'];
-							$order_shipping_first_name  = $order_data['shipping']['first_name'];
-							$order_shipping_last_name   = $order_data['shipping']['last_name'];
-							$order_shipping_company     = $order_data['shipping']['company'];
-							$order_shipping_address_1   = $order_data['shipping']['address_1'];
-							$order_shipping_address_2   = $order_data['shipping']['address_2'];
-							$order_shipping_city        = $order_data['shipping']['city'];
-							$order_shipping_state       = $order_data['shipping']['state'];
-							$order_shipping_postcode    = $order_data['shipping']['postcode'];
-							$order_shipping_country     = $order_data['shipping']['country'];
 
 							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status ) {
 								echo '<tr>';
@@ -392,7 +372,7 @@ function ddwc_dashboard_shortcode() {
 							$order_payment_method_title = $order_data['payment_method_title'];
 							$order_payment_method       = $order_data['payment_method'];
 							$order_payment_method       = $order_data['payment_method'];
-							$order_date_created         = $order_data['date_created']->date('m-d-Y');
+							$order_date_created         = $order_data['date_created']->date( 'm-d-Y' );
 							$order_discount_total       = $order_data['discount_total'];
 							$order_discount_tax         = $order_data['discount_tax'];
 							$order_shipping_total       = $order_data['shipping_total'];
@@ -401,26 +381,6 @@ function ddwc_dashboard_shortcode() {
 							$order_total                = $order_data['total'];
 							$order_total_tax            = $order_data['total_tax'];
 							$order_customer_id          = $order_data['customer_id'];
-							$order_billing_first_name   = $order_data['billing']['first_name'];
-							$order_billing_last_name    = $order_data['billing']['last_name'];
-							$order_billing_company      = $order_data['billing']['company'];
-							$order_billing_address_1    = $order_data['billing']['address_1'];
-							$order_billing_address_2    = $order_data['billing']['address_2'];
-							$order_billing_city         = $order_data['billing']['city'];
-							$order_billing_state        = $order_data['billing']['state'];
-							$order_billing_postcode     = $order_data['billing']['postcode'];
-							$order_billing_country      = $order_data['billing']['country'];
-							$order_billing_email        = $order_data['billing']['email'];
-							$order_billing_phone        = $order_data['billing']['phone'];
-							$order_shipping_first_name  = $order_data['shipping']['first_name'];
-							$order_shipping_last_name   = $order_data['shipping']['last_name'];
-							$order_shipping_company     = $order_data['shipping']['company'];
-							$order_shipping_address_1   = $order_data['shipping']['address_1'];
-							$order_shipping_address_2   = $order_data['shipping']['address_2'];
-							$order_shipping_city        = $order_data['shipping']['city'];
-							$order_shipping_state       = $order_data['shipping']['state'];
-							$order_shipping_postcode    = $order_data['shipping']['postcode'];
-							$order_shipping_country     = $order_data['shipping']['country'];
 
 							if ( 'completed' === $order_status ) {
 								echo '<tr>';
