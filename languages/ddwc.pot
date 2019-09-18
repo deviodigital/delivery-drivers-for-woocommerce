@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2019-09-17 23:09-0400\n"
-"PO-Revision-Date: 2019-09-17 23:08-0400\n"
+"POT-Creation-Date: 2019-09-18 15:23-0400\n"
+"PO-Revision-Date: 2019-09-18 15:22-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -125,24 +125,24 @@ msgstr ""
 msgid "Driver Note"
 msgstr ""
 
-#: admin/ddwc-functions.php:92 admin/ddwc-functions.php:102
+#: admin/ddwc-functions.php:90 admin/ddwc-functions.php:100
 msgid "Change Status"
 msgstr ""
 
-#: admin/ddwc-functions.php:94
+#: admin/ddwc-functions.php:92
 msgid "Message for shop manager / administrator (optional)"
 msgstr ""
 
-#: admin/ddwc-functions.php:95
+#: admin/ddwc-functions.php:93
 msgid "Add a message to the order"
 msgstr ""
 
-#: admin/ddwc-functions.php:97 admin/ddwc-woocommerce-orders.php:20
+#: admin/ddwc-functions.php:95 admin/ddwc-woocommerce-orders.php:20
 #: admin/ddwc-woocommerce-orders.php:66
 msgid "Out for Delivery"
 msgstr ""
 
-#: admin/ddwc-functions.php:105
+#: admin/ddwc-functions.php:103
 msgid "Completed"
 msgstr ""
 
