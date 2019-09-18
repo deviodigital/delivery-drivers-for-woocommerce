@@ -124,4 +124,4 @@ function ddwc_driver_dashboard_driver_availability() {
           </label>
           </div>';
 }
-add_action( 'ddwc_assigned_orders_title_before', 'ddwc_driver_dashboard_driver_availability' );
+add_action( 'ddwc_driver_dashboard_top', 'ddwc_driver_dashboard_driver_availability' );

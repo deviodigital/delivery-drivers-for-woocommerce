@@ -69,6 +69,7 @@ function ddwc_dashboard_shortcode() {
 					// Get the order data.
 					$order_data = $order->get_data();
 
+					// Specific order data.
 					$order_id                   = $order_data['id'];
 					$order_parent_id            = $order_data['parent_id'];
 					$order_status               = $order_data['status'];
