@@ -152,11 +152,16 @@ function ddwc_dashboard_shortcode() {
 
 					echo '<h4>' . __( 'Order details', 'ddwc' ) . '</h4>';
 
+					do_action( 'ddwc_driver_dashboard_order_details_table_before' );
+
 					// Get payment gateway details.
 					$payment_gateway = wc_get_payment_gateway_by_order( $order_id );
 
 					echo '<table class="ddwc-dashboard">';
 					echo '<tbody>';
+
+					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_top' );
+
 					// Display customer.
 					if ( '' !== $order_shipping_first_name ) {
 						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_shipping_first_name . ' ' . $order_shipping_last_name . '</td></tr>';
@@ -174,8 +179,13 @@ function ddwc_dashboard_shortcode() {
 					if ( isset( $order_date_created ) ) {
 						echo '<tr><td><strong>' . __( 'Order date', 'ddwc' ) . '</strong></td><td>' . $order_date_created . ' - ' . $order_time_created . '</td></tr>';
 					}
+
+					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_bottom' );
+
 					echo '</tbody>';
 					echo '</table>';
+
+					do_action( 'ddwc_driver_dashboard_order_details_table_after' );
 
 					do_action( 'ddwc_driver_dashboard_order_table_before' );
 
@@ -244,6 +254,8 @@ function ddwc_dashboard_shortcode() {
 					echo '</div>';
 
 				} else {
+
+					do_action( 'ddwc_driver_dashboard_top' );
 
 					/**
 					 * Args for Orders with Driver ID attached
@@ -447,6 +459,9 @@ function ddwc_dashboard_shortcode() {
 
 						do_action( 'ddwc_assigned_orders_empty_after' );
 					}
+
+					do_action( 'ddwc_driver_dashboard_bottom' );
+
 				}
 			} else {
 
