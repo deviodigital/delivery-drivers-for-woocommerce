@@ -43,12 +43,19 @@ function ddwc_dashboard_shortcode() {
 					// The store country/state.
 					$store_raw_country = get_option( 'woocommerce_default_country' );
 
-					// Split the store country/state
-					$split_country = explode( ":", $store_raw_country );
+					// Split the store country/state.
+					$split_country = explode( ':', $store_raw_country );
 
-					// Store country and state separated
-					$store_country = $split_country[0];
-					$store_state   = $split_country[1];
+					// Check to see if State & Country are available.
+					if ( false == strpos( $store_raw_country, ':' ) ) {
+						// Store country only.
+						$store_country = $split_country[0];
+						$store_state   = '';
+					} else {
+						// Store country and state separated.
+						$store_country = $split_country[0];
+						$store_state   = $split_country[1];
+					}
 
 					// Create store address.
 					$store_address = $store_address .  ' ' . $store_address_2 . ' ' . $store_city . ' ' . $store_state . ' ' . $store_postcode . ' ' . $store_country;
