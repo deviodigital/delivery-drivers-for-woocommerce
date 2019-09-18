@@ -58,7 +58,10 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					// Create store address.
-					$store_address = $store_address .  ' ' . $store_address_2 . ' ' . $store_city . ' ' . $store_state . ' ' . $store_postcode . ' ' . $store_country;
+					$store_address = $store_address . ' ' . $store_address_2 . ' ' . $store_city . ' ' . $store_state . ' ' . $store_postcode . ' ' . $store_country;
+
+					// Filter the store address.
+					$store_address = apply_filters( 'ddwc_driver_dashboard_store_address', $store_address );
 
 					// Get an instance of the WC_Order object
 					$order = wc_get_order( $_GET['orderid'] );
