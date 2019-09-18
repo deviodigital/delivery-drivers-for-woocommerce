@@ -1,5 +1,19 @@
 # Changelog
 
+### 2.4
+* Added `$order_status` to `ddwc_driver_dashboard_change_status` filter in `admin/ddwc-functions.php`
+* Added `ddwc_driver_dashboard_store_address` filter in `admin/ddwc-dashboard-shortcode.php`
+* Added filter to remove customer name from formatted addresses in `admin/ddwc-woocommerce-settings.php`
+* Added 6 action hooks to the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+* Bugfix removed `exit` lines from status change helper functions in `admin/ddwc-functions.php`
+* Bugfix updated store state/country based on if the raw country code has `:` or not in `admin/ddwc-dashboard-shortcode.php`
+* Updated `$delivery_address` to use WC formatted addresses in `admin/ddwc-dashboard-shortcode.php`
+* Updated `the_title` filter to no longer pass `$id` in `admin/ddwc-woocommerce-account-tab.php`
+* Updated `ddwc-dashboard` table font-size in `public/css/ddwc-public.css`
+* Updated driver availability to use the `ddwc_driver_dashboard_top` action hook in `admin/ddwc-dashboard-shortcode.php`
+* Updated text strings for localization in `languages/ddwc.pot`
+* General code cleanup throughout multiple files
+
 ### 2.3
 * Added `$store_address` variable to `ddwc_delivery_address_google_map` filter in `admin/ddwc-dashboard-shortcode.php`
 * Added `ddwc_assigned_orders_title_before` action hook in `admin/ddwc-dashboard-shortcode.php`
