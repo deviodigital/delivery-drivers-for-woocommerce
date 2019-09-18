@@ -44,7 +44,6 @@ function ddwc_driver_dashboard_change_statuses() {
 
 		// Redirect so the new order details show on the page.
 		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $_GET['orderid'] );
-		exit;
 
 	}
 
@@ -59,7 +58,6 @@ function ddwc_driver_dashboard_change_statuses() {
 
 		// Redirect so the new order details show on the page.
 		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $_GET['orderid'] );
-		exit;
 
 	}
 
