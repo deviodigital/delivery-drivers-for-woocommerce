@@ -83,11 +83,11 @@ add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_cont
  * @param string $title
  * @return string
  */
-function ddwc_endpoint_title( $title, $id ) {
+function ddwc_endpoint_title( $title ) {
 
 	if ( is_wc_endpoint_url( 'driver-dashboard' ) && in_the_loop() ) {
 		$title = __( 'Driver Dashboard', 'ddwc' );
 	}
 	return $title;
 }
-add_filter( 'the_title', 'ddwc_endpoint_title', 10, 2 );
+add_filter( 'the_title', 'ddwc_endpoint_title', 10, 1 );
