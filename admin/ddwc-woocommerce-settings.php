@@ -178,3 +178,21 @@ function ddwc_custom_user_redirect( $redirect, $user ) {
 	return $redirect;
 }
 add_filter( 'woocommerce_login_redirect', 'ddwc_custom_user_redirect', 10, 2 );
+
+/**
+ * Remove name from formatted addresses
+ * 
+ * This filter is used to remove first and last name from formatted address, which is
+ * used in the Driver Dashboard Google Maps display of the customer's address.
+ *
+ * @access      public
+ * @since       2.3
+ * @return      string
+ */
+function ddwc_custom_order_formatted_address( $address ) {
+	unset( $address['first_name'] );
+	unset( $address['last_name'] );
+	return $address;
+}
+add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
+add_filter( 'woocommerce_order_formatted_billing_address' , 'ddwc_custom_order_formatted_address' );
