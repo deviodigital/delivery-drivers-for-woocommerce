@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2019-08-21 15:58-0400\n"
-"PO-Revision-Date: 2019-08-21 15:58-0400\n"
+"POT-Creation-Date: 2019-09-17 23:09-0400\n"
+"PO-Revision-Date: 2019-09-17 23:08-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,98 +26,98 @@ msgstr ""
 msgid "Delivery Driver"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:103
+#: admin/ddwc-dashboard-shortcode.php:99
 msgid "Order #"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:109
+#: admin/ddwc-dashboard-shortcode.php:105
 msgid "Call Customer"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:114
+#: admin/ddwc-dashboard-shortcode.php:110
 msgid "Call Dispatch"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:119
+#: admin/ddwc-dashboard-shortcode.php:115
 msgid "Delivery Address"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:133
+#: admin/ddwc-dashboard-shortcode.php:129
 msgid "Get Directions"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:158
+#: admin/ddwc-dashboard-shortcode.php:154
 msgid "Order details"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:167
-#: admin/ddwc-dashboard-shortcode.php:169
+#: admin/ddwc-dashboard-shortcode.php:168
+#: admin/ddwc-dashboard-shortcode.php:170
 msgid "Customer"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:175
+#: admin/ddwc-dashboard-shortcode.php:176
 msgid "Payment method"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:180
+#: admin/ddwc-dashboard-shortcode.php:181
 msgid "Order date"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:188
-#: admin/ddwc-dashboard-shortcode.php:280
-#: admin/ddwc-dashboard-shortcode.php:363
+#: admin/ddwc-dashboard-shortcode.php:194
+#: admin/ddwc-dashboard-shortcode.php:288
+#: admin/ddwc-dashboard-shortcode.php:351
 msgid "Total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:191
+#: admin/ddwc-dashboard-shortcode.php:197
 msgid "Product"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:191
+#: admin/ddwc-dashboard-shortcode.php:197
 msgid "Qty"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:228
+#: admin/ddwc-dashboard-shortcode.php:234
 msgid "Delivery"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:235
+#: admin/ddwc-dashboard-shortcode.php:241
 msgid "Order total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:276
-#: admin/ddwc-dashboard-shortcode.php:448
+#: admin/ddwc-dashboard-shortcode.php:284
+#: admin/ddwc-dashboard-shortcode.php:416
 msgid "Assigned Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:283
-#: admin/ddwc-dashboard-shortcode.php:366
+#: admin/ddwc-dashboard-shortcode.php:291
+#: admin/ddwc-dashboard-shortcode.php:354
 msgid "ID"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:283
-#: admin/ddwc-dashboard-shortcode.php:366
+#: admin/ddwc-dashboard-shortcode.php:291
+#: admin/ddwc-dashboard-shortcode.php:354
 msgid "Date"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:283
-#: admin/ddwc-dashboard-shortcode.php:366
+#: admin/ddwc-dashboard-shortcode.php:291
+#: admin/ddwc-dashboard-shortcode.php:354
 msgid "Status"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:359
+#: admin/ddwc-dashboard-shortcode.php:347
 msgid "Completed Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:449
+#: admin/ddwc-dashboard-shortcode.php:417
 msgid "You do not have any assigned orders."
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:459
+#: admin/ddwc-dashboard-shortcode.php:430
 msgid "Access Denied"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:459
+#: admin/ddwc-dashboard-shortcode.php:430
 msgid "Sorry, but you are not able to view this page."
 msgstr ""
 
