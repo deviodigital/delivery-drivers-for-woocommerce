@@ -118,10 +118,10 @@ function ddwc_dashboard_shortcode() {
 						$plain_address = '<p>';
 						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
 							$plain_address   .= $order->get_formatted_shipping_address();
-							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
+							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_shipping_address() );
 						} else {
 							$plain_address   .= $order->get_formatted_billing_address();
-							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
+							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_billing_address() );
 						}
 						$plain_address  .= '</p>';
 						$directions_link = 'https://www.google.com/maps/search/?api=1&query=' . $delivery_address;
@@ -139,9 +139,9 @@ function ddwc_dashboard_shortcode() {
 					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 						// Use the Shipping address if available.
 						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
-							$delivery_address = $order_shipping_address_1 .  ' ' . $order_shipping_address_2 . ' ' . $order_shipping_city . ' ' . $order_shipping_state . ' ' . $order_shipping_postcode . ' ' . $order_shipping_country;
+							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_shipping_address() );
 						} else {
-							$delivery_address = $order_billing_address_1 .  ' ' . $order_billing_address_2 . ' ' . $order_billing_city . ' ' . $order_billing_state . ' ' . $order_billing_postcode . ' ' . $order_billing_country;
+							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_billing_address() );
 						}
 						// Create the Google Map.
 						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' . apply_filters( 'ddwc_google_maps_origin_address', $store_address ) . '&destination=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . '" allowfullscreen></iframe>';
