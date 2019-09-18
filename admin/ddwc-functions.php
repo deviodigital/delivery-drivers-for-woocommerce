@@ -108,7 +108,7 @@ function ddwc_driver_dashboard_change_status_forms() {
 
 	do_action( 'ddwc_driver_dashboard_change_status_forms_bottom' );
 
-	echo apply_filters( 'ddwc_driver_dashboard_change_status', $change_status );
+	echo apply_filters( 'ddwc_driver_dashboard_change_status', $change_status, $order_status );
 
 }
 
