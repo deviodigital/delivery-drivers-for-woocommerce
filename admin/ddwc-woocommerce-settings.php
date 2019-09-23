@@ -190,8 +190,11 @@ add_filter( 'woocommerce_login_redirect', 'ddwc_custom_user_redirect', 10, 2 );
  * @return      string
  */
 function ddwc_custom_order_formatted_address( $address ) {
-	unset( $address['first_name'] );
-	unset( $address['last_name'] );
+	// Check if $address is array.
+	if ( is_array( $address ) ) {
+		unset( $address['first_name'] );
+		unset( $address['last_name'] );
+	}
 	return $address;
 }
 add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
