@@ -91,6 +91,7 @@ function ddwc_dashboard_shortcode() {
 					$order_shipping_last_name   = $order_data['shipping']['last_name'];
 					$order_billing_first_name   = $order_data['billing']['first_name'];
 					$order_billing_last_name    = $order_data['billing']['last_name'];
+					$order_billing_phone        = $order_data['billing']['phone'];
 
 					echo '<div class="ddwc-orders">';
 
