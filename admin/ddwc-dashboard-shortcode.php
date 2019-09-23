@@ -87,6 +87,7 @@ function ddwc_dashboard_shortcode() {
 					$order_total                = $order_data['total'];
 					$order_total_tax            = $order_data['total_tax'];
 					$order_customer_id          = $order_data['customer_id'];
+					$order_shipping_address_1   = $order_data['shipping']['address_1'];
 					$order_shipping_first_name  = $order_data['shipping']['first_name'];
 					$order_shipping_last_name   = $order_data['shipping']['last_name'];
 					$order_billing_first_name   = $order_data['billing']['first_name'];
