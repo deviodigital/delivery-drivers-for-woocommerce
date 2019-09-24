@@ -327,7 +327,7 @@ function ddwc_dashboard_shortcode() {
 
 							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status ) {
 								echo '<tr>';
-								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
+								echo '<td><a href="' . apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_details_url', '?orderid=' . $driver_order->ID ) . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
 								echo '<td>' . $order_date_created . '</td>';
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
