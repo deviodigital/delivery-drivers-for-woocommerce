@@ -197,5 +197,3 @@ function ddwc_custom_order_formatted_address( $address ) {
 	}
 	return $address;
 }
-add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
-add_filter( 'woocommerce_order_formatted_billing_address' , 'ddwc_custom_order_formatted_address' );

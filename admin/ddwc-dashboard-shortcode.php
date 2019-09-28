@@ -120,9 +120,11 @@ function ddwc_dashboard_shortcode() {
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 						$plain_address = '<p>';
 						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+							add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
 							$plain_address   .= $order->get_formatted_shipping_address();
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_shipping_address() );
 						} else {
+							add_filter( 'woocommerce_order_formatted_billing_address' , 'ddwc_custom_order_formatted_address' );
 							$plain_address   .= $order->get_formatted_billing_address();
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_billing_address() );
 						}
@@ -142,8 +144,10 @@ function ddwc_dashboard_shortcode() {
 					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 						// Use the Shipping address if available.
 						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+							add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_shipping_address() );
 						} else {
+							add_filter( 'woocommerce_order_formatted_billing_address' , 'ddwc_custom_order_formatted_address' );
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_billing_address() );
 						}
 						// Create the Google Map.
