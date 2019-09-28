@@ -146,7 +146,7 @@ function ddwc_custom_delivery_driver_column( $column ) {
 				'id'               => 'ddwc_driver_id',
 				'selected'         => $ddwc_driver_id,
 				'class'            => 'widefat',
-				'show'             => 'display_name_with_login'
+				'show'             => 'display_name'
 			) );
 			echo '</div>';
 
