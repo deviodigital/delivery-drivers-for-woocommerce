@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.2.3
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,12 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 6. Google Maps Directions for delivery driver from Store address to Customer address
 
 == Changelog ==
+
+= 2.4.2 =
+* Bugfix removed formatted address filter from everywhere except driver dashboard in `admin/ddwc-woocommerce-settings.php`
+* Updated formatted address filter on driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+* Updated driver name in Orders screen select boxes to only use display name (removed login name) in `admin/class-ddwc-admin.php`
+* Updated text strings for localization in `languages/ddwc.pot`
 
 = 2.4.1 =
 * Added `ddwc_driver_dashboard_assigned_orders_order_details_url` filter in `admin/ddwc-dashboard-shortcode.php`

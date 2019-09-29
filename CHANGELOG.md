@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.2
+* Bugfix removed formatted address filter from everywhere except driver dashboard in `admin/ddwc-woocommerce-settings.php`
+* Updated formatted address filter on driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+* Updated driver name in Orders screen select boxes to only use display name (removed login name) in `admin/class-ddwc-admin.php`
+* Updated text strings for localization in `languages/ddwc.pot`
+
 ### 2.4.1
 * Added `ddwc_driver_dashboard_assigned_orders_order_details_url` filter in `admin/ddwc-dashboard-shortcode.php`
 * Bugfix re-added a missing variable for billing phone number in `admin/ddwc-dashboard-shortcode.php`
