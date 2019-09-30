@@ -244,3 +244,44 @@ function ddwc_driver_availability_update() {
 }
 add_action( 'wp_ajax_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
 add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
+/* bulk add driver */
+add_filter( 'bulk_actions-edit-shop_order', 'driver_bulk_edit', 20, 1 );
+
+function driver_bulk_edit( $actions ) {
+	$user_query = new WP_User_Query(array( 'role' => 'driver' ));
+if ( ! empty( $user_query->get_results() ) ) {
+	foreach ( $user_query->get_results() as $user ) {
+		$actions[$user->ID]='Set '.$user->display_name.' as driver';
+	}
+    $actions['edit_driver'] = __( 'Select Driver', 'woocommerce' );
+    return $actions;
+}
+}
+// Make the action from selected orders
+add_filter( 'handle_bulk_actions-edit-shop_order', 'driver_edit_handle_bulk_action', 10, 3 );
+function driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids ) {
+    if ( $action === $_GET['action'] ){
+		    $processed_ids = array();
+
+    foreach ( $post_ids as $post_id ) {
+        // Update Driver
+        update_post_meta( $post_id, 'ddwc_driver_id', $_GET['action'] );
+		$order = new WC_Order( $post_id );
+
+	// Update order status.
+	
+		$order->update_status( 'driver-assigned' );
+		
+$processed_ids[] = $post_id;
+		$redirect_to = add_query_arg( array(
+            'processed_count' => count( $processed_ids ),
+            'processed_ids' => implode( ',', $processed_ids ),
+        ), $redirect_to );
+	}
+	
+
+
+}
+	    return $redirect_to;
+
+}
