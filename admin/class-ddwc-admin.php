@@ -244,44 +244,63 @@ function ddwc_driver_availability_update() {
 }
 add_action( 'wp_ajax_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
 add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
-/* bulk add driver */
-add_filter( 'bulk_actions-edit-shop_order', 'driver_bulk_edit', 20, 1 );
 
-function driver_bulk_edit( $actions ) {
-	$user_query = new WP_User_Query(array( 'role' => 'driver' ));
-if ( ! empty( $user_query->get_results() ) ) {
-	foreach ( $user_query->get_results() as $user ) {
-		$actions[$user->ID]='Set '.$user->display_name.' as driver';
+/**
+ * Bulk actions edit
+ * 
+ * Add delivery drivers to the bulk actions for WooCommerce Orders.
+ * 
+ * Thank you to Github user @developer-mohamed-saad for this update!
+ * 
+ * @since 2.5
+ */
+function ddwc_driver_bulk_edit( $actions ) {
+	// Get all users with 'driver' user role.
+	$user_query = new WP_User_Query( array( 'role' => 'driver' ) );
+	// Check to make sure there are drivers added.
+	if ( ! empty( $user_query->get_results() ) ) {
+		// Loop through 'driver' users.
+		foreach ( $user_query->get_results() as $user ) {
+			// Add option to set user as the 'driver'.
+			$actions[$user->ID] = sprintf( __( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
+		}
+		return $actions;
 	}
-    $actions['edit_driver'] = __( 'Select Driver', 'woocommerce' );
-    return $actions;
 }
-}
-// Make the action from selected orders
-add_filter( 'handle_bulk_actions-edit-shop_order', 'driver_edit_handle_bulk_action', 10, 3 );
-function driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids ) {
-    if ( $action === $_GET['action'] ){
-		    $processed_ids = array();
+add_filter( 'bulk_actions-edit-shop_order', 'ddwc_driver_bulk_edit', 20, 1 );
 
-    foreach ( $post_ids as $post_id ) {
-        // Update Driver
-        update_post_meta( $post_id, 'ddwc_driver_id', $_GET['action'] );
-		$order = new WC_Order( $post_id );
+/**
+ * Handle bulk actions
+ * 
+ * Processes the selected options from the bulk actions list in the 
+ * WooCommerce Orders screen.
+ * 
+ * Thank you to Github user @developer-mohamed-saad for this update!
+ * 
+ * @since 2.5
+ */
+function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids ) {
+    if ( $action === $_GET['action'] ) {
+		// Processed IDs.
+		$processed_ids = array();
 
-	// Update order status.
-	
-		$order->update_status( 'driver-assigned' );
-		
-$processed_ids[] = $post_id;
-		$redirect_to = add_query_arg( array(
-            'processed_count' => count( $processed_ids ),
-            'processed_ids' => implode( ',', $processed_ids ),
-        ), $redirect_to );
+		// Loop through selected orders.
+		foreach ( $post_ids as $post_id ) {
+			// Update Driver.
+			update_post_meta( $post_id, 'ddwc_driver_id', $_GET['action'] );
+			// Get Order instance.
+			$order = new WC_Order( $post_id );
+			// Update order status.
+			$order->update_status( 'driver-assigned' );
+			// Add Post ID to array.
+			$processed_ids[] = $post_id;
+			// Redirect.
+			$redirect_to = add_query_arg( array(
+				'processed_count' => count( $processed_ids ),
+				'processed_ids'   => implode( ',', $processed_ids ),
+			), $redirect_to );
+		}
 	}
-	
-
-
+	return $redirect_to;
 }
-	    return $redirect_to;
-
-}
+add_filter( 'handle_bulk_actions-edit-shop_order', 'ddwc_driver_edit_handle_bulk_action', 10, 3 );
