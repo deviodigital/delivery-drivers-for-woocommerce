@@ -48,7 +48,7 @@ function ddwc_order_driver_details( $order ) {
         // Driver picture.
         if ( get_user_meta( $driver_id, 'ddwc_driver_picture', true ) ) {
             $driver_pic = get_user_meta( $driver_id, 'ddwc_driver_picture', true );
-            $string    .= '<a href="' . $driver_pic['url'] . '"><img src="' . $driver_pic['url'] . '" alt="Robert DeVore" /></a>';
+            $string    .= '<a href="' . $driver_pic['url'] . '"><img src="' . $driver_pic['url'] . '" alt="' . $driver_meta->user_firstname . ' ' . $driver_meta->user_lastname . '" /></a>';
         } else {
             // Do nothing.
         }
