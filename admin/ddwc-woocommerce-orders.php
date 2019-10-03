@@ -11,6 +11,23 @@
  */
 
 /**
+ * Registering Returned post status
+ * 
+ * @since 2.5
+ */
+function ddwc_register_order_returned_order_status() {
+    register_post_status( 'wc-order-returned', array(
+        'label'                     => __( 'Order Returned', 'ddwc' ),
+        'public'                    => true,
+        'show_in_admin_status_list' => true,
+        'show_in_admin_all_list'    => true,
+        'exclude_from_search'       => false,
+        'label_count'               => _n_noop( 'Returned <span class="count">(%s)</span>', 'Returned <span class="count">(%s)</span>' )
+    ) );
+}
+add_action( 'init', 'ddwc_register_order_returned_order_status' );
+
+/**
  * Registering Out for Delivery post status
  * 
  * @since 1.0
@@ -64,6 +81,7 @@ function ddwc_add_custom_order_statuses( $order_statuses ) {
         if ( 'wc-processing' === $key ) {
             $new_order_statuses['wc-driver-assigned']  = __( 'Driver Assigned', 'ddwc' );
             $new_order_statuses['wc-out-for-delivery'] = __( 'Out for Delivery', 'ddwc' );
+            $new_order_statuses['wc-order-returned']   = __( 'Order Returned', 'ddwc' );
         }
     }
 

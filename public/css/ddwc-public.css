@@ -209,8 +209,12 @@ input.ddwc-ofdmsg {
     margin-bottom: 12px;
 }
 
-.ddwc-orders form input[type="submit"].ddwc-changestatus {
+.ddwc-orders form input[type="submit"].ddwc-change-status {
     padding: 0.75em 2em;
+}
+
+.ddwc-orders form input[type="submit"].ddwc-change-status.order-returned {
+    margin-right: 12px;
 }
 
 /** DDWC Pro SMS Updates title on checkout */

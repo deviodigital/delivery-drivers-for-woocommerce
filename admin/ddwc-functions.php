@@ -27,7 +27,7 @@ function ddwc_driver_dashboard_change_statuses() {
 	if ( isset( $_POST['outfordelivery'] ) ) {
 
 		// Update order status.
-		$order->update_status( "out-for-delivery" );
+		$order->update_status( 'out-for-delivery' );
 
 		// Add driver note (if added).
 		if ( isset( $_POST['outfordeliverymessage'] ) && ! empty( $_POST['outfordeliverymessage'] ) ) {
@@ -47,11 +47,45 @@ function ddwc_driver_dashboard_change_statuses() {
 
 	}
 
+	// Update order status if marked RETURNED by Driver.
+	if ( isset( $_POST['orderreturned'] ) ) {
+
+		// Update order status.
+		$order->update_status( 'order-returned' );
+
+		// Add driver note (if added).
+		if ( isset( $_POST['ordermessage'] ) && ! empty( $_POST['ordermessage'] ) ) {
+			// The text for the note.
+			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['ordermessage'] );
+			// Add the note
+			$order->add_order_note( $note );
+			// Save the data
+			$order->save();
+		}
+
+		// Run additional functions.
+		do_action( 'ddwc_email_admin_order_status_returned' );
+
+		// Redirect so the new order details show on the page.
+		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $_GET['orderid'] );
+
+	}
+
 	// Update order status if marked COMPLETED by Driver.
 	if ( isset( $_POST['ordercompleted'] ) ) {
 
 		// Update order status.
-		$order->update_status( "completed" );
+		$order->update_status( 'completed' );
+
+		// Add driver note (if added).
+		if ( isset( $_POST['ordermessage'] ) && ! empty( $_POST['ordermessage'] ) ) {
+			// The text for the note.
+			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['ordermessage'] );
+			// Add the note
+			$order->add_order_note( $note );
+			// Save the data
+			$order->save();
+		}
 
 		// Run additional functions.
 		do_action( 'ddwc_email_admin_order_status_completed' );
@@ -87,7 +121,7 @@ function ddwc_driver_dashboard_change_status_forms() {
 	$change_status = '';
 
 	if ( 'driver-assigned' == $order_status ) {
-		$change_status  = '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . __( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
 		$change_status .= '<p><strong>' . __( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
 		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . __( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
@@ -95,12 +129,14 @@ function ddwc_driver_dashboard_change_status_forms() {
 		$change_status .= '<input type="submit" value="' . __( 'Out for Delivery', 'ddwc' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 	}
-	
+
 	if ( 'out-for-delivery' == $order_status ) {
-		$change_status  = '<h4>' . __( "Change Status", 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . __( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<input type="hidden" name="ordercompleted" value="completed" />';
-		$change_status .= '<input type="submit" value="' . __( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<p><strong>' . __( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . __( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<input type="submit" name="orderreturned" value="' . __( 'Returned', 'ddwc' ) . '" class="button ddwc-change-status order-returned" />';
+		$change_status .= '<input type="submit" name="ordercompleted" value="' . __( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 	}
 
