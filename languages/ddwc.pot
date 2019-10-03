@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2019-09-30 15:12-0400\n"
-"PO-Revision-Date: 2019-09-30 15:10-0400\n"
+"POT-Creation-Date: 2019-10-03 13:57-0400\n"
+"PO-Revision-Date: 2019-10-03 13:57-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -126,28 +126,33 @@ msgstr ""
 msgid "Sorry, but you are not able to view this page."
 msgstr ""
 
-#: admin/ddwc-functions.php:35
+#: admin/ddwc-functions.php:35 admin/ddwc-functions.php:59
+#: admin/ddwc-functions.php:83
 msgid "Driver Note"
 msgstr ""
 
-#: admin/ddwc-functions.php:90 admin/ddwc-functions.php:100
+#: admin/ddwc-functions.php:124 admin/ddwc-functions.php:134
 msgid "Change Status"
 msgstr ""
 
-#: admin/ddwc-functions.php:92
+#: admin/ddwc-functions.php:126 admin/ddwc-functions.php:136
 msgid "Message for shop manager / administrator (optional)"
 msgstr ""
 
-#: admin/ddwc-functions.php:93
+#: admin/ddwc-functions.php:127 admin/ddwc-functions.php:137
 msgid "Add a message to the order"
 msgstr ""
 
-#: admin/ddwc-functions.php:95 admin/ddwc-woocommerce-orders.php:20
-#: admin/ddwc-woocommerce-orders.php:66
+#: admin/ddwc-functions.php:129 admin/ddwc-woocommerce-orders.php:37
+#: admin/ddwc-woocommerce-orders.php:83
 msgid "Out for Delivery"
 msgstr ""
 
-#: admin/ddwc-functions.php:103
+#: admin/ddwc-functions.php:138
+msgid "Returned"
+msgstr ""
+
+#: admin/ddwc-functions.php:139
 msgid "Completed"
 msgstr ""
 
@@ -174,13 +179,13 @@ msgstr ""
 
 #: admin/ddwc-woocommerce-driver-ratings.php:86
 #: admin/ddwc-woocommerce-driver-ratings.php:372
-#: admin/ddwc-woocommerce-driver-ratings.php:515
+#: admin/ddwc-woocommerce-driver-ratings.php:518
 msgid "Vehicle Color"
 msgstr ""
 
 #: admin/ddwc-woocommerce-driver-ratings.php:98
 #: admin/ddwc-woocommerce-driver-ratings.php:358
-#: admin/ddwc-woocommerce-driver-ratings.php:502
+#: admin/ddwc-woocommerce-driver-ratings.php:505
 msgid "Vehicle Model"
 msgstr ""
 
@@ -198,18 +203,43 @@ msgid "Driver Photo"
 msgstr ""
 
 #: admin/ddwc-woocommerce-driver-ratings.php:314
-#: admin/ddwc-woocommerce-driver-ratings.php:461
+#: admin/ddwc-woocommerce-driver-ratings.php:464
 msgid "x"
 msgstr ""
 
 #: admin/ddwc-woocommerce-driver-ratings.php:321
-#: admin/ddwc-woocommerce-driver-ratings.php:468
+#: admin/ddwc-woocommerce-driver-ratings.php:471
 msgid "License Plate Number"
 msgstr ""
 
 #: admin/ddwc-woocommerce-driver-ratings.php:327
-#: admin/ddwc-woocommerce-driver-ratings.php:473
+#: admin/ddwc-woocommerce-driver-ratings.php:476
 msgid "Transportation Type"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:331
+#: admin/ddwc-woocommerce-driver-ratings.php:479
+msgid "Bicycle"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:331
+#: admin/ddwc-woocommerce-driver-ratings.php:479
+msgid "Motorcycle"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:331
+#: admin/ddwc-woocommerce-driver-ratings.php:479
+msgid "Car"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:331
+#: admin/ddwc-woocommerce-driver-ratings.php:479
+msgid "SUV"
+msgstr ""
+
+#: admin/ddwc-woocommerce-driver-ratings.php:331
+#: admin/ddwc-woocommerce-driver-ratings.php:479
+msgid "Truck"
 msgstr ""
 
 #: admin/ddwc-woocommerce-driver-ratings.php:381
@@ -224,18 +254,29 @@ msgstr ""
 msgid "Driver Picture"
 msgstr ""
 
+#: admin/ddwc-woocommerce-orders.php:20 admin/ddwc-woocommerce-orders.php:84
+msgid "Order Returned"
+msgstr ""
+
 #: admin/ddwc-woocommerce-orders.php:25
+#, php-format
+msgid "Returned <span class=\"count\">(%s)</span>"
+msgid_plural "Returned <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/ddwc-woocommerce-orders.php:42
 #, php-format
 msgid "Out for Delivery <span class=\"count\">(%s)</span>"
 msgid_plural "Out for Delivery <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/ddwc-woocommerce-orders.php:37 admin/ddwc-woocommerce-orders.php:65
+#: admin/ddwc-woocommerce-orders.php:54 admin/ddwc-woocommerce-orders.php:82
 msgid "Driver Assigned"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:42
+#: admin/ddwc-woocommerce-orders.php:59
 #, php-format
 msgid "Driver Assigned <span class=\"count\">(%s)</span>"
 msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"

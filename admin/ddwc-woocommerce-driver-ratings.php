@@ -184,7 +184,7 @@ add_action( 'wp_ajax_ddwc_driver_rating', 'ddwc_driver_rating_ajax' );
 add_action( 'wp_ajax_nopriv_ddwc_driver_rating', 'ddwc_driver_rating_ajax' );
 
 /**
- * Save File upload in user profile.
+ * Save custom profile fields in user profile.
  * 
  * @since 1.6
  */
@@ -304,7 +304,7 @@ function ddwc_add_profile_options( $profileuser ) {
                     if ( ! isset( $ddwc_driver_picture['error'] ) ) {
                         if ( ! empty( $ddwc_driver_picture ) ) {
                             $ddwc_driver_picture = $ddwc_driver_picture['url'];
-                            echo "<a href='" . $ddwc_driver_picture . "' target='_blank'><img src='" . $ddwc_driver_picture . "' width='100' height='100' class='ddwc-driver-picture' /></a><br />";
+                            echo '<a href="' . $ddwc_driver_picture . '" target="_blank"><img src="' . $ddwc_driver_picture . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
                         }
                     } else {
                         $ddwc_driver_picture = $ddwc_driver_picture['error'];
@@ -328,7 +328,7 @@ function ddwc_add_profile_options( $profileuser ) {
             <td>
             <?php
                 // Transportation types.
-                $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( 'Bicycle', 'Car', 'SUV', 'Truck' ) );
+                $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( __( 'Bicycle', 'ddwc' ), __( 'Motorcycle', 'ddwc' ), __( 'Car', 'ddwc' ), __( 'SUV', 'ddwc' ), __( 'Truck', 'ddwc' ) ) );
 
                 // Loop through types.
                 if ( $transportation_types ) {
@@ -447,13 +447,16 @@ function ddwc_add_to_edit_account_form() {
             <?php if ( get_user_meta( $user->ID, 'ddwc_driver_picture', true ) ) { ?>
             <div class="ddwc-driver-picture">
             <?php
+            // Driver picture.
             $ddwc_driver_picture = get_user_meta( $user->ID, 'ddwc_driver_picture', true );
             if ( ! isset( $ddwc_driver_picture['error'] ) ) {
                 if ( ! empty( $ddwc_driver_picture ) ) {
+                    // Driver picture URL.
                     $ddwc_driver_picture = $ddwc_driver_picture['url'];
-                    echo "<a href='" . $ddwc_driver_picture . "' target='_blank'><img src='" . $ddwc_driver_picture . "' width='100' height='100' class='ddwc-driver-picture' /></a><br />";
+                    echo '<a href="' . $ddwc_driver_picture . '" target="_blank"><img src="' . $ddwc_driver_picture . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
                 }
             } else {
+                // Picture error.
                 $ddwc_driver_picture = $ddwc_driver_picture['error'];
                 echo $ddwc_driver_picture. '<br />';
             }
@@ -473,7 +476,7 @@ function ddwc_add_to_edit_account_form() {
             <label for="reg_ddwc_driver_transportation_type"><?php _e( 'Transportation Type', 'ddwc' ); ?></label>
             <?php
                 // Transportation types.
-                $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( 'Bicycle', 'Car', 'SUV', 'Truck' ) );
+                $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( __( 'Bicycle', 'ddwc' ), __( 'Motorcycle', 'ddwc' ), __( 'Car', 'ddwc' ), __( 'SUV', 'ddwc' ), __( 'Truck', 'ddwc' ) ) );
 
                 // Loop through types.
                 if ( $transportation_types ) {
