@@ -57,12 +57,16 @@ function ddwc_build() {
 
 	// Get driver rating.
 	$ddwc_driver_rating = get_post_meta( $post->ID, 'ddwc_delivery_rating', true );
-
+	// Get driver phone number.
+	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'phone_number', true );
+	// Display driver button.
+	if ( ! empty( $ddwc_driver_number ) ) {
+		echo '<p><a href="tel:' . $ddwc_driver_number . '" class="button ddwc-button customer">' . __( 'Call Driver', 'ddwc' ) . '</a></p>';
+	}
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
 		echo '<p>' . __( 'Delivery rating', 'ddwc' ) . ': ' . $ddwc_driver_rating . ' out of 5 stars</p>';
 	}
-
 }
 
 /**
@@ -93,21 +97,19 @@ function ddwc_driver_save_order_details( $post_id, $post ) {
 	$ddwc_driver_meta['ddwc_driver_id'] = $_POST['ddwc_driver_id'];
 
 	/** Add values of $ddwc_driver_meta as custom fields */
-
-	foreach ( $ddwc_driver_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
-		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
+	foreach ( $ddwc_driver_meta as $key => $value ) {
+		if ( 'revision' === $post->post_type ) {
 			return;
 		}
-		$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely)
-		if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value.
+		$value = implode( ',', (array) $value );
+		if ( get_post_meta( $post->ID, $key, false ) ) {
 			update_post_meta( $post->ID, $key, $value );
-		} else { // If the custom field doesn't have a value.
+		} else {
 			add_post_meta( $post->ID, $key, $value );
 		}
-		if ( ! $value ) { /** Delete if blank */
+		if ( ! $value ) {
 			delete_post_meta( $post->ID, $key );
 		}
 	}
-
 }
-add_action( 'save_post', 'ddwc_driver_save_order_details', 1, 2 ); // Save the custom fields.
+add_action( 'save_post', 'ddwc_driver_save_order_details', 1, 2 );
