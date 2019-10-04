@@ -30,28 +30,29 @@ With these capabilities passed along to your drivers, you now have additional ti
 
 Below are a few examples of delivery services that can benefit from the **Delivery Drivers for WooCommerce**  plugin.
 
-*  Cannabis
-*  Flowers
-*  Health & Beauty
-*  Mobile Massage
-*  Alcohol Delivery
-*  Restaurant
-*  Grocery Stores
-*  Healthcare
-*  Cleaning
-*  Laundry
-*  ... and more!
+*   Cannabis
+*   Flowers
+*   Health & Beauty
+*   Mobile Massage
+*   Alcohol Delivery
+*   Restaurant
+*   Grocery Stores
+*   Healthcare
+*   Cleaning
+*   Laundry
+*   Mechanics
+*   ... and more!
 
 ## Pro Features
 
 [Delivery Drivers for WooCommerce Pro](https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro/) includes the following additional features:
 
-*  Auto-assign drivers when an order is submitted
-*  Accept driver applications from the Driver Dashboard
-*  Integration with [Twilio](https://www.twilio.com) for SMS messages
-*  Email/SMS driver when they've been assigned a new order
-*  Email/SMS customer when the driver marks an order as "Out for Delivery"
-*  Email/SMS administrator when the driver marks an order as "Completed"
+*   Auto-assign drivers when an order is submitted
+*   Accept driver applications from the Driver Dashboard
+*   Integration with [Twilio](https://www.twilio.com) for SMS messages
+*   Email/SMS driver when they've been assigned a new order
+*   Email/SMS customer when the driver marks an order as "Out for Delivery"
+*   Email/SMS administrator when the driver marks an order as "Completed"
 
 ## Changelog
 
