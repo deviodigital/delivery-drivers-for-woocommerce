@@ -90,11 +90,11 @@ function ddwc_driver_save_order_details( $post_id, $post ) {
 	 * OK, we're authenticated: we need to find and save the data
 	 * We'll put it into an array to make it easier to loop though.
 	 */
-	$ddwc_driver_order_meta['ddwc_driver_id'] = $_POST['ddwc_driver_id'];
+	$ddwc_driver_meta['ddwc_driver_id'] = $_POST['ddwc_driver_id'];
 
-	/** Add values of $ddwc_driver_order_meta as custom fields */
+	/** Add values of $ddwc_driver_meta as custom fields */
 
-	foreach ( $ddwc_driver_order_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
+	foreach ( $ddwc_driver_meta as $key => $value ) { /** Cycle through the $thccbd_meta array! */
 		if ( 'revision' === $post->post_type ) { /** Don't store custom data twice */
 			return;
 		}

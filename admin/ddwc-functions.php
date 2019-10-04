@@ -17,9 +17,8 @@
 function ddwc_driver_dashboard_change_statuses() {
 
 	// Get an instance of the WC_Order object.
-	$order        = wc_get_order( $_GET['orderid'] );
-	$order_data   = $order->get_data();
-	$order_status = $order_data['status'];
+	$order      = wc_get_order( $_GET['orderid'] );
+	$order_data = $order->get_data();
 
 	do_action( 'ddwc_driver_dashboard_change_statuses_top' );
 

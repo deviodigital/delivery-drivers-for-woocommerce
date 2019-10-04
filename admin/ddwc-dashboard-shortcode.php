@@ -76,7 +76,6 @@ function ddwc_dashboard_shortcode() {
 					$order_currency             = $order_data['currency'];
 					$order_version              = $order_data['version'];
 					$order_payment_method       = $order_data['payment_method'];
-					$order_payment_method_title = $order_data['payment_method_title'];
 					$order_date_created         = $order_data['date_created']->date( 'm-d-y' );
 					$order_time_created         = $order_data['date_created']->date( 'h:i a' );
 					$order_discount_total       = $order_data['discount_total'];
@@ -88,23 +87,23 @@ function ddwc_dashboard_shortcode() {
 					$order_total_tax            = $order_data['total_tax'];
 					$order_customer_id          = $order_data['customer_id'];
 					$order_shipping_address_1   = $order_data['shipping']['address_1'];
-					$order_shipping_first_name  = $order_data['shipping']['first_name'];
-					$order_shipping_last_name   = $order_data['shipping']['last_name'];
-					$order_billing_first_name   = $order_data['billing']['first_name'];
-					$order_billing_last_name    = $order_data['billing']['last_name'];
+					$order_shipping_fname       = $order_data['shipping']['first_name'];
+					$order_shipping_lname       = $order_data['shipping']['last_name'];
+					$order_billing_fname        = $order_data['billing']['first_name'];
+					$order_billing_lname        = $order_data['billing']['last_name'];
 					$order_billing_phone        = $order_data['billing']['phone'];
 
 					echo '<div class="ddwc-orders">';
 
 					// Display order number.
 					if ( isset( $order_id ) ) {
-						echo '<h3 class="ddwc">' . __( 'Order #', 'ddwc' ) . apply_filters( 'ddwc_order_number', $order_id ) . ' <span class="' . $order_status . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
+						echo '<h3 class="ddwc">' . __( 'Order #', 'ddwc' ) . apply_filters( 'ddwc_order_number', $order_id ) . ' <span class="' . esc_attr( $order_status ) . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
 					}
 
 					// Display a button to call the customers phone number.
 					echo '<p>';
 					if ( isset( $order_billing_phone ) ) {
-						echo '<a href="tel:' . $order_billing_phone . '" class="button ddwc-button customer">' . __( 'Call Customer', 'ddwc' ) . '</a> ';
+						echo '<a href="tel:' . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . __( 'Call Customer', 'ddwc' ) . '</a> ';
 					}
 
 					// Display a button to call the dispatch number if it's set in the Settings page. 
@@ -170,10 +169,10 @@ function ddwc_dashboard_shortcode() {
 					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_top' );
 
 					// Display customer.
-					if ( '' !== $order_shipping_first_name ) {
-						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_shipping_first_name . ' ' . $order_shipping_last_name . '</td></tr>';
-					} elseif ( '' !== $order_billing_first_name ) {
-						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_billing_first_name . ' ' . $order_billing_last_name . '</td></tr>';
+					if ( '' !== $order_shipping_fname ) {
+						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_shipping_fname . ' ' . $order_shipping_lname . '</td></tr>';
+					} elseif ( '' !== $order_billing_fname ) {
+						echo '<tr><td><strong>' . __( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_billing_fname . ' ' . $order_billing_lname . '</td></tr>';
 					} else {
 						// Do nothing.
 					}
@@ -301,33 +300,25 @@ function ddwc_dashboard_shortcode() {
 							// Get an instance of the WC_Order object.
 							$order = wc_get_order( $driver_order->ID );
 
-							$order_data = $order->get_data(); // The Order data.
-
-							// print_r( $order_data );
-
-							$currency_code   = $order_data['currency'];
-							$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
-
-							// print_r( $order_data );
-
-							$order_id                   = $order_data['id'];
-							$order_parent_id            = $order_data['parent_id'];
-							$order_status               = $order_data['status'];
-							$order_currency             = $order_data['currency'];
-							$order_version              = $order_data['version'];
-							$order_payment_method       = $order_data['payment_method'];
-							$order_payment_method_title = $order_data['payment_method_title'];
-							$order_payment_method       = $order_data['payment_method'];
-							$order_payment_method       = $order_data['payment_method'];
-							$order_date_created         = $order_data['date_created']->date( 'm-d-Y' );
-							$order_discount_total       = $order_data['discount_total'];
-							$order_discount_tax         = $order_data['discount_tax'];
-							$order_shipping_total       = $order_data['shipping_total'];
-							$order_shipping_tax         = $order_data['shipping_tax'];
-							$order_cart_tax             = $order_data['cart_tax'];
-							$order_total                = $order_data['total'];
-							$order_total_tax            = $order_data['total_tax'];
-							$order_customer_id          = $order_data['customer_id'];
+							// Get the order data.
+							$order_data           = $order->get_data();
+							$currency_code        = $order_data['currency'];
+							$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
+							$order_id             = $order_data['id'];
+							$order_parent_id      = $order_data['parent_id'];
+							$order_status         = $order_data['status'];
+							$order_currency       = $order_data['currency'];
+							$order_version        = $order_data['version'];
+							$order_payment_method = $order_data['payment_method'];
+							$order_date_created   = $order_data['date_created']->date( 'm-d-Y' );
+							$order_discount_total = $order_data['discount_total'];
+							$order_discount_tax   = $order_data['discount_tax'];
+							$order_shipping_total = $order_data['shipping_total'];
+							$order_shipping_tax   = $order_data['shipping_tax'];
+							$order_cart_tax       = $order_data['cart_tax'];
+							$order_total          = $order_data['total'];
+							$order_total_tax      = $order_data['total_tax'];
+							$order_customer_id    = $order_data['customer_id'];
 
 							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status || 'order-returned' === $order_status ) {
 								echo '<tr>';
@@ -366,28 +357,24 @@ function ddwc_dashboard_shortcode() {
 							$order = wc_get_order( $driver_order->ID );
 
 							// Get order data.
-							$order_data      = $order->get_data();
-							$currency_code   = $order_data['currency'];
-							$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
-
-							$order_id                   = $order_data['id'];
-							$order_parent_id            = $order_data['parent_id'];
-							$order_status               = $order_data['status'];
-							$order_currency             = $order_data['currency'];
-							$order_version              = $order_data['version'];
-							$order_payment_method       = $order_data['payment_method'];
-							$order_payment_method_title = $order_data['payment_method_title'];
-							$order_payment_method       = $order_data['payment_method'];
-							$order_payment_method       = $order_data['payment_method'];
-							$order_date_created         = $order_data['date_created']->date( 'm-d-Y' );
-							$order_discount_total       = $order_data['discount_total'];
-							$order_discount_tax         = $order_data['discount_tax'];
-							$order_shipping_total       = $order_data['shipping_total'];
-							$order_shipping_tax         = $order_data['shipping_tax'];
-							$order_cart_tax             = $order_data['cart_tax'];
-							$order_total                = $order_data['total'];
-							$order_total_tax            = $order_data['total_tax'];
-							$order_customer_id          = $order_data['customer_id'];
+							$order_data           = $order->get_data();
+							$currency_code        = $order_data['currency'];
+							$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
+							$order_id             = $order_data['id'];
+							$order_parent_id      = $order_data['parent_id'];
+							$order_status         = $order_data['status'];
+							$order_currency       = $order_data['currency'];
+							$order_version        = $order_data['version'];
+							$order_payment_method = $order_data['payment_method'];
+							$order_date_created   = $order_data['date_created']->date( 'm-d-Y' );
+							$order_discount_total = $order_data['discount_total'];
+							$order_discount_tax   = $order_data['discount_tax'];
+							$order_shipping_total = $order_data['shipping_total'];
+							$order_shipping_tax   = $order_data['shipping_tax'];
+							$order_cart_tax       = $order_data['cart_tax'];
+							$order_total          = $order_data['total'];
+							$order_total_tax      = $order_data['total_tax'];
+							$order_customer_id    = $order_data['customer_id'];
 
 							if ( 'completed' === $order_status ) {
 								echo '<tr>';
