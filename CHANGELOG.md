@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.5
+*   Added delivery drivers to the Bulk Edit options in the Edit Orders screen in `admin/class-ddwc-admin.php`
+*   Added a new order status "Order Returned" in `admin/ddwc-woocommerce-orders.php`
+*   Added "Call Driver" button to Edit Order screen driver metabox in `admin/ddwc-metaboxes.php`
+*   Bugfix for driver's picture image alt, removing hardcoded text and using driver name in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Updated the order status functions to include an "Order Returned" button when out for delivery in `admin/ddwc-functions.php`
+*   Updated assigned orders table to show orders with "Order Returned" status in `admin/ddwc-dashboard-shortcode.php`
+*   Updated removed login name from driver select in metabox in `admin/ddwc-metaboxes.php`
+*   Updated CSS for driver status change buttons in `public/css/ddwc-public.css`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.4.2
 *   Bugfix removed formatted address filter from everywhere except driver dashboard in `admin/ddwc-woocommerce-settings.php`
 *   Updated formatted address filter on driver dashboard in `admin/ddwc-dashboard-shortcode.php`

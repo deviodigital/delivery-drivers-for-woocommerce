@@ -67,10 +67,9 @@ class DDWC {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
+		$this->version = '2.5';
 		if ( defined( 'DDWC_VERSION' ) ) {
 			$this->version = DDWC_VERSION;
-		} else {
-			$this->version = '2.4.2';
 		}
 		$this->plugin_name = 'ddwc';
 
