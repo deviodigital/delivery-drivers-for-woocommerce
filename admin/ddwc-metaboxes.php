@@ -58,7 +58,7 @@ function ddwc_build() {
 	// Get driver rating.
 	$ddwc_driver_rating = get_post_meta( $post->ID, 'ddwc_delivery_rating', true );
 	// Get driver phone number.
-	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'phone_number', true );
+	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'billing_phone', true );
 	// Display driver button.
 	if ( ! empty( $ddwc_driver_number ) ) {
 		echo '<p><a href="tel:' . $ddwc_driver_number . '" class="button ddwc-button customer">' . __( 'Call Driver', 'ddwc' ) . '</a></p>';

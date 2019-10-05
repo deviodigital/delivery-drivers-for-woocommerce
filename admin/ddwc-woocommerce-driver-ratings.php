@@ -53,7 +53,7 @@ function ddwc_order_driver_details( $order ) {
         } elseif ( 'driver-assigned' == $order_status || 'out-for-delivery' == $order_status ) {
             // Display driver's phone number.
             if ( 'no' !== get_option( 'ddwc_settings_driver_phone_number' ) ) {
-                $driver_number = get_user_meta( $driver_id, 'phone_number', true );
+                $driver_number = get_user_meta( $driver_id, 'billing_phone', true );
                 // Display driver button.
                 if ( $driver_number ) {
                     $string .= '<a href="tel:' . $driver_number . '" class="button ddwc-button customer">' . __( 'Call Driver', 'ddwc' ) . '</a> ';
