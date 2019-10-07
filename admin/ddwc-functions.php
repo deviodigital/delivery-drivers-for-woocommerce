@@ -34,7 +34,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_html__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -62,7 +62,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_html__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -89,7 +89,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_html__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -131,22 +131,22 @@ function ddwc_driver_dashboard_change_status_forms() {
 	$change_status = '';
 
 	if ( 'driver-assigned' == $order_status ) {
-		$change_status  = '<h4>' . __( 'Change Status', 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . esc_html__( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<p><strong>' . __( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . __( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<p><strong>' . esc_html__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . esc_html__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
 		$change_status .= '<input type="hidden" name="outfordelivery" value="out-for-delivery" />';
-		$change_status .= '<input type="submit" value="' . __( 'Out for Delivery', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<input type="submit" value="' . esc_html__( 'Out for Delivery', 'ddwc' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 	}
 
 	if ( 'out-for-delivery' == $order_status ) {
-		$change_status  = '<h4>' . __( 'Change Status', 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . esc_html__( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<p><strong>' . __( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . __( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
-		$change_status .= '<input type="submit" name="orderreturned" value="' . __( 'Returned', 'ddwc' ) . '" class="button ddwc-change-status order-returned" />';
-		$change_status .= '<input type="submit" name="ordercompleted" value="' . __( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<p><strong>' . esc_html__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . esc_html__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<input type="submit" name="orderreturned" value="' . esc_html__( 'Returned', 'ddwc' ) . '" class="button ddwc-change-status order-returned" />';
+		$change_status .= '<input type="submit" name="ordercompleted" value="' . esc_html__( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 	}
 

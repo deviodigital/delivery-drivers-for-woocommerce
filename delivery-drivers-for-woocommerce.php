@@ -85,8 +85,8 @@ $plugin_name = plugin_basename( __FILE__ );
  * @return array updatead array of links related to the plugin.
  */
 function ddwc_settings_link( $links ) {
-	$pro_link      = '<a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . __( 'Go Pro', 'ddwc' ) . '</a>';
-	$settings_link = '<a href="admin.php?page=wc-settings&tab=ddwc">' . __( 'Settings', 'ddwc' ) . '</a>';
+	$pro_link      = '<a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_html__( 'Go Pro', 'ddwc' ) . '</a>';
+	$settings_link = '<a href="admin.php?page=wc-settings&tab=ddwc">' . esc_html__( 'Settings', 'ddwc' ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 	if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {

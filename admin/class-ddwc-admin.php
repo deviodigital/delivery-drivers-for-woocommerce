@@ -105,7 +105,7 @@ function ddwc_show_custom_delivery_driver_column( $columns ) {
 	unset( $new_columns['wc_actions'] );
 
     // Add delivery driver column.
-    $new_columns['delivery_driver'] = __( 'Delivery Driver', 'ddwc' );
+    $new_columns['delivery_driver'] = esc_html__( 'Delivery Driver', 'ddwc' );
 
 	// Add shipping address column.
 	$new_columns[ 'shipping_address' ] = $shipping_address;
@@ -261,7 +261,7 @@ function ddwc_driver_bulk_edit( $actions ) {
 		// Loop through 'driver' users.
 		foreach ( $user_query->get_results() as $user ) {
 			// Add option to set user as the 'driver'.
-			$actions[$user->ID] = sprintf( __( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
+			$actions[$user->ID] = sprintf( esc_html__( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
 		}
 		return $actions;
 	}
