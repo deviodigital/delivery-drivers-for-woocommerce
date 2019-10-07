@@ -1,5 +1,5 @@
 (function( $ ) {
-	'use strict';
+	"use strict";
 
 	/**
 	 * All of the code for your public-facing JavaScript source
@@ -45,18 +45,18 @@
  * @since 2.3
  */
 jQuery(document).ready(function ($) {
-    jQuery('.ddwc-availability label.switch input[type=checkbox]').change(function(e) {
-        var user_id = $(this).attr('id');
-        var metakey = 'ddwc_driver_availability';
-        var metavalue = $(this).attr('checked');
+    jQuery(".ddwc-availability label.switch input[type=checkbox]").change(function(e) {
+        var userid = $(this).attr("id");
+        var metakey = "ddwc_driver_availability";
+        var metavalue = $(this).attr("checked");
         $.post(WPaAjax.ajaxurl,{
-            action : 'ddwc_driver_availability_update',
-            user_id : user_id,
+            action : "ddwc_driver_availability_update",
+            user_id : userid,
             metakey : metakey,
             metavalue : metavalue
         },
         function(data, status) {
-            console.log("metavalue: " + metavalue + "Data: " + data + "\nStatus: " + status);
+            //console.log("metavalue: " + metavalue + "Data: " + data + "\nStatus: " + status);
         });
     });
 });

@@ -104,7 +104,7 @@ function ddwc_order_driver_details( $order ) {
     $(function() {
         $('.driver-rating').barrating({
             theme: 'fontawesome-stars',
-            initialRating: "<?php echo $ddwc_delivery_rating; ?>",
+            initialRating: "<?php esc_html_e( $ddwc_delivery_rating ); ?>",
             showSelectedRating: true,
             // onSelect is what triggers the saving of the rating.
             onSelect: function(value, text, event) {

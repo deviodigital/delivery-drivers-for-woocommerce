@@ -1,11 +1,11 @@
 jQuery(document).ready(function ($) {
-	jQuery('select#ddwc_driver_id').change(function(e) {
-		var item_id =  $(this).attr('name');
-		var metakey =  $(this).attr('id');
+	jQuery("select#ddwc_driver_id").change(function(e) {
+		var itemid =  $(this).attr("name");
+		var metakey =  $(this).attr("id");
 		var metavalue = this.value;
 		$.post(WPaAjax.ajaxurl,{
-			action : 'ddwc_delivery_driver_settings',
-			item_id : item_id,
+			action : "ddwc_delivery_driver_settings",
+			item_id : itemid,
 			metakey : metakey,
 			metavalue : metavalue
 //		},
@@ -17,5 +17,5 @@ jQuery(document).ready(function ($) {
 
 // Remove the link click wrapper on WooCommerce Edit Orders screen.
 jQuery(document).ready(function ($) {
-	$('td.delivery_driver.column-delivery_driver a').click(function(){ return false });
+	$("td.delivery_driver.column-delivery_driver a").click(function(){ return false });
 });
