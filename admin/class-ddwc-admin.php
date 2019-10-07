@@ -124,8 +124,7 @@ add_filter( 'manage_edit-shop_order_columns', 'ddwc_show_custom_delivery_driver_
  * @since 2.1
  */
 function ddwc_custom_delivery_driver_column( $column ) {
-
-    global $post, $woocommerce, $the_order;
+    global $post;
 
     switch ( $column ) {
 

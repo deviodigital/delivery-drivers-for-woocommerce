@@ -186,7 +186,7 @@ function ddwc_dashboard_shortcode() {
 					}
 					// Display order date.
 					if ( isset( $order_date_created ) ) {
-						echo '<tr><td><strong>' . __( 'Order date', 'ddwc' ) . '</strong></td><td>' . $order_date_created . ' - ' . $order_time_created . '</td></tr>';
+						echo '<tr><td><strong>' . __( 'Order date', 'ddwc' ) . '</strong></td><td>' . esc_html( $order_date_created ) . ' - ' . esc_html( $order_time_created ) . '</td></tr>';
 					}
 
 					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_bottom' );

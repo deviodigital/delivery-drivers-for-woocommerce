@@ -61,11 +61,11 @@ function ddwc_build() {
 	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'billing_phone', true );
 	// Display driver button.
 	if ( ! empty( $ddwc_driver_number ) ) {
-		echo '<p><a href="tel:' . $ddwc_driver_number . '" class="button ddwc-button customer">' . __( 'Call Driver', 'ddwc' ) . '</a></p>';
+		echo '<p><a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . __( 'Call Driver', 'ddwc' ) . '</a></p>';
 	}
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
-		echo '<p>' . __( 'Delivery rating', 'ddwc' ) . ': ' . $ddwc_driver_rating . ' out of 5 stars</p>';
+		echo '<p>' . __( 'Delivery rating', 'ddwc' ) . ': ' . esc_html( $ddwc_driver_rating ) . ' out of 5 stars</p>';
 	}
 }
 

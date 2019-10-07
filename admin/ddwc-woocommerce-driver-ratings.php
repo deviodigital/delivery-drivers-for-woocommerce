@@ -349,7 +349,7 @@ function ddwc_add_profile_options( $profileuser ) {
                         $checked = '';
                     }
                 ?>
-                <input class="regular-text" type="checkbox" name="ddwc_driver_availability" <?php echo $checked; ?> /> <?php esc_html_e( 'Is the driver currently accepting deliveries?', 'ddwc' ); ?>
+                <input class="regular-text" type="checkbox" name="ddwc_driver_availability" <?php echo esc_attr( $checked ); ?> /> <?php esc_html_e( 'Is the driver currently accepting deliveries?', 'ddwc' ); ?>
             </td>
         </tr>
         </table>
@@ -409,11 +409,11 @@ function ddwc_add_to_edit_account_form() {
             if ( ! isset( $ddwc_driver_picture['error'] ) ) {
                 if ( ! empty( $ddwc_driver_picture ) ) {
                     $ddwc_driver_picture = $ddwc_driver_picture['url'];
-                    echo '<a href="' . $ddwc_driver_picture . '" target="_blank"><img src="' . $ddwc_driver_picture . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
+                    echo '<a href="' . esc_html( $ddwc_driver_picture ) . '" target="_blank"><img src="' . esc_html( $ddwc_driver_picture ) . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
                 }
             } else {
                 $ddwc_driver_picture = $ddwc_driver_picture['error'];
-                echo $ddwc_driver_picture. '<br />';
+                echo esc_html( $ddwc_driver_picture ) . '<br />';
             }
             ?>
             <button class="remove-ddwc-driver-picture" name="remove_driver_picture"><?php esc_html_e( 'x', 'ddwc' ); ?></button>
@@ -436,7 +436,6 @@ function ddwc_add_to_edit_account_form() {
                     printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type" class="widefat">', get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
                     echo '<option value="">--</option>';
                     foreach ( $transportation_types as $type ) {
-                        print_r( get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
                         if ( $type != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
                             $imagesizeinfo = '';
                         } else {

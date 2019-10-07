@@ -81,10 +81,11 @@ class Delivery_Drivers_WooCommerce_Settings {
 			$pages_array[ $page->ID ] = $page->post_title;
 		}
 
+		// Go Pro.
+		$go_pro = '';
+
 		if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
 			$go_pro = ' | <a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . __( 'Go Pro', 'ddwc' ) . '</a>';
-		} else {
-			$go_pro = '';
 		}
 
 		$settings = array(

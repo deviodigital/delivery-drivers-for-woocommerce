@@ -49,8 +49,6 @@ register_activation_hook( __FILE__, 'ddwc_flush_rewrite_rules' );
  * @return array
  */
 function ddwc_my_account_menu_items( $items ) {
-	// Get current user.
-	$user = wp_get_current_user();
 	// Get customer-logout menu item.
 	$logout = $items['customer-logout'];
 	// Remove the customer-logout menu item.

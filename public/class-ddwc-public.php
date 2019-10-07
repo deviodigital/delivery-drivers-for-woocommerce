@@ -109,11 +109,11 @@ class Delivery_Drivers_Public {
  * @since 2.3
  */
 function ddwc_driver_dashboard_driver_availability() {
+	// Checked.
+	$checked = '';
 	// Driver availability.
-    if ( get_user_meta( get_current_user_id(), 'ddwc_driver_availability', true ) ) {
+	if ( get_user_meta( get_current_user_id(), 'ddwc_driver_availability', true ) ) {
         $checked = 'checked';
-    } else {
-        $checked = '';
     }
 
     echo '<div class="ddwc-availability">
