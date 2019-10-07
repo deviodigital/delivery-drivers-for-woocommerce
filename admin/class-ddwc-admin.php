@@ -179,9 +179,9 @@ add_filter( 'post_class', 'ddwc_add_no_link_to_woocommerce_orders' );
  */
 function ddwc_delivery_driver_settings() {
 
-	$item_id    = $_POST['item_id'];
-	$meta_key   = $_POST['metakey'];
-	$meta_value = $_POST['metavalue'];
+	$item_id    = filter_input( INPUT_POST, 'item_id' );
+	$meta_key   = filter_input( INPUT_POST, 'metakey' );
+	$meta_value = filter_input( INPUT_POST, 'metavalue' );
 
 	// Update driver ID for order.
 	update_post_meta( $item_id, $meta_key, $meta_value );
@@ -227,8 +227,8 @@ add_action( 'wp_ajax_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_setti
  */
 function ddwc_driver_availability_update() {
 
-	$user_id    = $_POST['user_id'];
-    $meta_value = $_POST['metavalue'];
+	$user_id    = filter_input( INPUT_POST, 'user_id' );
+    $meta_value = filter_input( INPUT_POST, 'metavalue' );
 
     if ( 'checked' == $meta_value ) {
         $new_value = 'on';

@@ -147,12 +147,12 @@ if ( 'no' !== get_option( 'ddwc_settings_driver_ratings' ) ) {
  */
 function ddwc_driver_rating_ajax( $order ) {
 
-	$postid    = esc_html( $_POST['postid'] );
-	$metakey   = 'ddwc_delivery_rating';
-	$metavalue = esc_html( $_POST['rating'] );
+	$post_id    = filter_input( INPUT_POST, 'postid' );
+	$meta_key   = 'ddwc_delivery_rating';
+	$meta_value = esc_html( filter_input( INPUT_POST, 'rating' ) );
 
 	// Update delivery rating.
-    update_post_meta( $postid, $metakey, $metavalue );
+    update_post_meta( $post_id, $meta_key, $meta_value );
 
     wp_die();
 }
@@ -167,30 +167,38 @@ add_action( 'wp_ajax_nopriv_ddwc_driver_rating', 'ddwc_driver_rating_ajax' );
 function ddwc_save_custom_profile_fields( $user_id ) {
     // Get user.
     $user = get_userdata( $user_id );
+    // Get post data.
+    $license_plate       = filter_input( INPUT_POST, 'ddwc_driver_license_plate' );
+    $transportation_type = filter_input( INPUT_POST, 'ddwc_driver_transportation_type' );
+    $vehicle_model       = filter_input( INPUT_POST, 'ddwc_driver_vehicle_model' );
+    $vehicle_color       = filter_input( INPUT_POST, 'ddwc_driver_vehicle_color' );
+    $driver_availability = filter_input( INPUT_POST, 'ddwc_driver_availability' );
+    $remove_picture      = filter_input( INPUT_POST, 'remove_driver_picture' );
+
     // If the user is a DRIVER, display the driver fields.
     if ( in_array( 'driver', (array) $user->roles ) ) {
         // Update license plate number.
-        if ( isset( $_POST['ddwc_driver_license_plate'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_license_plate', esc_html( $_POST['ddwc_driver_license_plate'] ) );
+        if ( isset( $license_plate ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_license_plate', esc_html( $license_plate ) );
         }
         // Update transportation type.
-        if ( isset( $_POST['ddwc_driver_transportation_type'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_transportation_type', esc_html( $_POST['ddwc_driver_transportation_type'] ) );
+        if ( isset( $transportation_type ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_transportation_type', esc_html( $transportation_type ) );
         }
         // Update vehicle model.
-        if ( isset( $_POST['ddwc_driver_vehicle_model'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_vehicle_model', esc_html( $_POST['ddwc_driver_vehicle_model'] ) );
+        if ( isset( $vehicle_model ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_vehicle_model', esc_html( $vehicle_model ) );
         }
         // Update vehicle color.
-        if ( isset( $_POST['ddwc_driver_vehicle_color'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_vehicle_color', esc_html( $_POST['ddwc_driver_vehicle_color'] ) );
+        if ( isset( $vehicle_color ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_vehicle_color', esc_html( $vehicle_color ) );
         }
         // Update driver availability.
-        if ( isset( $_POST['ddwc_driver_availability'] ) ) {
-            update_user_meta( $user_id, 'ddwc_driver_availability', esc_html( $_POST['ddwc_driver_availability'] ) );
+        if ( isset( $driver_availability ) ) {
+            update_user_meta( $user_id, 'ddwc_driver_availability', esc_html( $driver_availability ) );
         }
         // Remove driver picture from user profile.
-        if ( isset( $_POST['remove_driver_picture'] ) ) {
+        if ( isset( $remove_picture ) ) {
             update_user_meta( $user_id, 'ddwc_driver_picture', '' );
         }
         // If no new files are uploaded, return.
@@ -376,12 +384,13 @@ function ddwc_add_to_edit_account_form() {
     if ( ! function_exists( 'wp_generate_attachment_metadata' ) ) {
         require_once( ABSPATH . 'wp-admin/includes/image.php' );
     }
-    // Get user.
-    $user_id = get_current_user_id();
-    $user    = get_userdata( $user_id );
+    // Get user data.
+    $user_id       = get_current_user_id();
+    $user          = get_userdata( $user_id );
+    $license_plate = filter_input( INPUT_POST, 'ddwc_driver_license_plate' );
     // Save license plate number.
-    if ( isset( $_POST['ddwc_driver_license_plate'] ) ) {
-        update_user_meta( $user->ID, 'ddwc_driver_license_plate', esc_html( $_POST['ddwc_driver_license_plate'] ) );
+    if ( isset( $license_plate ) ) {
+        update_user_meta( $user->ID, 'ddwc_driver_license_plate', $license_plate );
     }
     ?>
     <?php

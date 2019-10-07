@@ -15,6 +15,9 @@ function ddwc_dashboard_shortcode() {
 		// Get the user ID.
 		$user_id = get_current_user_id();
 
+		// Get the order ID.
+		$order_id = filter_input( INPUT_GET, 'orderid' );
+
 		// Get the user object.
 		$user_meta = get_userdata( $user_id );
 
@@ -27,12 +30,12 @@ function ddwc_dashboard_shortcode() {
 			// Check if the role you're interested in, is present in the array.
 			if ( in_array( 'driver', $user_roles, true ) ) {
 
-				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) ) {
-					$driver_id = get_post_meta( $_GET['orderid'], 'ddwc_driver_id', true );
+				if ( isset( $order_id ) && ( '' != $order_id ) ) {
+					$driver_id = get_post_meta( $order_id, 'ddwc_driver_id', true );
 				}
 
 				// Display order info if ?orderid is set and driver is assigned.
-				if ( isset( $_GET['orderid'] ) && ( '' != $_GET['orderid'] ) && ( $driver_id == $user_id ) ) {
+				if ( isset( $order_id ) && ( '' != $order_id ) && ( $driver_id == $user_id ) ) {
 
 					// The store address.
 					$store_address     = get_option( 'woocommerce_store_address' );
@@ -64,34 +67,34 @@ function ddwc_dashboard_shortcode() {
 					$store_address = apply_filters( 'ddwc_driver_dashboard_store_address', $store_address );
 
 					// Get an instance of the WC_Order object
-					$order = wc_get_order( $_GET['orderid'] );
+					$order = wc_get_order( $order_id );
 
 					// Get the order data.
 					$order_data = $order->get_data();
 
 					// Specific order data.
-					$order_id                   = $order_data['id'];
-					$order_parent_id            = $order_data['parent_id'];
-					$order_status               = $order_data['status'];
-					$order_currency             = $order_data['currency'];
-					$order_version              = $order_data['version'];
-					$order_payment_method       = $order_data['payment_method'];
-					$order_date_created         = $order_data['date_created']->date( 'm-d-y' );
-					$order_time_created         = $order_data['date_created']->date( 'h:i a' );
-					$order_discount_total       = $order_data['discount_total'];
-					$order_discount_tax         = $order_data['discount_tax'];
-					$order_shipping_total       = $order_data['shipping_total'];
-					$order_shipping_tax         = $order_data['shipping_tax'];
-					$order_cart_tax             = $order_data['cart_tax'];
-					$order_total                = $order_data['total'];
-					$order_total_tax            = $order_data['total_tax'];
-					$order_customer_id          = $order_data['customer_id'];
-					$order_shipping_address_1   = $order_data['shipping']['address_1'];
-					$order_shipping_fname       = $order_data['shipping']['first_name'];
-					$order_shipping_lname       = $order_data['shipping']['last_name'];
-					$order_billing_fname        = $order_data['billing']['first_name'];
-					$order_billing_lname        = $order_data['billing']['last_name'];
-					$order_billing_phone        = $order_data['billing']['phone'];
+					$order_id             = $order_data['id'];
+					$order_parent_id      = $order_data['parent_id'];
+					$order_status         = $order_data['status'];
+					$order_currency       = $order_data['currency'];
+					$order_version        = $order_data['version'];
+					$order_payment_method = $order_data['payment_method'];
+					$order_date_created   = $order_data['date_created']->date( 'm-d-y' );
+					$order_time_created   = $order_data['date_created']->date( 'h:i a' );
+					$order_discount_total = $order_data['discount_total'];
+					$order_discount_tax   = $order_data['discount_tax'];
+					$order_shipping_total = $order_data['shipping_total'];
+					$order_shipping_tax   = $order_data['shipping_tax'];
+					$order_cart_tax       = $order_data['cart_tax'];
+					$order_total          = $order_data['total'];
+					$order_total_tax      = $order_data['total_tax'];
+					$order_customer_id    = $order_data['customer_id'];
+					$order_shipping_addr  = $order_data['shipping']['address_1'];
+					$order_shipping_fname = $order_data['shipping']['first_name'];
+					$order_shipping_lname = $order_data['shipping']['last_name'];
+					$order_billing_fname  = $order_data['billing']['first_name'];
+					$order_billing_lname  = $order_data['billing']['last_name'];
+					$order_billing_phone  = $order_data['billing']['phone'];
 
 					echo '<div class="ddwc-orders">';
 
@@ -118,7 +121,7 @@ function ddwc_dashboard_shortcode() {
 					// Plain text delivery address.
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 						$plain_address = '<p>';
-						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+						if ( isset( $order_shipping_addr ) && '' !== $order_shipping_addr ) {
 							add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
 							$plain_address   .= $order->get_formatted_shipping_address();
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_shipping_address() );
@@ -142,7 +145,7 @@ function ddwc_dashboard_shortcode() {
 					 */
 					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
 						// Use the Shipping address if available.
-						if ( isset( $order_shipping_address_1 ) && '' !== $order_shipping_address_1 ) {
+						if ( isset( $order_shipping_addr ) && '' !== $order_shipping_addr ) {
 							add_filter( 'woocommerce_order_formatted_shipping_address' , 'ddwc_custom_order_formatted_address' );
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_shipping_address() );
 						} else {
@@ -205,7 +208,7 @@ function ddwc_dashboard_shortcode() {
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_top' );
 
 					// get an instance of the WC_Order object.
-					$order_items     = wc_get_order( $_GET['orderid'] );
+					$order_items     = wc_get_order( $order_id );
 					$currency_code   = $order_items->get_currency();
 					$currency_symbol = get_woocommerce_currency_symbol( $currency_code );
 

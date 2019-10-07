@@ -16,22 +16,25 @@
  */
 function ddwc_driver_dashboard_change_statuses() {
 
-	// Get an instance of the WC_Order object.
-	$order      = wc_get_order( $_GET['orderid'] );
-	$order_data = $order->get_data();
+	// Get the order ID.
+	$order_id         = filter_input( INPUT_GET, 'orderid' );
+	$order            = wc_get_order( $order_id );
+	$order_data       = $order->get_data();
+	$out_for_delivery = filter_input( INPUT_POST, 'outfordelivery' );
+	$driver_note      = filter_input( INPUT_POST, 'outfordeliverymessage' );
 
 	do_action( 'ddwc_driver_dashboard_change_statuses_top' );
 
 	// Update order status if marked OUT FOR DELIVERY by Driver.
-	if ( isset( $_POST['outfordelivery'] ) ) {
+	if ( isset( $out_for_delivery ) ) {
 
 		// Update order status.
 		$order->update_status( 'out-for-delivery' );
 
 		// Add driver note (if added).
-		if ( isset( $_POST['outfordeliverymessage'] ) && ! empty( $_POST['outfordeliverymessage'] ) ) {
+		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['outfordeliverymessage'] );
+			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -42,20 +45,24 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_customer_order_status_out_for_delivery' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $_GET['orderid'] );
+		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $order_id );
 
 	}
 
+	// Variables for order returned.
+	$order_returned = filter_input( INPUT_POST, 'orderreturned' );
+	$driver_note    = filter_input( INPUT_POST, 'ordermessage' );
+
 	// Update order status if marked RETURNED by Driver.
-	if ( isset( $_POST['orderreturned'] ) ) {
+	if ( isset( $order_returned ) ) {
 
 		// Update order status.
 		$order->update_status( 'order-returned' );
 
 		// Add driver note (if added).
-		if ( isset( $_POST['ordermessage'] ) && ! empty( $_POST['ordermessage'] ) ) {
+		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['ordermessage'] );
+			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -66,20 +73,23 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_admin_order_status_returned' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $_GET['orderid'] );
+		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $order_id );
 
 	}
 
+	$order_completed = filter_input( INPUT_POST, 'ordercompleted' );
+	$driver_note     = filter_input( INPUT_POST, 'ordermessage' );
+
 	// Update order status if marked COMPLETED by Driver.
-	if ( isset( $_POST['ordercompleted'] ) ) {
+	if ( isset( $order_completed ) ) {
 
 		// Update order status.
 		$order->update_status( 'completed' );
 
 		// Add driver note (if added).
-		if ( isset( $_POST['ordermessage'] ) && ! empty( $_POST['ordermessage'] ) ) {
+		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $_POST['ordermessage'] );
+			$note = __( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -90,7 +100,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_admin_order_status_completed' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $_GET['orderid'] );
+		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $order_id );
 
 	}
 
@@ -109,8 +119,9 @@ add_action( 'ddwc_driver_dashboard_change_status_forms_top', 'ddwc_driver_dashbo
  */
 function ddwc_driver_dashboard_change_status_forms() {
 
-	// Get an instance of the WC_Order object.
-	$order        = wc_get_order( $_GET['orderid'] );
+	// Get the order ID.
+	$order_id     = filter_input( INPUT_GET, 'orderid' );
+	$order        = wc_get_order( $order_id );
 	$order_data   = $order->get_data();
 	$order_status = $order_data['status'];
 

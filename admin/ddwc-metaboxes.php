@@ -73,14 +73,15 @@ function ddwc_build() {
  * Save the Metabox Data
  */
 function ddwc_driver_save_order_details( $post_id, $post ) {
-
+	// Filter the noncename input.
+	$ddwc_noncename = filter_input( INPUT_POST, 'ddwc_meta_noncename' );
 	/**
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
 	if (
-		! isset( $_POST['ddwc_meta_noncename' ] ) ||
-		! wp_verify_nonce( $_POST['ddwc_meta_noncename'], plugin_basename( __FILE__ ) )
+		! isset( $ddwc_noncename ) ||
+		! wp_verify_nonce( $ddwc_noncename, plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}
@@ -94,7 +95,7 @@ function ddwc_driver_save_order_details( $post_id, $post ) {
 	 * OK, we're authenticated: we need to find and save the data
 	 * We'll put it into an array to make it easier to loop though.
 	 */
-	$ddwc_driver_meta['ddwc_driver_id'] = $_POST['ddwc_driver_id'];
+	$ddwc_driver_meta['ddwc_driver_id'] = filter_input( INPUT_POST, 'ddwc_driver_id' );
 
 	/** Add values of $ddwc_driver_meta as custom fields */
 	foreach ( $ddwc_driver_meta as $key => $value ) {
