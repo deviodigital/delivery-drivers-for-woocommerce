@@ -263,8 +263,8 @@ function ddwc_driver_bulk_edit( $actions ) {
 			// Add option to set user as the 'driver'.
 			$actions[$user->ID] = sprintf( esc_html__( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
 		}
-		return $actions;
 	}
+	return $actions;
 }
 add_filter( 'bulk_actions-edit-shop_order', 'ddwc_driver_bulk_edit', 20, 1 );
 
