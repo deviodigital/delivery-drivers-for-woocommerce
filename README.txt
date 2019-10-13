@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.2.3
-Stable tag: 2.5
+Stable tag: 2.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,10 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 6. Google Maps Directions for delivery driver from Store address to Customer address
 
 == Changelog ==
+
+= 2.5.1 =
+*   Bugfix that made the Bulk Edit options empty if no users with `driver` role found in `admin/class-ddwc-admin.php`
+*   General code cleanup throughout multiple files in the plugin
 
 = 2.5 =
 *   Added delivery drivers to the Bulk Edit options in the Edit Orders screen in `admin/class-ddwc-admin.php`

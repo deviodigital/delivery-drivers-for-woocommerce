@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.1
+*   Bugfix that made the Bulk Edit options empty if no users with `driver` role found in `admin/class-ddwc-admin.php`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.5
 *   Added delivery drivers to the Bulk Edit options in the Edit Orders screen in `admin/class-ddwc-admin.php`
 *   Added a new order status "Order Returned" in `admin/ddwc-woocommerce-orders.php`
