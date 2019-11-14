@@ -447,7 +447,24 @@ function ddwc_dashboard_shortcode() {
 					// Drivers table.
 					$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'ddwc' ) . '</h3>';
 					$drivers_table .= '<table class="ddwc-dashboard delivery-drivers">';
-					$drivers_table .= '<thead><tr><td>' . esc_attr__( 'Name', 'ddwc' ) . '</td><td>' . esc_attr__( 'Status', 'ddwc' ) . '</td><td>' . esc_attr__( 'Rating', 'ddwc' ) . '</td><td>' . esc_attr__( 'Contact', 'ddwc' ) . '</td></tr></thead>';
+
+					$thead = array(
+						__( 'Name', 'ddwc' ),
+						__( 'Status', 'ddwc' ),
+						__( 'Rating', 'ddwc' ),
+						__( 'Contact', 'ddwc' ),
+					);
+
+					$thead = apply_filters( 'ddwc_driver_dashboard_admin_table_thead', $thead );
+
+					// Drivers table head.
+					$drivers_table .= '<thead><tr>';
+					foreach ( $thead as $row ) {
+						$drivers_table .= '<td>' . $row . '</td>';
+					}
+					$drivers_table .= '</tr></thead>';
+
+					// Drivers table body.
 					$drivers_table .= '<tbody>';
 					foreach ( $drivers as $driver ) {
 						// Driver unavailable.
@@ -460,10 +477,6 @@ function ddwc_dashboard_shortcode() {
 
 						// Driver rating.
 						$driver_rating_final = ddwc_driver_rating( $driver->ID );
-
-						/**
-						 * @todo add a setting to turn the email/phone on/off
-						 */
 
 						// Driver phone number.
 						$driver_number = get_user_meta( $driver->ID, 'billing_phone', true );
