@@ -420,6 +420,86 @@ function ddwc_dashboard_shortcode() {
 					do_action( 'ddwc_driver_dashboard_bottom' );
 
 				}
+			} elseif ( ddwc_check_user_roles( array( 'administrator' ) ) ) {
+
+				/**
+				 * Driver Dashboard for Administrator
+				 * 
+				 * @since 2.6
+				 */
+
+				$args = array(
+					'role'    => 'driver',
+					'orderby' => 'user_nicename',
+					'order'   => 'ASC'
+				);
+
+				// Filter args.
+				$args = apply_filters( 'ddwc_driver_dashboard_admin_drivers_args', $args );
+
+				// Get users.
+				$drivers = get_users( $args );
+
+				/**
+				 * If Orders have Driver ID attached
+				 */
+				if ( $drivers ) {
+					// Drivers table.
+					$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'ddwc' ) . '</h3>';
+					$drivers_table .= '<table class="ddwc-dashboard delivery-drivers">';
+					$drivers_table .= '<thead><tr><td>' . esc_attr__( 'Name', 'ddwc' ) . '</td><td>' . esc_attr__( 'Status', 'ddwc' ) . '</td><td>' . esc_attr__( 'Rating', 'ddwc' ) . '</td><td>' . esc_attr__( 'Contact', 'ddwc' ) . '</td></tr></thead>';
+					$drivers_table .= '<tbody>';
+					foreach ( $drivers as $driver ) {
+						// Driver unavailable.
+						$availability = '<span class="unavailable">' . esc_attr__( 'Unavailable', 'ddwc' ) . '</span>';
+
+						// Driver available.
+						if ( get_user_meta( $driver->ID, 'ddwc_driver_availability', true ) ) {
+							$availability = '<span class="available">' . esc_attr__( 'Available', 'ddwc' ) . '</span>';
+						}
+
+						// Driver rating.
+						$driver_rating_final = ddwc_driver_rating( $driver->ID );
+
+						/**
+						 * @todo add a setting to turn the email/phone on/off
+						 */
+
+						// Driver phone number.
+						$driver_number = get_user_meta( $driver->ID, 'billing_phone', true );
+
+						// Driver phone number button.
+						if ( $driver_number ) {
+							$phone_number = '<a href="tel:' . esc_html( $driver_number ) . '" class="button ddwc-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M17.5 2c.276 0 .5.224.5.5v19c0 .276-.224.5-.5.5h-11c-.276 0-.5-.224-.5-.5v-19c0-.276.224-.5.5-.5h11zm2.5 0c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-20zm-9.5 1h3c.276 0 .5.224.5.501 0 .275-.224.499-.5.499h-3c-.275 0-.5-.224-.5-.499 0-.277.225-.501.5-.501zm1.5 18c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm5-3h-10v-13h10v13z"/></svg></a>';
+						} else {
+							$phone_number = '';
+						}
+
+						// Driver email address.
+						$user_info    = get_userdata( $driver->ID );
+						$driver_email = $user_info->user_email;
+
+						// Driver email address button.
+						if ( $driver_email ) {
+							$email_address = '<a href="mailto:' . esc_html( $driver_email ) . '" class="button ddwc-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a>';
+						} else {
+							$email_address = '';
+						}
+
+						// Add to string.
+						$drivers_table .= '<tr><td>' . esc_html( $driver->display_name ) . ' <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(edit)</a></td><td class="driver-status">' . $availability . '</td><td>' . $driver_rating_final . '</td><td class="driver-contact">' . $email_address . $phone_number . '</td></tr>';
+					}
+					$drivers_table .= '</tbody>';
+					$drivers_table .= '</table>';
+				}
+
+				do_action( 'ddwc_admin_drivers_table_before' );
+
+				// Display table.
+				echo $drivers_table;
+
+				do_action( 'ddwc_admin_drivers_table_after' );
+
 			} else {
 
 				// Set the Access Denied page text.

@@ -312,3 +312,31 @@ input.ddwc-ofdmsg {
 .ddwc-availability .switch .slider.round:before {
     border-radius: 50%;
 }
+
+/** Driver Dashboard - Admin - Delivery Drivers table */
+
+table.ddwc-dashboard.delivery-drivers td.driver-status span.unavailable {
+    color: rgba(0,0,0,0.5);
+}
+
+table.ddwc-dashboard.delivery-drivers td.driver-status span.available {
+    color: #76bd1d;
+    font-weight: bold;
+}
+
+table.ddwc-dashboard.delivery-drivers a.button.ddwc-button {
+    background: #222222;
+    padding: 0.75em;
+}
+
+table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:hover {
+    background: #767676;
+}
+
+table.ddwc-dashboard.delivery-drivers a.button.ddwc-button svg {
+    fill: #FFF;
+}
+
+table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:last-child:not(:first-child) {
+    margin-left: 6px;
+}
