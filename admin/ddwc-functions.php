@@ -187,3 +187,70 @@ function ddwc_check_user_roles( $roles, $user_id = null ) {
 
     return false;
 }
+
+/**
+ * Delivery driver average rating
+ *
+ * @param int $driver_id
+ * @return void
+ * @since 2.5
+ */
+function ddwc_driver_rating( $driver_id ) {
+	/**
+	 * Args for Orders with Driver ID attached
+	 */
+	$args = array(
+		'post_type'      => 'shop_order',
+		'posts_per_page' => -1,
+		'post_status'    => 'any',
+		'meta_key'       => 'ddwc_driver_id',
+		'meta_value'     => $driver_id
+	);
+
+	/**
+	* Get Orders with Driver ID attached
+	*/
+	$assigned_orders = get_posts( $args );
+
+	$order_count   = 0;
+	$driver_rating = 0;
+
+	/**
+	* If Orders have Driver ID attached
+	*/
+	if ( $assigned_orders ) {
+		foreach ( $assigned_orders as $driver_order ) {
+
+			// Get an instance of the WC_Order object.
+			$order = wc_get_order( $driver_order->ID );
+
+			// Get the order data.
+			$order_data   = $order->get_data();
+			$order_id     = $order_data['id'];
+			$order_status = $order_data['status'];
+
+			// Only run if the order is Completed.
+			if ( 'completed' === $order_status ) {
+				$order_rating = get_post_meta( $order_id, 'ddwc_delivery_rating', TRUE );
+				// Display driver rating.
+				if ( ! empty( $order_rating ) ) {
+					$order_count++; // potential ratings.
+					$driver_rating = $driver_rating + $order_rating;
+				}
+			}
+		}
+	}
+
+	if ( 0 != $driver_rating ) {
+		// Average rating.
+		$average_rating      = $driver_rating / $order_count;
+		$average_rating      = round( $average_rating, 1 );
+		// Driver rating final.
+		$driver_rating_final = $average_rating . '/5';
+	} else {
+		$average_rating      = NULL;
+		$driver_rating_final = '';
+	}
+
+	return $driver_rating_final;
+}
