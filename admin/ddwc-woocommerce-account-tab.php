@@ -54,7 +54,7 @@ function ddwc_my_account_menu_items( $items ) {
 	// Remove the customer-logout menu item.
 	unset( $items['customer-logout'] );
 	// Set user roles.
-	$roles = array( 'driver' );
+	$roles = array( 'administrator', 'driver' );
 	// Check user role.
 	if ( ddwc_check_user_roles( apply_filters( 'ddwc_my_account_check_user_role_array', $roles ) ) ) {
 		// Insert the driver-dashboard endpoint.
