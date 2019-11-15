@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.6
+*   Added driver dashboard for admins, displaying delivery drivers data in a table in `admin/ddwc-dashboard-shortcode.php`
+*   Added 2 action hooks for the admin driver dashboard delivery drivers table in `admin/ddwc-dashboard-shortcode.php`
+*   Added 3 filters for the admin driver dashboard delivery drivers table in `admin/ddwc-dashboard-shortcode.php`
+*   Updated CSS for admin's driver dashboard delivery drivers table in `public/css/ddwc-public.css`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.5.1
 *   Bugfix that made the Bulk Edit options empty if no users with `driver` role found in `admin/class-ddwc-admin.php`
 *   General code cleanup throughout multiple files in the plugin

@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.2.3
-Stable tag: 2.5.1
+Tested up to: 5.3
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,8 +91,17 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
 5. Delivery Driver information displayed on customer's order details page
 6. Google Maps Directions for delivery driver from Store address to Customer address
+7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 2.6 =
+*   Added driver dashboard for admins, displaying delivery drivers data in a table in `admin/ddwc-dashboard-shortcode.php`
+*   Added 2 action hooks for the admin driver dashboard delivery drivers table in `admin/ddwc-dashboard-shortcode.php`
+*   Added 3 filters for the admin driver dashboard delivery drivers table in `admin/ddwc-dashboard-shortcode.php`
+*   Updated CSS for admin's driver dashboard delivery drivers table in `public/css/ddwc-public.css`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
 
 = 2.5.1 =
 *   Bugfix that made the Bulk Edit options empty if no users with `driver` role found in `admin/class-ddwc-admin.php`

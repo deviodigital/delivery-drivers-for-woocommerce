@@ -67,11 +67,12 @@ class DDWC {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		$this->version = '2.5.1';
+		$this->plugin_name = 'ddwc';
+		$this->version     = '2.6';
+
 		if ( defined( 'DDWC_VERSION' ) ) {
 			$this->version = DDWC_VERSION;
 		}
-		$this->plugin_name = 'ddwc';
 
 		$this->load_dependencies();
 		$this->set_locale();
