@@ -444,9 +444,6 @@ function ddwc_dashboard_shortcode() {
 				 * If Orders have Driver ID attached
 				 */
 				if ( $drivers ) {
-					// Drivers table.
-					$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'ddwc' ) . '</h3>';
-					$drivers_table .= '<table class="ddwc-dashboard delivery-drivers">';
 
 					$thead = array(
 						__( 'Name', 'ddwc' ),
@@ -457,22 +454,35 @@ function ddwc_dashboard_shortcode() {
 
 					$thead = apply_filters( 'ddwc_driver_dashboard_admin_table_thead', $thead );
 
+					// Drivers table title.
+					$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'ddwc' ) . '</h3>';
+
+					// Drivers table start.
+					$drivers_table .= '<table class="ddwc-dashboard delivery-drivers">';
+
 					// Drivers table head.
 					$drivers_table .= '<thead><tr>';
+
+					// Loop through $thead.
 					foreach ( $thead as $row ) {
+						// Add td to thead.
 						$drivers_table .= '<td>' . $row . '</td>';
 					}
+
+					// End drivers table thead.
 					$drivers_table .= '</tr></thead>';
 
-					// Drivers table body.
+					// Drivers table tbody.
 					$drivers_table .= '<tbody>';
+
+					// Loop through drivers.
 					foreach ( $drivers as $driver ) {
 						// Driver unavailable.
-						$availability = '<span class="unavailable">' . esc_attr__( 'Unavailable', 'ddwc' ) . '</span>';
+						$availability = '<span class="driver-status unavailable">' . esc_attr__( 'Unavailable', 'ddwc' ) . '</span>';
 
 						// Driver available.
 						if ( get_user_meta( $driver->ID, 'ddwc_driver_availability', true ) ) {
-							$availability = '<span class="available">' . esc_attr__( 'Available', 'ddwc' ) . '</span>';
+							$availability = '<span class="driver-status available">' . esc_attr__( 'Available', 'ddwc' ) . '</span>';
 						}
 
 						// Driver rating.
@@ -488,8 +498,10 @@ function ddwc_dashboard_shortcode() {
 							$phone_number = '';
 						}
 
+						// Get driver userdata.
+						$user_info = get_userdata( $driver->ID );
+
 						// Driver email address.
-						$user_info    = get_userdata( $driver->ID );
 						$driver_email = $user_info->user_email;
 
 						// Driver email address button.
