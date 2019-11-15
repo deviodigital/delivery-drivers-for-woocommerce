@@ -315,11 +315,11 @@ input.ddwc-ofdmsg {
 
 /** Driver Dashboard - Admin - Delivery Drivers table */
 
-table.ddwc-dashboard.delivery-drivers td.driver-status span.unavailable {
+table.ddwc-dashboard.delivery-drivers span.driver-status.unavailable {
     color: rgba(0,0,0,0.5);
 }
 
-table.ddwc-dashboard.delivery-drivers td.driver-status span.available {
+table.ddwc-dashboard.delivery-drivers span.driver-status.available {
     color: #76bd1d;
     font-weight: bold;
 }
