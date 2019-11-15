@@ -511,10 +511,32 @@ function ddwc_dashboard_shortcode() {
 							$email_address = '';
 						}
 
-						// Add to string.
-						$drivers_table .= '<tr><td>' . esc_html( $driver->display_name ) . ' <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(edit)</a></td><td class="driver-status">' . $availability . '</td><td>' . $driver_rating_final . '</td><td class="driver-contact">' . $email_address . $phone_number . '</td></tr>';
+						$tbody = array(
+							esc_html( $driver->display_name ) . ' <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(' . __( 'edit', 'ddwc' ) . ')</a>',
+							$availability,
+							$driver_rating_final,
+							$email_address . $phone_number,
+						);
+	
+						$tbody = apply_filters( 'ddwc_driver_dashboard_admin_table_tbody', $tbody );
+	
+						// Drivers tbody tr.
+						$drivers_table .= '<tr>';
+
+						// Loop through $tbody.
+						foreach ( $tbody as $row ) {
+							// Add td to tbody.
+							$drivers_table .= '<td>' . $row . '</td>';
+						}
+
+						// End drivers table tbody tr.
+						$drivers_table .= '</tr>';
 					}
+
+					// End drivers table tbody.
 					$drivers_table .= '</tbody>';
+
+					// End drivers table.
 					$drivers_table .= '</table>';
 				}
 
