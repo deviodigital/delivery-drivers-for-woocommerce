@@ -16,12 +16,16 @@
  */
 function ddwc_driver_dashboard_change_statuses() {
 
-	// Get the order ID.
-	$order_id         = filter_input( INPUT_GET, 'orderid' );
-	$order            = wc_get_order( $order_id );
-	$order_data       = $order->get_data();
+	// Get the order.
+	$order_id = filter_input( INPUT_GET, 'orderid' );
+	$order    = wc_get_order( $order_id );
+
+	// Out for delivery + note.
 	$out_for_delivery = filter_input( INPUT_POST, 'outfordelivery' );
 	$driver_note      = filter_input( INPUT_POST, 'outfordeliverymessage' );
+
+	// Redirect URL.
+	$redirect_url = get_option( 'woocommerce_myaccount_page_id' ) . 'driver-dashboard/?orderid=' . $order_id;
 
 	do_action( 'ddwc_driver_dashboard_change_statuses_top' );
 
@@ -45,7 +49,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_customer_order_status_out_for_delivery' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $order_id );
+		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_out_for_delivery_url', $redirect_url, $order_id ) ) );
 
 	}
 
@@ -73,7 +77,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_admin_order_status_returned' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $order_id );
+		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_returned_url', $redirect_url, $order_id ) ) );
 
 	}
 
@@ -100,7 +104,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_admin_order_status_completed' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . 'driver-dashboard/?orderid=' . $order_id );
+		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_completed_url', $redirect_url, $order_id ) ) );
 
 	}
 
