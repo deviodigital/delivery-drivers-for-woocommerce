@@ -179,11 +179,13 @@ function ddwc_dashboard_shortcode() {
 					} else {
 						// Do nothing.
 					}
+
 					// Display payment method details.
 					if ( isset( $payment_gateway ) && FALSE !== $payment_gateway ) {
 						$payment_method = '<tr><td><strong>' . esc_html__( 'Payment method', 'ddwc' ) . '</strong></td><td>' . $payment_gateway->title . '</td></tr>';
 						echo apply_filters( 'ddwc_driver_dashboard_payment_method', $payment_method );
 					}
+
 					// Display order date.
 					if ( isset( $order_date_created ) ) {
 						echo '<tr><td><strong>' . esc_html__( 'Order date', 'ddwc' ) . '</strong></td><td>' . esc_html( $order_date_created ) . ' - ' . esc_html( $order_time_created ) . '</td></tr>';
@@ -215,14 +217,11 @@ function ddwc_dashboard_shortcode() {
 					if ( ! empty( $order_items ) ) {
 						// The loop to get the order items which are WC_Order_Item_Product objects since WC 3+
 						foreach( $order_items->get_items() as $item_id=>$item_product ) {
-							//Get the product ID
-							$product_id = $item_product->get_product_id();
 							//Get the WC_Product object
 							$product  = $item_product->get_product();
 							// Get the product quantity.
 							$quantity = $item_product->get_quantity();
-
-							$sku         = $product->get_sku();
+							// Get the product details.
 							$name        = $product->get_name();
 							$price       = $product->get_price();
 							$qtty        = $quantity;
@@ -560,6 +559,7 @@ function ddwc_dashboard_shortcode() {
 			// Do nothing.
 		}
 	} else {
+		// Display login form.
 		apply_filters( 'ddwc_dashboard_login_form', wp_login_form() );
 	}
 }
