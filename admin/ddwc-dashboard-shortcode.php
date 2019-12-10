@@ -351,6 +351,7 @@ function ddwc_dashboard_shortcode() {
 
 						echo '<table class="ddwc-dashboard">';
 						echo '<thead><tr><td>' . esc_html__( 'ID', 'ddwc' ) . '</td><td>' . esc_html__( 'Date', 'ddwc' ) . '</td><td>' . esc_html__( 'Status', 'ddwc' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_completed_orders_total_title', $total_title ) . '</tr></thead>';
+						echo do_action( 'ddwc_driver_dashboard_completed_orders_before_tbody' );
 						echo '<tbody>';
 						echo do_action( 'ddwc_driver_dashboard_completed_orders_tbody_top' );
 						foreach ( $assigned_orders as $driver_order ) {
