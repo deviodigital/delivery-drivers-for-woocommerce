@@ -84,7 +84,7 @@ add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_cont
 function ddwc_endpoint_title( $title ) {
 
 	if ( is_wc_endpoint_url( 'driver-dashboard' ) && in_the_loop() ) {
-		$title = esc_html__( 'Driver Dashboard', 'ddwc' );
+		$title = apply_filters( 'ddwc_my_account_endpoint_title_driver_dashboard', esc_attr__( 'Driver Dashboard', 'ddwc-pro' ) );
 	}
 	return $title;
 }
