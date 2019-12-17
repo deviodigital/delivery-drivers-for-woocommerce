@@ -223,6 +223,7 @@ function ddwc_driver_rating( $driver_id ) {
 	* If Orders have Driver ID attached
 	*/
 	if ( $assigned_orders ) {
+		// Loop through orders.
 		foreach ( $assigned_orders as $driver_order ) {
 
 			// Get an instance of the WC_Order object.
@@ -245,15 +246,16 @@ function ddwc_driver_rating( $driver_id ) {
 		}
 	}
 
+	// Set defaults.
+	$average_rating      = NULL;
+	$driver_rating_final = '';
+
 	if ( 0 != $driver_rating ) {
 		// Average rating.
 		$average_rating      = $driver_rating / $order_count;
 		$average_rating      = round( $average_rating, 1 );
 		// Driver rating final.
 		$driver_rating_final = $average_rating . '/5';
-	} else {
-		$average_rating      = NULL;
-		$driver_rating_final = '';
 	}
 
 	return $driver_rating_final;

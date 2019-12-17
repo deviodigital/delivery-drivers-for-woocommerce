@@ -58,7 +58,7 @@ function ddwc_my_account_menu_items( $items ) {
 	// Check user role.
 	if ( ddwc_check_user_roles( apply_filters( 'ddwc_my_account_check_user_role_array', $roles ) ) ) {
 		// Insert the driver-dashboard endpoint.
-		$items['driver-dashboard'] = apply_filters( 'ddwc_my_account_menu_item_driver_dashboard', esc_html__( 'Driver Dashboard', 'ddwc' ) );
+		$items['driver-dashboard'] = apply_filters( 'ddwc_my_account_menu_item_driver_dashboard', esc_attr__( 'Driver Dashboard', 'ddwc' ) );
 	}
 	// Insert back the customer-logout item.
 	$items['customer-logout'] = $logout;
