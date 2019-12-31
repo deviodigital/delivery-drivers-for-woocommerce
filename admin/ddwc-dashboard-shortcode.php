@@ -153,15 +153,7 @@ function ddwc_dashboard_shortcode() {
 							$delivery_address = str_replace( '<br/>', ' ', $order->get_formatted_billing_address() );
 						}
 
-						/**
-						 * Google Maps Delivery Address Geocode
-						 * 
-						 * This function will check admin settings and change the $delivery_address variable
-						 * to lat/lng coordinates if activated by the administrator
-						 * 
-						 * @return string
-						 * @since 2.7
-						 */
+						// Google Maps Delivery Address Geocode.
 						$delivery_address = ddwc_delivery_address_google_map_geocode( $delivery_address );
 
 						// Create the Google Map.
