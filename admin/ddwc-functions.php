@@ -285,6 +285,9 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 
 	// Error messages.
 	if ( 'OK' != $output->status ) {
+		// Remove the map via it's filter.
+		add_filter( 'ddwc_delivery_address_google_map', '__return_false' );
+
 		// Default error message.
 		$error_message = __( 'The delivery address is returning NULL.', 'ddwc' );
 
