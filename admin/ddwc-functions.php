@@ -260,3 +260,45 @@ function ddwc_driver_rating( $driver_id ) {
 
 	return $driver_rating_final;
 }
+
+/**
+ * Delivery Adddress Google Map Geocode
+ *
+ * @param string $delivery_address
+ * @since 2.7
+ */
+function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
+
+	// Default delivery address.
+	if ( NULL == $delivery_address ) {
+		$delivery_address = '';
+	}
+
+	// Prepare the delivery address for Google Maps geocode.
+	$delivery_address = str_replace( ' ', '+', $delivery_address );
+
+	// Get delivery address details from Google Maps.
+	$geocode = file_get_contents( 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $delivery_address . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) );
+	$output  = json_decode( $geocode );
+
+	// Get the delivery address latitude and longitude.
+	$latitude  = $output->results[0]->geometry->location->lat;
+	$longitude = $output->results[0]->geometry->location->lng;
+
+	// Delivery address (lat/lng).
+	$delivery_address = $latitude . ',' . $longitude;
+
+	// Error messages.
+	if ( 'OK' != $output->status ) {
+		// Default error message.
+		$error_message = __( 'The delivery address is returning NULL.', 'ddwc' );
+
+		// Google Maps error message.
+		if ( NULL != $output ) {
+			$error_message = $output->error_message;
+		}
+
+		echo '<p class="ddwc-map-api-error-msg">' . esc_html( $error_message ) . ' <a href="#">' . __( 'View Details', 'ddwc' ) . '</a></p>';
+	}
+
+}
