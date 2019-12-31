@@ -269,11 +269,6 @@ function ddwc_driver_rating( $driver_id ) {
  */
 function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 
-	// Default delivery address.
-	if ( NULL == $delivery_address ) {
-		$delivery_address = '';
-	}
-
 	// Prepare the delivery address for Google Maps geocode.
 	$delivery_address = str_replace( ' ', '+', $delivery_address );
 
@@ -301,4 +296,5 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 		echo '<p class="ddwc-map-api-error-msg">' . esc_html( $error_message ) . ' <a href="#">' . __( 'View Details', 'ddwc' ) . '</a></p>';
 	}
 
+	return $delivery_address;
 }
