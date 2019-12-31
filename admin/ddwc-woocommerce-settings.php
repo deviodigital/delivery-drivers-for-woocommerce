@@ -110,6 +110,15 @@ class Delivery_Drivers_WooCommerce_Settings {
 				'desc' => esc_html__( 'Add a map to the order directions for your drivers.', 'ddwc' ),
 				'id'   => 'ddwc_settings_google_maps_api_key'
 			),
+			// Google Maps address type.
+			'google_maps_geocode' => array(
+				'name'     => __( 'Google Maps Geocode', 'ddwc' ),
+				'desc_tip' => __( 'Update your drivers\' order details page to use a customers latitutde and longitude for directions', 'ddwc' ),
+				'id'       => 'ddwc_settings_google_maps_geocode',
+				'type'     => 'checkbox',
+				'css'      => 'min-width:300px;',
+				'desc'     => __( 'Enable Google Maps geocode for latitude and longitude', 'ddwc' ),
+			),
 			// Driver ratings.
 			'driver_ratings' => array(
 				'name' => esc_html__( 'Driver ratings', 'ddwc' ),
