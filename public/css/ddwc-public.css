@@ -73,6 +73,24 @@ h3.ddwc span.failed {
     border-color: #C94C42;
 }
 
+p.ddwc-map-api-error-msg {
+    background: #C94C42;
+    color: #FFF;
+    font-size: 14px;
+    padding: 10px;
+}
+
+p.ddwc-map-api-error-msg a,
+p.ddwc-map-api-error-msg a:visited {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+p.ddwc-map-api-error-msg a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
 /* Button Defaults */
 
 a.button.ddwc-button {
