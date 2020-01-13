@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.7
+*   Added 3 filters for change status redirect URL's in `admin/ddwc-functions.php`
+*   Added `ddwc_delivery_address_google_map_geocode` filter in `admin/ddwc-functions.php`
+*   Added `ddwc_delivery_address_google_map_geocode` function before Google Map in `admin/ddwc-dashboard-shortcode.php`
+*   Added `ddwc_my_account_endpoint_title_driver_dashboard` filter in `admin/ddwc-woocommerce-account-tab.php`
+*   Added `ddwc_driver_dashboard_completed_orders_before_tbody` action hook in `admin/ddwc-dashboard-shortcode.php`
+*   Added Google Maps Geocode WooCommerce setting in `admin/ddwc-woocommerce-settings.php`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.6
 *   Added driver dashboard for admins, displaying delivery drivers data in a table in `admin/ddwc-dashboard-shortcode.php`
 *   Added 2 action hooks for the admin driver dashboard delivery drivers table in `admin/ddwc-dashboard-shortcode.php`

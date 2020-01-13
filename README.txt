@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.3
-Stable tag: 2.6
+Tested up to: 5.3.2
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,16 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 2.7 =
+*   Added 3 filters for change status redirect URL's in `admin/ddwc-functions.php`
+*   Added `ddwc_delivery_address_google_map_geocode` filter in `admin/ddwc-functions.php`
+*   Added `ddwc_delivery_address_google_map_geocode` function before Google Map in `admin/ddwc-dashboard-shortcode.php`
+*   Added `ddwc_my_account_endpoint_title_driver_dashboard` filter in `admin/ddwc-woocommerce-account-tab.php`
+*   Added `ddwc_driver_dashboard_completed_orders_before_tbody` action hook in `admin/ddwc-dashboard-shortcode.php`
+*   Added Google Maps Geocode WooCommerce setting in `admin/ddwc-woocommerce-settings.php`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
 
 = 2.6 =
 *   Added driver dashboard for admins, displaying delivery drivers data in a table in `admin/ddwc-dashboard-shortcode.php`
