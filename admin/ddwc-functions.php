@@ -115,10 +115,10 @@ add_action( 'ddwc_driver_dashboard_change_status_forms_top', 'ddwc_driver_dashbo
 
 /**
  * Change order status forms
- * 
+ *
  * Displayed on the driver dashboard, allowing the driver to change
  * the status of an order as they deliver to customer.
- * 
+ *
  * @since 2.0
  */
 function ddwc_driver_dashboard_change_status_forms() {
@@ -295,8 +295,8 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 		if ( NULL != $output ) {
 			$error_message = $output->error_message;
 		}
-
-		echo '<p class="ddwc-map-api-error-msg">' . esc_html( $error_message ) . ' <a href="#">' . __( 'View Details', 'ddwc' ) . '</a></p>';
+		// Display an error message.
+		echo '<p class="ddwc-map-api-error-msg">' . esc_html( $error_message ) . '</p>';
 	}
 
 	return $delivery_address;
