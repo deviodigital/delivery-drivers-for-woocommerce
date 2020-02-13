@@ -90,7 +90,7 @@ class Delivery_Drivers_Admin {
  */
 function ddwc_show_custom_delivery_driver_column( $columns ) {
 
-    $new_columns = ( is_array( $columns ) ) ? $columns : array();
+  $new_columns = ( is_array( $columns ) ) ? $columns : array();
 
 	// Save shipping address column.
 	$shipping_address = $columns[ 'shipping_address' ];
@@ -104,8 +104,8 @@ function ddwc_show_custom_delivery_driver_column( $columns ) {
 	// Remove order actions column.
 	unset( $new_columns['wc_actions'] );
 
-    // Add delivery driver column.
-    $new_columns['delivery_driver'] = esc_html__( 'Delivery Driver', 'ddwc' );
+  // Add delivery driver column.
+  $new_columns['delivery_driver'] = esc_html__( 'Delivery Driver', 'ddwc' );
 
 	// Add shipping address column.
 	$new_columns[ 'shipping_address' ] = $shipping_address;
@@ -128,26 +128,26 @@ function ddwc_custom_delivery_driver_column( $column ) {
 
     switch ( $column ) {
 
-        case 'delivery_driver' :
-			// Noncename needed to verify where the data originated.
-			echo '<input type="hidden" name="ddwc_meta_noncename" id="ddwc_meta_noncename" value="' .
-			wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+      case 'delivery_driver' :
+				// Noncename needed to verify where the data originated.
+				echo '<input type="hidden" name="ddwc_meta_noncename" id="ddwc_meta_noncename" value="' .
+				wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-			// Get the driver data if its already been entered.
-			$ddwc_driver_id = get_post_meta( $post->ID, 'ddwc_driver_id', true );
+				// Get the driver data if its already been entered.
+				$ddwc_driver_id = get_post_meta( $post->ID, 'ddwc_driver_id', true );
 
-			// Echo Delivery Driver Metabox Input Field.
-			echo '<div class="ddwc-driver-box">';
-			wp_dropdown_users( array(
-				'show_option_none' => '--',
-				'role'             => 'driver',
-				'name'             => $post->ID,
-				'id'               => 'ddwc_driver_id',
-				'selected'         => $ddwc_driver_id,
-				'class'            => 'widefat',
-				'show'             => 'display_name'
-			) );
-			echo '</div>';
+				// Echo Delivery Driver Metabox Input Field.
+				echo '<div class="ddwc-driver-box">';
+				wp_dropdown_users( array(
+					'show_option_none' => '--',
+					'role'             => 'driver',
+					'name'             => $post->ID,
+					'id'               => 'ddwc_driver_id',
+					'selected'         => $ddwc_driver_id,
+					'class'            => 'widefat',
+					'show'             => 'display_name'
+				) );
+				echo '</div>';
 
         break;
     }
@@ -156,24 +156,24 @@ add_action( 'manage_shop_order_posts_custom_column', 'ddwc_custom_delivery_drive
 
 /**
  * Add "no-link" class to tr's from WooCommerce orders screen
- * 
+ *
  * @since 2.1
  */
 function ddwc_add_no_link_to_woocommerce_orders( $classes ) {
-	if ( current_user_can( 'manage_woocommerce' ) ) { //make sure we are shop managers 
-        foreach ( $classes as $class ) {
-	        if ( $class == 'type-shop_order' ) {
-	            $classes[] = 'no-link';
-	        }
-    	}
-    }
-    return $classes;
+	if ( current_user_can( 'manage_woocommerce' ) ) { //make sure we are shop managers
+    foreach ( $classes as $class ) {
+      if ( $class == 'type-shop_order' ) {
+        $classes[] = 'no-link';
+      }
+  	}
+  }
+  return $classes;
 }
 add_filter( 'post_class', 'ddwc_add_no_link_to_woocommerce_orders' );
 
 /**
  * AJAX function to update driver ID on WooCommerce Orders page
- * 
+ *
  * @since 2.1
  */
 function ddwc_delivery_driver_settings() {
@@ -202,7 +202,7 @@ function ddwc_delivery_driver_settings() {
     );
 
 	// Get all products based on $args.
-    $loop = get_posts( $args );
+  $loop = get_posts( $args );
 
 	// Loop through each product.
 	foreach ( $loop as $item ) {
@@ -214,43 +214,42 @@ function ddwc_delivery_driver_settings() {
 
 	}
 
-    exit;
+  exit;
 }
 add_action( 'wp_ajax_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings' );
 //add_action('wp_ajax_nopriv_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings');
 
 /**
  * AJAX function to update driver availability
- * 
+ *
  * @since 2.3
  */
 function ddwc_driver_availability_update() {
 
 	$user_id    = filter_input( INPUT_POST, 'user_id' );
-    $meta_value = filter_input( INPUT_POST, 'metavalue' );
+	$meta_value = filter_input( INPUT_POST, 'metavalue' );
 
-    if ( 'checked' == $meta_value ) {
-        $new_value = 'on';
-        $old_value = '';
-    } else {
-        $new_value = '';
-        $old_value = 'on';
-    }
+	if ( 'checked' == $meta_value ) {
+	    $new_value = 'on';
+	    $old_value = '';
+	} else {
+	    $new_value = '';
+	    $old_value = 'on';
+	}
 
-    // Update driver availability.
+	// Update driver availability.
 	update_user_meta( $user_id, 'ddwc_driver_availability', $new_value, $old_value );
-
 }
 add_action( 'wp_ajax_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
 add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
 
 /**
  * Bulk actions edit
- * 
+ *
  * Add delivery drivers to the bulk actions for WooCommerce Orders.
- * 
+ *
  * Thank you to Github user @developer-mohamed-saad for this update!
- * 
+ *
  * @since 2.5
  */
 function ddwc_driver_bulk_edit( $actions ) {
@@ -270,12 +269,12 @@ add_filter( 'bulk_actions-edit-shop_order', 'ddwc_driver_bulk_edit', 20, 1 );
 
 /**
  * Handle bulk actions
- * 
- * Processes the selected options from the bulk actions list in the 
+ *
+ * Processes the selected options from the bulk actions list in the
  * WooCommerce Orders screen.
- * 
+ *
  * Thank you to Github user @developer-mohamed-saad for this update!
- * 
+ *
  * @since 2.5
  */
 function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids ) {

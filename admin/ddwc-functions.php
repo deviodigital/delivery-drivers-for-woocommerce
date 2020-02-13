@@ -134,6 +134,7 @@ function ddwc_driver_dashboard_change_status_forms() {
 	// Create variable.
 	$change_status = '';
 
+	// Change status form if status is "driver assigned".
 	if ( 'driver-assigned' == $order_status ) {
 		$change_status  = '<h4>' . esc_html__( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
@@ -144,6 +145,7 @@ function ddwc_driver_dashboard_change_status_forms() {
 		$change_status .= wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 	}
 
+	// Change status form if status is "out for delivery".
 	if ( 'out-for-delivery' == $order_status ) {
 		$change_status  = '<h4>' . esc_html__( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
@@ -156,8 +158,8 @@ function ddwc_driver_dashboard_change_status_forms() {
 
 	do_action( 'ddwc_driver_dashboard_change_status_forms_bottom' );
 
+	// Display order status form.
 	echo apply_filters( 'ddwc_driver_dashboard_change_status', $change_status, $order_status );
-
 }
 
 /**
@@ -173,20 +175,23 @@ function ddwc_driver_dashboard_change_status_forms() {
  * @return bool
  */
 function ddwc_check_user_roles( $roles, $user_id = null ) {
-
-    if ( is_numeric( $user_id ) )
+		// Set user.
+    if ( is_numeric( $user_id ) ) {
         $user = get_userdata( $user_id );
-    else
+		} else {
         $user = wp_get_current_user();
-
-    if ( empty( $user ) )
+		}
+		// Bail if no user.
+    if ( empty( $user ) ) {
         return false;
-
+		}
+		// Get user roles.
     $user_roles = (array) $user->roles;
-
+		// Loop through user roles.
     foreach ( (array) $roles as $role ) {
-        if ( in_array( $role, $user_roles ) )
-            return true;
+        if ( in_array( $role, $user_roles ) ) {
+        		return true;
+				}
     }
 
     return false;

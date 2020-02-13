@@ -97,6 +97,10 @@ function ddwc_order_driver_details( $order ) {
 
         echo $string;
 
+        /**
+         * @todo Move JavaScript to public JS file and pass $ddwc_delivery_rating to it
+         */
+
         // Get the ajax rating file.
         $ddwc_delivery_rating = get_post_meta( $order_id, 'ddwc_delivery_rating', TRUE );
     ?>
@@ -142,16 +146,16 @@ if ( 'no' !== get_option( 'ddwc_settings_driver_ratings' ) ) {
 
 /**
  * AJAX function to update the delivery driver's rating on an order.
- * 
+ *
  * @since 1.6
  */
 function ddwc_driver_rating_ajax( $order ) {
 
-	$post_id    = filter_input( INPUT_POST, 'postid' );
-	$meta_key   = 'ddwc_delivery_rating';
-	$meta_value = esc_html( filter_input( INPUT_POST, 'rating' ) );
+    $post_id    = filter_input( INPUT_POST, 'postid' );
+    $meta_key   = 'ddwc_delivery_rating';
+    $meta_value = esc_html( filter_input( INPUT_POST, 'rating' ) );
 
-	// Update delivery rating.
+    // Update delivery rating.
     update_post_meta( $post_id, $meta_key, $meta_value );
 
     wp_die();
@@ -161,7 +165,7 @@ add_action( 'wp_ajax_nopriv_ddwc_driver_rating', 'ddwc_driver_rating_ajax' );
 
 /**
  * Save custom profile fields in user profile.
- * 
+ *
  * @since 1.6
  */
 function ddwc_save_custom_profile_fields( $user_id ) {
@@ -228,7 +232,7 @@ function ddwc_save_custom_profile_fields( $user_id ) {
             $filename   = $ddwc_driver_picture['file'];
             $title      = explode( '.', basename( $filename ) );
             $attachment = array(
-                'guid'           => $ddwc_driver_picture['url'], 
+                'guid'           => $ddwc_driver_picture['url'],
                 'post_mime_type' => $ddwc_driver_picture['type'],
                 'post_title'     => implode( '.', $title ),
                 'post_content'   => '',
@@ -247,7 +251,7 @@ add_action( 'woocommerce_save_account_details', 'ddwc_save_custom_profile_fields
 
 /**
  * Add profile options to Edit User screen
- * 
+ *
  * @since 1.6
  */
 function ddwc_add_profile_options( $profileuser ) {
@@ -361,7 +365,7 @@ add_action( 'edit_user_profile', 'ddwc_add_profile_options' );
 
 /**
  * Add form upload capabilites to edit user page.
- * 
+ *
  * @since 1.6
  */
 function ddwc_make_form_accept_uploads() {
@@ -372,7 +376,7 @@ add_action( 'woocommerce_edit_account_form_tag', 'ddwc_make_form_accept_uploads'
 
 /**
  * Add Driver details to WooCommerce My Account page.
- * 
+ *
  * @since 1.6
  */
 function ddwc_add_to_edit_account_form() {

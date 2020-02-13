@@ -25,7 +25,7 @@ add_action( 'init', 'ddwc_endpoints' );
  *
  * @param array $vars
  * @return array
- * 
+ *
  * @since 1.2
  */
 add_filter( 'woocommerce_get_query_vars', function ( $vars ) {
@@ -82,7 +82,7 @@ add_action( 'woocommerce_account_driver-dashboard_endpoint', 'ddwc_endpoint_cont
  * @return string
  */
 function ddwc_endpoint_title( $title ) {
-
+	// Change title on driver dashboard page.
 	if ( is_wc_endpoint_url( 'driver-dashboard' ) && in_the_loop() ) {
 		$title = apply_filters( 'ddwc_my_account_endpoint_title_driver_dashboard', esc_attr__( 'Driver Dashboard', 'ddwc-pro' ) );
 	}

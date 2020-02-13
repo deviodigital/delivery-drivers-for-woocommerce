@@ -105,15 +105,14 @@ function ddwc_dashboard_shortcode() {
 
 					// Display a button to call the customers phone number.
 					echo '<p>';
-					if ( isset( $order_billing_phone ) ) {
-						echo '<a href="tel:' . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . esc_html__( 'Call Customer', 'ddwc' ) . '</a> ';
-					}
+						if ( isset( $order_billing_phone ) ) {
+							echo '<a href="tel:' . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . esc_html__( 'Call Customer', 'ddwc' ) . '</a> ';
+						}
 
-					// Display a button to call the dispatch number if it's set in the Settings page. 
-					if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
-						echo '<a href="tel:' . get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . esc_html__( 'Call Dispatch', 'ddwc' ) . '</a>';
-					}
-
+						// Display a button to call the dispatch number if it's set in the Settings page.
+						if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
+							echo '<a href="tel:' . get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . esc_html__( 'Call Dispatch', 'ddwc' ) . '</a>';
+						}
 					echo '</p>';
 
 					echo '<h4>' . esc_html__( 'Delivery Address', 'ddwc' ) . '</h4>';
@@ -140,7 +139,7 @@ function ddwc_dashboard_shortcode() {
 					}
 
 					/**
-					 * Display a Google Map with the customers address if an API key is added to 
+					 * Display a Google Map with the customers address if an API key is added to
 					 * the WooCommerce Settings page.
 					 */
 					if ( false !== get_option( 'ddwc_settings_google_maps_api_key' ) && '' !== get_option( 'ddwc_settings_google_maps_api_key' ) ) {
@@ -431,7 +430,7 @@ function ddwc_dashboard_shortcode() {
 
 				/**
 				 * Driver Dashboard for Administrator
-				 * 
+				 *
 				 * @since 2.6
 				 */
 
@@ -453,10 +452,10 @@ function ddwc_dashboard_shortcode() {
 				if ( $drivers ) {
 
 					$thead = array(
-						__( 'Name', 'ddwc' ),
-						__( 'Status', 'ddwc' ),
-						__( 'Rating', 'ddwc' ),
-						__( 'Contact', 'ddwc' ),
+						esc_attr__( 'Name', 'ddwc' ),
+						esc_attr__( 'Status', 'ddwc' ),
+						esc_attr__( 'Rating', 'ddwc' ),
+						esc_attr__( 'Contact', 'ddwc' ),
 					);
 
 					$thead = apply_filters( 'ddwc_driver_dashboard_admin_table_thead', $thead );
@@ -524,9 +523,9 @@ function ddwc_dashboard_shortcode() {
 							$driver_rating_final,
 							$email_address . $phone_number,
 						);
-	
+
 						$tbody = apply_filters( 'ddwc_driver_dashboard_admin_table_tbody', $tbody );
-	
+
 						// Drivers tbody tr.
 						$drivers_table .= '<tr>';
 

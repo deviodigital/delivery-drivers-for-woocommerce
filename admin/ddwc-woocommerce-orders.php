@@ -12,7 +12,7 @@
 
 /**
  * Registering Returned post status
- * 
+ *
  * @since 2.5
  */
 function ddwc_register_order_returned_order_status() {
@@ -29,7 +29,7 @@ add_action( 'init', 'ddwc_register_order_returned_order_status' );
 
 /**
  * Registering Out for Delivery post status
- * 
+ *
  * @since 1.0
  */
 function ddwc_register_out_for_delivery_order_status() {
@@ -46,7 +46,7 @@ add_action( 'init', 'ddwc_register_out_for_delivery_order_status' );
 
 /**
  * Registering Driver Assigned post status
- * 
+ *
  * @since 1.0
  */
 function ddwc_register_driver_assigned_order_status() {
@@ -67,17 +67,17 @@ add_action( 'init', 'ddwc_register_driver_assigned_order_status' );
  * @param array $order_statuses
  *
  * @return array
- * 
+ *
  * @since 1.0
  */
 function ddwc_add_custom_order_statuses( $order_statuses ) {
-
+    // Create new status array.
     $new_order_statuses = array();
-
+    // Loop though statuses.
     foreach ( $order_statuses as $key => $status ) {
-
+        // Add status to our new statuses.
         $new_order_statuses[ $key ] = $status;
-
+        // Add our custom statuses.
         if ( 'wc-processing' === $key ) {
             $new_order_statuses['wc-driver-assigned']  = esc_html__( 'Driver Assigned', 'ddwc' );
             $new_order_statuses['wc-out-for-delivery'] = esc_html__( 'Out for Delivery', 'ddwc' );

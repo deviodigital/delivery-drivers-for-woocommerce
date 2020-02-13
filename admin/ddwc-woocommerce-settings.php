@@ -84,6 +84,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 		// Go Pro.
 		$go_pro = '';
 
+		// Go Pro link if DDWC Pro plugin isn't active.
 		if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
 			$go_pro = ' | <a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_html__( 'Go Pro', 'ddwc' ) . '</a>';
 		}
@@ -168,10 +169,10 @@ function ddwc_custom_user_redirect( $redirect, $user ) {
 	// Redirect page ID.
 	$redirect_page_id = url_to_postid( $redirect );
 	// Checkout page ID.
-    $checkout_page_id = wc_get_page_id( 'checkout' );
+  $checkout_page_id = wc_get_page_id( 'checkout' );
 	// Redirect normally if user is on checkout page.
-    if ( $redirect_page_id == $checkout_page_id ) {
-        return $redirect;
+  if ( $redirect_page_id == $checkout_page_id ) {
+    return $redirect;
 	}
 	// Redirect delivery drivers to the dashboard.
 	if ( 'driver' == $user_role ) {
@@ -184,7 +185,7 @@ add_filter( 'woocommerce_login_redirect', 'ddwc_custom_user_redirect', 10, 2 );
 
 /**
  * Remove name from formatted addresses
- * 
+ *
  * This filter is used to remove first and last name from formatted address, which is
  * used in the Driver Dashboard Google Maps display of the customer's address.
  *
