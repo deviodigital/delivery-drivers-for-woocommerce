@@ -38,7 +38,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = esc_html__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_attr__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -50,7 +50,6 @@ function ddwc_driver_dashboard_change_statuses() {
 
 		// Redirect so the new order details show on the page.
 		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_out_for_delivery_url', $redirect_url, $order_id ) ) );
-
 	}
 
 	// Variables for order returned.
@@ -66,7 +65,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = esc_html__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_attr__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -78,7 +77,6 @@ function ddwc_driver_dashboard_change_statuses() {
 
 		// Redirect so the new order details show on the page.
 		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_returned_url', $redirect_url, $order_id ) ) );
-
 	}
 
 	$order_completed = filter_input( INPUT_POST, 'ordercompleted' );
@@ -93,7 +91,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = esc_html__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_attr__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -105,7 +103,6 @@ function ddwc_driver_dashboard_change_statuses() {
 
 		// Redirect so the new order details show on the page.
 		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_completed_url', $redirect_url, $order_id ) ) );
-
 	}
 
 	do_action( 'ddwc_driver_dashboard_change_statuses_bottom' );
@@ -136,23 +133,23 @@ function ddwc_driver_dashboard_change_status_forms() {
 
 	// Change status form if status is "driver assigned".
 	if ( 'driver-assigned' == $order_status ) {
-		$change_status  = '<h4>' . esc_html__( 'Change Status', 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . esc_attr__( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<p><strong>' . esc_html__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . esc_html__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<p><strong>' . esc_attr__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . esc_attr__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
 		$change_status .= '<input type="hidden" name="outfordelivery" value="out-for-delivery" />';
-		$change_status .= '<input type="submit" value="' . esc_html__( 'Out for Delivery', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<input type="submit" value="' . esc_attr__( 'Out for Delivery', 'ddwc' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 	}
 
 	// Change status form if status is "out for delivery".
 	if ( 'out-for-delivery' == $order_status ) {
-		$change_status  = '<h4>' . esc_html__( 'Change Status', 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . esc_attr__( 'Change Status', 'ddwc' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<p><strong>' . esc_html__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . esc_html__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
-		$change_status .= '<input type="submit" name="orderreturned" value="' . esc_html__( 'Returned', 'ddwc' ) . '" class="button ddwc-change-status order-returned" />';
-		$change_status .= '<input type="submit" name="ordercompleted" value="' . esc_html__( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<p><strong>' . esc_attr__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . esc_attr__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<input type="submit" name="orderreturned" value="' . esc_attr__( 'Returned', 'ddwc' ) . '" class="button ddwc-change-status order-returned" />';
+		$change_status .= '<input type="submit" name="ordercompleted" value="' . esc_attr__( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 	}
 
@@ -220,9 +217,8 @@ function ddwc_driver_rating( $driver_id ) {
 	* Get Orders with Driver ID attached
 	*/
 	$assigned_orders = get_posts( $args );
-
-	$order_count   = 0;
-	$driver_rating = 0;
+	$order_count     = 0;
+	$driver_rating   = 0;
 
 	/**
 	* If Orders have Driver ID attached
@@ -257,8 +253,8 @@ function ddwc_driver_rating( $driver_id ) {
 
 	if ( 0 != $driver_rating ) {
 		// Average rating.
-		$average_rating      = $driver_rating / $order_count;
-		$average_rating      = round( $average_rating, 1 );
+		$average_rating = $driver_rating / $order_count;
+		$average_rating = round( $average_rating, 1 );
 		// Driver rating final.
 		$driver_rating_final = $average_rating . '/5';
 	}

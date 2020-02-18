@@ -29,10 +29,10 @@ add_action( 'init', 'ddwc_endpoints' );
  * @since 1.2
  */
 add_filter( 'woocommerce_get_query_vars', function ( $vars ) {
-    foreach ( ['driver-dashboard'] as $e ) {
-        $vars[$e] = $e;
-    }
-    return $vars;
+  foreach ( ['driver-dashboard'] as $e ) {
+    $vars[$e] = $e;
+  }
+  return $vars;
 } );
 
 // Flush rewrite rules.

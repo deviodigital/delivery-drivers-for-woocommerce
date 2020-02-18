@@ -54,18 +54,6 @@ class Delivery_Drivers_Admin {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Delivery_Drivers_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Delivery_Drivers_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ddwc-admin.min.css', array(), $this->version, 'all' );
 
 	}
@@ -105,7 +93,7 @@ function ddwc_show_custom_delivery_driver_column( $columns ) {
 	unset( $new_columns['wc_actions'] );
 
   // Add delivery driver column.
-  $new_columns['delivery_driver'] = esc_html__( 'Delivery Driver', 'ddwc' );
+  $new_columns['delivery_driver'] = esc_attr__( 'Delivery Driver', 'ddwc' );
 
 	// Add shipping address column.
 	$new_columns[ 'shipping_address' ] = $shipping_address;
@@ -197,21 +185,19 @@ function ddwc_delivery_driver_settings() {
 
 	// WooCommerce product loop $args
 	$args = array(
-        'post_type'      => 'product',
-        'posts_per_page' => 1000,
-    );
+      'post_type'      => 'product',
+      'posts_per_page' => 1000,
+  );
 
 	// Get all products based on $args.
   $loop = get_posts( $args );
 
 	// Loop through each product.
 	foreach ( $loop as $item ) {
-
 		// Update inventory.
 		if ( $meta_value === get_post_meta( $item->ID, $meta_key, true ) ) {
 			update_post_meta( $item->ID, $meta_key, $meta_value );
 		}
-
 	}
 
   exit;
@@ -230,11 +216,11 @@ function ddwc_driver_availability_update() {
 	$meta_value = filter_input( INPUT_POST, 'metavalue' );
 
 	if ( 'checked' == $meta_value ) {
-	    $new_value = 'on';
-	    $old_value = '';
+			$new_value = 'on';
+			$old_value = '';
 	} else {
-	    $new_value = '';
-	    $old_value = 'on';
+			$new_value = '';
+			$old_value = 'on';
 	}
 
 	// Update driver availability.

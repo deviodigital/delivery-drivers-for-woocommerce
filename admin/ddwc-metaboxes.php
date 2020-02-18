@@ -20,7 +20,7 @@
 function ddwc_metaboxes() {
 	add_meta_box(
 		'ddwc_metaboxes',
-		esc_html__( 'Delivery Driver', 'ddwc' ),
+		esc_attr__( 'Delivery Driver', 'ddwc' ),
 		'ddwc_build',
 		'shop_order',
 		'side',
@@ -45,7 +45,7 @@ function ddwc_build() {
 	// Echo Delivery Driver Metabox Input Field.
 	echo '<div class="ddwc-driver-box">';
 	wp_dropdown_users( array(
-		'show_option_none' => esc_html__( 'Assign a driver', 'ddwc' ),
+		'show_option_none' => esc_attr__( 'Assign a driver', 'ddwc' ),
 		'role'             => 'driver',
 		'name'             => 'ddwc_driver_id',
 		'id'               => 'ddwc_driver_id',
@@ -61,11 +61,11 @@ function ddwc_build() {
 	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'billing_phone', true );
 	// Display driver button.
 	if ( ! empty( $ddwc_driver_number ) ) {
-		echo '<p><a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_html__( 'Call Driver', 'ddwc' ) . '</a></p>';
+		echo '<p><a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'ddwc' ) . '</a></p>';
 	}
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
-		echo '<p>' . esc_html__( 'Delivery rating', 'ddwc' ) . ': ' . esc_html( $ddwc_driver_rating ) . ' out of 5 stars</p>';
+		echo '<p>' . esc_attr__( 'Delivery rating', 'ddwc' ) . ': ' . esc_html( $ddwc_driver_rating ) . ' out of 5 stars</p>';
 	}
 }
 
