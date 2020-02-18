@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 5.3.2
-Stable tag: 2.7
+Stable tag: 2.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,7 +38,7 @@ With these capabilities passed along to your drivers, you now have additional ti
 
 ## For any mobile workforce
 
-Below are a few examples of delivery services that can benefit from the **Delivery Drivers for WooCommerce**   plugin.
+Below are a few examples of delivery services that can benefit from the **Delivery Drivers for WooCommerce** plugin.
 
 *   Flowers
 *   Health & Beauty
@@ -94,6 +94,9 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 2.7.1 =
+*   General code cleanup throughout multiple files in the plugin
 
 = 2.7 =
 *   Added 3 filters for change status redirect URL's in `admin/ddwc-functions.php`

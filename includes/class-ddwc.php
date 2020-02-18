@@ -68,7 +68,7 @@ class DDWC {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'ddwc';
-		$this->version     = '2.7';
+		$this->version     = '2.7.1';
 
 		if ( defined( 'DDWC_VERSION' ) ) {
 			$this->version = DDWC_VERSION;
@@ -118,7 +118,7 @@ class DDWC {
 
 		/**
 		 * The file responsible for defining the DDWC helper functions
-		 * 
+		 *
 		 * @since 2.0
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-functions.php';

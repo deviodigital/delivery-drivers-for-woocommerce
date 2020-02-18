@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.7.1
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.7
 *   Added 3 filters for change status redirect URL's in `admin/ddwc-functions.php`
 *   Added `ddwc_delivery_address_google_map_geocode` filter in `admin/ddwc-functions.php`
