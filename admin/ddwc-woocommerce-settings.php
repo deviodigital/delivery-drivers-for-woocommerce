@@ -120,6 +120,18 @@ class Delivery_Drivers_WooCommerce_Settings {
 				'css'      => 'min-width:300px;',
 				'desc'     => esc_attr__( 'Enable Google Maps geocode for latitude and longitude', 'ddwc' ),
 			),
+			// Google Maps mode.
+			'google_maps_mode' => array(
+				'name' => esc_attr__( 'Map mode', 'ddwc' ),
+				'type' => 'select',
+				'desc' => esc_attr__( 'Select the method of travel you would like used in your drivers map.', 'ddwc' ),
+				'id'   => 'ddwc_settings_google_maps_mode',
+				'options' => array(
+					'driving'   => esc_attr__( 'Driving', 'ddwc' ),
+					'walking'   => esc_attr__( 'Walking', 'ddwc' ),
+					'bicycling' => esc_attr__( 'Bicycling', 'ddwc' )
+				),
+			),
 			// Driver ratings.
 			'driver_ratings' => array(
 				'name' => esc_attr__( 'Driver ratings', 'ddwc' ),
