@@ -105,14 +105,25 @@ function ddwc_dashboard_shortcode() {
 
 					// Display a button to call the customers phone number.
 					echo '<p>';
+
+						$phone_customer = '';
+						$phone_dispatch = '';
+
+						// Call Customer button.
 						if ( isset( $order_billing_phone ) ) {
-							echo '<a href="tel:' . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Customer', 'ddwc' ) . '</a> ';
+							$phone_customer = '<a href="tel:' . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Customer', 'ddwc' ) . '</a> ';
 						}
 
-						// Display a button to call the dispatch number if it's set in the Settings page.
+						// Call Dispatch button.
 						if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
-							echo '<a href="tel:' . get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . esc_attr__( 'Call Dispatch', 'ddwc' ) . '</a>';
+							$phone_dispatch = '<a href="tel:' . get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . esc_attr__( 'Call Dispatch', 'ddwc' ) . '</a> ';
 						}
+
+						// Call buttons.
+						$phone_numbers = apply_filters( 'ddwc_driver_dashboard_phone_numbers', $phone_dispatch . $phone_dispatch );
+
+						echo $phone_numbers;
+
 					echo '</p>';
 
 					echo '<h4>' . esc_attr__( 'Delivery Address', 'ddwc' ) . '</h4>';
