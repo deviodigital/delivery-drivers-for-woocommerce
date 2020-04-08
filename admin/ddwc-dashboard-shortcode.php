@@ -169,8 +169,15 @@ function ddwc_dashboard_shortcode() {
 							$delivery_address = ddwc_delivery_address_google_map_geocode( $delivery_address );
 						}
 
+						// Map mode, based on WooCommerce settings.
+						if ( NULL !== get_option( 'ddwc_settings_google_maps_mode' ) ) {
+							$mode = get_option( 'ddwc_settings_google_maps_mode' );
+						} else {
+							$mode = 'driving';
+						}
+
 						// Map mode.
-						$map_mode = '&mode=' . apply_filters( 'ddwc_delivery_address_google_map_mode', 'driving' );
+						$map_mode = '&mode=' . apply_filters( 'ddwc_delivery_address_google_map_mode', $mode );
 
 						// Create the Google Map.
 						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' . apply_filters( 'ddwc_google_maps_origin_address', $store_address ) . '&destination=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . $map_mode . '" allowfullscreen></iframe>';
