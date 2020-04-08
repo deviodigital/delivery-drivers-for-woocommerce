@@ -120,7 +120,7 @@ function ddwc_dashboard_shortcode() {
 						}
 
 						// Call buttons.
-						$phone_numbers = apply_filters( 'ddwc_driver_dashboard_phone_numbers', $phone_dispatch . $phone_dispatch );
+						$phone_numbers = apply_filters( 'ddwc_driver_dashboard_phone_numbers', $phone_dispatch . $phone_customer );
 
 						echo $phone_numbers;
 
