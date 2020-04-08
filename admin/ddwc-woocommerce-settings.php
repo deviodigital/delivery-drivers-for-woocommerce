@@ -122,7 +122,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 			),
 			// Google Maps mode.
 			'google_maps_mode' => array(
-				'name' => esc_attr__( 'Map mode', 'ddwc' ),
+				'name' => esc_attr__( 'Google Maps Mode', 'ddwc' ),
 				'type' => 'select',
 				'desc' => esc_attr__( 'Select the method of travel you would like used in your drivers map.', 'ddwc' ),
 				'id'   => 'ddwc_settings_google_maps_mode',
