@@ -173,7 +173,7 @@ function ddwc_dashboard_shortcode() {
 						if ( NULL !== get_option( 'ddwc_settings_google_maps_mode' ) ) {
 							$mode = get_option( 'ddwc_settings_google_maps_mode' );
 						} else {
-							$mode = 'driving';
+							$mode = esc_attr__( 'driving', 'ddwc' );
 						}
 
 						// Map mode.
