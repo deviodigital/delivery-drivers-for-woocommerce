@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8
+*   Added `ddwc_driver_dashboard_phone_numbers` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Added `ddwc_delivery_address_google_map_mode` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Added `Google Maps Mode` option to the WooCommerce DDWC Settings page in `admin/ddwc-woocommerce-settings.php`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.7.1
 *   General code cleanup throughout multiple files in the plugin
 

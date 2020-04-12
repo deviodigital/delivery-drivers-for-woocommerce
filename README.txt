@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.3.2
-Stable tag: 2.7.1
+Tested up to: 5.4.0
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,13 +87,20 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 
 1. Delivery Drivers WooCommerce Settings page
 2. Delivery Driver column added to the Edit Orders screen
-3. Driver dashboard, displaying all assigned orders (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
-4. Order details display (theme in use: [CannaBiz](https://www.wpdispensary.com/downloads/cannabiz/))
+3. Driver dashboard, displaying all assigned orders (theme in use: CannaBiz)
+4. Order details display (theme in use: CannaBiz)
 5. Delivery Driver information displayed on customer's order details page
 6. Google Maps Directions for delivery driver from Store address to Customer address
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 2.8 =
+*   Added `ddwc_driver_dashboard_phone_numbers` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Added `ddwc_delivery_address_google_map_mode` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Added `Google Maps Mode` option to the WooCommerce DDWC Settings page in `admin/ddwc-woocommerce-settings.php`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
 
 = 2.7.1 =
 *   General code cleanup throughout multiple files in the plugin
