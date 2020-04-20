@@ -80,7 +80,7 @@ function ddwc_dashboard_shortcode() {
 					$order_version        = $order_data['version'];
 					$order_payment_method = $order_data['payment_method'];
 					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', 'm-d-Y' ) );
-					$order_time_created   = $order_data['date_created']->date( 'h:i a' );
+					$order_time_created   = $order_data['date_created']->date( apply_filters( 'ddwc_time_format', 'h:i a' ) );
 					$order_discount_total = $order_data['discount_total'];
 					$order_discount_tax   = $order_data['discount_tax'];
 					$order_shipping_total = $order_data['shipping_total'];
