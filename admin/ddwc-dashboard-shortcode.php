@@ -253,7 +253,7 @@ function ddwc_dashboard_shortcode() {
 							$price       = $product->get_price();
 							$qtty        = $quantity;
 							$qtty_price  = $qtty * $price;
-							$price       = '<td>' .$currency_symbol . number_format( $qtty_price, 2 ) . '</td>';
+							$price       = '<td>' . $currency_symbol . number_format( $qtty_price, 2 ) . '</td>';
 							$total_price = apply_filters( 'ddwc_driver_dashboard_order_item_price', $price );
 
 							echo '<tr><td>' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
