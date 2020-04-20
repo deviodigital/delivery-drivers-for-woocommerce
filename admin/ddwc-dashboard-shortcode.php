@@ -349,7 +349,19 @@ function ddwc_dashboard_shortcode() {
 							$order_total_tax      = $order_data['total_tax'];
 							$order_customer_id    = $order_data['customer_id'];
 
-							if ( 'processing' === $order_status || 'driver-assigned' === $order_status || 'out-for-delivery' === $order_status || 'order-returned' === $order_status ) {
+							// Statuses for driver.
+							$statuses = array(
+								'processing',
+								'driver-assigned',
+								'out-for-delivery',
+								'order-returned'
+							);
+
+							// Filter the statuses.
+							$statuses = apply_filters( 'ddwc_driver_dashboard_assigned_orders_statuses', $statuses );
+
+							// Add orders to table if order status matches item in $statuses array.
+							if ( in_array( $order_status, $statuses ) ) {
 								echo '<tr>';
 								echo '<td><a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a></td>';
 								echo '<td>' . $order_date_created . '</td>';
