@@ -108,7 +108,7 @@ function ddwc_driver_dashboard_change_statuses() {
 	do_action( 'ddwc_driver_dashboard_change_statuses_bottom' );
 
 }
-add_action( 'ddwc_driver_dashboard_change_status_forms_top', 'ddwc_driver_dashboard_change_statuses' );
+add_action( 'wp_loaded', 'ddwc_driver_dashboard_change_statuses' );
 
 /**
  * Change order status forms
