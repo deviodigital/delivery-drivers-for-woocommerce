@@ -79,8 +79,8 @@ function ddwc_dashboard_shortcode() {
 					$order_currency       = $order_data['currency'];
 					$order_version        = $order_data['version'];
 					$order_payment_method = $order_data['payment_method'];
-					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', 'm-d-Y' ) );
-					$order_time_created   = $order_data['date_created']->date( apply_filters( 'ddwc_time_format', 'h:i a' ) );
+					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
+					$order_time_created   = $order_data['date_created']->date( apply_filters( 'ddwc_time_format', get_option( 'time_format' ) ) );
 					$order_discount_total = $order_data['discount_total'];
 					$order_discount_tax   = $order_data['discount_tax'];
 					$order_shipping_total = $order_data['shipping_total'];
@@ -255,7 +255,9 @@ function ddwc_dashboard_shortcode() {
 							$qtty_price  = $qtty * $price;
 							$price       = '<td>' . $currency_symbol . number_format( $qtty_price, 2 ) . '</td>';
 							$total_price = apply_filters( 'ddwc_driver_dashboard_order_item_price', $price );
-
+							/**
+							 * @todo add thumbnail image next to the product name.
+							 */
 							echo '<tr><td>' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
 						}
 					} else {
@@ -339,7 +341,7 @@ function ddwc_dashboard_shortcode() {
 							$order_currency       = $order_data['currency'];
 							$order_version        = $order_data['version'];
 							$order_payment_method = $order_data['payment_method'];
-							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', 'm-d-Y' ) );
+							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 							$order_discount_total = $order_data['discount_total'];
 							$order_discount_tax   = $order_data['discount_tax'];
 							$order_shipping_total = $order_data['shipping_total'];
@@ -408,7 +410,7 @@ function ddwc_dashboard_shortcode() {
 							$order_currency       = $order_data['currency'];
 							$order_version        = $order_data['version'];
 							$order_payment_method = $order_data['payment_method'];
-							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', 'm-d-Y' ) );
+							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option('date_format') ) );
 							$order_discount_total = $order_data['discount_total'];
 							$order_discount_tax   = $order_data['discount_tax'];
 							$order_shipping_total = $order_data['shipping_total'];
