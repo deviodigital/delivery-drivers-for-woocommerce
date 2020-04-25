@@ -94,7 +94,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 			'ddwc_settings_section_title' => array(
 				'name' => esc_attr__( 'Delivery Drivers for WooCommerce', 'ddwc' ),
 				'type' => 'title',
-				'desc' => esc_attr__( 'Brought to you by', 'ddwc' ) . ' <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://deviodigital.com/documentation" target="_blank">' . __esc_attr( 'Documentation', 'ddwc' ) . '</a>',
+				'desc' => esc_attr__( 'Brought to you by', 'ddwc' ) . ' <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://deviodigital.com/documentation" target="_blank">' . esc_attr__( 'Documentation', 'ddwc' ) . '</a>',
 				'id'   => 'ddwc_settings_section_title'
 			),
 			// Dispatch phone number.
