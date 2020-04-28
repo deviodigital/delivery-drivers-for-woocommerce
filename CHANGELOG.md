@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.9
+*   Added `ddwc_date_format` & `ddwc_time_format` filters in `admin/ddwc-dashboard-shortcode.php`
+*   Added `ddwc_driver_dashboard_assigned_orders_statuses` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Added `ddwc_driver_dashboard_change_statuses_redirect_url` filter in `admin/ddwc-functions.php`
+*   Added documentation link to settings page in `admin/ddwc-woocommerce-settings.php`
+*   Added check for DDWC Pro with admin notice if version number is older than currently available in `delivery-drivers-for-woocommerce.php`
+*   Bugfix updates redirect errors on driver status change in ` admin/ddwc-functions.php`
+*   Bugfix to hide the 'Call Driver' button in Edit Order metabox if no driver is selected in `admin/ddwc-metaboxes.php`
+*   Updated date/time formats to use default WordPress settings in `admin/ddwc-dashboard-shortcode.php`
+*   Updated dropdown of available drivers on Orders screen in `admin/class-ddwc-admin.php`
+*   Updated delivery drivers metabox dropdown to remove "Assign a driver" text as default in `admin/ddwc-metaboxes.php`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.8
 *   Added `ddwc_driver_dashboard_phone_numbers` filter in `admin/ddwc-dashboard-shortcode.php`
 *   Added `ddwc_delivery_address_google_map_mode` filter in `admin/ddwc-dashboard-shortcode.php`
