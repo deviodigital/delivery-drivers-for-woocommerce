@@ -97,3 +97,40 @@ function ddwc_settings_link( $links ) {
 	return $links;
 }
 add_filter( "plugin_action_links_$plugin_name", 'ddwc_settings_link' );
+
+/**
+ * Check DDWC Pro version number.
+ *
+ * If the DDWC Pro version number is less than what's defined below, there will
+ * be a notice added to the admin screen letting the user know there's a new
+ * version of the DDWC Pro plugin available.
+ *
+ * @since 2.9
+ */
+function ddwc_check_pro_version() {
+	// Only run if DDWC Pro is active.
+	if ( function_exists( 'ddwc_pro_all_settings' ) ) {
+		// Check if DDWC Pro version is defined.
+		if ( ! defined( 'DDWC_PRO_VERSION' ) ) {
+			define( 'DDWC_PRO_VERSION', 0 ); // default to zero.
+		}
+		// Set pro version number.
+		$pro_version = DDWC_PRO_VERSION;
+		if ( '0' == $pro_version || $pro_version < '1.7' ) {
+			add_action( 'admin_notices', 'ddwc_update_ddwc_pro_notice' );
+		}
+	}
+}
+add_action( 'admin_init', 'ddwc_check_pro_version' );
+
+/**
+ * Error notice - Runs if DDWC Pro is out of date.
+ *
+ * @see ddwc_check_pro_version()
+ * @since 2.9
+ */
+function ddwc_update_ddwc_pro_notice() {
+	$ddwc_orders = '<a href="https://www.deviodigital.com/my-account/orders/" target="_blank">Orders</a>';
+	$error       = sprintf( esc_html__( 'There is a new version of DDWC Pro available. Download your copy from the %1$s page on Devio Digital.', 'ddwc' ), $ddwc_orders );
+	echo '<div class="notice notice-info"><p>' . $error . '</p></div>';
+}
