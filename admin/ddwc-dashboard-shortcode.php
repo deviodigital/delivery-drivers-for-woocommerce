@@ -89,6 +89,7 @@ function ddwc_dashboard_shortcode() {
 					$order_total          = $order_data['total'];
 					$order_total_tax      = $order_data['total_tax'];
 					$order_customer_id    = $order_data['customer_id'];
+					$order_customer_note  = $order_data['customer_note'];
 					$order_shipping_addr  = $order_data['shipping']['address_1'];
 					$order_shipping_fname = $order_data['shipping']['first_name'];
 					$order_shipping_lname = $order_data['shipping']['last_name'];
@@ -198,13 +199,9 @@ function ddwc_dashboard_shortcode() {
 
 					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_top' );
 
-					// Display customer.
-					if ( '' !== $order_shipping_fname ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_shipping_fname . ' ' . $order_shipping_lname . '</td></tr>';
-					} elseif ( '' !== $order_billing_fname ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer', 'ddwc' ) . '</strong></td><td>' . $order_billing_fname . ' ' . $order_billing_lname . '</td></tr>';
-					} else {
-						// Do nothing.
+					// Display order date.
+					if ( isset( $order_date_created ) ) {
+						echo '<tr><td><strong>' . esc_attr__( 'Order date', 'ddwc' ) . '</strong></td><td>' . esc_html( $order_date_created ) . ' - ' . esc_html( $order_time_created ) . '</td></tr>';
 					}
 
 					// Display payment method details.
@@ -213,9 +210,17 @@ function ddwc_dashboard_shortcode() {
 						echo apply_filters( 'ddwc_driver_dashboard_payment_method', $payment_method );
 					}
 
-					// Display order date.
-					if ( isset( $order_date_created ) ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Order date', 'ddwc' ) . '</strong></td><td>' . esc_html( $order_date_created ) . ' - ' . esc_html( $order_time_created ) . '</td></tr>';
+					// Display customer name.
+					if ( '' !== $order_shipping_fname ) {
+						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'ddwc' ) . '</strong></td><td>' . $order_shipping_fname . ' ' . $order_shipping_lname . '</td></tr>';
+					} elseif ( '' !== $order_billing_fname ) {
+						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'ddwc' ) . '</strong></td><td>' . $order_billing_fname . ' ' . $order_billing_lname . '</td></tr>';
+					} else {
+						// Do nothing.
+					}
+					// Display customer note.
+					if ( isset( $order_customer_note ) ) {
+						echo '<tr><td><strong>' . esc_attr__( 'Customer note', 'ddwc' ) . '</strong></td><td>' . esc_html( $order_customer_note ) . '</td></tr>';
 					}
 
 					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_bottom' );
