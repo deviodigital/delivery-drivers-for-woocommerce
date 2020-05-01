@@ -37,7 +37,7 @@ function ddwc_order_driver_details( $order ) {
     if ( '-1' !== $driver_id && '' !== $driver_id ) {
         $string  = '<div class="ddwc-driver-details">';
         $string .= '<h2>' . esc_attr__( 'Delivery Driver', 'ddwc' ) . '</h2>';
-        $string .= '<div class="details-img">';
+        $string .= '<div class="ddwc-driver-details-img">';
         // Driver picture.
         if ( get_user_meta( $driver_id, 'ddwc_driver_picture', true ) ) {
             $driver_pic = get_user_meta( $driver_id, 'ddwc_driver_picture', true );
@@ -46,7 +46,7 @@ function ddwc_order_driver_details( $order ) {
             // Do nothing.
         }
         $string .= '</div>';
-        $string .= '<div class="details-text">';
+        $string .= '<div class="ddwc-driver-details-text">';
         // Driver name.
         $string .= '<h4>' . $driver_meta->user_firstname . ' ' . $driver_meta->user_lastname . '</h4>';
         // Display star rating.
