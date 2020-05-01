@@ -19,7 +19,7 @@
  *
  * @package    DDWC
  * @subpackage DDWC/includes
- * @author     Devio Digital <deviodigital@gmail.com>
+ * @author     Devio Digital <contact@deviodigital.com>
  */
 class Delivery_Drivers_Loader {
 

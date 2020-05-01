@@ -8,6 +8,7 @@
  *
  * @package    DDWC
  * @subpackage DDWC/includes
+ * @author     Devio Digital <contact@deviodigital.com>
  */
 
 /**
@@ -18,7 +19,7 @@
  * @since      1.0.0
  * @package    DDWC
  * @subpackage DDWC/includes
- * @author     Devio Digital <deviodigital@gmail.com>
+ * @author     Devio Digital <contact@deviodigital.com>
  */
 class Delivery_Drivers_Deactivator {
 

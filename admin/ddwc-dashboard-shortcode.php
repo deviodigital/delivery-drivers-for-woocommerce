@@ -7,6 +7,7 @@
  *
  * @package    DDWC
  * @subpackage DDWC/admin
+ * @author     Devio Digital <contact@deviodigital.com>
  */
 function ddwc_dashboard_shortcode() {
 
