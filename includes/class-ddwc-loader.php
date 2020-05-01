@@ -8,6 +8,7 @@
  *
  * @package    DDWC
  * @subpackage DDWC/includes
+ * @author     Devio Digital <contact@deviodigital.com>
  */
 
 /**
