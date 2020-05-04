@@ -275,18 +275,18 @@ function ddwc_add_profile_options( $profileuser ) {
             <td class="ddwc-driver-picture">
                 <?php if ( get_user_meta( $profileuser->ID, 'ddwc_driver_picture', true ) ) { ?>
                 <div class="ddwc-driver-picture">
-                  <?php
-                      if ( ! isset( $ddwc_driver_picture['error'] ) ) {
-                          if ( ! empty( $ddwc_driver_picture ) ) {
-                              $ddwc_driver_picture = $ddwc_driver_picture['url'];
-                              echo '<a href="' . $ddwc_driver_picture . '" target="_blank"><img src="' . $ddwc_driver_picture . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
-                          }
-                      } else {
-                          $ddwc_driver_picture = $ddwc_driver_picture['error'];
-                          echo $ddwc_driver_picture. '<br />';
-                      }
-                  ?>
-                  <button class="ddwc-remove-driver-picture" name="remove_driver_picture"><?php esc_html_e( 'x', 'ddwc' ); ?></button>
+                    <?php
+                        if ( ! isset( $ddwc_driver_picture['error'] ) ) {
+                            if ( ! empty( $ddwc_driver_picture ) ) {
+                                $ddwc_driver_picture = $ddwc_driver_picture['url'];
+                                echo '<a href="' . $ddwc_driver_picture . '" target="_blank"><img src="' . $ddwc_driver_picture . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
+                            }
+                        } else {
+                            $ddwc_driver_picture = $ddwc_driver_picture['error'];
+                            echo $ddwc_driver_picture. '<br />';
+                        }
+                    ?>
+                    <button class="ddwc-remove-driver-picture" name="remove_driver_picture"><?php esc_html_e( 'x', 'ddwc' ); ?></button>
                 </div><!-- /.ddwc-driver-picture -->
                 <?php } ?>
                 <input type="file" name="ddwc_driver_picture" value="" />
@@ -414,19 +414,19 @@ function ddwc_add_to_edit_account_form() {
             <label for="reg_ddwc_driver_picture"><?php esc_html_e( 'Driver Picture', 'ddwc' ); ?></label>
             <?php if ( get_user_meta( $user->ID, 'ddwc_driver_picture', true ) ) { ?>
             <div class="ddwc-driver-picture">
-              <?php
-              $ddwc_driver_picture = get_user_meta( $user->ID, 'ddwc_driver_picture', true );
-              if ( ! isset( $ddwc_driver_picture['error'] ) ) {
-                  if ( ! empty( $ddwc_driver_picture ) ) {
-                      $ddwc_driver_picture = $ddwc_driver_picture['url'];
-                      echo '<a href="' . esc_html( $ddwc_driver_picture ) . '" target="_blank"><img src="' . esc_html( $ddwc_driver_picture ) . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
-                  }
-              } else {
-                  $ddwc_driver_picture = $ddwc_driver_picture['error'];
-                  echo esc_html( $ddwc_driver_picture ) . '<br />';
-              }
-              ?>
-              <button class="remove-ddwc-driver-picture" name="remove_driver_picture"><?php esc_html_e( 'x', 'ddwc' ); ?></button>
+                <?php
+                $ddwc_driver_picture = get_user_meta( $user->ID, 'ddwc_driver_picture', true );
+                if ( ! isset( $ddwc_driver_picture['error'] ) ) {
+                    if ( ! empty( $ddwc_driver_picture ) ) {
+                        $ddwc_driver_picture = $ddwc_driver_picture['url'];
+                        echo '<a href="' . esc_html( $ddwc_driver_picture ) . '" target="_blank"><img src="' . esc_html( $ddwc_driver_picture ) . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
+                    }
+                } else {
+                    $ddwc_driver_picture = $ddwc_driver_picture['error'];
+                    echo esc_html( $ddwc_driver_picture ) . '<br />';
+                }
+                ?>
+                <button class="remove-ddwc-driver-picture" name="remove_driver_picture"><?php esc_html_e( 'x', 'ddwc' ); ?></button>
             </div><!-- /.ddwc-driver-picture -->
             <?php } ?>
             <input type="file" name="ddwc_driver_picture" id="reg_ddwc_driver_picture" value="" />

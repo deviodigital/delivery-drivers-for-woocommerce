@@ -123,10 +123,10 @@ class Delivery_Drivers_WooCommerce_Settings {
 			),
 			// Google Maps mode.
 			'google_maps_mode' => array(
-				'name' => esc_attr__( 'Google Maps Mode', 'ddwc' ),
-				'type' => 'select',
-				'desc' => esc_attr__( 'Select the method of travel you would like used in your drivers map.', 'ddwc' ),
-				'id'   => 'ddwc_settings_google_maps_mode',
+				'name'    => esc_attr__( 'Google Maps Mode', 'ddwc' ),
+				'type'    => 'select',
+				'desc'    => esc_attr__( 'Select the method of travel you would like used in your drivers map.', 'ddwc' ),
+				'id'      => 'ddwc_settings_google_maps_mode',
 				'options' => array(
 					'driving'   => esc_attr__( 'Driving', 'ddwc' ),
 					'walking'   => esc_attr__( 'Walking', 'ddwc' ),
@@ -135,10 +135,10 @@ class Delivery_Drivers_WooCommerce_Settings {
 			),
 			// Driver ratings.
 			'driver_ratings' => array(
-				'name' => esc_attr__( 'Driver ratings', 'ddwc' ),
-				'type' => 'select',
-				'desc' => esc_attr__( 'Add driver details with delivery star ratings to order details page.', 'ddwc' ),
-				'id'   => 'ddwc_settings_driver_ratings',
+				'name'    => esc_attr__( 'Driver ratings', 'ddwc' ),
+				'type'    => 'select',
+				'desc'    => esc_attr__( 'Add driver details with delivery star ratings to order details page.', 'ddwc' ),
+				'id'      => 'ddwc_settings_driver_ratings',
 				'options' => array(
 					'yes' => esc_attr__( 'Yes', 'ddwc' ),
 					'no'  => esc_attr__( 'No', 'ddwc' )
@@ -146,10 +146,10 @@ class Delivery_Drivers_WooCommerce_Settings {
 			),
 			// Driver phone number.
 			'driver_phone_number' => array(
-				'name' => esc_attr__( 'Driver phone number', 'ddwc' ),
-				'type' => 'select',
-				'desc' => esc_attr__( 'Add a button for customers to call driver in the driver details.', 'ddwc' ),
-				'id'   => 'ddwc_settings_driver_phone_number',
+				'name'    => esc_attr__( 'Driver phone number', 'ddwc' ),
+				'type'    => 'select',
+				'desc'    => esc_attr__( 'Add a button for customers to call driver in the driver details.', 'ddwc' ),
+				'id'      => 'ddwc_settings_driver_phone_number',
 				'options' => array(
 					'yes' => esc_attr__( 'Yes', 'ddwc' ),
 					'no'  => esc_attr__( 'No', 'ddwc' )
@@ -162,7 +162,6 @@ class Delivery_Drivers_WooCommerce_Settings {
 			),
 		);
 		return apply_filters( 'ddwc_woocommerce_settings', $settings );
-
 	}
 }
 Delivery_Drivers_WooCommerce_Settings::init();
@@ -182,10 +181,10 @@ function ddwc_custom_user_redirect( $redirect, $user ) {
 	// Redirect page ID.
 	$redirect_page_id = url_to_postid( $redirect );
 	// Checkout page ID.
-  $checkout_page_id = wc_get_page_id( 'checkout' );
+	$checkout_page_id = wc_get_page_id( 'checkout' );
 	// Redirect normally if user is on checkout page.
-  if ( $redirect_page_id == $checkout_page_id ) {
-    return $redirect;
+	if ( $redirect_page_id == $checkout_page_id ) {
+		return $redirect;
 	}
 	// Redirect delivery drivers to the dashboard.
 	if ( 'driver' == $user_role ) {

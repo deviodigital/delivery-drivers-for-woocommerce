@@ -78,7 +78,7 @@ class Delivery_Drivers_Admin {
  */
 function ddwc_show_custom_delivery_driver_column( $columns ) {
 
-  $new_columns = ( is_array( $columns ) ) ? $columns : array();
+	$new_columns = ( is_array( $columns ) ) ? $columns : array();
 
 	// Save shipping address column.
 	$shipping_address = $columns[ 'shipping_address' ];
@@ -92,8 +92,8 @@ function ddwc_show_custom_delivery_driver_column( $columns ) {
 	// Remove order actions column.
 	unset( $new_columns['wc_actions'] );
 
-  // Add delivery driver column.
-  $new_columns['delivery_driver'] = esc_attr__( 'Delivery Driver', 'ddwc' );
+	// Add delivery driver column.
+	$new_columns['delivery_driver'] = esc_attr__( 'Delivery Driver', 'ddwc' );
 
 	// Add shipping address column.
 	$new_columns[ 'shipping_address' ] = $shipping_address;
@@ -207,12 +207,12 @@ function ddwc_delivery_driver_settings() {
 
 	// WooCommerce product loop $args
 	$args = array(
-      'post_type'      => 'product',
-      'posts_per_page' => 1000,
-  );
+		'post_type'      => 'product',
+		'posts_per_page' => 1000,
+	);
 
 	// Get all products based on $args.
-  $loop = get_posts( $args );
+	$loop = get_posts( $args );
 
 	// Loop through each product.
 	foreach ( $loop as $item ) {
@@ -238,11 +238,11 @@ function ddwc_driver_availability_update() {
 	$meta_value = filter_input( INPUT_POST, 'metavalue' );
 
 	if ( 'checked' == $meta_value ) {
-			$new_value = 'on';
-			$old_value = '';
+		$new_value = 'on';
+		$old_value = '';
 	} else {
-			$new_value = '';
-			$old_value = 'on';
+		$new_value = '';
+		$old_value = 'on';
 	}
 
 	// Update driver availability.

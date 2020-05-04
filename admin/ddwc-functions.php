@@ -173,23 +173,23 @@ function ddwc_driver_dashboard_change_status_forms() {
  * @return bool
  */
 function ddwc_check_user_roles( $roles, $user_id = null ) {
-		// Set user.
+	// Set user.
     if ( is_numeric( $user_id ) ) {
         $user = get_userdata( $user_id );
-		} else {
+	} else {
         $user = wp_get_current_user();
-		}
-		// Bail if no user.
+	}
+	// Bail if no user.
     if ( empty( $user ) ) {
         return false;
-		}
-		// Get user roles.
+	}
+	// Get user roles.
     $user_roles = (array) $user->roles;
-		// Loop through user roles.
+	// Loop through user roles.
     foreach ( (array) $roles as $role ) {
         if ( in_array( $role, $user_roles ) ) {
-        		return true;
-				}
+			return true;
+		}
     }
 
     return false;
