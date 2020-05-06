@@ -225,6 +225,7 @@ table.ddwc-driver-details tr td {
 
 input.ddwc-ofdmsg {
     margin-bottom: 12px;
+    min-width: 260px;
 }
 
 .ddwc-orders form input[type="submit"].ddwc-change-status {
