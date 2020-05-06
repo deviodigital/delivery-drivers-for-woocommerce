@@ -344,6 +344,8 @@ table.ddwc-dashboard.delivery-drivers span.driver-status.available {
 
 table.ddwc-dashboard.delivery-drivers a.button.ddwc-button {
     background: #222222;
+    display: inline-block;
+    height: 36px;
     padding: 0.75em;
 }
 
