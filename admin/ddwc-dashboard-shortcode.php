@@ -220,7 +220,7 @@ function ddwc_dashboard_shortcode() {
 						// Do nothing.
 					}
 					// Display customer note.
-					if ( isset( $order_customer_note ) ) {
+					if ( isset( $order_customer_note ) && '' != $order_customer_note ) {
 						echo '<tr><td><strong>' . esc_attr__( 'Customer note', 'ddwc' ) . '</strong></td><td>' . esc_html( $order_customer_note ) . '</td></tr>';
 					}
 
@@ -327,10 +327,27 @@ function ddwc_dashboard_shortcode() {
 
 						do_action( 'ddwc_assigned_orders_table_before' );
 
-						$total_title = '<td>' . esc_attr__( 'Total', 'ddwc' ) . '</td>';
-
 						echo '<table class="ddwc-dashboard">';
-						echo '<thead><tr><td>' . esc_attr__( 'ID', 'ddwc' ) . '</td><td>' . esc_attr__( 'Date', 'ddwc' ) . '</td><td>' . esc_attr__( 'Status', 'ddwc' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_assigned_orders_total_title', $total_title ) . '</tr></thead>';
+
+						// Array for assigned orders table thead.
+						$thead = array(
+							esc_attr__( 'ID', 'ddwc' ),
+							esc_attr__( 'Date', 'ddwc' ),
+							esc_attr__( 'Status', 'ddwc' ),
+							apply_filters( 'ddwc_driver_dashboard_assigned_orders_total_title', esc_attr__( 'Total', 'ddwc' ) ),
+						);
+
+						// Filter the thead array.
+						$thead = apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_table_thead', $thead );
+
+						echo '<thead><tr>';
+						// Loop through $thead.
+						foreach ( $thead as $row ) {
+							// Add td to thead.
+							echo '<td>' . $row . '</td>';
+						}
+						echo '</tr></thead>';
+
 						echo '<tbody>';
 						foreach ( $assigned_orders as $driver_order ) {
 
@@ -370,19 +387,31 @@ function ddwc_dashboard_shortcode() {
 
 							// Add orders to table if order status matches item in $statuses array.
 							if ( in_array( $order_status, $statuses ) ) {
-								echo '<tr>';
-								echo '<td><a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a></td>';
-								echo '<td>' . $order_date_created . '</td>';
-								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
-
+								// Order total.
 								if ( isset( $order_total ) ) {
-									$order_total = '<td>'  . $currency_symbol . $order_total . '</td>';
-									echo apply_filters( 'ddwc_driver_dashboard_assigned_orders_total', $order_total, $driver_order->ID );
+									$order_total = $currency_symbol . $order_total;
+									$order_total = apply_filters( 'ddwc_driver_dashboard_assigned_orders_total', $order_total, $driver_order->ID );
 								} else {
-									echo '<td>-</td>';
+									$order_total = '-';
 								}
 
-								echo '</tr>';
+								// Array for assigned orders table tbody.
+								$tbody = array(
+									'<a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a>',
+									$order_date_created,
+									wc_get_order_status_name( $order_status ),
+									$order_total
+								);
+		
+								// Array for assigned orders table tbody.
+								$tbody = apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_table_tbody', $tbody, $order_id );
+
+								echo '<tr>';
+								// Loop through $tbody.
+								foreach ( $tbody as $row ) {
+									echo '<td>' . $row . '</td>';
+								}
+								echo '<tr>';
 							}
 						}
 						echo '</tbody>';
