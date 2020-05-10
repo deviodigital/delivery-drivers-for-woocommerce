@@ -498,8 +498,6 @@ function ddwc_dashboard_shortcode() {
 				}
 			} elseif ( ddwc_check_user_roles( array( 'administrator' ) ) ) {
 
-				ddwc_driver_dashboard_admin_drivers_table();
-
 				do_action( 'ddwc_admin_orders_form_before' );
 
 				/**
@@ -689,7 +687,7 @@ function ddwc_dashboard_shortcode() {
 
 					// Array for admin orders table tbody.
 					$tbody = array(
-						'<a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_admin_orders_order_details_url', get_bloginfo( 'home' ) . '/wp-admin/post.php?post=' . $driver_order->ID . '&action=edit', $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a>',
+						'<a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_admin_orders_order_details_url', admin_url( 'post.php?post=' . $driver_order->ID . '&action=edit' ), $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a>',
 						$order_date_created,
 						apply_filters( 'ddwc_driver_dashboard_admin_orders_orders_table_address', $address ),
 						wc_get_order_status_name( $order_status ),
@@ -723,6 +721,9 @@ function ddwc_dashboard_shortcode() {
 				echo '</table>';
 
 				do_action( 'ddwc_admin_orders_table_after' );
+
+				// Add the Delivery Drivers table.
+				ddwc_driver_dashboard_admin_drivers_table();
 
 			} else {
 
