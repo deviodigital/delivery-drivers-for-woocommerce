@@ -293,9 +293,16 @@ function ddwc_add_profile_options( $profileuser ) {
             </td>
         </tr>
         <tr>
-            <th scope="row"><?php esc_html_e( 'License Plate Number', 'ddwc' ); ?></th>
+            <th scope="row"><?php esc_html_e( 'Availability', 'ddwc' ); ?></th>
             <td>
-                <input class="regular-text" type="text" name="ddwc_driver_license_plate" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_license_plate', true ) ); ?>" />
+                <?php
+                    if ( get_user_meta( $profileuser->ID, 'ddwc_driver_availability', true ) ) {
+                        $checked = 'checked';
+                    } else {
+                        $checked = '';
+                    }
+                ?>
+                <input class="regular-text" type="checkbox" name="ddwc_driver_availability" <?php esc_attr_e( $checked ); ?> /> <?php esc_html_e( 'Is the driver currently accepting deliveries?', 'ddwc' ); ?>
             </td>
         </tr>
         <tr>
@@ -310,11 +317,11 @@ function ddwc_add_profile_options( $profileuser ) {
                     echo '<option value="">--</option>';
                     foreach ( $transportation_types as $type ) {
                         if ( $type != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                            $imagesizeinfo = '';
+                            $selected = '';
                         } else {
-                            $imagesizeinfo = 'selected="selected"';
+                            $selected = 'selected="selected"';
                         }
-                        printf( '<option value="%s" ' . esc_html( $imagesizeinfo ) . '>%s</option>', esc_html( $type ), esc_html( $type ) );
+                        printf( '<option value="%s" ' . esc_html( $selected ) . '>%s</option>', esc_html( $type ), esc_html( $type ) );
                     }
                     print( '</select>' );
                 }
@@ -349,19 +356,14 @@ function ddwc_add_profile_options( $profileuser ) {
                 <input class="regular-text" type="text" name="ddwc_driver_vehicle_color" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_vehicle_color', true ) ); ?>" />
             </td>
         </tr>
+        <?php if ( 'Bicycle' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) { ?>
         <tr>
-            <th scope="row"><?php esc_html_e( 'Availability', 'ddwc' ); ?></th>
+            <th scope="row"><?php esc_html_e( 'License Plate Number', 'ddwc' ); ?></th>
             <td>
-                <?php
-                    if ( get_user_meta( $profileuser->ID, 'ddwc_driver_availability', true ) ) {
-                        $checked = 'checked';
-                    } else {
-                        $checked = '';
-                    }
-                ?>
-                <input class="regular-text" type="checkbox" name="ddwc_driver_availability" <?php esc_attr_e( $checked ); ?> /> <?php esc_html_e( 'Is the driver currently accepting deliveries?', 'ddwc' ); ?>
+                <input class="regular-text" type="text" name="ddwc_driver_license_plate" value="<?php echo esc_html( get_user_meta( $profileuser->ID, 'ddwc_driver_license_plate', true ) ); ?>" />
             </td>
         </tr>
+        <?php } ?>
         </table>
     <?php
     }
@@ -432,10 +434,6 @@ function ddwc_add_to_edit_account_form() {
             <input type="file" name="ddwc_driver_picture" id="reg_ddwc_driver_picture" value="" />
         </p>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="reg_ddwc_driver_license_plate"><?php esc_html_e( 'License Plate Number', 'ddwc' ); ?></label>
-            <input type="text" class="input-text" name="ddwc_driver_license_plate" id="reg_ddwc_driver_license_plate" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_license_plate', true ); ?>" />
-        </p>
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="reg_ddwc_driver_transportation_type"><?php esc_html_e( 'Transportation Type', 'ddwc' ); ?></label>
             <?php
                 // Transportation types.
@@ -480,6 +478,12 @@ function ddwc_add_to_edit_account_form() {
             ?>
             </label>
             <input type="text" class="input-text" name="ddwc_driver_vehicle_color" id="reg_ddwc_driver_vehicle_color" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_vehicle_color', true ); ?>" />
+        </p>
+        <?php if ( 'Bicycle' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) { ?>
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="reg_ddwc_driver_license_plate"><?php esc_html_e( 'License Plate Number', 'ddwc' ); ?></label>
+            <input type="text" class="input-text" name="ddwc_driver_license_plate" id="reg_ddwc_driver_license_plate" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_license_plate', true ); ?>" />
+        <?php } ?>
         </p>
     </fieldset>
     <?php
