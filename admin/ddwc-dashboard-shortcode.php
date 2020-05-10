@@ -625,6 +625,8 @@ function ddwc_dashboard_shortcode() {
 
 				do_action( 'ddwc_admin_drivers_table_after' );
 
+				do_action( 'ddwc_admin_orders_form_before' );
+
 				/**
 				 * Args for Orders with Driver ID attached
 				 */
@@ -669,6 +671,8 @@ function ddwc_dashboard_shortcode() {
 					</div>
 				</form>
 				<?php
+				do_action( 'ddwc_admin_orders_form_after' );
+
 				// 	Filter variables.
 				if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 					// Check if the filter-from field is set.
@@ -717,7 +721,6 @@ function ddwc_dashboard_shortcode() {
 					),
 				);
 
-
 				// Check if the form filter-name is set.
 				if ( isset( $_POST['filter-name'] ) ) {
 					// Set the Driver ID key name.
@@ -731,12 +734,15 @@ function ddwc_dashboard_shortcode() {
 				 */
 				$driver_orders = get_posts( $args );
 
-				echo '<table class="ddwc-dashboard">';
+				do_action( 'ddwc_admin_orders_table_before' );
+
+				echo '<table class="ddwc-dashboard admin-orders">';
 
 				// Array for admin orders table thead.
 				$thead = array(
 					esc_attr__( 'ID', 'ddwc' ),
 					esc_attr__( 'Date', 'ddwc' ),
+					esc_attr__( 'Address', 'ddwc' ),
 					esc_attr__( 'Status', 'ddwc' ),
 					apply_filters( 'ddwc_driver_dashboard_admin_orders_total_title', esc_attr__( 'Total', 'ddwc' ) ),
 				);
@@ -778,6 +784,26 @@ function ddwc_dashboard_shortcode() {
 					$order_total_tax      = $order_data['total_tax'];
 					$order_customer_id    = $order_data['customer_id'];
 
+					## BILLING INFORMATION:
+
+					$order_billing_city     = $order_data['billing']['city'];
+					$order_billing_state    = $order_data['billing']['state'];
+					$order_billing_postcode = $order_data['billing']['postcode'];
+
+					## SHIPPING INFORMATION:
+
+					$order_shipping_city     = $order_data['shipping']['city'];
+					$order_shipping_state    = $order_data['shipping']['state'];
+					$order_shipping_postcode = $order_data['shipping']['postcode'];
+
+					// Create address to use in the table.
+					$address = $order_billing_city . ' ' . $order_billing_state . ', ' . $order_billing_postcode;
+
+					// Set address to shipping (if available).
+					if ( isset( $order_shipping_city ) ) {
+						$address = $order_shipping_city . ' ' . $order_shipping_state . ', ' . $order_shipping_postcode;
+					}
+
 					// Order total.
 					if ( isset( $order_total ) ) {
 						$order_total = $currency_symbol . $order_total;
@@ -788,8 +814,9 @@ function ddwc_dashboard_shortcode() {
 
 					// Array for admin orders table tbody.
 					$tbody = array(
-						'<a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_admin_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a>',
+						'<a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_admin_orders_order_details_url', get_bloginfo( 'home' ) . '/wp-admin/post.php?post=' . $driver_order->ID . '&action=edit', $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a>',
 						$order_date_created,
+						apply_filters( 'ddwc_driver_dashboard_admin_orders_orders_table_address', $address ),
 						wc_get_order_status_name( $order_status ),
 						$order_total
 					);
@@ -797,15 +824,30 @@ function ddwc_dashboard_shortcode() {
 					// Array for admin orders table tbody.
 					$tbody = apply_filters( 'ddwc_driver_dashboard_admin_orders_order_table_tbody', $tbody, $order_id );
 
-					echo '<tr>';
-					// Loop through $tbody.
-					foreach ( $tbody as $row ) {
-						echo '<td>' . $row . '</td>';
+					// Statuses for driver.
+					$statuses = array(
+						'driver-assigned',
+						'out-for-delivery',
+						'order-returned'
+					);
+
+					// Filter the statuses.
+					$statuses = apply_filters( 'ddwc_driver_dashboard_orders_table_statuses', $statuses );
+
+					// Add orders to table if order status matches item in $statuses array.
+					if ( in_array( $order_status, $statuses ) ) {
+						echo '<tr>';
+						// Loop through $tbody.
+						foreach ( $tbody as $row ) {
+							echo '<td>' . $row . '</td>';
+						}
+						echo '<tr>';
 					}
-					echo '<tr>';
 				}
 				echo '</tbody>';
 				echo '</table>';
+
+				do_action( 'ddwc_admin_orders_table_after' );
 
 			} else {
 
