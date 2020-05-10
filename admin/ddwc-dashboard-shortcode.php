@@ -674,42 +674,49 @@ function ddwc_dashboard_shortcode() {
 					// Check if the filter-from field is set.
 					if ( isset( $_POST['filter-from'] ) ) {
 						// Form field - from date.
-						$from_time  = strtotime( $_POST['filter-from'] );
-						$from_year  = date( 'Y', $from_time );
-						$from_month = date( 'n', $from_time );
-						$from_day   = date( 'j', $from_time );
-						$from_time  = $from_year . '-' . $from_month . '-' . $from_day;
-					} else {
-						$from_time = date( 'Y-m-d', strtotime( '-7 days' ) );
+						$from_time  = date( 'Y-m-d', strtotime( $_POST['filter-from'] ) );
+						$from_year  = date( 'Y', strtotime( $from_time ) );
+						$from_month = date( 'n', strtotime( $from_time ) );
+						$from_day   = date( 'j', strtotime( $from_time ) );
 					}
 					// Check if the filter-to field is set.
 					if ( isset( $_POST['filter-to'] ) ) {
 						// Form field - to date.
-						$to_time  = strtotime( $_POST['filter-to'] );
-						$to_year  = date( 'Y', $to_time );
-						$to_month = date( 'n', $to_time );
-						$to_day   = date( 'j', $to_time );
-						$to_time  = $to_year . '-' . $to_month . '-' . $to_day;
-					} else {
-						$to_time = date( 'Y-m-d' );
+						$to_time  = date( 'Y-m-d', strtotime( $_POST['filter-to'] ) );
+						$to_year  = date( 'Y', strtotime( $to_time ) );
+						$to_month = date( 'n', strtotime( $to_time ) );
+						$to_day   = date( 'j', strtotime( $to_time ) );
 					}
-					// Update the args.
-					$args['date_query'] = array(
-						array(
-							'after'     => array(
-								'year'  => $from_year,
-								'month' => $from_month,
-								'day'   => $from_day,
-							),
-							'before'    => array(
-								'year'  => $to_year,
-								'month' => $to_month,
-								'day'   => $to_day,
-							),
-							'inclusive' => true,
-						),
-					);
+				} else {
+					// From time (7 days ago).
+					$from_time  = date( 'Y-m-d', strtotime( '-7 days' ) );
+					$from_year  = date( 'Y', strtotime( $from_time ) );
+					$from_month = date( 'n', strtotime( $from_time ) );
+					$from_day   = date( 'j', strtotime( $from_time ) );
+					// To time (now).
+					$to_time  = date( 'Y-m-d' );
+					$to_year  = date( 'Y', strtotime( $to_time ) );
+					$to_month = date( 'n', strtotime( $to_time ) );
+					$to_day   = date( 'j', strtotime( $to_time ) );
 				}
+
+				// Update the args.
+				$args['date_query'] = array(
+					array(
+						'after'     => array(
+							'year'  => $from_year,
+							'month' => $from_month,
+							'day'   => $from_day,
+						),
+						'before'    => array(
+							'year'  => $to_year,
+							'month' => $to_month,
+							'day'   => $to_day,
+						),
+						'inclusive' => true,
+					),
+				);
+
 
 				// Check if the form filter-name is set.
 				if ( isset( $_POST['filter-name'] ) ) {
