@@ -625,6 +625,181 @@ function ddwc_dashboard_shortcode() {
 
 				do_action( 'ddwc_admin_drivers_table_after' );
 
+				/**
+				 * Args for Orders with Driver ID attached
+				 */
+				$args = array(
+					'orderby'        => 'date',
+					'post_type'      => 'shop_order',
+					'posts_per_page' => -1,
+					'post_status'    => 'any'
+				);
+				?>
+				<h3><?php _e( 'Delivery Orders', 'ddwc' ); ?></h3>
+				<form class="ddwc-order-filters" method="post" action="<?php $_SERVER['REQUEST_URI']; ?>">
+					<div class="form-group">
+						<label><?php _e( 'From', 'ddwc' ); ?></label>
+						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo $_POST['filter-from']; } else { echo date( 'Y-m-d', strtotime( '-7 days' ) ); } ?>" />
+					</div>
+					<div class="form-group">
+						<label><?php _e( 'To', 'ddwc' ); ?></label>
+						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo $_POST['filter-to']; } else { echo date( 'Y-m-d' );  } ?>" />
+					</div>
+					<div class="form-group">
+						<label><?php _e( 'Driver', 'ddwc' ); ?></label>
+						<select name="filter-name">
+							<option value=""></option>
+							<?php
+								$user_query = new WP_User_Query( array( 'role' => 'driver' ) );
+								if ( ! empty( $user_query->get_results() ) ) {
+									foreach ( $user_query->get_results() as $user ) {
+										if ( isset( $_POST['filter-name'] ) && $user->ID == $_POST['filter-name'] ) {
+											$selected = 'selected';
+										} else {
+											$selected = '';
+										}
+										echo '<option ' . $selected . ' value="' . $user->ID . '">' . $user->display_name . ' User ID: (' . $user->ID . ')'.' </option>';
+									}
+								}
+							?>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="<?php _e( 'SUBMIT', 'ddwc' ); ?>" />
+					</div>
+				</form>
+				<?php
+				// 	Filter variables.
+				if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+					// Check if the filter-from field is set.
+					if ( isset( $_POST['filter-from'] ) ) {
+						// Form field - from date.
+						$from_time  = strtotime( $_POST['filter-from'] );
+						$from_year  = date( 'Y', $from_time );
+						$from_month = date( 'n', $from_time );
+						$from_day   = date( 'j', $from_time );
+						$from_time  = $from_year . '-' . $from_month . '-' . $from_day;
+					} else {
+						$from_time = date( 'Y-m-d', strtotime( '-7 days' ) );
+					}
+					// Check if the filter-to field is set.
+					if ( isset( $_POST['filter-to'] ) ) {
+						// Form field - to date.
+						$to_time  = strtotime( $_POST['filter-to'] );
+						$to_year  = date( 'Y', $to_time );
+						$to_month = date( 'n', $to_time );
+						$to_day   = date( 'j', $to_time );
+						$to_time  = $to_year . '-' . $to_month . '-' . $to_day;
+					} else {
+						$to_time = date( 'Y-m-d' );
+					}
+					// Update the args.
+					$args['date_query'] = array(
+						array(
+							'after'     => array(
+								'year'  => $from_year,
+								'month' => $from_month,
+								'day'   => $from_day,
+							),
+							'before'    => array(
+								'year'  => $to_year,
+								'month' => $to_month,
+								'day'   => $to_day,
+							),
+							'inclusive' => true,
+						),
+					);
+				}
+
+				// Check if the form filter-name is set.
+				if ( isset( $_POST['filter-name'] ) ) {
+					// Set the Driver ID key name.
+					$args['meta_key']   = 'ddwc_driver_id';
+					// Set the Driver ID value.
+					$args['meta_value']	= $_POST['filter-name'];
+				}
+
+				/**
+				 * Get Delivery Orders
+				 */
+				$driver_orders = get_posts( $args );
+
+				echo '<table class="ddwc-dashboard">';
+
+				// Array for admin orders table thead.
+				$thead = array(
+					esc_attr__( 'ID', 'ddwc' ),
+					esc_attr__( 'Date', 'ddwc' ),
+					esc_attr__( 'Status', 'ddwc' ),
+					apply_filters( 'ddwc_driver_dashboard_admin_orders_total_title', esc_attr__( 'Total', 'ddwc' ) ),
+				);
+
+				// Filter the thead array.
+				$thead = apply_filters( 'ddwc_driver_dashboard_admin_orders_order_table_thead', $thead );
+
+				echo '<thead><tr>';
+				// Loop through $thead.
+				foreach ( $thead as $row ) {
+					// Add td to thead.
+					echo '<td>' . $row . '</td>';
+				}
+				echo '</tr></thead>';
+
+				echo '<tbody>';
+				foreach ( $driver_orders as $driver_order ) {
+
+					// Get an instance of the WC_Order object.
+					$order = wc_get_order( $driver_order->ID );
+
+					// Get the order data.
+					$order_data           = $order->get_data();
+					$currency_code        = $order_data['currency'];
+					$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
+					$order_id             = $order_data['id'];
+					$order_parent_id      = $order_data['parent_id'];
+					$order_status         = $order_data['status'];
+					$order_currency       = $order_data['currency'];
+					$order_version        = $order_data['version'];
+					$order_payment_method = $order_data['payment_method'];
+					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
+					$order_discount_total = $order_data['discount_total'];
+					$order_discount_tax   = $order_data['discount_tax'];
+					$order_shipping_total = $order_data['shipping_total'];
+					$order_shipping_tax   = $order_data['shipping_tax'];
+					$order_cart_tax       = $order_data['cart_tax'];
+					$order_total          = $order_data['total'];
+					$order_total_tax      = $order_data['total_tax'];
+					$order_customer_id    = $order_data['customer_id'];
+
+					// Order total.
+					if ( isset( $order_total ) ) {
+						$order_total = $currency_symbol . $order_total;
+						$order_total = apply_filters( 'ddwc_driver_dashboard_admin_orders_total', $order_total, $driver_order->ID );
+					} else {
+						$order_total = '-';
+					}
+
+					// Array for admin orders table tbody.
+					$tbody = array(
+						'<a href="' . esc_url( apply_filters( 'ddwc_driver_dashboard_admin_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) ) . '">' . esc_html( apply_filters( 'ddwc_order_number', $driver_order->ID ) ) . '</a>',
+						$order_date_created,
+						wc_get_order_status_name( $order_status ),
+						$order_total
+					);
+
+					// Array for admin orders table tbody.
+					$tbody = apply_filters( 'ddwc_driver_dashboard_admin_orders_order_table_tbody', $tbody, $order_id );
+
+					echo '<tr>';
+					// Loop through $tbody.
+					foreach ( $tbody as $row ) {
+						echo '<td>' . $row . '</td>';
+					}
+					echo '<tr>';
+				}
+				echo '</tbody>';
+				echo '</table>';
+
 			} else {
 
 				// Set the Access Denied page text.

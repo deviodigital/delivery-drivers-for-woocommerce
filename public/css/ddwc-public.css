@@ -361,3 +361,15 @@ table.ddwc-dashboard.delivery-drivers a.button.ddwc-button svg {
 table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:last-child:not(:first-child) {
     margin-left: 6px;
 }
+
+/** Driver Dashboard - Admin - Delivery Orders table */
+
+form.ddwc-order-filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
