@@ -369,7 +369,11 @@ form.ddwc-order-filters {
     justify-content: space-between;
 }
 
-.form-group {
+form.ddwc-order-filters .form-group {
     display: flex;
     flex-direction: column;
+}
+
+form.ddwc-order-filters input[type="submit"] {
+    padding: 16px 24px;
 }
