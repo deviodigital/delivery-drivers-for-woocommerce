@@ -615,7 +615,7 @@ function ddwc_dashboard_shortcode() {
 				$thead = array(
 					esc_attr__( 'ID', 'ddwc' ),
 					esc_attr__( 'Date', 'ddwc' ),
-					esc_attr__( 'Address', 'ddwc' ),
+					esc_attr__( 'Location', 'ddwc' ),
 					esc_attr__( 'Status', 'ddwc' ),
 					apply_filters( 'ddwc_driver_dashboard_admin_orders_total_title', esc_attr__( 'Total', 'ddwc' ) ),
 				);
