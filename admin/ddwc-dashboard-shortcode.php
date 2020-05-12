@@ -533,7 +533,7 @@ function ddwc_dashboard_shortcode() {
 										} else {
 											$selected = '';
 										}
-										echo '<option ' . $selected . ' value="' . $user->ID . '">' . $user->display_name . ' User ID: (' . $user->ID . ')'.' </option>';
+										echo '<option ' . $selected . ' value="' . $user->ID . '">' . $user->display_name . '</option>';
 									}
 								}
 							?>
