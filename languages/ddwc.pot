@@ -425,7 +425,7 @@ msgid "https://www.deviodigital.com"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Streamline your mobile workforce and increase your bottom line."
+msgid "Racionalice su fuerza de trabajo móvil y aumente su balance final."
 msgstr ""
 
 #. Author of the plugin/theme
