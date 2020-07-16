@@ -87,7 +87,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 
 		// Go Pro link if DDWC Pro plugin isn't active.
 		if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
-			$go_pro = ' | <a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'ddwc' ) . '</a>';
+			$go_pro = ' | <a href="https://www.deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'ddwc' ) . '</a>';
 		}
 
 		$settings = array(
@@ -95,7 +95,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 			'ddwc_settings_section_title' => array(
 				'name' => esc_attr__( 'Delivery Drivers for WooCommerce', 'ddwc' ),
 				'type' => 'title',
-				'desc' => esc_attr__( 'Brought to you by', 'ddwc' ) . ' <a href="https://www.deviodigital.com" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://deviodigital.com/documentation" target="_blank">' . esc_attr__( 'Documentation', 'ddwc' ) . '</a>',
+				'desc' => esc_attr__( 'Brought to you by', 'ddwc' ) . ' <a href="https://www.deviodigital.com/" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://www.deviodigital.com/documentation/" target="_blank">' . esc_attr__( 'Documentation', 'ddwc' ) . '</a>',
 				'id'   => 'ddwc_settings_section_title'
 			),
 			// Dispatch phone number.
