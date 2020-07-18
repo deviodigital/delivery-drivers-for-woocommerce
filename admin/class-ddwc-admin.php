@@ -216,7 +216,7 @@ function ddwc_delivery_driver_settings() {
 
 	// Loop through each product.
 	foreach ( $loop as $item ) {
-		// Update inventory.
+		// Update driver ID.
 		if ( $meta_value === get_post_meta( $item->ID, $meta_key, true ) ) {
 			update_post_meta( $item->ID, $meta_key, $meta_value );
 		}
