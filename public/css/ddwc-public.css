@@ -364,14 +364,31 @@ table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:last-child:not(:first
 
 /** Driver Dashboard - Admin - Delivery Orders table */
 
+table.ddwc-dashboard.admin-orders {
+    margin-bottom: 24px;
+}
+
 form.ddwc-order-filters {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0;
 }
 
 form.ddwc-order-filters .form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 24px;
+}
+
+form.ddwc-order-filters .form-group:last-child {
+    align-self: flex-end;
+}
+
+form.ddwc-order-filters .form-group input[type="date"], form.ddwc-order-filters .form-group select {
+    padding: .75em;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 form.ddwc-order-filters input[type="submit"] {
