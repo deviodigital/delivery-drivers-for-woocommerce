@@ -154,6 +154,11 @@ button.remove-ddwc-driver-picture:hover {
     width: 100%;
 }
 
+.ddwc-driver-details-img,
+.ddwc-driver-details-text {
+    float: left;
+}
+
 .ddwc-driver-details img,
 .ddwc-driver-picture img {
     float: left;
@@ -167,17 +172,26 @@ button.remove-ddwc-driver-picture:hover {
     margin-bottom: 12px !important;
 }
 
+.ddwc-driver-details-text h4,
+.entry-content .ddwc-driver-details-text h4 {
+    margin-top: 0;
+}
+
 .woocommerce-order-details :last-child,
 table.ddwc-driver-details {
     margin-bottom: 12px !important;
 }
 
-table.ddwc-driver-details tr {
-    border: 1px solid #ddd;
+table.ddwc-driver-details {
+    margin-top: 12px;
 }
 
 table.ddwc-driver-details tr td {
     padding: 10px;
+}
+
+table.ddwc-driver-details tr td:first-child {
+    padding-left: 0;
 }
 
 /** Bar Rating */
@@ -258,7 +272,8 @@ input.ddwc-ofdmsg {
     }
 }
 
-.ddwc-availability h4 {
+.ddwc-availability h4,
+.entry-content .ddwc-availability h4 {
     font-size: 20px;
     display: inline-block;
     line-height: 34px;
