@@ -96,6 +96,8 @@ function ddwc_order_driver_details( $order ) {
         // Driver License plate.
         if ( get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) ) {
             $string .= '<td>' . esc_attr__( 'License Plate', 'ddwc' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) . '</strong></td>';
+        } else {
+            // Do nothing.
         }
         $string .= '</tr></tbody></table>';
         $string .= '</div>';
@@ -417,14 +419,18 @@ function ddwc_add_to_edit_account_form() {
             <?php if ( get_user_meta( $user->ID, 'ddwc_driver_picture', true ) ) { ?>
             <div class="ddwc-driver-picture">
                 <?php
+                // Get driver picture.
                 $ddwc_driver_picture = get_user_meta( $user->ID, 'ddwc_driver_picture', true );
+                // Display driver picture.
                 if ( ! isset( $ddwc_driver_picture['error'] ) ) {
                     if ( ! empty( $ddwc_driver_picture ) ) {
                         $ddwc_driver_picture = $ddwc_driver_picture['url'];
                         echo '<a href="' . esc_html( $ddwc_driver_picture ) . '" target="_blank"><img src="' . esc_html( $ddwc_driver_picture ) . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
                     }
                 } else {
+                    // Get error.
                     $ddwc_driver_picture = $ddwc_driver_picture['error'];
+                    // Display error.
                     echo esc_html( $ddwc_driver_picture ) . '<br />';
                 }
                 ?>
@@ -443,6 +449,7 @@ function ddwc_add_to_edit_account_form() {
                 if ( $transportation_types ) {
                     printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type" class="widefat">', get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
                     echo '<option value="">--</option>';
+                    // Loop through transportation types.
                     foreach ( $transportation_types as $type ) {
                         if ( $type != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
                             $imagesizeinfo = '';
