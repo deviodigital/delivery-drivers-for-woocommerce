@@ -377,6 +377,17 @@ table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:last-child:not(:first
     margin-left: 6px;
 }
 
+table.ddwc-dashboard.delivery-drivers td:first-child img {
+    max-width: 24px;
+    margin-right: 6px;
+    float: left;
+}
+
+table.ddwc-dashboard.delivery-drivers td:first-child span.driver-name {
+    float: left;
+    margin-right: 6px;
+}
+
 /** Driver Dashboard - Admin - Delivery Orders table */
 
 table.ddwc-dashboard.admin-orders {
@@ -408,4 +419,10 @@ form.ddwc-order-filters .form-group input[type="date"], form.ddwc-order-filters 
 
 form.ddwc-order-filters input[type="submit"] {
     padding: 16px 24px;
+}
+
+@media screen and (max-width:1080px) {
+    form.ddwc-order-filters {
+        flex-direction: column;
+    }
 }
