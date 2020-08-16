@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.0
+*   Added customer note to order details in driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+*   Added additional div wrappers to driver display on customer order in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Added orders table for admins to see orders for specific drivers on the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+*   Updated driver details to hide license plate if bicycle is the selected transportation type in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Updated assigned orders table to be filterable in `admin/ddwc-dashboard-shortcode.php`
+*   Updated button styles for driver contact buttons in `public/css/ddwc-public.css`
+*   Updated driver contact button and out for delivery input styles in `public/css/ddwc-public.css`
+*   General code cleanup throughout multiple files in the plugin
+
 ## 2.9
 *   Added `ddwc_date_format` & `ddwc_time_format` filters in `admin/ddwc-dashboard-shortcode.php`
 *   Added `ddwc_driver_dashboard_assigned_orders_statuses` filter in `admin/ddwc-dashboard-shortcode.php`

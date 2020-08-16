@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.4.0
-Stable tag: 2.9
+Tested up to: 5.5
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,17 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.0 =
+*   Added orders table for admins to see orders for specific drivers on the driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+*   Added customer note to order details in driver dashboard in `admin/ddwc-dashboard-shortcode.php`
+*   Added additional div wrappers to driver display on customer order in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Updated driver details to hide license plate if bicycle is the selected transportation type in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Updated assigned orders table to be filterable in `admin/ddwc-dashboard-shortcode.php`
+*   Updated button styles for driver contact buttons in `public/css/ddwc-public.css`
+*   Updated driver contact button and out for delivery input styles in `public/css/ddwc-public.css`
+*   Updated text strings for localization in `languages/ddwc.pot`
+*   General code cleanup throughout multiple files in the plugin
 
 = 2.9 =
 *   Added `ddwc_date_format` & `ddwc_time_format` filters in `admin/ddwc-dashboard-shortcode.php`
