@@ -39,3 +39,7 @@
 .ddwc-driver-picture img {
     height: auto;
 }
+
+.wp-core-ui select#ddwc_driver_transportation_type {
+    width: 22rem;
+}
