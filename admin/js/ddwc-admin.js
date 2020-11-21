@@ -3,19 +3,14 @@ jQuery(document).ready(function ($) {
 		var itemid =  $(this).attr("name");
 		var metakey =  $(this).attr("id");
 		var metavalue = this.value;
+		// Update driver ID metadata.
 		$.post(WPaAjax.ajaxurl,{
 			action : "ddwc_delivery_driver_settings",
 			item_id : itemid,
 			metakey : metakey,
 			metavalue : metavalue
-//		},
-//		function(data, status) {
-//			console.log("Data: " + data + "\nStatus: " + status);
 		});
 	});
-});
-
-// Remove the link click wrapper on WooCommerce Edit Orders screen.
-jQuery(document).ready(function ($) {
+	// Remove the link click wrapper on WooCommerce Edit Orders screen.
 	$("td.delivery_driver.column-delivery_driver a").click(function(){ return false });
 });
