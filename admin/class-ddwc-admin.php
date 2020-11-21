@@ -268,7 +268,7 @@ function ddwc_driver_bulk_edit( $actions ) {
 		// Loop through 'driver' users.
 		foreach ( $user_query->get_results() as $user ) {
 			// Add option to set user as the 'driver'.
-			$actions[$user->ID] = sprintf( esc_html__( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
+			$actions['driver_id_' . $user->ID] = sprintf( esc_html__( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
 		}
 	}
 	return $actions;
@@ -281,9 +281,8 @@ add_filter( 'bulk_actions-edit-shop_order', 'ddwc_driver_bulk_edit', 20, 1 );
  * Processes the selected options from the bulk actions list in the
  * WooCommerce Orders screen.
  *
- * Thank you to Github user @developer-mohamed-saad for this update!
- *
- * @since 2.5
+ * @since  2.5
+ * @return string
  */
 function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids ) {
     if ( $action === $_GET['action'] ) {
@@ -292,19 +291,46 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 
 		// Loop through selected orders.
 		foreach ( $post_ids as $post_id ) {
-			// Update Driver.
-			update_post_meta( $post_id, 'ddwc_driver_id', $_GET['action'] );
-			// Get Order instance.
-			$order = new WC_Order( $post_id );
-			// Update order status.
-			$order->update_status( 'driver-assigned' );
-			// Add Post ID to array.
-			$processed_ids[] = $post_id;
-			// Redirect.
-			$redirect_to = add_query_arg( array(
-				'processed_count' => count( $processed_ids ),
-				'processed_ids'   => implode( ',', $processed_ids ),
-			), $redirect_to );
+			// Only run code if bulk action is assigning orders to a driver.
+			if ( strpos( $_GET['action'], 'driver_id_' ) !== false ) {
+				// Get only the ID number from action string.
+				$driver_id = str_replace( 'driver_id_', '', $_GET['action'] );
+
+				// Get current Assigned Driver.
+				$current_driver = get_post_meta( $post_id, 'ddwc_driver_id', true );
+
+				// Update Assigned Driver.
+				update_post_meta( $post_id, 'ddwc_driver_id', $driver_id );
+
+				// Get Order instance.
+				$order = new WC_Order( $post_id );
+
+				// Get current status.
+				$current_status = $order->get_status();
+
+				// Statuses to skip.
+				$skip_statuses = array(
+					'on-hold',
+					'driver-assigned',
+					'order-returned',
+					'completed',
+				);
+				$skip_statuses = apply_filters( 'ddwc_orders_bulk_action_update_driver_skip_statuses', $skip_statuses );
+
+				// Update order status.
+				if ( ! in_array( $current_status, $skip_statuses ) ) {
+					$order->update_status( 'driver-assigned' );
+				}
+
+				// Add Post ID to array.
+				$processed_ids[] = $post_id;
+
+				// Redirect.
+				$redirect_to = add_query_arg( array(
+					'processed_count' => count( $processed_ids ),
+					'processed_ids'   => implode( ',', $processed_ids ),
+				), $redirect_to );
+			}
 		}
 	}
 	return $redirect_to;
