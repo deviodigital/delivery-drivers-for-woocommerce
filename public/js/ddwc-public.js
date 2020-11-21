@@ -46,17 +46,30 @@
  */
 jQuery(document).ready(function ($) {
     jQuery(".ddwc-availability label.switch input[type=checkbox]").change(function(e) {
-        var userid = $(this).attr("id");
-        var metakey = "ddwc_driver_availability";
-        var metavalue = $(this).attr("checked");
-        $.post(WPaAjax.ajaxurl,{
+        var userID = $(this).attr("id");
+		var metaKey = "ddwc_driver_availability";
+		var isChecked = $(this).prop("checked");
+
+		// Checked.
+		if ( true === isChecked ) {
+			var metaValue = "on";
+		}
+		// Unchecked.
+		if ( false === isChecked ) {
+			var metaValue = "";
+		}
+
+		// Post the data.
+		$.post(WPaAjax.ajaxurl,{
             action : "ddwc_driver_availability_update",
-            user_id : userid,
-            metakey : metakey,
-            metavalue : metavalue
-        },
+            user_id : userID,
+            metakey : metaKey,
+            metavalue : metaValue
+		},
+		// Post logging.
         function(data, status) {
-            //console.log("metavalue: " + metavalue + "Data: " + data + "\nStatus: " + status);
+			// Log the $.post() results.
+			// console.log("metavalue: " + metavalue + " - Data: " + data + "\nStatus: " + status);
         });
     });
 });

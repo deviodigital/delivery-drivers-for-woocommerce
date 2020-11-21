@@ -237,7 +237,7 @@ function ddwc_driver_availability_update() {
 	$user_id    = filter_input( INPUT_POST, 'user_id' );
 	$meta_value = filter_input( INPUT_POST, 'metavalue' );
 
-	if ( 'checked' == $meta_value ) {
+	if ( 'on' == $meta_value ) {
 		$new_value = 'on';
 		$old_value = '';
 	} else {
