@@ -256,13 +256,17 @@ add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_avail
  *
  * Add delivery drivers to the bulk actions for WooCommerce Orders.
  *
- * Thank you to Github user @developer-mohamed-saad for this update!
- *
  * @since 2.5
  */
 function ddwc_driver_bulk_edit( $actions ) {
+	// Add order status changes.
+	$actions['mark_driver-assigned']  = __( 'Change status to driver assigned', 'ddwc' );
+	$actions['mark_out-for-delivery'] = __( 'Change status to out for delivery', 'ddwc' );
+	$actions['mark_order-returned']   = __( 'Change status to order returned', 'ddwc' );
+
 	// Get all users with 'driver' user role.
 	$user_query = new WP_User_Query( array( 'role' => 'driver' ) );
+
 	// Check to make sure there are drivers added.
 	if ( ! empty( $user_query->get_results() ) ) {
 		// Loop through 'driver' users.
@@ -271,6 +275,7 @@ function ddwc_driver_bulk_edit( $actions ) {
 			$actions['driver_id_' . $user->ID] = sprintf( esc_html__( 'Set %1$s as driver', 'ddwc' ), esc_html( $user->display_name ) );
 		}
 	}
+
 	return $actions;
 }
 add_filter( 'bulk_actions-edit-shop_order', 'ddwc_driver_bulk_edit', 20, 1 );
@@ -291,6 +296,49 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 
 		// Loop through selected orders.
 		foreach ( $post_ids as $post_id ) {
+
+			// Only run code if the bulk action is changing to Driver Assigned.
+			if ( isset( $_REQUEST['mark_driver-assigned'] ) && 1 == $_REQUEST['changed'] ) {
+				// Get order.
+				$order = new WC_Order( $post_id );
+				// Order note.
+				$order_note = __( 'That\'s what happened by bulk edit:', 'ddwc' );
+				// Update order status.
+				$order->update_status( 'driver-assigned', $order_note, true );
+				// Save order.
+				$order->save();
+				// Action hook.
+				do_action( 'ddwc_mark_driver_assigned', $post_id );
+			}
+
+			// Only run code if the bulk action is changing to Out for Delivery.
+			if ( isset( $_REQUEST['mark_out-for-delivery'] ) && 1 == $_REQUEST['changed'] ) {
+				// Get order.
+				$order = new WC_Order( $post_id );
+				// Order note.
+				$order_note = __( 'That\'s what happened by bulk edit:', 'ddwc' );
+				// Update order status.
+				$order->update_status( 'out-for-delivery', $order_note, true );
+				// Save order.
+				$order->save();
+				// Action hook.
+				do_action( 'ddwc_mark_out_for_delivery', $post_id );
+			}
+
+			// Only run code if the bulk action is changing to Order Returned.
+			if ( isset( $_REQUEST['mark_order-returned'] ) && 1 == $_REQUEST['changed'] ) {
+				// Get order.
+				$order = new WC_Order( $post_id );
+				// Order note.
+				$order_note = __( 'That\'s what happened by bulk edit:', 'ddwc' );
+				// Update order status.
+				$order->update_status( 'order-returned', $order_note, true );
+				// Save order.
+				$order->save();
+				// Action hook.
+				do_action( 'ddwc_mark_order_returned', $post_id );
+			}
+
 			// Only run code if bulk action is assigning orders to a driver.
 			if ( strpos( $_GET['action'], 'driver_id_' ) !== false ) {
 				// Get only the ID number from action string.
@@ -325,12 +373,14 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 				// Add Post ID to array.
 				$processed_ids[] = $post_id;
 
-				// Redirect.
-				$redirect_to = add_query_arg( array(
-					'processed_count' => count( $processed_ids ),
-					'processed_ids'   => implode( ',', $processed_ids ),
-				), $redirect_to );
 			}
+
+			// Redirect.
+			$redirect_to = add_query_arg( array(
+				'processed_count' => count( $processed_ids ),
+				'processed_ids'   => implode( ',', $processed_ids ),
+			), $redirect_to );
+
 		}
 	}
 	return $redirect_to;
