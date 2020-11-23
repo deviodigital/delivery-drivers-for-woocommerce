@@ -170,14 +170,14 @@ add_action( 'manage_shop_order_posts_custom_column', 'ddwc_custom_delivery_drive
  * @since 2.1
  */
 function ddwc_add_no_link_to_woocommerce_orders( $classes ) {
-	if ( current_user_can( 'manage_woocommerce' ) ) { //make sure we are shop managers
-    foreach ( $classes as $class ) {
-      if ( $class == 'type-shop_order' ) {
-        $classes[] = 'no-link';
-      }
-  	}
-  }
-  return $classes;
+	if ( current_user_can( 'manage_woocommerce' ) ) {
+		foreach ( $classes as $class ) {
+			if ( 'type-shop_order' == $class ) {
+				$classes[] = 'no-link';
+			}
+		}
+	}
+	return $classes;
 }
 add_filter( 'post_class', 'ddwc_add_no_link_to_woocommerce_orders' );
 
