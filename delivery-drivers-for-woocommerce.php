@@ -130,7 +130,7 @@ add_action( 'admin_init', 'ddwc_check_pro_version' );
  * @since 2.9
  */
 function ddwc_update_ddwc_pro_notice() {
-	$ddwc_orders = '<a href="https://www.deviodigital.com/my-account/orders/" target="_blank">Orders</a>';
+	$ddwc_orders = '<a href="https://www.deviodigital.com/my-account/orders/" target="_blank">' . __( 'Orders', 'ddwc' ) . '</a>';
 	$error       = sprintf( esc_html__( 'There is a new version of DDWC Pro available. Download your copy from the %1$s page on Devio Digital.', 'ddwc' ), $ddwc_orders );
 	echo '<div class="notice notice-info"><p>' . $error . '</p></div>';
 }
