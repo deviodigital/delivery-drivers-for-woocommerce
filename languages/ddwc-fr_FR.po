@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2020-12-25 18:38-0500\n"
-"PO-Revision-Date: 2020-12-25 18:38-0500\n"
+"POT-Creation-Date: 2020-12-27 14:58-0500\n"
+"PO-Revision-Date: 2020-12-27 14:58-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -46,7 +46,7 @@ msgstr "Définir %1$s comme pilote"
 #: admin/class-ddwc-admin.php:305 admin/class-ddwc-admin.php:319
 #: admin/class-ddwc-admin.php:333
 msgid "That's what happened by bulk edit:"
-msgstr "C’est ce qui s’est passé lors de la modification groupée"
+msgstr "C’est ce qui s’est passé lors de la modification groupée:"
 
 #: admin/ddwc-dashboard-shortcode.php:105
 msgid "Order #"
@@ -177,7 +177,7 @@ msgstr "Accès Refusé"
 
 #: admin/ddwc-dashboard-shortcode.php:731
 msgid "Sorry, but you are not able to view this page."
-msgstr "Désolé, mais vous ne pouvez pas afficher cette page"
+msgstr "Désolé, mais vous ne pouvez pas afficher cette page."
 
 #: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
 #: admin/ddwc-functions.php:95
@@ -394,7 +394,7 @@ msgstr ""
 
 #: admin/ddwc-woocommerce-settings.php:110
 msgid "Google Maps API key"
-msgstr "Google Maps API KEY"
+msgstr "Clé API Google Maps"
 
 #: admin/ddwc-woocommerce-settings.php:112
 msgid "Add a map to the order directions for your drivers."
@@ -493,7 +493,7 @@ msgstr "Accepter les livraisons"
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
 msgid "https://www.deviodigital.com"
-msgstr "https://www.id4project.com"
+msgstr "https://www.deviodigital.com"
 
 #. Description of the plugin/theme
 msgid "Streamline your mobile workforce and increase your bottom line."
@@ -501,4 +501,4 @@ msgstr "Rationalisez votre main-d’œuvre mobile et augmentez vos résultats."
 
 #. Author of the plugin/theme
 msgid "Devio Digital"
-msgstr "id4 project"
+msgstr "Devio Digital"

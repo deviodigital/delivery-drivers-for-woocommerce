@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2020-12-26 20:13-0500\n"
-"PO-Revision-Date: 2020-12-26 20:14-0500\n"
+"POT-Creation-Date: 2020-12-27 14:57-0500\n"
+"PO-Revision-Date: 2020-12-27 14:57-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -145,7 +145,7 @@ msgstr "Pedidos completados"
 
 #: admin/ddwc-dashboard-shortcode.php:489
 msgid "You do not have any assigned orders."
-msgstr "No tiene ningún pedido asignado"
+msgstr "No tiene ningún pedido asignado."
 
 #: admin/ddwc-dashboard-shortcode.php:513
 msgid "Delivery Orders"
@@ -177,7 +177,7 @@ msgstr "Acceso denegado"
 
 #: admin/ddwc-dashboard-shortcode.php:731
 msgid "Sorry, but you are not able to view this page."
-msgstr "Lo sentimos, pero no puede ver esta página"
+msgstr "Lo sentimos, pero no puede ver esta página."
 
 #: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
 #: admin/ddwc-functions.php:95
@@ -211,7 +211,7 @@ msgstr "Completado"
 
 #: admin/ddwc-functions.php:294
 msgid "The delivery address is returning NULL."
-msgstr "La dirección de entrega devuelve NULL"
+msgstr "La dirección de entrega devuelve NULL."
 
 #: admin/ddwc-functions.php:336
 msgid "Name"
@@ -388,7 +388,8 @@ msgstr "Número de teléfono de despacho"
 
 #: admin/ddwc-woocommerce-settings.php:105
 msgid "Allow your drivers to call if they have questions about an order."
-msgstr "Permita que sus conductores llamen si tienen preguntas sobre un pedido"
+msgstr ""
+"Permita que sus conductores llamen si tienen preguntas sobre un pedido."
 
 #: admin/ddwc-woocommerce-settings.php:110
 msgid "Google Maps API key"
@@ -396,7 +397,7 @@ msgstr "Clave API de Google Maps"
 
 #: admin/ddwc-woocommerce-settings.php:112
 msgid "Add a map to the order directions for your drivers."
-msgstr "Agregue un mapa a las instrucciones del pedido para sus conductores"
+msgstr "Agregue un mapa a las instrucciones del pedido para sus conductores."
 
 #: admin/ddwc-woocommerce-settings.php:117
 msgid "Google Maps Geocode"
@@ -422,7 +423,7 @@ msgstr "Modo Google Maps"
 msgid "Select the method of travel you would like used in your drivers map."
 msgstr ""
 "Seleccione el método de viaje que le gustaría utilizar en su mapa de "
-"conductores"
+"conductores."
 
 #: admin/ddwc-woocommerce-settings.php:131
 msgid "Driving"
@@ -444,7 +445,7 @@ msgstr "Calificaciones del conductor"
 msgid "Add driver details with delivery star ratings to order details page."
 msgstr ""
 "Agregue detalles del conductor con calificaciones de estrellas de entrega a "
-"la página de detalles del pedido"
+"la página de detalles del pedido."
 
 #: admin/ddwc-woocommerce-settings.php:143
 #: admin/ddwc-woocommerce-settings.php:154
@@ -494,7 +495,7 @@ msgstr "https://www.deviodigital.com"
 
 #. Description of the plugin/theme
 msgid "Streamline your mobile workforce and increase your bottom line."
-msgstr "Tu tienda en línea conectada a Whatsapp"
+msgstr "Tu tienda en línea conectada a Whatsapp."
 
 #. Author of the plugin/theme
 msgid "Devio Digital"
