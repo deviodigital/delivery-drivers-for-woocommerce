@@ -1,11 +1,9 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
 "POT-Creation-Date: 2020-12-26 20:07-0500\n"
-"PO-Revision-Date: 2020-12-26 20:07-0500\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2020-12-26 20:13-0500\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,456 +13,467 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: delivery-drivers-for-woocommerce.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: es\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: admin/class-ddwc-admin.php:96 admin/ddwc-metaboxes.php:24
 #: admin/ddwc-woocommerce-driver-ratings.php:40
 msgid "Delivery Driver"
-msgstr ""
+msgstr "Conductor de entrega"
 
 #: admin/class-ddwc-admin.php:263
 msgid "Change status to driver assigned"
-msgstr ""
+msgstr "Cambiar el estado al conductor asignado"
 
 #: admin/class-ddwc-admin.php:264
 msgid "Change status to out for delivery"
-msgstr ""
+msgstr "Cambiar el estado a listo para la entrega"
 
 #: admin/class-ddwc-admin.php:265
 msgid "Change status to order returned"
-msgstr ""
+msgstr "Cambiar el estado al pedido devuelto"
 
 #: admin/class-ddwc-admin.php:275
 #, php-format
 msgid "Set %1$s as driver"
-msgstr ""
+msgstr "Establecer a %1$s como rapartidor"
 
 #: admin/class-ddwc-admin.php:305 admin/class-ddwc-admin.php:319
 #: admin/class-ddwc-admin.php:333
 msgid "That's what happened by bulk edit:"
-msgstr ""
+msgstr "Eso es lo que sucedió con la edición masiva:"
 
 #: admin/ddwc-dashboard-shortcode.php:105
 msgid "Order #"
-msgstr ""
+msgstr "Pedido #"
 
 #: admin/ddwc-dashboard-shortcode.php:116
 msgid "Call Customer"
-msgstr ""
+msgstr "Llamar al cliente"
 
 #: admin/ddwc-dashboard-shortcode.php:121
 msgid "Call Dispatch"
-msgstr ""
+msgstr "Llamar a la oficina"
 
 #: admin/ddwc-dashboard-shortcode.php:131
 msgid "Delivery Address"
-msgstr ""
+msgstr "Dirección de entrega"
 
 #: admin/ddwc-dashboard-shortcode.php:147
 msgid "Get Directions"
-msgstr ""
+msgstr "Cómo llegar"
 
 #: admin/ddwc-dashboard-shortcode.php:178
 msgid "driving"
-msgstr ""
+msgstr "conducción"
 
 #: admin/ddwc-dashboard-shortcode.php:191
 msgid "Order details"
-msgstr ""
+msgstr "Detalles del pedido"
 
 #: admin/ddwc-dashboard-shortcode.php:205
 msgid "Order date"
-msgstr ""
+msgstr "Fecha de pedido"
 
 #: admin/ddwc-dashboard-shortcode.php:210
 msgid "Payment method"
-msgstr ""
+msgstr "Método de pago"
 
 #: admin/ddwc-dashboard-shortcode.php:216
 #: admin/ddwc-dashboard-shortcode.php:218
 msgid "Customer name"
-msgstr ""
+msgstr "Nombre del cliente"
 
 #: admin/ddwc-dashboard-shortcode.php:224
 msgid "Customer note"
-msgstr ""
+msgstr "Nota del cliente"
 
 #: admin/ddwc-dashboard-shortcode.php:237
 #: admin/ddwc-dashboard-shortcode.php:337
 #: admin/ddwc-dashboard-shortcode.php:426
 #: admin/ddwc-dashboard-shortcode.php:620
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: admin/ddwc-dashboard-shortcode.php:240
 msgid "Product"
-msgstr ""
+msgstr "Producto"
 
 #: admin/ddwc-dashboard-shortcode.php:240
 msgid "Qty"
-msgstr ""
+msgstr "Cantidad"
 
 #: admin/ddwc-dashboard-shortcode.php:276
 msgid "Delivery"
-msgstr ""
+msgstr "Entrega"
 
 #: admin/ddwc-dashboard-shortcode.php:283
 msgid "Order total"
-msgstr ""
+msgstr "Valor final"
 
 #: admin/ddwc-dashboard-shortcode.php:326
 #: admin/ddwc-dashboard-shortcode.php:488
 msgid "Assigned Orders"
-msgstr ""
+msgstr "Órdenes asignadas"
 
 #: admin/ddwc-dashboard-shortcode.php:334
 #: admin/ddwc-dashboard-shortcode.php:429
 #: admin/ddwc-dashboard-shortcode.php:616
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: admin/ddwc-dashboard-shortcode.php:335
 #: admin/ddwc-dashboard-shortcode.php:429
 #: admin/ddwc-dashboard-shortcode.php:617
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #: admin/ddwc-dashboard-shortcode.php:336
 #: admin/ddwc-dashboard-shortcode.php:429
 #: admin/ddwc-dashboard-shortcode.php:619 admin/ddwc-functions.php:337
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #: admin/ddwc-dashboard-shortcode.php:422
 msgid "Completed Orders"
-msgstr ""
+msgstr "Pedidos completados"
 
 #: admin/ddwc-dashboard-shortcode.php:489
 msgid "You do not have any assigned orders."
-msgstr ""
+msgstr "No tiene ningún pedido asignado"
 
 #: admin/ddwc-dashboard-shortcode.php:513
 msgid "Delivery Orders"
-msgstr ""
+msgstr "Albaranes de entrega"
 
 #: admin/ddwc-dashboard-shortcode.php:516
 msgid "From"
-msgstr ""
+msgstr "Desde"
 
 #: admin/ddwc-dashboard-shortcode.php:520
 msgid "To"
-msgstr ""
+msgstr "A"
 
 #: admin/ddwc-dashboard-shortcode.php:524
 msgid "Driver"
-msgstr ""
+msgstr "Conductor"
 
 #: admin/ddwc-dashboard-shortcode.php:543
 msgid "SUBMIT"
-msgstr ""
+msgstr "ENVIAR"
 
 #: admin/ddwc-dashboard-shortcode.php:618
 msgid "Location"
-msgstr ""
+msgstr "Ubicación"
 
 #: admin/ddwc-dashboard-shortcode.php:731
 msgid "Access Denied"
-msgstr ""
+msgstr "Acceso denegado"
 
 #: admin/ddwc-dashboard-shortcode.php:731
 msgid "Sorry, but you are not able to view this page."
-msgstr ""
+msgstr "Lo sentimos, pero no puede ver esta página"
 
 #: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
 #: admin/ddwc-functions.php:95
 msgid "Driver Note"
-msgstr ""
+msgstr "Nota del repartidor"
 
 #: admin/ddwc-functions.php:137 admin/ddwc-functions.php:148
 msgid "Change Status"
-msgstr ""
+msgstr "Cambiar Estado"
 
 #: admin/ddwc-functions.php:139 admin/ddwc-functions.php:150
 msgid "Message for shop manager / administrator (optional)"
-msgstr ""
+msgstr "Mensaje para el gerente / administrador de la tienda (opcional)"
 
 #: admin/ddwc-functions.php:140 admin/ddwc-functions.php:151
 msgid "Add a message to the order"
-msgstr ""
+msgstr "Agregar un mensaje al pedido"
 
 #: admin/ddwc-functions.php:142 admin/ddwc-woocommerce-orders.php:38
 #: admin/ddwc-woocommerce-orders.php:84
 msgid "Out for Delivery"
-msgstr ""
+msgstr "Listo para la entrega"
 
 #: admin/ddwc-functions.php:152
 msgid "Returned"
-msgstr ""
+msgstr "Devuelto"
 
 #: admin/ddwc-functions.php:153
 msgid "Completed"
-msgstr ""
+msgstr "Completado"
 
 #: admin/ddwc-functions.php:294
 msgid "The delivery address is returning NULL."
-msgstr ""
+msgstr "La dirección de entrega devuelve NULL"
 
 #: admin/ddwc-functions.php:336
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: admin/ddwc-functions.php:338
 msgid "Rating"
-msgstr ""
+msgstr "Valoración"
 
 #: admin/ddwc-functions.php:339
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #: admin/ddwc-functions.php:345 admin/ddwc-woocommerce-settings.php:37
 msgid "Delivery Drivers"
-msgstr ""
+msgstr "Repartidores"
 
 #: admin/ddwc-functions.php:368
 msgid "Unavailable"
-msgstr ""
+msgstr "No disponible"
 
 #: admin/ddwc-functions.php:372
 msgid "Available"
-msgstr ""
+msgstr "Disponible"
 
 #: admin/ddwc-functions.php:409
 msgid "edit"
-msgstr ""
+msgstr "editar"
 
 #: admin/ddwc-metaboxes.php:65 admin/ddwc-woocommerce-driver-ratings.php:63
 msgid "Call Driver"
-msgstr ""
+msgstr "Llamar al Repartidor"
 
 #: admin/ddwc-metaboxes.php:69
 msgid "Delivery rating"
-msgstr ""
+msgstr "Calificación del Repartidor"
 
 #: admin/ddwc-woocommerce-account-tab.php:62
 #: admin/ddwc-woocommerce-account-tab.php:88
 msgid "Driver Dashboard"
-msgstr ""
+msgstr "Panel del Repartidor"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:56
 msgid "Rate Delivery"
-msgstr ""
+msgstr "Calificar Entrega"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:77
 #: admin/ddwc-woocommerce-driver-ratings.php:353
 #: admin/ddwc-woocommerce-driver-ratings.php:483
 msgid "Vehicle Color"
-msgstr ""
+msgstr "Color del vehículo"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:88
 #: admin/ddwc-woocommerce-driver-ratings.php:339
 #: admin/ddwc-woocommerce-driver-ratings.php:471
 msgid "Vehicle Model"
-msgstr ""
+msgstr "Modelo"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:98
 msgid "License Plate"
-msgstr ""
+msgstr "Matricula de Carro"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:273
 #: admin/ddwc-woocommerce-driver-ratings.php:416
 msgid "Driver Verification"
-msgstr ""
+msgstr "Verificación del repartidor"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:276
 msgid "Driver Photo"
-msgstr ""
+msgstr "Foto del repartidor"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:291
 #: admin/ddwc-woocommerce-driver-ratings.php:437
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:298
 msgid "Availability"
-msgstr ""
+msgstr "Disponibilidad"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:307
 msgid "Is the driver currently accepting deliveries?"
-msgstr ""
+msgstr "¿El conductor actualmente acepta entregas?"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:311
 #: admin/ddwc-woocommerce-driver-ratings.php:443
 msgid "Transportation Type"
-msgstr ""
+msgstr "Tipo de transporte"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:315
 #: admin/ddwc-woocommerce-driver-ratings.php:446
 msgid "Bicycle"
-msgstr ""
+msgstr "Bicicleta"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:315
 #: admin/ddwc-woocommerce-driver-ratings.php:446
 msgid "Motorcycle"
-msgstr ""
+msgstr "Motocicleta"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:315
 #: admin/ddwc-woocommerce-driver-ratings.php:446
 msgid "Car"
-msgstr ""
+msgstr "Coche"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:315
 #: admin/ddwc-woocommerce-driver-ratings.php:446
 msgid "SUV"
-msgstr ""
+msgstr "SUV"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:315
 #: admin/ddwc-woocommerce-driver-ratings.php:446
 msgid "Truck"
-msgstr ""
+msgstr "Camión"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:363
 #: admin/ddwc-woocommerce-driver-ratings.php:491
 msgid "License Plate Number"
-msgstr ""
+msgstr "Número de placa"
 
 #: admin/ddwc-woocommerce-driver-ratings.php:418
 msgid "Driver Picture"
-msgstr ""
+msgstr "Imagen del conductor"
 
 #: admin/ddwc-woocommerce-orders.php:21 admin/ddwc-woocommerce-orders.php:85
 msgid "Order Returned"
-msgstr ""
+msgstr "Pedido devuelto"
 
 #: admin/ddwc-woocommerce-orders.php:26
 #, php-format
 msgid "Returned <span class=\"count\">(%s)</span>"
 msgid_plural "Returned <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Devueltas <span class=\"count\">(%s)</span>"
+msgstr[1] "Devueltas <span class=\"count\">(%s)</span>"
 
 #: admin/ddwc-woocommerce-orders.php:43
 #, php-format
 msgid "Out for Delivery <span class=\"count\">(%s)</span>"
 msgid_plural "Out for Delivery <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Listas para entrega <span class=\"count\">(%s)</span>"
+msgstr[1] "Listas para entrega <span class=\"count\">(%s)</span>"
 
 #: admin/ddwc-woocommerce-orders.php:55 admin/ddwc-woocommerce-orders.php:83
 msgid "Driver Assigned"
-msgstr ""
+msgstr "Rep. asignado"
 
 #: admin/ddwc-woocommerce-orders.php:60
 #, php-format
 msgid "Driver Assigned <span class=\"count\">(%s)</span>"
 msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Repartidor asignado <span class=\"count\">(%s)</span>"
+msgstr[1] "Repartidor asignado <span class=\"count\">(%s)</span>"
 
 #: admin/ddwc-woocommerce-settings.php:90
 #: delivery-drivers-for-woocommerce.php:89
 msgid "Go Pro"
-msgstr ""
+msgstr "Hazte Pro"
 
 #. Plugin Name of the plugin/theme
 #: admin/ddwc-woocommerce-settings.php:96
 msgid "Delivery Drivers for WooCommerce"
-msgstr ""
+msgstr "Repartidores para Wamarket"
 
 #: admin/ddwc-woocommerce-settings.php:98
 msgid "Brought to you by"
-msgstr ""
+msgstr "Presentado por"
 
 #: admin/ddwc-woocommerce-settings.php:98
 msgid "Documentation"
-msgstr ""
+msgstr "Documentación"
 
 #: admin/ddwc-woocommerce-settings.php:103
 msgid "Dispatch phone number"
-msgstr ""
+msgstr "Número de teléfono de despacho"
 
 #: admin/ddwc-woocommerce-settings.php:105
 msgid "Allow your drivers to call if they have questions about an order."
 msgstr ""
+"Permita que sus conductores llamen si tienen preguntas sobre un pedido"
 
 #: admin/ddwc-woocommerce-settings.php:110
 msgid "Google Maps API key"
-msgstr ""
+msgstr "Clave API de Google Maps"
 
 #: admin/ddwc-woocommerce-settings.php:112
 msgid "Add a map to the order directions for your drivers."
-msgstr ""
+msgstr "Agregue un mapa a las instrucciones del pedido para sus conductores"
 
 #: admin/ddwc-woocommerce-settings.php:117
 msgid "Google Maps Geocode"
-msgstr ""
+msgstr "Geocódigo de Google Maps"
 
 #: admin/ddwc-woocommerce-settings.php:118
 msgid ""
 "Update your drivers' order details page to use a customers latitutde and "
 "longitude for directions"
 msgstr ""
+"Actualice la página de detalles de los pedidos de sus conductores para "
+"usar una latitud y la longitud para las direcciones"
 
 #: admin/ddwc-woocommerce-settings.php:122
 msgid "Enable Google Maps geocode for latitude and longitude"
-msgstr ""
+msgstr "Habilitar el geocódigo de Google Maps para la latitud y la longitud"
 
 #: admin/ddwc-woocommerce-settings.php:126
 msgid "Google Maps Mode"
-msgstr ""
+msgstr "Modo Google Maps"
 
 #: admin/ddwc-woocommerce-settings.php:128
 msgid "Select the method of travel you would like used in your drivers map."
 msgstr ""
+"Seleccione el método de viaje que le gustaría utilizar en su mapa de "
+"conductores"
 
 #: admin/ddwc-woocommerce-settings.php:131
 msgid "Driving"
-msgstr ""
+msgstr "Conduciendo"
 
 #: admin/ddwc-woocommerce-settings.php:132
 msgid "Walking"
-msgstr ""
+msgstr "Andando"
 
 #: admin/ddwc-woocommerce-settings.php:133
 msgid "Bicycling"
-msgstr ""
+msgstr "En bici"
 
 #: admin/ddwc-woocommerce-settings.php:138
 msgid "Driver ratings"
-msgstr ""
+msgstr "Calificaciones del conductor"
 
 #: admin/ddwc-woocommerce-settings.php:140
 msgid "Add driver details with delivery star ratings to order details page."
 msgstr ""
+"Agregue detalles del conductor con calificaciones de estrellas de entrega "
+"a la página de detalles del pedido"
 
 #: admin/ddwc-woocommerce-settings.php:143
 #: admin/ddwc-woocommerce-settings.php:154
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #: admin/ddwc-woocommerce-settings.php:144
 #: admin/ddwc-woocommerce-settings.php:155
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: admin/ddwc-woocommerce-settings.php:149
 msgid "Driver phone number"
-msgstr ""
+msgstr "Número de teléfono del repartidor"
 
 #: admin/ddwc-woocommerce-settings.php:151
 msgid "Add a button for customers to call driver in the driver details."
 msgstr ""
+"Agregue un botón para que los clientes llamen al repartidor en los "
+"detalles del repartidor."
 
 #: delivery-drivers-for-woocommerce.php:91
 msgid "Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #: delivery-drivers-for-woocommerce.php:133
 msgid "Orders"
-msgstr ""
+msgstr "Pedidos"
 
 #: delivery-drivers-for-woocommerce.php:134
 #, php-format
@@ -472,20 +481,22 @@ msgid ""
 "There is a new version of DDWC Pro available. Download your copy from the "
 "%1$s page on Devio Digital."
 msgstr ""
+"Hay una nueva versión de DDWC Pro disponible. Descarga tu copia de la "
+"página %1$s en Devio Digital."
 
 #: public/class-ddwc-public.php:93
 msgid "Accepting deliveries"
-msgstr ""
+msgstr "Aceptando entregas"
 
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
 msgid "https://www.deviodigital.com"
-msgstr ""
+msgstr "https://www.deviodigital.com"
 
 #. Description of the plugin/theme
 msgid "Streamline your mobile workforce and increase your bottom line."
-msgstr ""
+msgstr "Tu tienda en línea conectada a Whatsapp"
 
 #. Author of the plugin/theme
 msgid "Devio Digital"
-msgstr ""
+msgstr "Devio Digital"
