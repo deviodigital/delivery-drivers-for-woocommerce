@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1
+
+*   Added new Spanish translation in `languages/ddwc-es_ES.pot`
+*   Added new French translation in `languages/ddwc-fr_FR.pot`
+*   Added new Italian translation in `languages/ddwc-it_IT.pot`
+
 ## 3.0
 *   Added customer note to order details in driver dashboard in `admin/ddwc-dashboard-shortcode.php`
 *   Added additional div wrappers to driver display on customer order in `admin/ddwc-woocommerce-driver-ratings.php`
