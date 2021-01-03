@@ -68,7 +68,7 @@ class DDWC {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		$this->plugin_name = 'ddwc';
+		$this->plugin_name = 'delivery-drivers-for-woocommerce';
 		$this->version     = '3.1';
 
 		if ( defined( 'DDWC_VERSION' ) ) {

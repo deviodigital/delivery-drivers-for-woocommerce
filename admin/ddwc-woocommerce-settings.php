@@ -34,7 +34,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 	 * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Delivery Drivers tab.
 	 */
 	public static function add_settings_tab( $settings_tabs ) {
-		$settings_tabs['ddwc'] = esc_attr__( 'Delivery Drivers', 'ddwc' );
+		$settings_tabs['ddwc'] = esc_attr__( 'Delivery Drivers', 'delivery-drivers-for-woocommerce' );
 		return $settings_tabs;
 	}
 
@@ -87,72 +87,72 @@ class Delivery_Drivers_WooCommerce_Settings {
 
 		// Go Pro link if DDWC Pro plugin isn't active.
 		if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
-			$go_pro = ' | <a href="https://www.deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'ddwc' ) . '</a>';
+			$go_pro = ' | <a href="https://www.deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'delivery-drivers-for-woocommerce' ) . '</a>';
 		}
 
 		$settings = array(
 			// Section title.
 			'ddwc_settings_section_title' => array(
-				'name' => esc_attr__( 'Delivery Drivers for WooCommerce', 'ddwc' ),
+				'name' => esc_attr__( 'Delivery Drivers for WooCommerce', 'delivery-drivers-for-woocommerce' ),
 				'type' => 'title',
-				'desc' => esc_attr__( 'Brought to you by', 'ddwc' ) . ' <a href="https://www.deviodigital.com/" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://www.deviodigital.com/documentation/" target="_blank">' . esc_attr__( 'Documentation', 'ddwc' ) . '</a>',
+				'desc' => esc_attr__( 'Brought to you by', 'delivery-drivers-for-woocommerce' ) . ' <a href="https://www.deviodigital.com/" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://www.deviodigital.com/documentation/" target="_blank">' . esc_attr__( 'Documentation', 'delivery-drivers-for-woocommerce' ) . '</a>',
 				'id'   => 'ddwc_settings_section_title'
 			),
 			// Dispatch phone number.
 			'dispatch_phone_number' => array(
-				'name' => esc_attr__( 'Dispatch phone number', 'ddwc' ),
+				'name' => esc_attr__( 'Dispatch phone number', 'delivery-drivers-for-woocommerce' ),
 				'type' => 'text',
-				'desc' => esc_attr__( 'Allow your drivers to call if they have questions about an order.', 'ddwc' ),
+				'desc' => esc_attr__( 'Allow your drivers to call if they have questions about an order.', 'delivery-drivers-for-woocommerce' ),
 				'id'   => 'ddwc_settings_dispatch_phone_number'
 			),
 			// Google Maps API key.
 			'google_maps_api_key' => array(
-				'name' => esc_attr__( 'Google Maps API key', 'ddwc' ),
+				'name' => esc_attr__( 'Google Maps API key', 'delivery-drivers-for-woocommerce' ),
 				'type' => 'text',
-				'desc' => esc_attr__( 'Add a map to the order directions for your drivers.', 'ddwc' ),
+				'desc' => esc_attr__( 'Add a map to the order directions for your drivers.', 'delivery-drivers-for-woocommerce' ),
 				'id'   => 'ddwc_settings_google_maps_api_key'
 			),
 			// Google Maps address type.
 			'google_maps_geocode' => array(
-				'name'     => esc_attr__( 'Google Maps Geocode', 'ddwc' ),
-				'desc_tip' => esc_attr__( 'Update your drivers\' order details page to use a customers latitutde and longitude for directions', 'ddwc' ),
+				'name'     => esc_attr__( 'Google Maps Geocode', 'delivery-drivers-for-woocommerce' ),
+				'desc_tip' => esc_attr__( 'Update your drivers\' order details page to use a customers latitutde and longitude for directions', 'delivery-drivers-for-woocommerce' ),
 				'id'       => 'ddwc_settings_google_maps_geocode',
 				'type'     => 'checkbox',
 				'css'      => 'min-width:300px;',
-				'desc'     => esc_attr__( 'Enable Google Maps geocode for latitude and longitude', 'ddwc' ),
+				'desc'     => esc_attr__( 'Enable Google Maps geocode for latitude and longitude', 'delivery-drivers-for-woocommerce' ),
 			),
 			// Google Maps mode.
 			'google_maps_mode' => array(
-				'name'    => esc_attr__( 'Google Maps Mode', 'ddwc' ),
+				'name'    => esc_attr__( 'Google Maps Mode', 'delivery-drivers-for-woocommerce' ),
 				'type'    => 'select',
-				'desc'    => esc_attr__( 'Select the method of travel you would like used in your drivers map.', 'ddwc' ),
+				'desc'    => esc_attr__( 'Select the method of travel you would like used in your drivers map.', 'delivery-drivers-for-woocommerce' ),
 				'id'      => 'ddwc_settings_google_maps_mode',
 				'options' => array(
-					'driving'   => esc_attr__( 'Driving', 'ddwc' ),
-					'walking'   => esc_attr__( 'Walking', 'ddwc' ),
-					'bicycling' => esc_attr__( 'Bicycling', 'ddwc' )
+					'driving'   => esc_attr__( 'Driving', 'delivery-drivers-for-woocommerce' ),
+					'walking'   => esc_attr__( 'Walking', 'delivery-drivers-for-woocommerce' ),
+					'bicycling' => esc_attr__( 'Bicycling', 'delivery-drivers-for-woocommerce' )
 				),
 			),
 			// Driver ratings.
 			'driver_ratings' => array(
-				'name'    => esc_attr__( 'Driver ratings', 'ddwc' ),
+				'name'    => esc_attr__( 'Driver ratings', 'delivery-drivers-for-woocommerce' ),
 				'type'    => 'select',
-				'desc'    => esc_attr__( 'Add driver details with delivery star ratings to order details page.', 'ddwc' ),
+				'desc'    => esc_attr__( 'Add driver details with delivery star ratings to order details page.', 'delivery-drivers-for-woocommerce' ),
 				'id'      => 'ddwc_settings_driver_ratings',
 				'options' => array(
-					'yes' => esc_attr__( 'Yes', 'ddwc' ),
-					'no'  => esc_attr__( 'No', 'ddwc' )
+					'yes' => esc_attr__( 'Yes', 'delivery-drivers-for-woocommerce' ),
+					'no'  => esc_attr__( 'No', 'delivery-drivers-for-woocommerce' )
 				),
 			),
 			// Driver phone number.
 			'driver_phone_number' => array(
-				'name'    => esc_attr__( 'Driver phone number', 'ddwc' ),
+				'name'    => esc_attr__( 'Driver phone number', 'delivery-drivers-for-woocommerce' ),
 				'type'    => 'select',
-				'desc'    => esc_attr__( 'Add a button for customers to call driver in the driver details.', 'ddwc' ),
+				'desc'    => esc_attr__( 'Add a button for customers to call driver in the driver details.', 'delivery-drivers-for-woocommerce' ),
 				'id'      => 'ddwc_settings_driver_phone_number',
 				'options' => array(
-					'yes' => esc_attr__( 'Yes', 'ddwc' ),
-					'no'  => esc_attr__( 'No', 'ddwc' )
+					'yes' => esc_attr__( 'Yes', 'delivery-drivers-for-woocommerce' ),
+					'no'  => esc_attr__( 'No', 'delivery-drivers-for-woocommerce' )
 				),
 			),
 			// Section End.

@@ -18,7 +18,7 @@
  */
 function ddwc_register_order_returned_order_status() {
     register_post_status( 'wc-order-returned', array(
-        'label'                     => esc_attr__( 'Order Returned', 'ddwc' ),
+        'label'                     => esc_attr__( 'Order Returned', 'delivery-drivers-for-woocommerce' ),
         'public'                    => true,
         'show_in_admin_status_list' => true,
         'show_in_admin_all_list'    => true,
@@ -35,7 +35,7 @@ add_action( 'init', 'ddwc_register_order_returned_order_status' );
  */
 function ddwc_register_out_for_delivery_order_status() {
     register_post_status( 'wc-out-for-delivery', array(
-        'label'                     => esc_attr__( 'Out for Delivery', 'ddwc' ),
+        'label'                     => esc_attr__( 'Out for Delivery', 'delivery-drivers-for-woocommerce' ),
         'public'                    => true,
         'show_in_admin_status_list' => true,
         'show_in_admin_all_list'    => true,
@@ -52,7 +52,7 @@ add_action( 'init', 'ddwc_register_out_for_delivery_order_status' );
  */
 function ddwc_register_driver_assigned_order_status() {
     register_post_status( 'wc-driver-assigned', array(
-        'label'                     => esc_attr__( 'Driver Assigned', 'ddwc' ),
+        'label'                     => esc_attr__( 'Driver Assigned', 'delivery-drivers-for-woocommerce' ),
         'public'                    => true,
         'show_in_admin_status_list' => true,
         'show_in_admin_all_list'    => true,
@@ -80,9 +80,9 @@ function ddwc_add_custom_order_statuses( $order_statuses ) {
         $new_order_statuses[ $key ] = $status;
         // Add our custom statuses.
         if ( 'wc-processing' === $key ) {
-            $new_order_statuses['wc-driver-assigned']  = esc_attr__( 'Driver Assigned', 'ddwc' );
-            $new_order_statuses['wc-out-for-delivery'] = esc_attr__( 'Out for Delivery', 'ddwc' );
-            $new_order_statuses['wc-order-returned']   = esc_attr__( 'Order Returned', 'ddwc' );
+            $new_order_statuses['wc-driver-assigned']  = esc_attr__( 'Driver Assigned', 'delivery-drivers-for-woocommerce' );
+            $new_order_statuses['wc-out-for-delivery'] = esc_attr__( 'Out for Delivery', 'delivery-drivers-for-woocommerce' );
+            $new_order_statuses['wc-order-returned']   = esc_attr__( 'Order Returned', 'delivery-drivers-for-woocommerce' );
         }
     }
 

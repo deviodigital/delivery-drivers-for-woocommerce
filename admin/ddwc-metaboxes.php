@@ -21,7 +21,7 @@
 function ddwc_metaboxes() {
 	add_meta_box(
 		'ddwc_metaboxes',
-		esc_attr__( 'Delivery Driver', 'ddwc' ),
+		esc_attr__( 'Delivery Driver', 'delivery-drivers-for-woocommerce' ),
 		'ddwc_build',
 		'shop_order',
 		'side',
@@ -62,11 +62,11 @@ function ddwc_build() {
 	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'billing_phone', true );
 	// Display driver button.
 	if ( ! empty( $ddwc_driver_number ) &&  '-1' != $ddwc_driver_id ) {
-		echo '<p><a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'ddwc' ) . '</a></p>';
+		echo '<p><a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a></p>';
 	}
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
-		echo '<p>' . esc_attr__( 'Delivery rating', 'ddwc' ) . ': ' . esc_html( $ddwc_driver_rating ) . ' out of 5 stars</p>';
+		echo '<p>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . ': ' . esc_html( $ddwc_driver_rating ) . ' out of 5 stars</p>';
 	}
 }
 

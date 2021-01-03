@@ -90,7 +90,7 @@ function ddwc_driver_dashboard_driver_availability() {
 	}
 
 	echo '<div class="ddwc-availability">
-        <h4>' . esc_attr__( 'Accepting deliveries', 'ddwc' ) . '</h4>
+        <h4>' . esc_attr__( 'Accepting deliveries', 'delivery-drivers-for-woocommerce' ) . '</h4>
         <label class="switch">
           <input id="' . get_current_user_id() . '" type="checkbox" ' . $checked . ' />
           <span class="slider round"></span>

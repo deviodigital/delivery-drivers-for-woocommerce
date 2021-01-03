@@ -27,7 +27,6 @@
  */
 class Delivery_Drivers_i18n {
 
-
 	/**
 	 * Load the plugin text domain for translation.
 	 *
@@ -36,13 +35,11 @@ class Delivery_Drivers_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'ddwc',
+			'delivery-drivers-for-woocommerce',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
 
 	}
-
-
 
 }

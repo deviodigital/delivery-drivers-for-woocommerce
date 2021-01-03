@@ -39,7 +39,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = esc_attr__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_attr__( 'Driver Note', 'delivery-drivers-for-woocommerce' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -66,7 +66,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = esc_attr__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_attr__( 'Driver Note', 'delivery-drivers-for-woocommerce' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -92,7 +92,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		// Add driver note (if added).
 		if ( isset( $driver_note ) && ! empty( $driver_note ) ) {
 			// The text for the note.
-			$note = esc_attr__( 'Driver Note', 'ddwc' ) . ': ' . esc_html( $driver_note );
+			$note = esc_attr__( 'Driver Note', 'delivery-drivers-for-woocommerce' ) . ': ' . esc_html( $driver_note );
 			// Add the note
 			$order->add_order_note( $note );
 			// Save the data
@@ -134,23 +134,23 @@ function ddwc_driver_dashboard_change_status_forms() {
 
 	// Change status form if status is "driver assigned".
 	if ( 'driver-assigned' == $order_status ) {
-		$change_status  = '<h4>' . esc_attr__( 'Change Status', 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . esc_attr__( 'Change Status', 'delivery-drivers-for-woocommerce' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<p><strong>' . esc_attr__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . esc_attr__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<p><strong>' . esc_attr__( 'Message for shop manager / administrator (optional)', 'delivery-drivers-for-woocommerce' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="outfordeliverymessage" value="" placeholder="' . esc_attr__( 'Add a message to the order', 'delivery-drivers-for-woocommerce' ) . '" class="ddwc-ofdmsg" />';
 		$change_status .= '<input type="hidden" name="outfordelivery" value="out-for-delivery" />';
-		$change_status .= '<input type="submit" value="' . esc_attr__( 'Out for Delivery', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<input type="submit" value="' . esc_attr__( 'Out for Delivery', 'delivery-drivers-for-woocommerce' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_out_for_delivery_nonce_action', 'ddwc_out_for_delivery_nonce_field' ) . '</form>';
 	}
 
 	// Change status form if status is "out for delivery".
 	if ( 'out-for-delivery' == $order_status ) {
-		$change_status  = '<h4>' . esc_attr__( 'Change Status', 'ddwc' ) . '</h4>';
+		$change_status  = '<h4>' . esc_attr__( 'Change Status', 'delivery-drivers-for-woocommerce' ) . '</h4>';
 		$change_status .= '<form method="post">';
-		$change_status .= '<p><strong>' . esc_attr__( 'Message for shop manager / administrator (optional)', 'ddwc' ) . '</strong></p>';
-		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . esc_attr__( 'Add a message to the order', 'ddwc' ) . '" class="ddwc-ofdmsg" />';
-		$change_status .= '<input type="submit" name="orderreturned" value="' . esc_attr__( 'Returned', 'ddwc' ) . '" class="button ddwc-change-status order-returned" />';
-		$change_status .= '<input type="submit" name="ordercompleted" value="' . esc_attr__( 'Completed', 'ddwc' ) . '" class="button ddwc-change-status" />';
+		$change_status .= '<p><strong>' . esc_attr__( 'Message for shop manager / administrator (optional)', 'delivery-drivers-for-woocommerce' ) . '</strong></p>';
+		$change_status .= '<input type="text" name="ordermessage" value="" placeholder="' . esc_attr__( 'Add a message to the order', 'delivery-drivers-for-woocommerce' ) . '" class="ddwc-ofdmsg" />';
+		$change_status .= '<input type="submit" name="orderreturned" value="' . esc_attr__( 'Returned', 'delivery-drivers-for-woocommerce' ) . '" class="button ddwc-change-status order-returned" />';
+		$change_status .= '<input type="submit" name="ordercompleted" value="' . esc_attr__( 'Completed', 'delivery-drivers-for-woocommerce' ) . '" class="button ddwc-change-status" />';
 		$change_status .= wp_nonce_field( 'ddwc_order_completed_nonce_action', 'ddwc_order_completed_nonce_field' ) . '</form>';
 	}
 
@@ -291,7 +291,7 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 		add_filter( 'ddwc_delivery_address_google_map', '__return_false' );
 
 		// Default error message.
-		$error_message = __( 'The delivery address is returning NULL.', 'ddwc' );
+		$error_message = __( 'The delivery address is returning NULL.', 'delivery-drivers-for-woocommerce' );
 
 		// Google Maps error message.
 		if ( NULL != $output ) {
@@ -333,16 +333,16 @@ function ddwc_driver_dashboard_admin_drivers_table() {
 	if ( $drivers ) {
 
 		$thead = array(
-			esc_attr__( 'Name', 'ddwc' ),
-			esc_attr__( 'Status', 'ddwc' ),
-			esc_attr__( 'Rating', 'ddwc' ),
-			esc_attr__( 'Contact', 'ddwc' ),
+			esc_attr__( 'Name', 'delivery-drivers-for-woocommerce' ),
+			esc_attr__( 'Status', 'delivery-drivers-for-woocommerce' ),
+			esc_attr__( 'Rating', 'delivery-drivers-for-woocommerce' ),
+			esc_attr__( 'Contact', 'delivery-drivers-for-woocommerce' ),
 		);
 
 		$thead = apply_filters( 'ddwc_driver_dashboard_admin_table_thead', $thead );
 
 		// Drivers table title.
-		$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'ddwc' ) . '</h3>';
+		$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'delivery-drivers-for-woocommerce' ) . '</h3>';
 
 		// Drivers table start.
 		$drivers_table .= '<table class="ddwc-dashboard delivery-drivers">';
@@ -365,11 +365,11 @@ function ddwc_driver_dashboard_admin_drivers_table() {
 		// Loop through drivers.
 		foreach ( $drivers as $driver ) {
 			// Driver unavailable.
-			$availability = '<span class="driver-status unavailable">' . esc_attr__( 'Unavailable', 'ddwc' ) . '</span>';
+			$availability = '<span class="driver-status unavailable">' . esc_attr__( 'Unavailable', 'delivery-drivers-for-woocommerce' ) . '</span>';
 
 			// Driver available.
 			if ( get_user_meta( $driver->ID, 'ddwc_driver_availability', true ) ) {
-				$availability = '<span class="driver-status available">' . esc_attr__( 'Available', 'ddwc' ) . '</span>';
+				$availability = '<span class="driver-status available">' . esc_attr__( 'Available', 'delivery-drivers-for-woocommerce' ) . '</span>';
 			}
 
 			// Driver rating.
@@ -406,7 +406,7 @@ function ddwc_driver_dashboard_admin_drivers_table() {
 			}
 
 			$tbody = array(
-				$driver_img . '<span class="driver-name">' . esc_html( $driver->display_name ) . '</span> <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(' . __( 'edit', 'ddwc' ) . ')</a>',
+				$driver_img . '<span class="driver-name">' . esc_html( $driver->display_name ) . '</span> <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(' . __( 'edit', 'delivery-drivers-for-woocommerce' ) . ')</a>',
 				$availability,
 				$driver_rating_final,
 				$email_address . $phone_number,
