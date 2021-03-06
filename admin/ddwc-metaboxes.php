@@ -60,10 +60,13 @@ function ddwc_build() {
 	$ddwc_driver_rating = get_post_meta( $post->ID, 'ddwc_delivery_rating', true );
 	// Get driver phone number.
 	$ddwc_driver_number = get_user_meta( $ddwc_driver_id, 'billing_phone', true );
+	echo '<p>';
 	// Display driver button.
 	if ( ! empty( $ddwc_driver_number ) &&  '-1' != $ddwc_driver_id ) {
-		echo '<p><a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a></p>';
+		echo '<a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a> ';
 	}
+	echo '<a href="/wp-admin/user-edit.php?user_id=' . esc_attr( $ddwc_driver_id ) . '" class="button ddwc-button customer">' . esc_attr__( 'View Profile', 'delivery-drivers-for-woocommerce' ) . '</a>';
+	echo '</p>';
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
 		// Star.
