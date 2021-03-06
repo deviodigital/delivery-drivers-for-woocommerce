@@ -445,7 +445,7 @@ function ddwc_dashboard_shortcode() {
 							$order_currency       = $order_data['currency'];
 							$order_version        = $order_data['version'];
 							$order_payment_method = $order_data['payment_method'];
-							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option('date_format') ) );
+							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 							$order_discount_total = $order_data['discount_total'];
 							$order_discount_tax   = $order_data['discount_tax'];
 							$order_shipping_total = $order_data['shipping_total'];
@@ -457,7 +457,7 @@ function ddwc_dashboard_shortcode() {
 
 							if ( 'completed' === $order_status ) {
 								echo '<tr>';
-								echo '<td><a href="?orderid=' . $driver_order->ID . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
+								echo '<td><a href="' . apply_filters( 'ddwc_driver_dashboard_completed_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
 								echo '<td>' . $order_date_created . '</td>';
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
