@@ -69,12 +69,10 @@ function ddwc_build() {
 	echo '</p>';
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
-		// Star.
+		// Star icon.
 		$star = '<i class="fas fa-star"></i>';
-		// Delivery rating text.
-		echo '<p>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . ':</p>';
-		// Star rating.
-		echo str_repeat( $star, $ddwc_driver_rating );
+		// Delivery rating.
+		echo '<p>' . esc_attr__( 'Customer rating', 'delivery-drivers-for-woocommerce' ) . ': ' . str_repeat( $star, $ddwc_driver_rating ) . '</p>';
 	}
 }
 
