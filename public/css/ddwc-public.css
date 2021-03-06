@@ -148,15 +148,25 @@ button.remove-ddwc-driver-picture:hover {
     color: #FFF;
 }
 
-.ddwc-driver-details {
+div.ddwc-driver-details {
     position: relative;
     float: left;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.ddwc-driver-details-img,
+.ddwc-driver-details-img {
+    flex-basis: 25%;
+}
+
 .ddwc-driver-details-text {
-    float: left;
+    flex-basis: 70%;
+}
+
+.ddwc-driver-details h2 {
+    flex-basis: 100%;
 }
 
 .ddwc-driver-details img,
@@ -188,10 +198,6 @@ table.ddwc-driver-details {
 
 table.ddwc-driver-details tr td {
     padding: 10px;
-}
-
-table.ddwc-driver-details tr td:first-child {
-    padding-left: 0;
 }
 
 /** Bar Rating */
