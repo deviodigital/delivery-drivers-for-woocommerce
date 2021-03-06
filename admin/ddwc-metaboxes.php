@@ -66,7 +66,12 @@ function ddwc_build() {
 	}
 	// Display driver rating.
 	if ( ! empty( $ddwc_driver_rating ) ) {
-		echo '<p>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . ': ' . esc_html( $ddwc_driver_rating ) . ' out of 5 stars</p>';
+		// Star.
+		$star = '<i class="fas fa-star"></i>';
+		// Delivery rating text.
+		echo '<p>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . ':</p>';
+		// Star rating.
+		echo str_repeat( $star, $ddwc_driver_rating );
 	}
 }
 
