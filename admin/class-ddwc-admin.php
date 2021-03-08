@@ -117,47 +117,47 @@ function ddwc_custom_delivery_driver_column( $column ) {
     switch ( $column ) {
 
       case 'delivery_driver' :
-				// Noncename needed to verify where the data originated.
-				echo '<input type="hidden" name="ddwc_meta_noncename" id="ddwc_meta_noncename" value="' .
-				wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
+			// Noncename needed to verify where the data originated.
+			echo '<input type="hidden" name="ddwc_meta_noncename" id="ddwc_meta_noncename" value="' .
+			wp_create_nonce( plugin_basename( __FILE__ ) ) . '" />';
 
-				// Get the driver data if its already been entered.
-				$ddwc_driver_id = get_post_meta( $post->ID, 'ddwc_driver_id', true );
+			// Get the driver data if its already been entered.
+			$ddwc_driver_id = get_post_meta( $post->ID, 'ddwc_driver_id', true );
 
-				// Get all drivers.
-				$driver_args = array(
-					'role' => 'driver',
-				);
-				$drivers = get_users( $driver_args );
+			// Get all drivers.
+			$driver_args = array(
+				'role' => 'driver',
+			);
+			$drivers = get_users( $driver_args );
 
-				// Create empty array.
-				$available_drivers = array();
+			// Create empty array.
+			$available_drivers = array();
 
-				// Loop through drivers.
-				foreach ( $drivers as $driver ) {
-					// Check if driver availability is active.
-					if ( get_user_meta( $driver->ID, 'ddwc_driver_availability', true ) ) {
-						// Add driver to availabile list.
-						$available_drivers[] = $driver->ID;
-					}
+			// Loop through drivers.
+			foreach ( $drivers as $driver ) {
+				// Check if driver availability is active.
+				if ( get_user_meta( $driver->ID, 'ddwc_driver_availability', true ) ) {
+					// Add driver to availabile list.
+					$available_drivers[] = $driver->ID;
 				}
+			}
 
-				// Add active driver to available list.
-				$available_drivers[] = $ddwc_driver_id;
+			// Add active driver to available list.
+			$available_drivers[] = $ddwc_driver_id;
 
-				// Echo Delivery Driver Metabox Input Field.
-				echo '<div class="ddwc-driver-box">';
-				wp_dropdown_users( array(
-					'show_option_none' => '--',
-					'role'             => 'driver',
-					'name'             => $post->ID,
-					'id'               => 'ddwc_driver_id',
-					'selected'         => $ddwc_driver_id,
-					'class'            => 'widefat',
-					'show'             => 'display_name',
-					'include'          => $available_drivers
-				) );
-				echo '</div>';
+			// Echo Delivery Driver Metabox Input Field.
+			echo '<div class="ddwc-driver-box">';
+			wp_dropdown_users( array(
+				'show_option_none' => '--',
+				'role'             => 'driver',
+				'name'             => $post->ID,
+				'id'               => 'ddwc_driver_id',
+				'selected'         => $ddwc_driver_id,
+				'class'            => 'widefat',
+				'show'             => 'display_name',
+				'include'          => $available_drivers
+			) );
+			echo '</div>';
 
         break;
     }

@@ -251,13 +251,15 @@ function ddwc_driver_rating( $driver_id ) {
 	// Set defaults.
 	$average_rating      = NULL;
 	$driver_rating_final = '';
+	// Star icon.
+	$star = '<i class="fas fa-star"></i>';
 
 	if ( 0 != $driver_rating ) {
 		// Average rating.
 		$average_rating = $driver_rating / $order_count;
 		$average_rating = round( $average_rating, 1 );
 		// Driver rating final.
-		$driver_rating_final = $average_rating . '/5';
+		$driver_rating_final = str_repeat( $star, $average_rating ); 
 	}
 
 	return $driver_rating_final;
