@@ -71,5 +71,5 @@ jQuery(document).ready(function ($) {
 			// Log the $.post() results.
 			// console.log("metavalue: " + metavalue + " - Data: " + data + "\nStatus: " + status);
         });
-    });
+	});
 });
