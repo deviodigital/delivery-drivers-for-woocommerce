@@ -69,37 +69,40 @@ function ddwc_order_driver_details( $order ) {
             // Do nothing.
         }
         $string .= '</div>';
-        // Driver details table.
-        $string .= '<table class="ddwc-driver-details"><tbody><tr>';
-        // Vehicle color.
-        if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) ) {
-            // Color name.
-            $color_name = esc_attr__( 'Vehicle Color', 'delivery-drivers-for-woocommerce' );
-            if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
-                $color_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
+        // Display driver details table if order is not completed.
+        if ( 'driver-assigned' == $order_status || 'out-for-delivery' == $order_status ) {
+            // Driver details table.
+            $string .= '<table class="ddwc-driver-details"><tbody><tr>';
+            // Vehicle color.
+            if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) ) {
+                // Color name.
+                $color_name = esc_attr__( 'Vehicle Color', 'delivery-drivers-for-woocommerce' );
+                if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
+                    $color_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
+                }
+                $string .= '<td>' . $color_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) . '</strong></td>';
+            } else {
+                // Do nothing.
             }
-            $string .= '<td>' . $color_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) . '</strong></td>';
-        } else {
-            // Do nothing.
-        }
-        // Vehicle model.
-        if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) ) {
-            // Model name.
-            $model_name = esc_attr__( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
-            if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
-                $model_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
+            // Vehicle model.
+            if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) ) {
+                // Model name.
+                $model_name = esc_attr__( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
+                if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
+                    $model_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
+                }
+                $string .= '<td>' . $model_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) . '</strong></td>';
+            } else {
+                // Do nothing.
             }
-            $string .= '<td>' . $model_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) . '</strong></td>';
-        } else {
-            // Do nothing.
+            // Driver License plate.
+            if ( get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) ) {
+                $string .= '<td>' . esc_attr__( 'License Plate', 'delivery-drivers-for-woocommerce' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) . '</strong></td>';
+            } else {
+                // Do nothing.
+            }
+            $string .= '</tr></tbody></table>';
         }
-        // Driver License plate.
-        if ( get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) ) {
-            $string .= '<td>' . esc_attr__( 'License Plate', 'delivery-drivers-for-woocommerce' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) . '</strong></td>';
-        } else {
-            // Do nothing.
-        }
-        $string .= '</tr></tbody></table>';
         $string .= '</div>';
 
         echo $string;
