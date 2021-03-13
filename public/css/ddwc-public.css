@@ -158,11 +158,12 @@ div.ddwc-driver-details {
 }
 
 .ddwc-driver-details-img {
-    flex-basis: 25%;
+    flex-basis: 140px;
 }
 
 .ddwc-driver-details-text {
-    flex-basis: 70%;
+    flex: 1;
+    padding-left: 24px;
     position: relative;
 }
 
