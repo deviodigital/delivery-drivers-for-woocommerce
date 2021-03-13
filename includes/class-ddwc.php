@@ -156,6 +156,11 @@ class DDWC {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-driver-ratings.php';
 
 		/**
+		 * The file responsible for defining the user profile settings.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-user-profile-settings.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
