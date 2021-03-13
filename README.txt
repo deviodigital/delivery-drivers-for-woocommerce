@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.6
-Stable tag: 3.1
+Tested up to: 5.7
+Stable tag: 3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,23 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.2 =
+*   Added `ddwc_driver_dashboard_completed_orders_order_details_url` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Added `FontAwesome` and enqueued the stylesheet in `public/class-ddwc-public.php`
+*   Added new German translation in `languages/delivery-drivers-for-woocommerce-de_DE.pot`
+*   Added new Arabic translation in `languages/delivery-drivers-for-woocommerce-ar_AR.pot`
+*   Added thank you message when driver star rating is clicked on customer's order screen in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Added `view profile` link to driver details metabox on Edit Order screen in `admin/ddwc-metaboxes.php`
+*   Updated driver vehicle details display requirements on order details page in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Updated delivery rating in metabox to display stars instead of numbers in `admin/ddwc-metaboxes.php`
+*   Updated driver rating to use stars in admin view of the driver dashboard in `admin/ddwc-functions.php`
+*   Updated text strings for localization in `languages/delivery-drivers-for-woocommerce.pot`
+*   Updated text strings for localization in `languages/delivery-drivers-for-woocommerce-es_ES.pot`
+*   Updated text strings for localization in `languages/delivery-drivers-for-woocommerce-fr_FR.pot`
+*   Updated text strings for localization in `languages/delivery-drivers-for-woocommerce-it_IT.pot`
+*   Updated textdomain from `ddwc` to full plugin slug throughout multiple files in the plugin
+*   General code cleanup throughout multiple files in the plugin
 
 = 3.1 =
 *   Added new Spanish translation in `languages/ddwc-es_ES.pot`
