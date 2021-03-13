@@ -1,0 +1,535 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Delivery Drivers for WooCommerce\n"
+"POT-Creation-Date: 2021-03-13 00:51-0500\n"
+"PO-Revision-Date: 2021-03-13 00:51-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: delivery-drivers-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-ddwc-admin.php:96 admin/ddwc-metaboxes.php:24
+#: admin/ddwc-woocommerce-driver-ratings.php:45
+msgid "Delivery Driver"
+msgstr "سائق توصيل"
+
+#: admin/class-ddwc-admin.php:263
+msgid "Change status to driver assigned"
+msgstr "تغيير الوضع إلى السائق المعين"
+
+#: admin/class-ddwc-admin.php:264
+msgid "Change status to out for delivery"
+msgstr "تغيير الحالة للخارج للتسليم"
+
+#: admin/class-ddwc-admin.php:265
+msgid "Change status to order returned"
+msgstr "عادت حالة التغيير إلى الطلب"
+
+#: admin/class-ddwc-admin.php:275
+#, php-format
+msgid "Set %1$s as driver"
+msgstr "قم بتعيين %1$s كسائق"
+
+#: admin/class-ddwc-admin.php:305 admin/class-ddwc-admin.php:319
+#: admin/class-ddwc-admin.php:333
+msgid "That's what happened by bulk edit:"
+msgstr "هذا ما حدث عن طريق التعديل الجماعي:"
+
+#: admin/ddwc-dashboard-shortcode.php:105
+msgid "Order #"
+msgstr "الطلب #"
+
+#: admin/ddwc-dashboard-shortcode.php:116
+msgid "Call Customer"
+msgstr "اتصل بالعميل"
+
+#: admin/ddwc-dashboard-shortcode.php:121
+msgid "Call Dispatch"
+msgstr "دعوة ديسباتش"
+
+#: admin/ddwc-dashboard-shortcode.php:131
+msgid "Delivery Address"
+msgstr "عنوان التسليم"
+
+#: admin/ddwc-dashboard-shortcode.php:147
+msgid "Get Directions"
+msgstr "احصل على الاتجاهات"
+
+#: admin/ddwc-dashboard-shortcode.php:178
+msgid "driving"
+msgstr "القيادة"
+
+#: admin/ddwc-dashboard-shortcode.php:191
+msgid "Order details"
+msgstr "تفاصيل الطلب"
+
+#: admin/ddwc-dashboard-shortcode.php:205
+msgid "Order date"
+msgstr "تاريخ الطلب"
+
+#: admin/ddwc-dashboard-shortcode.php:210
+msgid "Payment method"
+msgstr "طريقة الدفع"
+
+#: admin/ddwc-dashboard-shortcode.php:216
+#: admin/ddwc-dashboard-shortcode.php:218
+msgid "Customer name"
+msgstr "أسم العميل"
+
+#: admin/ddwc-dashboard-shortcode.php:224
+msgid "Customer note"
+msgstr "ملاحظة الزبون"
+
+#: admin/ddwc-dashboard-shortcode.php:237
+#: admin/ddwc-dashboard-shortcode.php:337
+#: admin/ddwc-dashboard-shortcode.php:426
+#: admin/ddwc-dashboard-shortcode.php:620
+msgid "Total"
+msgstr "المجموع"
+
+#: admin/ddwc-dashboard-shortcode.php:240
+msgid "Product"
+msgstr "المنتج"
+
+#: admin/ddwc-dashboard-shortcode.php:240
+msgid "Qty"
+msgstr "الكمية"
+
+#: admin/ddwc-dashboard-shortcode.php:276
+msgid "Delivery"
+msgstr "التسليم"
+
+#: admin/ddwc-dashboard-shortcode.php:283
+msgid "Order total"
+msgstr "قيمة إجمالي الطلبات"
+
+#: admin/ddwc-dashboard-shortcode.php:326
+#: admin/ddwc-dashboard-shortcode.php:488
+#, fuzzy
+msgid "Assigned Orders"
+msgstr "الأوامر المعينة"
+
+#: admin/ddwc-dashboard-shortcode.php:334
+#: admin/ddwc-dashboard-shortcode.php:429
+#: admin/ddwc-dashboard-shortcode.php:616
+msgid "ID"
+msgstr "المعرف"
+
+#: admin/ddwc-dashboard-shortcode.php:335
+#: admin/ddwc-dashboard-shortcode.php:429
+#: admin/ddwc-dashboard-shortcode.php:617
+msgid "Date"
+msgstr "التاريخ"
+
+#: admin/ddwc-dashboard-shortcode.php:336
+#: admin/ddwc-dashboard-shortcode.php:429
+#: admin/ddwc-dashboard-shortcode.php:619 admin/ddwc-functions.php:339
+msgid "Status"
+msgstr "الحالة"
+
+#: admin/ddwc-dashboard-shortcode.php:422
+msgid "Completed Orders"
+msgstr "الطلبات المكتملة"
+
+#: admin/ddwc-dashboard-shortcode.php:489
+#, fuzzy
+msgid "You do not have any assigned orders."
+msgstr "ليس لديك أي أوامر معينة."
+
+#: admin/ddwc-dashboard-shortcode.php:513
+msgid "Delivery Orders"
+msgstr "أوامر التسليم"
+
+#: admin/ddwc-dashboard-shortcode.php:516
+msgid "From"
+msgstr "من"
+
+#: admin/ddwc-dashboard-shortcode.php:520
+msgid "To"
+msgstr "إلى"
+
+#: admin/ddwc-dashboard-shortcode.php:524
+msgid "Driver"
+msgstr "سائق"
+
+#: admin/ddwc-dashboard-shortcode.php:543
+msgid "SUBMIT"
+msgstr "إدخال"
+
+#: admin/ddwc-dashboard-shortcode.php:618
+msgid "Location"
+msgstr "الموقع"
+
+#: admin/ddwc-dashboard-shortcode.php:731
+msgid "Access Denied"
+msgstr "تم الرفض"
+
+#: admin/ddwc-dashboard-shortcode.php:731
+msgid "Sorry, but you are not able to view this page."
+msgstr "عذرا ، ولكن لا يمكنك مشاهدة هذه الصفحة."
+
+#: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
+#: admin/ddwc-functions.php:95
+#, fuzzy
+msgid "Driver Note"
+msgstr "ملاحظة السائق"
+
+#: admin/ddwc-functions.php:137 admin/ddwc-functions.php:148
+msgid "Change Status"
+msgstr "تغيير الحالة"
+
+#: admin/ddwc-functions.php:139 admin/ddwc-functions.php:150
+msgid "Message for shop manager / administrator (optional)"
+msgstr "رسالة لمدير المتجر / المسؤول (اختياري)"
+
+#: admin/ddwc-functions.php:140 admin/ddwc-functions.php:151
+msgid "Add a message to the order"
+msgstr "أضف رسالة إلى الطلب"
+
+#: admin/ddwc-functions.php:142 admin/ddwc-woocommerce-orders.php:38
+#: admin/ddwc-woocommerce-orders.php:84
+msgid "Out for Delivery"
+msgstr "خارج للتوصيل"
+
+#: admin/ddwc-functions.php:152
+msgid "Returned"
+msgstr "إسترجاع"
+
+#: admin/ddwc-functions.php:153
+msgid "Completed"
+msgstr "مكتمل"
+
+#: admin/ddwc-functions.php:296
+msgid "The delivery address is returning NULL."
+msgstr "عنوان التسليم يعيد NULL."
+
+#: admin/ddwc-functions.php:338
+msgid "Name"
+msgstr "الاسم"
+
+#: admin/ddwc-functions.php:340
+msgid "Rating"
+msgstr "تقييم"
+
+#: admin/ddwc-functions.php:341
+msgid "Contact"
+msgstr "اتصال"
+
+#: admin/ddwc-functions.php:347 admin/ddwc-woocommerce-settings.php:37
+msgid "Delivery Drivers"
+msgstr "سائقي التوصيل"
+
+#: admin/ddwc-functions.php:370
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#: admin/ddwc-functions.php:374
+msgid "Available"
+msgstr "متاح"
+
+#: admin/ddwc-functions.php:411
+msgid "edit"
+msgstr "تحرير"
+
+#: admin/ddwc-metaboxes.php:66 admin/ddwc-woocommerce-driver-ratings.php:68
+msgid "Call Driver"
+msgstr "اتصل بالسائق"
+
+#: admin/ddwc-metaboxes.php:68
+msgid "View Profile"
+msgstr "عرض الصفحة الشخصية"
+
+#: admin/ddwc-metaboxes.php:75
+msgid "Customer rating"
+msgstr "تقييم العملاء"
+
+#: admin/ddwc-user-profile-settings.php:118
+#: admin/ddwc-user-profile-settings.php:261
+#, fuzzy
+msgid "Driver Verification"
+msgstr "التحقق من السائق"
+
+#: admin/ddwc-user-profile-settings.php:121
+msgid "Driver Photo"
+msgstr "صورة سائق"
+
+#: admin/ddwc-user-profile-settings.php:136
+#: admin/ddwc-user-profile-settings.php:282
+msgid "x"
+msgstr "x"
+
+#: admin/ddwc-user-profile-settings.php:143
+msgid "Availability"
+msgstr "توفر"
+
+#: admin/ddwc-user-profile-settings.php:152
+msgid "Is the driver currently accepting deliveries?"
+msgstr "هل يقبل السائق حاليًا عمليات التسليم؟"
+
+#: admin/ddwc-user-profile-settings.php:156
+#: admin/ddwc-user-profile-settings.php:288
+msgid "Transportation Type"
+msgstr "نوع وسيلة النقل"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Bicycle"
+msgstr "دراجة"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Motorcycle"
+msgstr "دراجة نارية"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Car"
+msgstr "سيارة"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+#, fuzzy
+msgid "SUV"
+msgstr "سيارات الدفع الرباعي"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Truck"
+msgstr "شاحنه"
+
+#: admin/ddwc-user-profile-settings.php:182
+#: admin/ddwc-user-profile-settings.php:314
+msgid "Model"
+msgstr "نموذج"
+
+#: admin/ddwc-user-profile-settings.php:184
+#: admin/ddwc-user-profile-settings.php:316
+#: admin/ddwc-woocommerce-driver-ratings.php:95
+msgid "Vehicle Model"
+msgstr "موديل المركبة"
+
+#: admin/ddwc-user-profile-settings.php:196
+#: admin/ddwc-user-profile-settings.php:326
+msgid "Color"
+msgstr "اللون"
+
+#: admin/ddwc-user-profile-settings.php:198
+#: admin/ddwc-user-profile-settings.php:328
+#: admin/ddwc-woocommerce-driver-ratings.php:84
+#, fuzzy
+msgid "Vehicle Color"
+msgstr "لون السيارة"
+
+#: admin/ddwc-user-profile-settings.php:208
+#: admin/ddwc-user-profile-settings.php:336
+msgid "License Plate Number"
+msgstr "رقم لوحة سيارته"
+
+#: admin/ddwc-user-profile-settings.php:263
+msgid "Driver Picture"
+msgstr "صورة السائق"
+
+#: admin/ddwc-woocommerce-account-tab.php:62
+#: admin/ddwc-woocommerce-account-tab.php:88
+msgid "Driver Dashboard"
+msgstr "لوحة القيادة للسائق"
+
+#: admin/ddwc-woocommerce-driver-ratings.php:61
+msgid "Rate Delivery"
+msgstr "معدل التسليم"
+
+#: admin/ddwc-woocommerce-driver-ratings.php:61
+msgid "Thanks for your rating!"
+msgstr "شكرا لتصويتك!"
+
+#: admin/ddwc-woocommerce-driver-ratings.php:105
+msgid "License Plate"
+msgstr "ترخيص اللوحة"
+
+#: admin/ddwc-woocommerce-orders.php:21 admin/ddwc-woocommerce-orders.php:85
+msgid "Order Returned"
+msgstr "تم إرجاع الطلب"
+
+#: admin/ddwc-woocommerce-orders.php:26
+#, php-format
+msgid "Returned <span class=\"count\">(%s)</span>"
+msgid_plural "Returned <span class=\"count\">(%s)</span>"
+msgstr[0] "عاد <span class=\"count\">(%s)</span>"
+msgstr[1] "عاد <span class=\"count\">(%s)</span>"
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: admin/ddwc-woocommerce-orders.php:43
+#, php-format
+msgid "Out for Delivery <span class=\"count\">(%s)</span>"
+msgid_plural "Out for Delivery <span class=\"count\">(%s)</span>"
+msgstr[0] "خارج للتوصيل <span class=\"count\">(%s)</span>"
+msgstr[1] "خارج للتوصيل <span class=\"count\">(%s)</span>"
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: admin/ddwc-woocommerce-orders.php:55 admin/ddwc-woocommerce-orders.php:83
+msgid "Driver Assigned"
+msgstr "سائق معين"
+
+#: admin/ddwc-woocommerce-orders.php:60
+#, php-format
+msgid "Driver Assigned <span class=\"count\">(%s)</span>"
+msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"
+msgstr[0] "سائق معين <span class=\"count\">(%s)</span>"
+msgstr[1] "سائق معين <span class=\"count\">(%s)</span>"
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: admin/ddwc-woocommerce-settings.php:90
+#: delivery-drivers-for-woocommerce.php:91
+msgid "Go Pro"
+msgstr "احصل علي نسخه مدفوعه"
+
+#. Plugin Name of the plugin/theme
+#: admin/ddwc-woocommerce-settings.php:96
+msgid "Delivery Drivers for WooCommerce"
+msgstr "برامج تشغيل التوصيل لـ WooCommerce"
+
+#: admin/ddwc-woocommerce-settings.php:98
+msgid "Brought to you by"
+msgstr "جلب لك بواسطة"
+
+#: admin/ddwc-woocommerce-settings.php:98
+msgid "Documentation"
+msgstr "الوثائق"
+
+#: admin/ddwc-woocommerce-settings.php:103
+#, fuzzy
+msgid "Dispatch phone number"
+msgstr "رقم هاتف الإرسال"
+
+#: admin/ddwc-woocommerce-settings.php:105
+msgid "Allow your drivers to call if they have questions about an order."
+msgstr "اسمح للسائقين بالاتصال إذا كانت لديهم أسئلة حول أحد الطلبات."
+
+#: admin/ddwc-woocommerce-settings.php:110
+msgid "Google Maps API key"
+msgstr "مفتاح API لخرائط Google"
+
+#: admin/ddwc-woocommerce-settings.php:112
+msgid "Add a map to the order directions for your drivers."
+msgstr "أضف خريطة لاتجاهات الطلب للسائقين."
+
+#: admin/ddwc-woocommerce-settings.php:117
+msgid "Google Maps Geocode"
+msgstr "خرائط جوجل Geocode"
+
+#: admin/ddwc-woocommerce-settings.php:118
+msgid ""
+"Update your drivers' order details page to use a customers latitutde and "
+"longitude for directions"
+msgstr ""
+"قم بتحديث صفحة تفاصيل طلبات برامج التشغيل الخاصة بك لاستخدام خط الطول وخط "
+"العرض للعميل للحصول على الاتجاهات"
+
+#: admin/ddwc-woocommerce-settings.php:122
+msgid "Enable Google Maps geocode for latitude and longitude"
+msgstr "تفعيل خرائط Google الجغرافية لخطوط الطول والعرض"
+
+#: admin/ddwc-woocommerce-settings.php:126
+#, fuzzy
+msgid "Google Maps Mode"
+msgstr "وضع خرائط جوجل"
+
+#: admin/ddwc-woocommerce-settings.php:128
+msgid "Select the method of travel you would like used in your drivers map."
+msgstr "حدد طريقة السفر التي ترغب في استخدامها في خريطة السائقين الخاصة بك."
+
+#: admin/ddwc-woocommerce-settings.php:131
+msgid "Driving"
+msgstr "القيادة"
+
+#: admin/ddwc-woocommerce-settings.php:132
+msgid "Walking"
+msgstr "المشي"
+
+#: admin/ddwc-woocommerce-settings.php:133
+msgid "Bicycling"
+msgstr "دراجة هوائية"
+
+#: admin/ddwc-woocommerce-settings.php:138
+msgid "Driver ratings"
+msgstr "تقييمات السائقين"
+
+#: admin/ddwc-woocommerce-settings.php:140
+msgid "Add driver details with delivery star ratings to order details page."
+msgstr ""
+"أضف تفاصيل برنامج التشغيل مع تصنيفات نجوم التسليم إلى صفحة تفاصيل الطلب."
+
+#: admin/ddwc-woocommerce-settings.php:143
+#: admin/ddwc-woocommerce-settings.php:154
+msgid "Yes"
+msgstr "نعم"
+
+#: admin/ddwc-woocommerce-settings.php:144
+#: admin/ddwc-woocommerce-settings.php:155
+msgid "No"
+msgstr "لا"
+
+#: admin/ddwc-woocommerce-settings.php:149
+#, fuzzy
+msgid "Driver phone number"
+msgstr "رقم هاتف السائق"
+
+#: admin/ddwc-woocommerce-settings.php:151
+msgid "Add a button for customers to call driver in the driver details."
+msgstr "أضف زرًا للعملاء للاتصال بالسائق في تفاصيل السائق."
+
+#: delivery-drivers-for-woocommerce.php:93
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: delivery-drivers-for-woocommerce.php:135
+msgid "Orders"
+msgstr "الطلبات"
+
+#: delivery-drivers-for-woocommerce.php:136
+#, php-format
+msgid ""
+"There is a new version of DDWC Pro available. Download your copy from the "
+"%1$s page on Devio Digital."
+msgstr ""
+"يتوفر إصدار جديد من DDWC Pro. قم بتنزيل نسختك من صفحة %1$s على Devio Digital."
+
+#: public/class-ddwc-public.php:94
+msgid "Accepting deliveries"
+msgstr "قبول عمليات التسليم"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.deviodigital.com"
+msgstr "‫https://www.deviodigital.com"
+
+#. Description of the plugin/theme
+msgid "Streamline your mobile workforce and increase your bottom line."
+msgstr "تبسيط القوى العاملة المتنقلة لديك وزيادة أرباحك."
+
+#. Author of the plugin/theme
+msgid "Devio Digital"
+msgstr "‫Devio Digital"
