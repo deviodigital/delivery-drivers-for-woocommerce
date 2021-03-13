@@ -9,24 +9,25 @@
 }
 
 .ddwc-driver-picture {
+    display: inline-block;
+    margin-right: 12px;
     position: relative;
     width: 140px;
-    display: inline-block;
 }
 
 .ddwc-remove-driver-picture {
     background: #FF0000;
     border: 0;
-    color: #FFF;
     border-radius: 50%;
+    color: #FFF;
     font-family: 'Helvetica', Arial, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 1px;
     padding: 10px 6.61px;
     position: absolute;
-    top: -5px;
     right: -5px;
+    top: -5px;
     text-align: center;
 }
 

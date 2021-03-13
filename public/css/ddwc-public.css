@@ -125,6 +125,7 @@ a.button.ddwc-button:active {
     position: relative;
     width: 140px;
     display: inline-block;
+    margin-right: 12px;
 }
 
 button.remove-ddwc-driver-picture {
