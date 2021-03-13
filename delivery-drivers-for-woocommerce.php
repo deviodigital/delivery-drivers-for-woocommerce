@@ -19,7 +19,7 @@
  * Text Domain:          delivery-drivers-for-woocommerce
  * Domain Path:          /languages
  * WC requires at least: 3.5.0
- * WC tested up to:      4.9.0
+ * WC tested up to:      5.1.0
  */
 
 // If this file is called directly, abort.
