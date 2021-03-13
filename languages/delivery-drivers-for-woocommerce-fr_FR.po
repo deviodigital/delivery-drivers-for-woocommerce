@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2020-12-27 14:58-0500\n"
-"PO-Revision-Date: 2020-12-27 14:58-0500\n"
+"POT-Creation-Date: 2021-03-13 00:19-0500\n"
+"PO-Revision-Date: 2021-03-13 00:19-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: admin/class-ddwc-admin.php:96 admin/ddwc-metaboxes.php:24
-#: admin/ddwc-woocommerce-driver-ratings.php:40
+#: admin/ddwc-woocommerce-driver-ratings.php:45
 msgid "Delivery Driver"
 msgstr "Chauffeur partenaire"
 
@@ -135,7 +135,7 @@ msgstr "Date"
 
 #: admin/ddwc-dashboard-shortcode.php:336
 #: admin/ddwc-dashboard-shortcode.php:429
-#: admin/ddwc-dashboard-shortcode.php:619 admin/ddwc-functions.php:337
+#: admin/ddwc-dashboard-shortcode.php:619 admin/ddwc-functions.php:339
 msgid "Status"
 msgstr "Statut"
 
@@ -209,131 +209,149 @@ msgstr "Retourné"
 msgid "Completed"
 msgstr "Terminé"
 
-#: admin/ddwc-functions.php:294
+#: admin/ddwc-functions.php:296
 msgid "The delivery address is returning NULL."
 msgstr "L’adresse de livraison renvoie NULL."
 
-#: admin/ddwc-functions.php:336
+#: admin/ddwc-functions.php:338
 msgid "Name"
 msgstr "Nom"
 
-#: admin/ddwc-functions.php:338
+#: admin/ddwc-functions.php:340
 msgid "Rating"
 msgstr "Évaluation"
 
-#: admin/ddwc-functions.php:339
+#: admin/ddwc-functions.php:341
 msgid "Contact"
 msgstr "Contact"
 
-#: admin/ddwc-functions.php:345 admin/ddwc-woocommerce-settings.php:37
+#: admin/ddwc-functions.php:347 admin/ddwc-woocommerce-settings.php:37
 msgid "Delivery Drivers"
 msgstr "Chauffeurs partenaires"
 
-#: admin/ddwc-functions.php:368
+#: admin/ddwc-functions.php:370
 msgid "Unavailable"
 msgstr "Indisponible"
 
-#: admin/ddwc-functions.php:372
+#: admin/ddwc-functions.php:374
 msgid "Available"
 msgstr "Disponible"
 
-#: admin/ddwc-functions.php:409
+#: admin/ddwc-functions.php:411
 msgid "edit"
 msgstr "modifier"
 
-#: admin/ddwc-metaboxes.php:65 admin/ddwc-woocommerce-driver-ratings.php:63
+#: admin/ddwc-metaboxes.php:66 admin/ddwc-woocommerce-driver-ratings.php:68
 msgid "Call Driver"
 msgstr "Appeler le livreur"
 
-#: admin/ddwc-metaboxes.php:69
-msgid "Delivery rating"
-msgstr "Évaluation de la livraison"
+#: admin/ddwc-metaboxes.php:68
+msgid "View Profile"
+msgstr "Voir le profil"
+
+#: admin/ddwc-metaboxes.php:75
+msgid "Customer rating"
+msgstr "Évaluation du client"
+
+#: admin/ddwc-user-profile-settings.php:118
+#: admin/ddwc-user-profile-settings.php:261
+msgid "Driver Verification"
+msgstr "Vérification du livreur"
+
+#: admin/ddwc-user-profile-settings.php:121
+msgid "Driver Photo"
+msgstr "Photo du livreur"
+
+#: admin/ddwc-user-profile-settings.php:136
+#: admin/ddwc-user-profile-settings.php:282
+msgid "x"
+msgstr "x"
+
+#: admin/ddwc-user-profile-settings.php:143
+msgid "Availability"
+msgstr "Disponibilité"
+
+#: admin/ddwc-user-profile-settings.php:152
+msgid "Is the driver currently accepting deliveries?"
+msgstr "Le livreur accepte-t-il actuellement les livraisons ?"
+
+#: admin/ddwc-user-profile-settings.php:156
+#: admin/ddwc-user-profile-settings.php:288
+msgid "Transportation Type"
+msgstr "Type de transport"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Bicycle"
+msgstr "Vélo"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Motorcycle"
+msgstr "Moto/Vélomoteurs"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Car"
+msgstr "Voiture"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "SUV"
+msgstr "SUV"
+
+#: admin/ddwc-user-profile-settings.php:160
+#: admin/ddwc-user-profile-settings.php:291
+msgid "Truck"
+msgstr "Camion"
+
+#: admin/ddwc-user-profile-settings.php:182
+#: admin/ddwc-user-profile-settings.php:314
+msgid "Model"
+msgstr "Modèle"
+
+#: admin/ddwc-user-profile-settings.php:184
+#: admin/ddwc-user-profile-settings.php:316
+#: admin/ddwc-woocommerce-driver-ratings.php:95
+msgid "Vehicle Model"
+msgstr "Modèle de véhicule"
+
+#: admin/ddwc-user-profile-settings.php:196
+#: admin/ddwc-user-profile-settings.php:326
+msgid "Color"
+msgstr "Couleur"
+
+#: admin/ddwc-user-profile-settings.php:198
+#: admin/ddwc-user-profile-settings.php:328
+#: admin/ddwc-woocommerce-driver-ratings.php:84
+msgid "Vehicle Color"
+msgstr "Couleur du véhicule"
+
+#: admin/ddwc-user-profile-settings.php:208
+#: admin/ddwc-user-profile-settings.php:336
+msgid "License Plate Number"
+msgstr "Numéro de plaque d’immatriculation"
+
+#: admin/ddwc-user-profile-settings.php:263
+msgid "Driver Picture"
+msgstr "Photo du livreur"
 
 #: admin/ddwc-woocommerce-account-tab.php:62
 #: admin/ddwc-woocommerce-account-tab.php:88
 msgid "Driver Dashboard"
 msgstr "Tableau de bord du livreur"
 
-#: admin/ddwc-woocommerce-driver-ratings.php:56
+#: admin/ddwc-woocommerce-driver-ratings.php:61
 msgid "Rate Delivery"
 msgstr "Taux de livraison"
 
-#: admin/ddwc-woocommerce-driver-ratings.php:77
-#: admin/ddwc-woocommerce-driver-ratings.php:353
-#: admin/ddwc-woocommerce-driver-ratings.php:483
-msgid "Vehicle Color"
-msgstr "Couleur du véhicule"
+#: admin/ddwc-woocommerce-driver-ratings.php:61
+msgid "Thanks for your rating!"
+msgstr "Merci pour votre évaluation!"
 
-#: admin/ddwc-woocommerce-driver-ratings.php:88
-#: admin/ddwc-woocommerce-driver-ratings.php:339
-#: admin/ddwc-woocommerce-driver-ratings.php:471
-msgid "Vehicle Model"
-msgstr "Modèle de véhicule"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:98
+#: admin/ddwc-woocommerce-driver-ratings.php:105
 msgid "License Plate"
 msgstr "Plaque d'Immatriculation"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:273
-#: admin/ddwc-woocommerce-driver-ratings.php:416
-msgid "Driver Verification"
-msgstr "Vérification du livreur"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:276
-msgid "Driver Photo"
-msgstr "Photo du livreur"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:291
-#: admin/ddwc-woocommerce-driver-ratings.php:437
-msgid "x"
-msgstr "x"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:298
-msgid "Availability"
-msgstr "Disponibilité"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:307
-msgid "Is the driver currently accepting deliveries?"
-msgstr "Le livreur accepte-t-il actuellement les livraisons ?"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:311
-#: admin/ddwc-woocommerce-driver-ratings.php:443
-msgid "Transportation Type"
-msgstr "Type de transport"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:315
-#: admin/ddwc-woocommerce-driver-ratings.php:446
-msgid "Bicycle"
-msgstr "Vélo"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:315
-#: admin/ddwc-woocommerce-driver-ratings.php:446
-msgid "Motorcycle"
-msgstr "Moto/Vélomoteurs"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:315
-#: admin/ddwc-woocommerce-driver-ratings.php:446
-msgid "Car"
-msgstr "Voiture"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:315
-#: admin/ddwc-woocommerce-driver-ratings.php:446
-msgid "SUV"
-msgstr "SUV"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:315
-#: admin/ddwc-woocommerce-driver-ratings.php:446
-msgid "Truck"
-msgstr "Camion"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:363
-#: admin/ddwc-woocommerce-driver-ratings.php:491
-msgid "License Plate Number"
-msgstr "Numéro de plaque d’immatriculation"
-
-#: admin/ddwc-woocommerce-driver-ratings.php:418
-msgid "Driver Picture"
-msgstr "Photo du livreur"
 
 #: admin/ddwc-woocommerce-orders.php:21 admin/ddwc-woocommerce-orders.php:85
 msgid "Order Returned"
@@ -365,7 +383,7 @@ msgstr[0] "Chauffeurs partenaires assignés <span class=\"count\">(%s)</span>"
 msgstr[1] "Chauffeurs partenaires assignés <span class=\"count\">(%s)</span>"
 
 #: admin/ddwc-woocommerce-settings.php:90
-#: delivery-drivers-for-woocommerce.php:89
+#: delivery-drivers-for-woocommerce.php:91
 msgid "Go Pro"
 msgstr "Go Pro"
 
@@ -469,15 +487,15 @@ msgid "Add a button for customers to call driver in the driver details."
 msgstr ""
 "Ajoutez un bouton pour que les clients appellent le livreur pour les détails."
 
-#: delivery-drivers-for-woocommerce.php:91
+#: delivery-drivers-for-woocommerce.php:93
 msgid "Settings"
 msgstr "Paramètres"
 
-#: delivery-drivers-for-woocommerce.php:133
+#: delivery-drivers-for-woocommerce.php:135
 msgid "Orders"
 msgstr "Commandes"
 
-#: delivery-drivers-for-woocommerce.php:134
+#: delivery-drivers-for-woocommerce.php:136
 #, php-format
 msgid ""
 "There is a new version of DDWC Pro available. Download your copy from the "
@@ -486,7 +504,7 @@ msgstr ""
 "Une nouvelle version de DDWC Pro est disponible. Téléchargez votre copie à "
 "partir de la page %1$s sur Devio Digital."
 
-#: public/class-ddwc-public.php:93
+#: public/class-ddwc-public.php:94
 msgid "Accepting deliveries"
 msgstr "Accepter les livraisons"
 
