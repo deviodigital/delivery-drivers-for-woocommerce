@@ -118,7 +118,7 @@ function ddwc_check_pro_version() {
 		}
 		// Set pro version number.
 		$pro_version = DDWC_PRO_VERSION;
-		if ( '0' == $pro_version || $pro_version < '2.1' ) {
+		if ( '0' == $pro_version || $pro_version < '2.2' ) {
 			add_action( 'admin_notices', 'ddwc_update_ddwc_pro_notice' );
 		}
 	}
