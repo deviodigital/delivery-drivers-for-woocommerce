@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
 "POT-Creation-Date: 2021-03-13 00:16-0500\n"
-"PO-Revision-Date: 2021-03-13 00:17-0500\n"
+"PO-Revision-Date: 2021-09-09 17:34-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: delivery-drivers-for-woocommerce.php\n"
@@ -46,7 +46,7 @@ msgstr "Imposta %1$s come driver"
 #: admin/class-ddwc-admin.php:305 admin/class-ddwc-admin.php:319
 #: admin/class-ddwc-admin.php:333
 msgid "That's what happened by bulk edit:"
-msgstr "Questo è quello che è successo con la modifica collettiva"
+msgstr "Questo è quello che è successo con la modifica collettiva:"
 
 #: admin/ddwc-dashboard-shortcode.php:105
 msgid "Order #"
@@ -406,7 +406,7 @@ msgstr "Numero di telefono della spedizione"
 
 #: admin/ddwc-woocommerce-settings.php:105
 msgid "Allow your drivers to call if they have questions about an order."
-msgstr "Consenti ai tuoi autisti di chiamare se hanno domande su un ordine"
+msgstr "Consenti ai tuoi autisti di chiamare se hanno domande su un ordine."
 
 #: admin/ddwc-woocommerce-settings.php:110
 msgid "Google Maps API key"
@@ -414,7 +414,7 @@ msgstr "Chiave API di Google Maps"
 
 #: admin/ddwc-woocommerce-settings.php:112
 msgid "Add a map to the order directions for your drivers."
-msgstr "Aggiungi una mappa alle indicazioni per l’ordine dei tuoi autisti"
+msgstr "Aggiungi una mappa alle indicazioni per l’ordine dei tuoi autisti."
 
 #: admin/ddwc-woocommerce-settings.php:117
 msgid "Google Maps Geocode"
@@ -441,7 +441,7 @@ msgstr "Modalità Google Maps"
 msgid "Select the method of travel you would like used in your drivers map."
 msgstr ""
 "Seleziona il metodo di viaggio che desideri utilizzare nella mappa dei "
-"conducenti"
+"conducenti."
 
 #: admin/ddwc-woocommerce-settings.php:131
 msgid "Driving"
@@ -463,7 +463,7 @@ msgstr "Valutazioni dei driver"
 msgid "Add driver details with delivery star ratings to order details page."
 msgstr ""
 "Aggiungi i dettagli del conducente con le valutazioni a stelle di consegna "
-"alla pagina dei dettagli dell’ordine"
+"alla pagina dei dettagli dell’ordine."
 
 #: admin/ddwc-woocommerce-settings.php:143
 #: admin/ddwc-woocommerce-settings.php:154
@@ -483,7 +483,7 @@ msgstr "Numero di telefono del rider"
 msgid "Add a button for customers to call driver in the driver details."
 msgstr ""
 "Aggiungi un pulsante per consentire ai clienti di chiamare l’autista nei "
-"dettagli dell’autista"
+"dettagli dell’autista."
 
 #: delivery-drivers-for-woocommerce.php:93
 msgid "Settings"
