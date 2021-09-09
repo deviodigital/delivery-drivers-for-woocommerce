@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.1
+*   Added `ddwc_woocommerce_store_address` helper function in `admin/ddwc-functions.php`
+*   Updated text strings for localization for translations found in the `languages` folder
+
 ## 3.2
 *   Added `ddwc_driver_dashboard_completed_orders_order_details_url` filter in `admin/ddwc-dashboard-shortcode.php`
 *   Added `FontAwesome` and enqueued the stylesheet in `public/class-ddwc-public.php`
