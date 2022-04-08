@@ -266,7 +266,7 @@ function ddwc_driver_rating( $driver_id ) {
 }
 
 /**
- * Delivery Adddress Google Map Geocode
+ * Delivery Address Google Map Geocode
  *
  * @param string $delivery_address
  * @since 2.7
