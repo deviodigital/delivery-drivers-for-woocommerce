@@ -338,7 +338,7 @@ input.ddwc-ofdmsg {
   transition: .4s;
 }
 
-.ddwc-availability .switch .slider:before {
+.ddwc-availability .switch .slider::before {
   position: absolute;
   content: "";
   height: 22px;
@@ -358,7 +358,7 @@ input.ddwc-ofdmsg {
   box-shadow: 0 0 1px #76bd1d;
 }
 
-.ddwc-availability input:checked + .slider:before {
+.ddwc-availability input:checked + .slider::before {
   -webkit-transform: translateX(28px);
   -ms-transform: translateX(28px);
   transform: translateX(28px);
@@ -369,7 +369,7 @@ input.ddwc-ofdmsg {
   border-radius: 22px;
 }
 
-.ddwc-availability .switch .slider.round:before {
+.ddwc-availability .switch .slider.round::before {
   border-radius: 50%;
 }
 
