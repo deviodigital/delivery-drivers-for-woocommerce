@@ -488,11 +488,11 @@ function ddwc_dashboard_shortcode() {
 				<form class="ddwc-order-filters" method="post" action="<?php $_SERVER['REQUEST_URI']; ?>">
 					<div class="form-group">
 						<label><?php _e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo $_POST['filter-from']; } else { echo date( 'Y-m-d', strtotime( '-7 days' ) ); } ?>" />
+						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo date( 'Y-m-d', strtotime( '-7 days' ) ); } ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php _e( 'To', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo $_POST['filter-to']; } else { echo date( 'Y-m-d' );  } ?>" />
+						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo date( 'Y-m-d' );  } ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php _e( 'Driver', 'delivery-drivers-for-woocommerce' ); ?></label>
@@ -502,12 +502,12 @@ function ddwc_dashboard_shortcode() {
 								$user_query = new WP_User_Query( array( 'role' => 'driver' ) );
 								if ( ! empty( $user_query->get_results() ) ) {
 									foreach ( $user_query->get_results() as $user ) {
-										if ( isset( $_POST['filter-name'] ) && $user->ID == $_POST['filter-name'] ) {
+										if ( isset( $_POST['filter-name'] ) && $user->ID == filter_input( INPUT_POST, 'filter-name' ) ) {
 											$selected = 'selected';
 										} else {
 											$selected = '';
 										}
-										echo '<option ' . $selected . ' value="' . $user->ID . '">' . $user->display_name . '</option>';
+										echo '<option ' . esc_html( $selected ) . ' value="' . $user->ID . '">' . $user->display_name . '</option>';
 									}
 								}
 							?>
