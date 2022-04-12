@@ -181,18 +181,19 @@ function ddwc_dashboard_shortcode() {
 
 					// Display payment method details.
 					if ( isset( $payment_gateway ) && FALSE !== $payment_gateway ) {
-						$payment_method = '<tr><td><strong>' . esc_attr__( 'Payment method', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . $payment_gateway->title . '</td></tr>';
+						$payment_method = '<tr><td><strong>' . esc_attr__( 'Payment method', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $payment_gateway->title ) . '</td></tr>';
 						echo apply_filters( 'ddwc_driver_dashboard_payment_method', $payment_method );
 					}
 
 					// Display customer name.
 					if ( '' !== $order_shipping_fname ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . $order_shipping_fname . ' ' . $order_shipping_lname . '</td></tr>';
+						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $order_shipping_fname ) . ' ' . esc_attr( $order_shipping_lname ) . '</td></tr>';
 					} elseif ( '' !== $order_billing_fname ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . $order_billing_fname . ' ' . $order_billing_lname . '</td></tr>';
+						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $order_billing_fname ) . ' ' . esc_attr( $order_billing_lname ) . '</td></tr>';
 					} else {
 						// Do nothing.
 					}
+
 					// Display customer note.
 					if ( isset( $order_customer_note ) && '' != $order_customer_note ) {
 						echo '<tr><td><strong>' . esc_attr__( 'Customer note', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_html( $order_customer_note ) . '</td></tr>';
@@ -238,7 +239,7 @@ function ddwc_dashboard_shortcode() {
 							/**
 							 * @todo add thumbnail image next to the product name.
 							 */
-							echo '<tr><td>' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
+							echo '<tr><td>' . esc_html( $name ) . '</td><td>' . esc_html( $qtty ) . '</td>' . esc_html( $total_price ) . '</tr>';
 						}
 					} else {
 						// Do nothing.
@@ -318,7 +319,7 @@ function ddwc_dashboard_shortcode() {
 						// Loop through $thead.
 						foreach ( $thead as $row ) {
 							// Add td to thead.
-							echo '<td>' . $row . '</td>';
+							echo '<td>' . esc_html( $row ) . '</td>';
 						}
 						echo '</tr></thead>';
 
@@ -432,7 +433,7 @@ function ddwc_dashboard_shortcode() {
 							if ( 'completed' === $order_status && strtotime( $order_date_created ) > strtotime( '-7 day' ) ) {
 								echo '<tr>';
 								echo '<td><a href="' . apply_filters( 'ddwc_driver_dashboard_completed_orders_order_details_url', '?orderid=' . $driver_order->ID, $driver_order->ID ) . '">' . apply_filters( 'ddwc_order_number', $driver_order->ID ) . '</a></td>';
-								echo '<td>' . $order_date_created . '</td>';
+								echo '<td>' . esc_html( $order_date_created ) . '</td>';
 								echo '<td>' . wc_get_order_status_name( $order_status ) . '</td>';
 
 								if ( isset( $order_total ) ) {
@@ -484,18 +485,18 @@ function ddwc_dashboard_shortcode() {
 					'post_status'    => 'any'
 				);
 				?>
-				<h3><?php _e( 'Delivery Orders', 'delivery-drivers-for-woocommerce' ); ?></h3>
+				<h3><?php esc_attr_e( 'Delivery Orders', 'delivery-drivers-for-woocommerce' ); ?></h3>
 				<form class="ddwc-order-filters" method="post" action="<?php $_SERVER['REQUEST_URI']; ?>">
 					<div class="form-group">
-						<label><?php _e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
+						<label><?php esc_attresc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
 						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo date( 'Y-m-d', strtotime( '-7 days' ) ); } ?>" />
 					</div>
 					<div class="form-group">
-						<label><?php _e( 'To', 'delivery-drivers-for-woocommerce' ); ?></label>
+						<label><?php esc_attr_e( 'To', 'delivery-drivers-for-woocommerce' ); ?></label>
 						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo date( 'Y-m-d' );  } ?>" />
 					</div>
 					<div class="form-group">
-						<label><?php _e( 'Driver', 'delivery-drivers-for-woocommerce' ); ?></label>
+						<label><?php esc_attr_e( 'Driver', 'delivery-drivers-for-woocommerce' ); ?></label>
 						<select name="filter-name">
 							<option value=""></option>
 							<?php
@@ -514,14 +515,14 @@ function ddwc_dashboard_shortcode() {
 						</select>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="<?php _e( 'SUBMIT', 'delivery-drivers-for-woocommerce' ); ?>" />
+						<input type="submit" value="<?php esc_attr_e( 'SUBMIT', 'delivery-drivers-for-woocommerce' ); ?>" />
 					</div>
 				</form>
 				<?php
 				do_action( 'ddwc_admin_orders_form_after' );
 
 				// 	Filter variables.
-				if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+				if ( isset( $_SERVER ) && ! empty( $_SERVER ) && 'POST' == $_SERVER['REQUEST_METHOD'] ) {
 					// Check if the filter-from field is set.
 					if ( isset( $_POST['filter-from'] ) ) {
 						// Form field - from date.

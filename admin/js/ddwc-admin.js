@@ -12,5 +12,5 @@ jQuery(document).ready(function ($) {
 		});
 	});
 	// Remove the link click wrapper on WooCommerce Edit Orders screen.
-	$("td.delivery_driver.column-delivery_driver a").click(function(){ return false });
+	$("td.delivery_driver.column-delivery_driver a").click(function(){ return false; });
 });

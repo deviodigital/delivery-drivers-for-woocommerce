@@ -133,6 +133,6 @@ add_action( 'admin_init', 'ddwc_check_pro_version' );
  */
 function ddwc_update_ddwc_pro_notice() {
 	$ddwc_orders = '<a href="https://www.deviodigital.com/my-account/orders/" target="_blank">' . esc_html__( 'Orders', 'delivery-drivers-for-woocommerce' ) . '</a>';
-	$error       = sprintf( esc_html__( 'There is a new version of DDWC Pro available. Download your copy from the %1$s page on Devio Digital.', 'delivery-drivers-for-woocommerce' ), $ddwc_orders );
-	echo '<div class="notice notice-info"><p>' . $error . '</p></div>';
+	$error       = sprintf( esc_attr__( 'There is a new version of DDWC Pro available. Download your copy from the %1$s page on Devio Digital.', 'delivery-drivers-for-woocommerce' ), $ddwc_orders );
+	echo '<div class="notice notice-info"><p>' . esc_html( $error ) . '</p></div>';
 }
