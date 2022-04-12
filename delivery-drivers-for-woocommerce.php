@@ -90,7 +90,7 @@ function ddwc_settings_link( $links ) {
 	// Pro link.
 	$pro_link = '<a href="https://deviodigital.com/product/delivery-drivers-for-woocommerce-pro" target="_blank" style="font-weight:700;">' . esc_attr__( 'Go Pro', 'delivery-drivers-for-woocommerce' ) . '</a>';
 	// Settings link.
-	$settings_link = '<a href="admin.php?page=wc-settings&tab=ddwc">' . esc_attr__( 'Settings', 'delivery-drivers-for-woocommerce' ) . '</a>';
+	$settings_link = '<a href="admin.php?page=wc-settings&tab=ddwc">' . esc_html__( 'Settings', 'delivery-drivers-for-woocommerce' ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 	if ( ! function_exists( 'ddwc_pro_all_settings' ) ) {
@@ -132,7 +132,7 @@ add_action( 'admin_init', 'ddwc_check_pro_version' );
  * @since 2.9
  */
 function ddwc_update_ddwc_pro_notice() {
-	$ddwc_orders = '<a href="https://www.deviodigital.com/my-account/orders/" target="_blank">' . __( 'Orders', 'delivery-drivers-for-woocommerce' ) . '</a>';
+	$ddwc_orders = '<a href="https://www.deviodigital.com/my-account/orders/" target="_blank">' . esc_html__( 'Orders', 'delivery-drivers-for-woocommerce' ) . '</a>';
 	$error       = sprintf( esc_html__( 'There is a new version of DDWC Pro available. Download your copy from the %1$s page on Devio Digital.', 'delivery-drivers-for-woocommerce' ), $ddwc_orders );
 	echo '<div class="notice notice-info"><p>' . $error . '</p></div>';
 }

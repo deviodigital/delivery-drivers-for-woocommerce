@@ -260,9 +260,9 @@ add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_avail
  */
 function ddwc_driver_bulk_edit( $actions ) {
 	// Add order status changes.
-	$actions['mark_driver-assigned']  = __( 'Change status to driver assigned', 'delivery-drivers-for-woocommerce' );
-	$actions['mark_out-for-delivery'] = __( 'Change status to out for delivery', 'delivery-drivers-for-woocommerce' );
-	$actions['mark_order-returned']   = __( 'Change status to order returned', 'delivery-drivers-for-woocommerce' );
+	$actions['mark_driver-assigned']  = esc_attr__( 'Change status to driver assigned', 'delivery-drivers-for-woocommerce' );
+	$actions['mark_out-for-delivery'] = esc_attr__( 'Change status to out for delivery', 'delivery-drivers-for-woocommerce' );
+	$actions['mark_order-returned']   = esc_attr__( 'Change status to order returned', 'delivery-drivers-for-woocommerce' );
 
 	// Get all users with 'driver' user role.
 	$user_query = new WP_User_Query( array( 'role' => 'driver' ) );
@@ -272,7 +272,7 @@ function ddwc_driver_bulk_edit( $actions ) {
 		// Loop through 'driver' users.
 		foreach ( $user_query->get_results() as $user ) {
 			// Add option to set user as the 'driver'.
-			$actions['driver_id_' . $user->ID] = sprintf( esc_html__( 'Set %1$s as driver', 'delivery-drivers-for-woocommerce' ), esc_html( $user->display_name ) );
+			$actions['driver_id_' . $user->ID] = sprintf( esc_attr__( 'Set %1$s as driver', 'delivery-drivers-for-woocommerce' ), esc_html( $user->display_name ) );
 		}
 	}
 
@@ -302,7 +302,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 				// Get order.
 				$order = new WC_Order( $post_id );
 				// Order note.
-				$order_note = __( 'That\'s what happened by bulk edit:', 'delivery-drivers-for-woocommerce' );
+				$order_note = esc_attr__( 'That\'s what happened by bulk edit:', 'delivery-drivers-for-woocommerce' );
 				// Update order status.
 				$order->update_status( 'driver-assigned', $order_note, true );
 				// Save order.
@@ -316,7 +316,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 				// Get order.
 				$order = new WC_Order( $post_id );
 				// Order note.
-				$order_note = __( 'That\'s what happened by bulk edit:', 'delivery-drivers-for-woocommerce' );
+				$order_note = esc_attr__( 'That\'s what happened by bulk edit:', 'delivery-drivers-for-woocommerce' );
 				// Update order status.
 				$order->update_status( 'out-for-delivery', $order_note, true );
 				// Save order.
@@ -330,7 +330,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 				// Get order.
 				$order = new WC_Order( $post_id );
 				// Order note.
-				$order_note = __( 'That\'s what happened by bulk edit:', 'delivery-drivers-for-woocommerce' );
+				$order_note = esc_attr__( 'That\'s what happened by bulk edit:', 'delivery-drivers-for-woocommerce' );
 				// Update order status.
 				$order->update_status( 'order-returned', $order_note, true );
 				// Save order.

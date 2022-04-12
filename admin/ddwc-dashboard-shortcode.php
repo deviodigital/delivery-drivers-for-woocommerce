@@ -525,7 +525,7 @@ function ddwc_dashboard_shortcode() {
 					// Check if the filter-from field is set.
 					if ( isset( $_POST['filter-from'] ) ) {
 						// Form field - from date.
-						$from_time  = date( 'Y-m-d', strtotime( $_POST['filter-from'] ) );
+						$from_time  = date( 'Y-m-d', strtotime( filter_input( INPUT_POST, 'filter-from' ) ) );
 						$from_year  = date( 'Y', strtotime( $from_time ) );
 						$from_month = date( 'n', strtotime( $from_time ) );
 						$from_day   = date( 'j', strtotime( $from_time ) );
@@ -533,7 +533,7 @@ function ddwc_dashboard_shortcode() {
 					// Check if the filter-to field is set.
 					if ( isset( $_POST['filter-to'] ) ) {
 						// Form field - to date.
-						$to_time  = date( 'Y-m-d', strtotime( $_POST['filter-to'] ) );
+						$to_time  = date( 'Y-m-d', strtotime( filter_input( INPUT_POST, 'filter-to' ) ) );
 						$to_year  = date( 'Y', strtotime( $to_time ) );
 						$to_month = date( 'n', strtotime( $to_time ) );
 						$to_day   = date( 'j', strtotime( $to_time ) );
@@ -573,7 +573,7 @@ function ddwc_dashboard_shortcode() {
 					// Set the Driver ID key name.
 					$args['meta_key']   = 'ddwc_driver_id';
 					// Set the Driver ID value.
-					$args['meta_value']	= $_POST['filter-name'];
+					$args['meta_value']	= filter_input( INPUT_POST, 'filter-name' );
 				}
 
 				/**
