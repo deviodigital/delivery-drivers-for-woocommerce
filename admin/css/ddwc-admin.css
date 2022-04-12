@@ -5,42 +5,42 @@
 
 
 .forminp span.description {
-    display: block;
+  display: block;
 }
 
 .ddwc-driver-picture {
-    display: inline-block;
-    margin-right: 12px;
-    position: relative;
-    width: 140px;
+  display: inline-block;
+  margin-right: 12px;
+  position: relative;
+  width: 140px;
 }
 
 .ddwc-remove-driver-picture {
-    background: #FF0000;
-    border: 0;
-    border-radius: 50%;
-    color: #FFF;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1px;
-    padding: 10px 6.61px;
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    text-align: center;
+  background: #FF0000;
+  border: 0;
+  border-radius: 50%;
+  color: #FFF;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1px;
+  padding: 10px 6.61px;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  text-align: center;
 }
 
 .ddwc-remove-driver-picture:hover {
-    background: #DF0000;
-    color: #FFF;
-    cursor: pointer;
+  background: #DF0000;
+  color: #FFF;
+  cursor: pointer;
 }
 
 .ddwc-driver-picture img {
-    height: auto;
+  height: auto;
 }
 
 .wp-core-ui select#ddwc_driver_transportation_type {
-    width: 22rem;
+  width: 22rem;
 }
