@@ -143,10 +143,11 @@ function ddwc_add_profile_options( $profileuser ) {
             <th scope="row"><?php esc_html_e( 'Availability', 'delivery-drivers-for-woocommerce' ); ?></th>
             <td>
                 <?php
+                    // Create variable.
+                    $checked = '';
+                    // Update variable?
                     if ( get_user_meta( $profileuser->ID, 'ddwc_driver_availability', true ) ) {
                         $checked = 'checked';
-                    } else {
-                        $checked = '';
                     }
                 ?>
                 <input class="regular-text" type="checkbox" name="ddwc_driver_availability" <?php esc_attr_e( $checked ); ?> /> <?php esc_html_e( 'Is the driver currently accepting deliveries?', 'delivery-drivers-for-woocommerce' ); ?>

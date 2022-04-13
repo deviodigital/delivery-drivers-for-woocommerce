@@ -24,7 +24,7 @@ class Delivery_Drivers_WooCommerce_Settings {
 
 	public static function output_custom_type( $value ) {
 		// You can output the custom type in any format you'd like.
-		echo $value['desc'];
+		echo esc_html( $value['desc'] );
 	}
 
 	/**
@@ -64,7 +64,6 @@ class Delivery_Drivers_WooCommerce_Settings {
 	 * @return array Array of settings for @see woocommerce_admin_fields() function.
 	 */
 	public static function get_settings() {
-
 		// Get loop of all Pages.
 		$args = array(
 			'sort_column'  => 'post_title',

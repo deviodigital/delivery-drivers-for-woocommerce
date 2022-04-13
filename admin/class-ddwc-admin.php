@@ -199,10 +199,10 @@ function ddwc_delivery_driver_settings() {
 	$order = new WC_Order( $item_id );
 
 	// Update order status.
+	$order->update_status( 'driver-assigned' );
+
 	if ( -1 == $meta_value ) {
 		$order->update_status( 'processing' );
-	} else {
-		$order->update_status( 'driver-assigned' );
 	}
 
 	// WooCommerce product loop $args

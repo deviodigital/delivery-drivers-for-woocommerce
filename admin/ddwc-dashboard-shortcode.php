@@ -49,18 +49,11 @@ function ddwc_dashboard_shortcode() {
 
 					// Specific order data.
 					$order_id             = $order_data['id'];
-					$order_parent_id      = $order_data['parent_id'];
 					$order_status         = $order_data['status'];
 					$order_currency       = $order_data['currency'];
-					$order_version        = $order_data['version'];
-					$order_payment_method = $order_data['payment_method'];
 					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 					$order_time_created   = $order_data['date_created']->date( apply_filters( 'ddwc_time_format', get_option( 'time_format' ) ) );
-					$order_discount_total = $order_data['discount_total'];
-					$order_discount_tax   = $order_data['discount_tax'];
 					$order_shipping_total = $order_data['shipping_total'];
-					$order_shipping_tax   = $order_data['shipping_tax'];
-					$order_cart_tax       = $order_data['cart_tax'];
 					$order_total          = $order_data['total'];
 					$order_total_tax      = $order_data['total_tax'];
 					$order_customer_id    = $order_data['customer_id'];
@@ -334,17 +327,10 @@ function ddwc_dashboard_shortcode() {
 							$currency_code        = $order_data['currency'];
 							$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
 							$order_id             = $order_data['id'];
-							$order_parent_id      = $order_data['parent_id'];
 							$order_status         = $order_data['status'];
 							$order_currency       = $order_data['currency'];
-							$order_version        = $order_data['version'];
-							$order_payment_method = $order_data['payment_method'];
 							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
-							$order_discount_total = $order_data['discount_total'];
-							$order_discount_tax   = $order_data['discount_tax'];
 							$order_shipping_total = $order_data['shipping_total'];
-							$order_shipping_tax   = $order_data['shipping_tax'];
-							$order_cart_tax       = $order_data['cart_tax'];
 							$order_total          = $order_data['total'];
 							$order_total_tax      = $order_data['total_tax'];
 							$order_customer_id    = $order_data['customer_id'];
@@ -415,17 +401,10 @@ function ddwc_dashboard_shortcode() {
 							$currency_code        = $order_data['currency'];
 							$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
 							$order_id             = $order_data['id'];
-							$order_parent_id      = $order_data['parent_id'];
 							$order_status         = $order_data['status'];
 							$order_currency       = $order_data['currency'];
-							$order_version        = $order_data['version'];
-							$order_payment_method = $order_data['payment_method'];
 							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
-							$order_discount_total = $order_data['discount_total'];
-							$order_discount_tax   = $order_data['discount_tax'];
 							$order_shipping_total = $order_data['shipping_total'];
-							$order_shipping_tax   = $order_data['shipping_tax'];
-							$order_cart_tax       = $order_data['cart_tax'];
 							$order_total          = $order_data['total'];
 							$order_total_tax      = $order_data['total_tax'];
 							$order_customer_id    = $order_data['customer_id'];
@@ -489,11 +468,11 @@ function ddwc_dashboard_shortcode() {
 				<form class="ddwc-order-filters" method="post" action="<?php $_SERVER['REQUEST_URI']; ?>">
 					<div class="form-group">
 						<label><?php esc_attresc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo date( 'Y-m-d', strtotime( '-7 days' ) ); } ?>" />
+						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) ); } ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php esc_attr_e( 'To', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo date( 'Y-m-d' );  } ?>" />
+						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo esc_attr( date( 'Y-m-d' ) );  } ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php esc_attr_e( 'Driver', 'delivery-drivers-for-woocommerce' ); ?></label>
@@ -617,17 +596,10 @@ function ddwc_dashboard_shortcode() {
 					$currency_code        = $order_data['currency'];
 					$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
 					$order_id             = $order_data['id'];
-					$order_parent_id      = $order_data['parent_id'];
 					$order_status         = $order_data['status'];
 					$order_currency       = $order_data['currency'];
-					$order_version        = $order_data['version'];
-					$order_payment_method = $order_data['payment_method'];
 					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
-					$order_discount_total = $order_data['discount_total'];
-					$order_discount_tax   = $order_data['discount_tax'];
 					$order_shipping_total = $order_data['shipping_total'];
-					$order_shipping_tax   = $order_data['shipping_tax'];
-					$order_cart_tax       = $order_data['cart_tax'];
 					$order_total          = $order_data['total'];
 					$order_total_tax      = $order_data['total_tax'];
 					$order_customer_id    = $order_data['customer_id'];

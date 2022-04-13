@@ -48,8 +48,6 @@ function ddwc_order_driver_details( $order ) {
         if ( get_user_meta( $driver_id, 'ddwc_driver_picture', true ) ) {
             $driver_pic = get_user_meta( $driver_id, 'ddwc_driver_picture', true );
             $string    .= '<a href="' . $driver_pic['url'] . '"><img src="' . $driver_pic['url'] . '" alt="' . $driver_meta->user_firstname . ' ' . $driver_meta->user_lastname . '" /></a>';
-        } else {
-            // Do nothing.
         }
         $string .= '</div>';
         $string .= '<div class="ddwc-driver-details-text">';
@@ -67,8 +65,6 @@ function ddwc_order_driver_details( $order ) {
                 if ( $driver_number ) {
                     $string .= '<a href="tel:' . $driver_number . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a> ';
                 }
-            } else {
-                // Do nothing.
             }
         } else {
             // Do nothing.
@@ -86,8 +82,6 @@ function ddwc_order_driver_details( $order ) {
                     $color_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
                 }
                 $string .= '<td>' . $color_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) . '</strong></td>';
-            } else {
-                // Do nothing.
             }
             // Vehicle model.
             if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) ) {
@@ -97,14 +91,10 @@ function ddwc_order_driver_details( $order ) {
                     $model_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
                 }
                 $string .= '<td>' . $model_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) . '</strong></td>';
-            } else {
-                // Do nothing.
             }
             // Driver License plate.
             if ( get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) ) {
                 $string .= '<td>' . esc_attr__( 'License Plate', 'delivery-drivers-for-woocommerce' ) . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_license_plate', true ) . '</strong></td>';
-            } else {
-                // Do nothing.
             }
             $string .= '</tr></tbody></table>';
         }
