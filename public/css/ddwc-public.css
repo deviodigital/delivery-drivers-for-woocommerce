@@ -105,7 +105,7 @@ a.button.ddwc-button:hover,
 a.button.ddwc-button:focus,
 a.button.ddwc-button:active {
   background: #767676;
-  color: #ffffff;
+  color: #FFF;
   border: 0;
   box-shadow: none;
 }
@@ -221,10 +221,10 @@ table.ddwc-driver-details tr td {
   color: #d2d2d2;
 }
 .br-theme-fontawesome-stars .br-widget a.br-active:after {
-  color: #EDB867;
+  color: #edb867;
 }
 .br-theme-fontawesome-stars .br-widget a.br-selected:after {
-  color: #EDB867;
+  color: #edb867;
 }
 .br-theme-fontawesome-stars .br-widget .br-current-rating {
   display: none;
