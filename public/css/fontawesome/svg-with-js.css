@@ -2,6 +2,7 @@
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+
 svg:not(:root).svg-inline--fa {
   overflow: visible;
 }
@@ -13,85 +14,111 @@ svg:not(:root).svg-inline--fa {
   overflow: visible;
   vertical-align: -.125em;
 }
-  .svg-inline--fa.fa-lg {
-    vertical-align: -.225em;
+
+.svg-inline--fa.fa-lg {
+  vertical-align: -.225em;
 }
-  .svg-inline--fa.fa-w-1 {
-    width: 0.0625em;
+
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
 }
-  .svg-inline--fa.fa-w-2 {
-    width: 0.125em;
+
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
 }
-  .svg-inline--fa.fa-w-3 {
-    width: 0.1875em;
+
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
 }
-  .svg-inline--fa.fa-w-4 {
-    width: 0.25em;
+
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
 }
-  .svg-inline--fa.fa-w-5 {
-    width: 0.3125em;
+
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
 }
-  .svg-inline--fa.fa-w-6 {
-    width: 0.375em;
+
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
 }
-  .svg-inline--fa.fa-w-7 {
-    width: 0.4375em;
+
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
 }
-  .svg-inline--fa.fa-w-8 {
-    width: 0.5em;
+
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
 }
-  .svg-inline--fa.fa-w-9 {
-    width: 0.5625em;
+
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
 }
-  .svg-inline--fa.fa-w-10 {
-    width: 0.625em;
+
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
 }
-  .svg-inline--fa.fa-w-11 {
-    width: 0.6875em;
+
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
 }
-  .svg-inline--fa.fa-w-12 {
-    width: 0.75em;
+
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
 }
-  .svg-inline--fa.fa-w-13 {
-    width: 0.8125em;
+
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
 }
-  .svg-inline--fa.fa-w-14 {
-    width: 0.875em;
+
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
 }
-  .svg-inline--fa.fa-w-15 {
-    width: 0.9375em;
+
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
 }
-  .svg-inline--fa.fa-w-16 {
-    width: 1em;
+
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
 }
-  .svg-inline--fa.fa-w-17 {
-    width: 1.0625em;
+
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
 }
-  .svg-inline--fa.fa-w-18 {
-    width: 1.125em;
+
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
 }
-  .svg-inline--fa.fa-w-19 {
-    width: 1.1875em;
+
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
 }
-  .svg-inline--fa.fa-w-20 {
-    width: 1.25em;
+
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
 }
-  .svg-inline--fa.fa-pull-left {
-    margin-right: .3em;
-    width: auto;
+
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
 }
-  .svg-inline--fa.fa-pull-right {
-    margin-left: .3em;
-    width: auto;
+
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
 }
-  .svg-inline--fa.fa-border {
-    height: 1.5em;
+
+.svg-inline--fa.fa-border {
+  height: 1.5em;
 }
-  .svg-inline--fa.fa-li {
-    width: 2em;
+
+.svg-inline--fa.fa-li {
+  width: 2em;
 }
-  .svg-inline--fa.fa-fw {
-    width: 1.25em;
+
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
 }
 
 .fa-layers svg.svg-inline--fa {
@@ -111,9 +138,9 @@ svg:not(:root).svg-inline--fa {
   vertical-align: -.125em;
   width: 1em;
 }
-  .fa-layers svg.svg-inline--fa {
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .fa-layers-text, .fa-layers-counter {
@@ -142,7 +169,7 @@ svg:not(:root).svg-inline--fa {
   max-width: 5em;
   min-width: 1.5em;
   overflow: hidden;
-  padding: .25em;
+  padding: 0.25em;
   right: 0;
   text-overflow: ellipsis;
   top: 0;
@@ -199,11 +226,11 @@ svg:not(:root).svg-inline--fa {
 }
 
 .fa-xs {
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .fa-sm {
-  font-size: .875em;
+  font-size: 0.875em;
 }
 
 .fa-1x {
@@ -256,8 +283,8 @@ svg:not(:root).svg-inline--fa {
   margin-left: 2.5em;
   padding-left: 0;
 }
-  .fa-ul > li {
-    position: relative;
+.fa-ul > li {
+  position: relative;
 }
 
 .fa-li {
@@ -270,8 +297,8 @@ svg:not(:root).svg-inline--fa {
 
 .fa-border {
   border: solid 0.08em #eee;
-  border-radius: .1em;
-  padding: .2em .25em .15em;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
 }
 
 .fa-pull-left {
@@ -287,7 +314,7 @@ svg:not(:root).svg-inline--fa {
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 
 .fa.fa-pull-right,
@@ -295,7 +322,7 @@ svg:not(:root).svg-inline--fa {
 .far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 
 .fa-spin {
@@ -312,21 +339,25 @@ svg:not(:root).svg-inline--fa {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-}
+  }
+
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-} }
+  }
+}
 
 @keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-}
+  }
+
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-} }
+  }
+}
 
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
@@ -449,7 +480,7 @@ svg:not(:root).svg-inline--fa {
 
 .svg-inline--fa mask .fa-primary,
 .svg-inline--fa mask .fa-secondary {
-  fill: black;
+  fill: #000;
 }
 
 .fad.fa-inverse {
