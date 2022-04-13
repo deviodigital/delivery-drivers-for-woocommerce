@@ -13,7 +13,7 @@
 
  // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+	wp_die();
 }
 
 /**
@@ -56,7 +56,7 @@ function ddwc_order_driver_details( $order ) {
         // Display star rating.
         if ( 'completed' == $order_status ) {
             // Star ratings.
-            $string .= esc_attr__( 'Rate Delivery', 'delivery-drivers-for-woocommerce' ) . '<br /><select class="driver-rating" id="rating_' . $order_id . '" data-id="rating_' . $order_id . '"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><span class="rating-tooltip">' . apply_filters( 'ddwc_driver_rating_thank_you_text', __( 'Thanks for your rating!', 'delivery-drivers-for-woocommerce' ) ) . '</span>';
+            $string .= esc_attr__( 'Rate Delivery', 'delivery-drivers-for-woocommerce' ) . '<br /><select class="driver-rating" id="rating_' . $order_id . '" data-id="rating_' . $order_id . '"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><span class="rating-tooltip">' . apply_filters( 'ddwc_driver_rating_thank_you_text', esc_attr__( 'Thanks for your rating!', 'delivery-drivers-for-woocommerce' ) ) . '</span>';
         } elseif ( 'driver-assigned' == $order_status || 'out-for-delivery' == $order_status ) {
             // Display driver's phone number.
             if ( 'no' !== get_option( 'ddwc_settings_driver_phone_number' ) ) {

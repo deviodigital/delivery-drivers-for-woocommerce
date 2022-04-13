@@ -205,7 +205,7 @@ function ddwc_delivery_driver_settings() {
 		$order->update_status( 'processing' );
 	}
 
-	// WooCommerce product loop $args
+	// WooCommerce product loop $args.
 	$args = array(
 		'post_type'      => 'product',
 		'posts_per_page' => 1000,
@@ -222,7 +222,7 @@ function ddwc_delivery_driver_settings() {
 		}
 	}
 
-  exit;
+  wp_die();
 }
 add_action( 'wp_ajax_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings' );
 //add_action('wp_ajax_nopriv_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings');
@@ -236,13 +236,12 @@ function ddwc_driver_availability_update() {
 
 	$user_id    = filter_input( INPUT_POST, 'user_id' );
 	$meta_value = filter_input( INPUT_POST, 'metavalue' );
+	$new_value  = '';
+	$old_value  = 'on';
 
 	if ( 'on' == $meta_value ) {
 		$new_value = 'on';
 		$old_value = '';
-	} else {
-		$new_value = '';
-		$old_value = 'on';
 	}
 
 	// Update driver availability.
@@ -290,7 +289,7 @@ add_filter( 'bulk_actions-edit-shop_order', 'ddwc_driver_bulk_edit', 20, 1 );
  * @return string
  */
 function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids ) {
-    if ( $action === $_GET['action'] ) {
+    if ( $action === filter_input( INPUT_GET, 'action' ) ) {
 		// Processed IDs.
 		$processed_ids = array();
 
@@ -342,7 +341,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 			// Only run code if bulk action is assigning orders to a driver.
 			if ( strpos( $_GET['action'], 'driver_id_' ) !== false ) {
 				// Get only the ID number from action string.
-				$driver_id = str_replace( 'driver_id_', '', $_GET['action'] );
+				$driver_id = str_replace( 'driver_id_', '', filter_input( INPUT_GET, 'action' ) );
 
 				// Get current Assigned Driver.
 				//$current_driver = get_post_meta( $post_id, 'ddwc_driver_id', true );

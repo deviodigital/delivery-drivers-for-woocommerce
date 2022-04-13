@@ -50,7 +50,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_customer_order_status_out_for_delivery' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_out_for_delivery_url', $redirect_url, $order_id ) ) );
+		wp_safe_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_out_for_delivery_url', $redirect_url, $order_id ) ) );
 	}
 
 	// Variables for order returned.
@@ -77,7 +77,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_admin_order_status_returned' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_returned_url', $redirect_url, $order_id ) ) );
+		wp_safe_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_returned_url', $redirect_url, $order_id ) ) );
 	}
 
 	$order_completed = filter_input( INPUT_POST, 'ordercompleted' );
@@ -103,7 +103,7 @@ function ddwc_driver_dashboard_change_statuses() {
 		do_action( 'ddwc_email_admin_order_status_completed' );
 
 		// Redirect so the new order details show on the page.
-		wp_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_completed_url', $redirect_url, $order_id ) ) );
+		wp_safe_redirect( get_permalink( apply_filters( 'ddwc_driver_dashboard_change_status_completed_url', $redirect_url, $order_id ) ) );
 	}
 
 	do_action( 'ddwc_driver_dashboard_change_statuses_bottom' );
@@ -293,7 +293,7 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 		add_filter( 'ddwc_delivery_address_google_map', '__return_false' );
 
 		// Default error message.
-		$error_message = __( 'The delivery address is returning NULL.', 'delivery-drivers-for-woocommerce' );
+		$error_message = esc_attr__( 'The delivery address is returning NULL.', 'delivery-drivers-for-woocommerce' );
 
 		// Google Maps error message.
 		if ( NULL != $output ) {
@@ -344,7 +344,7 @@ function ddwc_driver_dashboard_admin_drivers_table() {
 		$thead = apply_filters( 'ddwc_driver_dashboard_admin_table_thead', $thead );
 
 		// Drivers table title.
-		$drivers_table  = '<h3 class="ddwc delivery-drivers">' . __( 'Delivery Drivers', 'delivery-drivers-for-woocommerce' ) . '</h3>';
+		$drivers_table  = '<h3 class="ddwc delivery-drivers">' . esc_attr__( 'Delivery Drivers', 'delivery-drivers-for-woocommerce' ) . '</h3>';
 
 		// Drivers table start.
 		$drivers_table .= '<table class="ddwc-dashboard delivery-drivers">';
@@ -408,7 +408,7 @@ function ddwc_driver_dashboard_admin_drivers_table() {
 			}
 
 			$tbody = array(
-				$driver_img . '<span class="driver-name">' . esc_html( $driver->display_name ) . '</span> <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(' . __( 'edit', 'delivery-drivers-for-woocommerce' ) . ')</a>',
+				$driver_img . '<span class="driver-name">' . esc_html( $driver->display_name ) . '</span> <a href="' . admin_url( 'user-edit.php?user_id=' . $driver->ID ) . '">(' . esc_attr__( 'edit', 'delivery-drivers-for-woocommerce' ) . ')</a>',
 				$availability,
 				$driver_rating_final,
 				$email_address . $phone_number,

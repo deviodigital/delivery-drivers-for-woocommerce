@@ -54,7 +54,6 @@ function ddwc_dashboard_shortcode() {
 					$order_time_created   = $order_data['date_created']->date( apply_filters( 'ddwc_time_format', get_option( 'time_format' ) ) );
 					$order_shipping_total = $order_data['shipping_total'];
 					$order_total          = $order_data['total'];
-					$order_customer_id    = $order_data['customer_id'];
 					$order_customer_note  = $order_data['customer_note'];
 					$order_shipping_addr  = $order_data['shipping']['address_1'];
 					$order_shipping_fname = $order_data['shipping']['first_name'];
@@ -216,7 +215,7 @@ function ddwc_dashboard_shortcode() {
 					if ( ! empty( $order_items ) ) {
 						// The loop to get the order items which are WC_Order_Item_Product objects since WC 3+
 						foreach( $order_items->get_items() as $item_id=>$item_product ) {
-							//Get the WC_Product object
+							// Get the WC_Product object.
 							$product  = $item_product->get_product();
 							// Get the product quantity.
 							$quantity = $item_product->get_quantity();
@@ -232,8 +231,6 @@ function ddwc_dashboard_shortcode() {
 							 */
 							echo '<tr><td>' . esc_html( $name ) . '</td><td>' . esc_html( $qtty ) . '</td>' . esc_html( $total_price ) . '</tr>';
 						}
-					} else {
-						// Do nothing.
 					}
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_before_delivery' );
@@ -329,7 +326,6 @@ function ddwc_dashboard_shortcode() {
 							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 							$order_shipping_total = $order_data['shipping_total'];
 							$order_total          = $order_data['total'];
-							$order_customer_id    = $order_data['customer_id'];
 
 							// Statuses for driver.
 							$statuses = array(
@@ -401,7 +397,6 @@ function ddwc_dashboard_shortcode() {
 							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 							$order_shipping_total = $order_data['shipping_total'];
 							$order_total          = $order_data['total'];
-							$order_customer_id    = $order_data['customer_id'];
 
 							if ( 'completed' === $order_status && strtotime( $order_date_created ) > strtotime( '-7 day' ) ) {
 								echo '<tr>';
@@ -459,7 +454,7 @@ function ddwc_dashboard_shortcode() {
 				);
 				?>
 				<h3><?php esc_attr_e( 'Delivery Orders', 'delivery-drivers-for-woocommerce' ); ?></h3>
-				<form class="ddwc-order-filters" method="post" action="<?php $_SERVER['REQUEST_URI']; ?>">
+				<form class="ddwc-order-filters" method="post" action="<?php filter_input( INPUT_SERVER, 'REQUEST_URI' ); ?>">
 					<div class="form-group">
 						<label><?php esc_attresc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
 						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) ); } ?>" />
@@ -495,7 +490,7 @@ function ddwc_dashboard_shortcode() {
 				do_action( 'ddwc_admin_orders_form_after' );
 
 				// 	Filter variables.
-				if ( isset( $_SERVER ) && ! empty( $_SERVER ) && 'POST' == $_SERVER['REQUEST_METHOD'] ) {
+				if ( isset( $_SERVER ) && ! empty( $_SERVER ) && 'POST' == filter_input( INPUT_SERVER, 'REQUEST_METHOD' ) ) {
 					// Check if the filter-from field is set.
 					if ( isset( $_POST['filter-from'] ) ) {
 						// Form field - from date.
@@ -594,7 +589,6 @@ function ddwc_dashboard_shortcode() {
 					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 					$order_shipping_total = $order_data['shipping_total'];
 					$order_total          = $order_data['total'];
-					$order_customer_id    = $order_data['customer_id'];
 
 					## BILLING INFORMATION:
 

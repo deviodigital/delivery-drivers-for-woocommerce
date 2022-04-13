@@ -180,7 +180,8 @@ function ddwc_add_profile_options( $profileuser ) {
             <th scope="row">
                 <?php
                     if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . __( 'Model', 'delivery-drivers-for-woocommerce' );
+                        $vehicle_model = get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Model', 'delivery-drivers-for-woocommerce' );
+                        esc_html_e( $vehile_model );
                     } else {
                         esc_html_e( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
                     }
@@ -194,7 +195,8 @@ function ddwc_add_profile_options( $profileuser ) {
             <th scope="row">
                 <?php
                     if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . __( 'Color', 'delivery-drivers-for-woocommerce' );
+                        $vehicle_color = get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Color', 'delivery-drivers-for-woocommerce' );
+                        esc_html_e( $vehicle_color );
                     } else {
                         esc_html_e( 'Vehicle Color', 'delivery-drivers-for-woocommerce' );
                     }
@@ -271,6 +273,7 @@ function ddwc_add_to_edit_account_form() {
                 if ( ! isset( $ddwc_driver_picture['error'] ) ) {
                     if ( ! empty( $ddwc_driver_picture ) ) {
                         $ddwc_driver_picture = $ddwc_driver_picture['url'];
+                        // @todo change esc_html to esc_url (check to make sure changing it works correctly).
                         echo '<a href="' . esc_html( $ddwc_driver_picture ) . '" target="_blank"><img src="' . esc_html( $ddwc_driver_picture ) . '" width="100" height="100" class="ddwc-driver-picture" /></a><br />';
                     }
                 } else {
@@ -312,7 +315,7 @@ function ddwc_add_to_edit_account_form() {
             <label for="reg_ddwc_driver_vehicle_model">
                 <?php
                     if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . __( 'Model', 'delivery-drivers-for-woocommerce' );
+                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Model', 'delivery-drivers-for-woocommerce' );
                     } else {
                         esc_html_e( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
                     }
@@ -324,7 +327,7 @@ function ddwc_add_to_edit_account_form() {
             <label for="reg_ddwc_driver_vehicle_color">
             <?php
                 if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                    echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . __( 'Color', 'delivery-drivers-for-woocommerce' );
+                    echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Color', 'delivery-drivers-for-woocommerce' );
                 } else {
                     esc_html_e( 'Vehicle Color', 'delivery-drivers-for-woocommerce' );
                 }
