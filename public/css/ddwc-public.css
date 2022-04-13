@@ -35,9 +35,6 @@ table.ddwc-dashboard tr.order-total {
 h3.ddwc {
   margin-top: 0;
   margin-bottom: 24px;
-}
-
-h3.ddwc {
   position: relative;
 }
 
@@ -62,32 +59,32 @@ h3.ddwc span.completed {
 }
 
 h3.ddwc span.out-for-delivery {
-  color: #56A8C7;
-  border-color: #56A8C7;
+  color: #56a8c7;
+  border-color: #56a8c7;
 }
 
 h3.ddwc span.cancelled,
 h3.ddwc span.refunded,
 h3.ddwc span.failed {
-  color: #C94C42;
-  border-color: #C94C42;
+  color: #c94c42;
+  border-color: #c94c42;
 }
 
 p.ddwc-map-api-error-msg {
-  background: #C94C42;
-  color: #FFF;
+  background: #c94c42;
+  color: #fff;
   font-size: 14px;
   padding: 10px;
 }
 
 p.ddwc-map-api-error-msg a,
 p.ddwc-map-api-error-msg a:visited {
-  color: #FFF;
+  color: #fff;
   text-decoration: underline;
 }
 
 p.ddwc-map-api-error-msg a:hover {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -97,7 +94,7 @@ a.button.ddwc-button {
   background: #222;
   padding: 0.75em 2em;
   border-radius: 3px;
-  color: #FFF;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -105,7 +102,7 @@ a.button.ddwc-button:hover,
 a.button.ddwc-button:focus,
 a.button.ddwc-button:active {
   background: #767676;
-  color: #FFF;
+  color: #fff;
   border: 0;
   box-shadow: none;
 }
@@ -131,7 +128,7 @@ a.button.ddwc-button:active {
 button.remove-ddwc-driver-picture {
   background: #FF0000;
   border: 0;
-  color: #FFF;
+  color: #fff;
   border-radius: 50%;
   font-family: 'Helvetica', Arial, sans-serif;
   font-size: 14px;
@@ -146,7 +143,7 @@ button.remove-ddwc-driver-picture {
 
 button.remove-ddwc-driver-picture:hover {
   background: #DF0000;
-  color: #FFF;
+  color: #fff;
 }
 
 div.ddwc-driver-details {
@@ -209,6 +206,7 @@ table.ddwc-driver-details tr td {
   height: 28px;
   white-space: nowrap;
 }
+
 .br-theme-fontawesome-stars .br-widget a {
   font: normal normal normal 20px/1 'Font Awesome 5 Free';
   text-rendering: auto;
@@ -216,22 +214,28 @@ table.ddwc-driver-details tr td {
   text-decoration: none;
   margin-right: 2px;
 }
+
 .br-theme-fontawesome-stars .br-widget a:after {
   content: '\f005';
   color: #d2d2d2;
 }
+
 .br-theme-fontawesome-stars .br-widget a.br-active:after {
   color: #edb867;
 }
+
 .br-theme-fontawesome-stars .br-widget a.br-selected:after {
   color: #edb867;
 }
+
 .br-theme-fontawesome-stars .br-widget .br-current-rating {
   display: none;
 }
+
 .br-theme-fontawesome-stars .br-readonly a {
   cursor: default;
 }
+
 @media print {
   .br-theme-fontawesome-stars .br-widget a:after {
     content: '\f006';
@@ -247,7 +251,7 @@ table.ddwc-driver-details tr td {
 span.rating-tooltip {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;  
+  transition: visibility 0s, opacity 0.5s linear;
   padding: 6px 0;
   font-size: 13px;
   color: #000;
@@ -334,8 +338,8 @@ input.ddwc-ofdmsg {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .ddwc-availability .switch .slider::before {
@@ -345,9 +349,9 @@ input.ddwc-ofdmsg {
   width: 22px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .ddwc-availability input:checked + .slider {
@@ -396,7 +400,7 @@ table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:hover {
 }
 
 table.ddwc-dashboard.delivery-drivers a.button.ddwc-button svg {
-  fill: #FFF;
+  fill: #fff;
 }
 
 table.ddwc-dashboard.delivery-drivers a.button.ddwc-button:last-child:not(:first-child) {
