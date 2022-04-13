@@ -181,7 +181,7 @@ function ddwc_add_profile_options( $profileuser ) {
                 <?php
                     if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
                         $vehicle_model = get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Model', 'delivery-drivers-for-woocommerce' );
-                        esc_html_e( $vehile_model );
+                        esc_html_e( $vehicle_model );
                     } else {
                         esc_html_e( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
                     }
@@ -315,7 +315,8 @@ function ddwc_add_to_edit_account_form() {
             <label for="reg_ddwc_driver_vehicle_model">
                 <?php
                     if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                        echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Model', 'delivery-drivers-for-woocommerce' );
+                        $vehicle_model = get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Model', 'delivery-drivers-for-woocommerce' );
+                        esc_html_e( $vehicle_model );
                     } else {
                         esc_html_e( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
                     }
@@ -327,7 +328,8 @@ function ddwc_add_to_edit_account_form() {
             <label for="reg_ddwc_driver_vehicle_color">
             <?php
                 if ( '' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
-                    echo get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Color', 'delivery-drivers-for-woocommerce' );
+                    $vehicle_color = get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) . ' ' . esc_attr__( 'Color', 'delivery-drivers-for-woocommerce' );
+                    esc_html_e( $vehicle_color );
                 } else {
                     esc_html_e( 'Vehicle Color', 'delivery-drivers-for-woocommerce' );
                 }
