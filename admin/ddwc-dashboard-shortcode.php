@@ -50,12 +50,10 @@ function ddwc_dashboard_shortcode() {
 					// Specific order data.
 					$order_id             = $order_data['id'];
 					$order_status         = $order_data['status'];
-					$order_currency       = $order_data['currency'];
 					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 					$order_time_created   = $order_data['date_created']->date( apply_filters( 'ddwc_time_format', get_option( 'time_format' ) ) );
 					$order_shipping_total = $order_data['shipping_total'];
 					$order_total          = $order_data['total'];
-					$order_total_tax      = $order_data['total_tax'];
 					$order_customer_id    = $order_data['customer_id'];
 					$order_customer_note  = $order_data['customer_note'];
 					$order_shipping_addr  = $order_data['shipping']['address_1'];
@@ -328,11 +326,9 @@ function ddwc_dashboard_shortcode() {
 							$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
 							$order_id             = $order_data['id'];
 							$order_status         = $order_data['status'];
-							$order_currency       = $order_data['currency'];
 							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 							$order_shipping_total = $order_data['shipping_total'];
 							$order_total          = $order_data['total'];
-							$order_total_tax      = $order_data['total_tax'];
 							$order_customer_id    = $order_data['customer_id'];
 
 							// Statuses for driver.
@@ -402,11 +398,9 @@ function ddwc_dashboard_shortcode() {
 							$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
 							$order_id             = $order_data['id'];
 							$order_status         = $order_data['status'];
-							$order_currency       = $order_data['currency'];
 							$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 							$order_shipping_total = $order_data['shipping_total'];
 							$order_total          = $order_data['total'];
-							$order_total_tax      = $order_data['total_tax'];
 							$order_customer_id    = $order_data['customer_id'];
 
 							if ( 'completed' === $order_status && strtotime( $order_date_created ) > strtotime( '-7 day' ) ) {
@@ -597,11 +591,9 @@ function ddwc_dashboard_shortcode() {
 					$currency_symbol      = get_woocommerce_currency_symbol( $currency_code );
 					$order_id             = $order_data['id'];
 					$order_status         = $order_data['status'];
-					$order_currency       = $order_data['currency'];
 					$order_date_created   = $order_data['date_created']->date( apply_filters( 'ddwc_date_format', get_option( 'date_format' ) ) );
 					$order_shipping_total = $order_data['shipping_total'];
 					$order_total          = $order_data['total'];
-					$order_total_tax      = $order_data['total_tax'];
 					$order_customer_id    = $order_data['customer_id'];
 
 					## BILLING INFORMATION:

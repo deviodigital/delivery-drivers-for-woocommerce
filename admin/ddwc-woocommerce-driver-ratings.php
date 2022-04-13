@@ -158,7 +158,7 @@ if ( 'no' !== get_option( 'ddwc_settings_driver_ratings' ) ) {
  *
  * @since 1.6
  */
-function ddwc_driver_rating_ajax( $order ) {
+function ddwc_driver_rating_ajax() {
 
     $post_id    = filter_input( INPUT_POST, 'postid' );
     $meta_key   = 'ddwc_delivery_rating';

@@ -79,7 +79,7 @@ function ddwc_build() {
 /**
  * Save the Metabox Data
  */
-function ddwc_driver_save_order_details( $post_id, $post ) {
+function ddwc_driver_save_order_details( $post ) {
 	// Filter the noncename input.
 	$ddwc_noncename = filter_input( INPUT_POST, 'ddwc_meta_noncename' );
 	/**
@@ -120,4 +120,4 @@ function ddwc_driver_save_order_details( $post_id, $post ) {
 		}
 	}
 }
-add_action( 'save_post', 'ddwc_driver_save_order_details', 1, 2 );
+add_action( 'save_post', 'ddwc_driver_save_order_details', 1, 1 );

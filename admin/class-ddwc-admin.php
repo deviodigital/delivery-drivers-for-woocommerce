@@ -345,7 +345,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 				$driver_id = str_replace( 'driver_id_', '', $_GET['action'] );
 
 				// Get current Assigned Driver.
-				$current_driver = get_post_meta( $post_id, 'ddwc_driver_id', true );
+				//$current_driver = get_post_meta( $post_id, 'ddwc_driver_id', true );
 
 				// Update Assigned Driver.
 				update_post_meta( $post_id, 'ddwc_driver_id', $driver_id );
