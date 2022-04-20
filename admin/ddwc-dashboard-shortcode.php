@@ -62,15 +62,16 @@ function ddwc_dashboard_shortcode() {
 					$order_billing_lname  = $order_data['billing']['last_name'];
 					$order_billing_phone  = $order_data['billing']['phone'];
 
-					echo '<div class="ddwc-orders">';
+					echo wp_kses( '<div class="ddwc-orders">', wp_kses_allowed_html( 'post' ) );
 
 					// Display order number.
 					if ( isset( $order_id ) ) {
-						echo '<h3 class="ddwc">' . esc_attr__( 'Order #', 'delivery-drivers-for-woocommerce' ) . apply_filters( 'ddwc_order_number', $order_id ) . ' <span class="' . esc_attr( $order_status ) . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
+						$order_number = '<h3 class="ddwc">' . esc_attr__( 'Order #', 'delivery-drivers-for-woocommerce' ) . apply_filters( 'ddwc_order_number', $order_id ) . ' <span class="' . esc_attr( $order_status ) . '">' . wc_get_order_status_name( $order_status ) . '</span></h3>';
+						echo wp_kses( $order_number, wp_kses_allowed_html( 'post' ) );
 					}
 
 					// Display a button to call the customers phone number.
-					echo '<p>';
+					$contact_info = '<p>';
 
 						$phone_customer = '';
 						$phone_dispatch = '';
@@ -88,11 +89,15 @@ function ddwc_dashboard_shortcode() {
 						// Call buttons.
 						$phone_numbers = apply_filters( 'ddwc_driver_dashboard_phone_numbers', $phone_dispatch . $phone_customer );
 
-						echo $phone_numbers;
+						$contact_info .= $phone_numbers;
 
-					echo '</p>';
+					$contact_info .= '</p>';
 
-					echo '<h4>' . esc_attr__( 'Delivery Address', 'delivery-drivers-for-woocommerce' ) . '</h4>';
+					echo wp_kses( $contact_info, wp_kses_allowed_html( 'post' ) );
+
+					$address_title = '<h4>' . esc_attr__( 'Delivery Address', 'delivery-drivers-for-woocommerce' ) . '</h4>';
+
+					echo wp_kses( $address_title, wp_kses_allowed_html( 'post' ) );
 
 					// Plain text delivery address.
 					if ( '' == get_option( 'ddwc_settings_google_maps_api_key' ) ) {
@@ -112,7 +117,8 @@ function ddwc_dashboard_shortcode() {
 						$plain_address  .= '<p><a target="_blank" href="' . apply_filters( 'ddwc_delivery_address_directions_link', $directions_link, $delivery_address ) . '" class="button">' . apply_filters( 'ddwc_delivery_address_directions_text', $directions_text ) . '</a></p>';
 
 						// Display the plain text delivery address.
-						echo apply_filters( 'ddwc_delivery_address_plain_text', $plain_address, $delivery_address );
+						$plain_text = apply_filters( 'ddwc_delivery_address_plain_text', $plain_address, $delivery_address );
+						echo wp_kses( $plain_text, wp_kses_allowed_html( 'post' ) );
 					}
 
 					/**
@@ -149,7 +155,8 @@ function ddwc_dashboard_shortcode() {
 						$google_map = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' . apply_filters( 'ddwc_google_maps_origin_address', $store_address ) . '&destination=' . apply_filters( 'ddwc_google_maps_delivery_address', $delivery_address ) . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) . $map_mode . '" allowfullscreen></iframe>';
 
 						// Display the Google Map with delivery address.
-						echo apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address, $store_address );
+						$delivery_map = apply_filters( 'ddwc_delivery_address_google_map', $google_map, $delivery_address, $store_address );
+						echo wp_kses( $delivery_map, ddwc_allowed_tags() );
 					}
 
 					echo '<h4>' . esc_attr__( 'Order details', 'delivery-drivers-for-woocommerce' ) . '</h4>';
@@ -159,14 +166,14 @@ function ddwc_dashboard_shortcode() {
 					// Get payment gateway details.
 					$payment_gateway = wc_get_payment_gateway_by_order( $order_id );
 
-					echo '<table class="ddwc-dashboard">';
-					echo '<tbody>';
+					echo wp_kses( '<table class="ddwc-dashboard">', ddwc_allowed_tags() );
+					echo wp_kses( '<tbody>', ddwc_allowed_tags() );
 
 					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_top' );
 
 					// Display order date.
 					if ( isset( $order_date_created ) ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Order date', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_html( $order_date_created ) . ' - ' . esc_html( $order_time_created ) . '</td></tr>';
+						echo wp_kses( '<tr><td><strong>' . esc_attr__( 'Order date', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_html( $order_date_created ) . ' - ' . esc_html( $order_time_created ) . '</td></tr>', ddwc_allowed_tags() );
 					}
 
 					// Display payment method details.
@@ -177,22 +184,22 @@ function ddwc_dashboard_shortcode() {
 
 					// Display customer name.
 					if ( '' !== $order_shipping_fname ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $order_shipping_fname ) . ' ' . esc_attr( $order_shipping_lname ) . '</td></tr>';
+						echo wp_kses( '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $order_shipping_fname ) . ' ' . esc_attr( $order_shipping_lname ) . '</td></tr>', ddwc_allowed_tags() );
 					} elseif ( '' !== $order_billing_fname ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $order_billing_fname ) . ' ' . esc_attr( $order_billing_lname ) . '</td></tr>';
+						echo wp_kses( '<tr><td><strong>' . esc_attr__( 'Customer name', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_attr( $order_billing_fname ) . ' ' . esc_attr( $order_billing_lname ) . '</td></tr>', ddwc_allowed_tags() );
 					} else {
 						// Do nothing.
 					}
 
 					// Display customer note.
 					if ( isset( $order_customer_note ) && '' != $order_customer_note ) {
-						echo '<tr><td><strong>' . esc_attr__( 'Customer note', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_html( $order_customer_note ) . '</td></tr>';
+						echo wp_kses( '<tr><td><strong>' . esc_attr__( 'Customer note', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_html( $order_customer_note ) . '</td></tr>', ddwc_allowed_tags() );
 					}
 
 					do_action( 'ddwc_driver_dashboard_order_details_table_tbody_bottom' );
 
-					echo '</tbody>';
-					echo '</table>';
+					echo wp_kses( '</tbody>', ddwc_allowed_tags() );
+					echo wp_kses( '</table>', ddwc_allowed_tags() );
 
 					do_action( 'ddwc_driver_dashboard_order_details_table_after' );
 
@@ -201,9 +208,9 @@ function ddwc_dashboard_shortcode() {
 					// Set up total title.
 					$total_title = '<td>' . esc_attr__( 'Total', 'delivery-drivers-for-woocommerce' ) . '</td>';
 
-					echo '<table class="ddwc-dashboard">';
-					echo '<thead><tr><td>' . esc_attr__( 'Product', 'delivery-drivers-for-woocommerce' ) . '</td><td>' . esc_attr__( 'Qty', 'delivery-drivers-for-woocommerce' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_total_title', $total_title ) . '</tr></thead>';
-					echo '<tbody>';
+					echo wp_kses( '<table class="ddwc-dashboard">', ddwc_allowed_tags() );
+					echo wp_kses( '<thead><tr><td>' . esc_attr__( 'Product', 'delivery-drivers-for-woocommerce' ) . '</td><td>' . esc_attr__( 'Qty', 'delivery-drivers-for-woocommerce' ) . '</td>' . apply_filters( 'ddwc_driver_dashboard_total_title', $total_title ) . '</tr></thead>', ddwc_allowed_tags() );
+					echo wp_kses( '<tbody>', ddwc_allowed_tags() );
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_top' );
 
@@ -229,7 +236,7 @@ function ddwc_dashboard_shortcode() {
 							/**
 							 * @todo add thumbnail image next to the product name.
 							 */
-							echo '<tr><td>' . esc_html( $name ) . '</td><td>' . esc_html( $qtty ) . '</td>' . esc_html( $total_price ) . '</tr>';
+							echo wp_kses( '<tr><td>' . esc_html( $name ) . '</td><td>' . esc_html( $qtty ) . '</td>' . esc_html( $total_price ) . '</tr>', ddwc_allowed_tags() );
 						}
 					}
 
@@ -249,15 +256,15 @@ function ddwc_dashboard_shortcode() {
 
 					do_action( 'ddwc_driver_dashboard_order_table_tbody_bottom' );
 
-					echo '</tbody>';
-					echo '</table>';
+					echo wp_kses( '</tbody>', ddwc_allowed_tags() );
+					echo wp_kses( '</table>', ddwc_allowed_tags() );
 
 					do_action( 'ddwc_driver_dashboard_order_table_after' );
 
 					// Change status forms.
 					apply_filters( 'ddwc_driver_dashboard_change_status_forms', ddwc_driver_dashboard_change_status_forms() );
 
-					echo '</div>';
+					echo wp_kses( '</div>', ddwc_allowed_tags() );
 
 				} else {
 
@@ -290,7 +297,7 @@ function ddwc_dashboard_shortcode() {
 
 						do_action( 'ddwc_assigned_orders_table_before' );
 
-						echo '<table class="ddwc-dashboard">';
+						$assigned_table = '<table class="ddwc-dashboard">';
 
 						// Array for assigned orders table thead.
 						$thead = array(
@@ -303,15 +310,15 @@ function ddwc_dashboard_shortcode() {
 						// Filter the thead array.
 						$thead = apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_table_thead', $thead );
 
-						echo '<thead><tr>';
+						$assigned_table .= '<thead><tr>';
 						// Loop through $thead.
 						foreach ( $thead as $row ) {
 							// Add td to thead.
-							echo '<td>' . esc_html( $row ) . '</td>';
+							$assigned_table .= '<td>' . esc_html( $row ) . '</td>';
 						}
-						echo '</tr></thead>';
+						$assigned_table .= '</tr></thead>';
 
-						echo '<tbody>';
+						$assigned_table .= '<tbody>';
 						foreach ( $assigned_orders as $driver_order ) {
 
 							// Get an instance of the WC_Order object.
@@ -359,16 +366,18 @@ function ddwc_dashboard_shortcode() {
 								// Array for assigned orders table tbody.
 								$tbody = apply_filters( 'ddwc_driver_dashboard_assigned_orders_order_table_tbody', $tbody, $order_id );
 
-								echo '<tr>';
+								$assigned_table .= '<tr>';
 								// Loop through $tbody.
 								foreach ( $tbody as $row ) {
-									echo '<td>' . $row . '</td>';
+									$assigned_table .= '<td>' . $row . '</td>';
 								}
-								echo '<tr>';
+								$assigned_table .= '<tr>';
 							}
 						}
-						echo '</tbody>';
-						echo '</table>';
+						$assigned_table .= '</tbody>';
+						$assigned_table .= '</table>';
+
+						echo wp_kses( $assigned_table, ddwc_allowed_tags() );
 
 						do_action( 'ddwc_assigned_orders_table_after' );
 
@@ -456,7 +465,7 @@ function ddwc_dashboard_shortcode() {
 				<h3><?php esc_attr_e( 'Delivery Orders', 'delivery-drivers-for-woocommerce' ); ?></h3>
 				<form class="ddwc-order-filters" method="post" action="<?php filter_input( INPUT_SERVER, 'REQUEST_URI' ); ?>">
 					<div class="form-group">
-						<label><?php esc_attresc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
+						<label><?php esc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
 						<input type="date" name="filter-from" value="<?php if ( ! empty( filter_input( INPUT_POST, 'filter-from' ) ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) ); } ?>" />
 					</div>
 					<div class="form-group">
@@ -476,7 +485,8 @@ function ddwc_dashboard_shortcode() {
 										} else {
 											$selected = '';
 										}
-										echo '<option ' . esc_html( $selected ) . ' value="' . $user->ID . '">' . $user->display_name . '</option>';
+										$option = '<option ' . esc_html( $selected ) . ' value="' . $user->ID . '">' . $user->display_name . '</option>';
+										echo wp_kses( $option, ddwc_allowed_tags() );
 									}
 								}
 							?>
@@ -492,7 +502,7 @@ function ddwc_dashboard_shortcode() {
 				// 	Filter variables.
 				if ( isset( $_SERVER ) && ! empty( $_SERVER ) && 'POST' == filter_input( INPUT_SERVER, 'REQUEST_METHOD' ) ) {
 					// Check if the filter-from field is set.
-					if ( filter_input( INPUT_POST, 'filter-from' ) ) {
+					if ( null !== filter_input( INPUT_POST, 'filter-from' ) ) {
 						// Form field - from date.
 						$from_time  = date( 'Y-m-d', strtotime( filter_input( INPUT_POST, 'filter-from' ) ) );
 						$from_year  = date( 'Y', strtotime( $from_time ) );
@@ -500,7 +510,7 @@ function ddwc_dashboard_shortcode() {
 						$from_day   = date( 'j', strtotime( $from_time ) );
 					}
 					// Check if the filter-to field is set.
-					if ( filter_input( INPUT_POST, 'filter-to' ) ) {
+					if ( null !== filter_input( INPUT_POST, 'filter-to' ) ) {
 						// Form field - to date.
 						$to_time  = date( 'Y-m-d', strtotime( filter_input( INPUT_POST, 'filter-to' ) ) );
 						$to_year  = date( 'Y', strtotime( $to_time ) );
@@ -523,12 +533,12 @@ function ddwc_dashboard_shortcode() {
 				// Update the args.
 				$args['date_query'] = array(
 					array(
-						'after'     => array(
+						'after' => array(
 							'year'  => $from_year,
 							'month' => $from_month,
 							'day'   => $from_day,
 						),
-						'before'    => array(
+						'before' => array(
 							'year'  => $to_year,
 							'month' => $to_month,
 							'day'   => $to_day,
@@ -538,9 +548,9 @@ function ddwc_dashboard_shortcode() {
 				);
 
 				// Check if the form filter-name is set.
-				if ( isset( $_POST['filter-name'] ) ) {
+				if ( null !== filter_input( INPUT_POST, 'filter-name' ) ) {
 					// Set the Driver ID key name.
-					$args['meta_key']   = 'ddwc_driver_id';
+					$args['meta_key'] = 'ddwc_driver_id';
 					// Set the Driver ID value.
 					$args['meta_value']	= filter_input( INPUT_POST, 'filter-name' );
 				}
@@ -552,7 +562,7 @@ function ddwc_dashboard_shortcode() {
 
 				do_action( 'ddwc_admin_orders_table_before' );
 
-				echo '<table class="ddwc-dashboard admin-orders">';
+				$html = '<table class="ddwc-dashboard admin-orders">';
 
 				// Array for admin orders table thead.
 				$thead = array(
@@ -566,15 +576,15 @@ function ddwc_dashboard_shortcode() {
 				// Filter the thead array.
 				$thead = apply_filters( 'ddwc_driver_dashboard_admin_orders_order_table_thead', $thead );
 
-				echo '<thead><tr>';
+				$html .= '<thead><tr>';
 				// Loop through $thead.
 				foreach ( $thead as $row ) {
 					// Add td to thead.
-					echo '<td>' . $row . '</td>';
+					$html .= '<td>' . $row . '</td>';
 				}
-				echo '</tr></thead>';
+				$html .= '</tr></thead>';
 
-				echo '<tbody>';
+				$html .= '<tbody>';
 				foreach ( $driver_orders as $driver_order ) {
 
 					// Get an instance of the WC_Order object.
@@ -642,16 +652,18 @@ function ddwc_dashboard_shortcode() {
 
 					// Add orders to table if order status matches item in $statuses array.
 					if ( in_array( $order_status, $statuses ) ) {
-						echo '<tr>';
+						$html .= '<tr>';
 						// Loop through $tbody.
 						foreach ( $tbody as $row ) {
-							echo '<td>' . $row . '</td>';
+							$html .= '<td>' . $row . '</td>';
 						}
-						echo '<tr>';
+						$html .= '<tr>';
 					}
 				}
-				echo '</tbody>';
-				echo '</table>';
+				$html .= '</tbody>';
+				$html .= '</table>';
+
+				echo wp_kses( $html, wp_kses_allowed_html( 'post' ) );
 
 				do_action( 'ddwc_admin_orders_table_after' );
 
