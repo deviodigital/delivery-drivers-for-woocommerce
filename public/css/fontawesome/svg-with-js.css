@@ -143,7 +143,8 @@ svg:not(:root).svg-inline--fa {
           transform-origin: center center;
 }
 
-.fa-layers-text, .fa-layers-counter {
+.fa-layers-text,
+.fa-layers-counter {
   display: inline-block;
   position: absolute;
   text-align: center;
@@ -283,6 +284,7 @@ svg:not(:root).svg-inline--fa {
   margin-left: 2.5em;
   padding-left: 0;
 }
+
 .fa-ul > li {
   position: relative;
 }

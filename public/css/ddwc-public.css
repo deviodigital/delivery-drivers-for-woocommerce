@@ -3,7 +3,7 @@
  * included in this file.
  */
 table.ddwc-dashboard {
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
 }
 
 table.ddwc-dashboard thead {
@@ -46,7 +46,7 @@ h3.ddwc span {
   display: inline-block;
   font-size: 16px;
   margin-left: 10px;
-  margin-top: 0px;
+  margin-top: 0;
   padding: 6px 12px;
   position: absolute;
   top: 0;
@@ -215,16 +215,16 @@ table.ddwc-driver-details tr td {
   margin-right: 2px;
 }
 
-.br-theme-fontawesome-stars .br-widget a:after {
+.br-theme-fontawesome-stars .br-widget a::after {
   content: '\f005';
   color: #d2d2d2;
 }
 
-.br-theme-fontawesome-stars .br-widget a.br-active:after {
+.br-theme-fontawesome-stars .br-widget a.br-active::after {
   color: #edb867;
 }
 
-.br-theme-fontawesome-stars .br-widget a.br-selected:after {
+.br-theme-fontawesome-stars .br-widget a.br-selected::after {
   color: #edb867;
 }
 
@@ -237,12 +237,13 @@ table.ddwc-driver-details tr td {
 }
 
 @media print {
-  .br-theme-fontawesome-stars .br-widget a:after {
+  .br-theme-fontawesome-stars .br-widget a::after {
     content: '\f006';
     color: black;
   }
-  .br-theme-fontawesome-stars .br-widget a.br-active:after,
-  .br-theme-fontawesome-stars .br-widget a.br-selected:after {
+
+  .br-theme-fontawesome-stars .br-widget a.br-active::after,
+  .br-theme-fontawesome-stars .br-widget a.br-selected::after {
     content: '\f005';
     color: black;
   }
@@ -389,7 +390,7 @@ table.ddwc-dashboard.delivery-drivers span.driver-status.available {
 }
 
 table.ddwc-dashboard.delivery-drivers a.button.ddwc-button {
-  background: #222222;
+  background: #222;
   display: inline-block;
   height: 36px;
   padding: 0.75em;
@@ -441,7 +442,7 @@ form.ddwc-order-filters .form-group:last-child {
 }
 
 form.ddwc-order-filters .form-group input[type="date"], form.ddwc-order-filters .form-group select {
-  padding: .75em;
+  padding: 0.75em;
   border: 1px solid #ddd;
   border-radius: 0;
   box-shadow: none;
