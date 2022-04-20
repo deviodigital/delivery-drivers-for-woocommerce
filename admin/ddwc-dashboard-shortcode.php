@@ -462,16 +462,28 @@ function ddwc_dashboard_shortcode() {
 					'posts_per_page' => -1,
 					'post_status'    => 'any'
 				);
+				// Set filter from value.
+				$filter_from = esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) );
+				// Update filter from value if one is set.
+				if ( ! empty( filter_input( INPUT_POST, 'filter-from' ) ) ) {
+					$filter_from = filter_input( INPUT_POST, 'filter-from' );
+				}
+				// Set filter to value.
+				$filter_to = esc_attr( date( 'Y-m-d' ) );
+				// Update filter to value if one is set.
+				if ( ! empty( filter_input( INPUT_POST, 'filter-to' ) ) ) {
+					$filter_to = filter_input( INPUT_POST, 'filter-to' );
+				}
 				?>
 				<h3><?php esc_attr_e( 'Delivery Orders', 'delivery-drivers-for-woocommerce' ); ?></h3>
 				<form class="ddwc-order-filters" method="post" action="<?php filter_input( INPUT_SERVER, 'REQUEST_URI' ); ?>">
 					<div class="form-group">
 						<label><?php esc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-from" value="<?php if ( ! empty( filter_input( INPUT_POST, 'filter-from' ) ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) ); } ?>" />
+						<input type="date" name="filter-from" value="<?php esc_attr( $filter_from ); ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php esc_attr_e( 'To', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-to" value="<?php if ( ! empty( filter_input( INPUT_POST, 'filter-to' ) ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo esc_attr( date( 'Y-m-d' ) );  } ?>" />
+						<input type="date" name="filter-to" value="<?php esc_attr( $filter_to ); ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php esc_attr_e( 'Driver', 'delivery-drivers-for-woocommerce' ); ?></label>
@@ -603,22 +615,22 @@ function ddwc_dashboard_shortcode() {
 
 					## BILLING INFORMATION:
 
-					$order_billing_city     = $order_data['billing']['city'];
-					$order_billing_state    = $order_data['billing']['state'];
-					$order_billing_postcode = $order_data['billing']['postcode'];
+					$order_billing_city  = $order_data['billing']['city'];
+					$order_billing_state = $order_data['billing']['state'];
+					$order_billing_code  = $order_data['billing']['postcode'];
 
 					## SHIPPING INFORMATION:
 
-					$order_shipping_city     = $order_data['shipping']['city'];
-					$order_shipping_state    = $order_data['shipping']['state'];
-					$order_shipping_postcode = $order_data['shipping']['postcode'];
+					$order_shipping_city  = $order_data['shipping']['city'];
+					$order_shipping_state = $order_data['shipping']['state'];
+					$order_shipping_code  = $order_data['shipping']['postcode'];
 
 					// Create address to use in the table.
-					$address = $order_billing_city . ' ' . $order_billing_state . ', ' . $order_billing_postcode;
+					$address = $order_billing_city . ' ' . $order_billing_state . ', ' . $order_billing_code;
 
 					// Set address to shipping (if available).
 					if ( isset( $order_shipping_city ) ) {
-						$address = $order_shipping_city . ' ' . $order_shipping_state . ', ' . $order_shipping_postcode;
+						$address = $order_shipping_city . ' ' . $order_shipping_state . ', ' . $order_shipping_code;
 					}
 
 					// Order total.

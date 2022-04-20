@@ -3,7 +3,7 @@
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 @font-face {
-  font-family: 'Font Awesome 5 Brands', sans-serif;;
+  font-family: 'Font Awesome 5 Brands', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-display: block;
@@ -12,6 +12,6 @@
 }
 
 .fab {
-  font-family: 'Font Awesome 5 Brands', sans-serif;;
+  font-family: 'Font Awesome 5 Brands', sans-serif;
   font-weight: 400;
 }

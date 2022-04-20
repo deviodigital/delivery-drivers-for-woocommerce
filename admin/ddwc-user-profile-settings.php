@@ -161,7 +161,7 @@ function ddwc_add_profile_options( $profileuser ) {
                 $transportation_types = apply_filters( 'ddwc_woocommerce_edit_account_transportation_types', array( esc_attr__( 'Bicycle', 'delivery-drivers-for-woocommerce' ), esc_attr__( 'Motorcycle', 'delivery-drivers-for-woocommerce' ), esc_attr__( 'Car', 'delivery-drivers-for-woocommerce' ), esc_attr__( 'SUV', 'delivery-drivers-for-woocommerce' ), esc_attr__( 'Truck', 'delivery-drivers-for-woocommerce' ) ) );
                 // Loop through types.
                 if ( $transportation_types ) {
-                    printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type">', get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
+                    printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type">', esc_html( get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) );
                     echo '<option value="">--</option>';
                     foreach ( $transportation_types as $type ) {
                         if ( $type != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) {
@@ -296,7 +296,7 @@ function ddwc_add_to_edit_account_form() {
 
                 // Loop through types.
                 if ( $transportation_types ) {
-                    printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type" class="widefat">', get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) );
+                    printf( '<select name="ddwc_driver_transportation_type" id="ddwc_driver_transportation_type" name="ddwc_driver_transportation_type" class="widefat">', esc_html( get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) );
                     echo '<option value="">--</option>';
                     // Loop through transportation types.
                     foreach ( $transportation_types as $type ) {
@@ -322,7 +322,7 @@ function ddwc_add_to_edit_account_form() {
                     }
                 ?>
             </label>
-            <input type="text" class="input-text" name="ddwc_driver_vehicle_model" id="reg_ddwc_driver_vehicle_model" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_vehicle_model', true ); ?>" />
+            <input type="text" class="input-text" name="ddwc_driver_vehicle_model" id="reg_ddwc_driver_vehicle_model" value="<?php esc_html_e( get_user_meta( $user->ID, 'ddwc_driver_vehicle_model', true ) ); ?>" />
         </p>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="reg_ddwc_driver_vehicle_color">
@@ -335,12 +335,12 @@ function ddwc_add_to_edit_account_form() {
                 }
             ?>
             </label>
-            <input type="text" class="input-text" name="ddwc_driver_vehicle_color" id="reg_ddwc_driver_vehicle_color" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_vehicle_color', true ); ?>" />
+            <input type="text" class="input-text" name="ddwc_driver_vehicle_color" id="reg_ddwc_driver_vehicle_color" value="<?php esc_html_e( get_user_meta( $user->ID, 'ddwc_driver_vehicle_color', true ) ); ?>" />
         </p>
         <?php if ( 'Bicycle' != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', TRUE ) ) { ?>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="reg_ddwc_driver_license_plate"><?php esc_html_e( 'License Plate Number', 'delivery-drivers-for-woocommerce' ); ?></label>
-            <input type="text" class="input-text" name="ddwc_driver_license_plate" id="reg_ddwc_driver_license_plate" value="<?php echo get_user_meta( $user->ID, 'ddwc_driver_license_plate', true ); ?>" />
+            <input type="text" class="input-text" name="ddwc_driver_license_plate" id="reg_ddwc_driver_license_plate" value="<?php esc_html_e( get_user_meta( $user->ID, 'ddwc_driver_license_plate', true ) ); ?>" />
         <?php } ?>
         </p>
     </fieldset>

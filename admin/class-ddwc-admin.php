@@ -297,7 +297,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 		foreach ( $post_ids as $post_id ) {
 
 			// Only run code if the bulk action is changing to Driver Assigned.
-			if ( isset( $_REQUEST['mark_driver-assigned'] ) && 1 == $_REQUEST['changed'] ) {
+			if ( null !== filter_input( INPUT_REQUEST, 'mark_driver-assigned' ) && 1 == filter_input( INPUT_REQUEST, 'changed' ) ) {
 				// Get order.
 				$order = new WC_Order( $post_id );
 				// Order note.
@@ -311,7 +311,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 			}
 
 			// Only run code if the bulk action is changing to Out for Delivery.
-			if ( isset( $_REQUEST['mark_out-for-delivery'] ) && 1 == $_REQUEST['changed'] ) {
+			if ( null !== filter_input( INPUT_REQUEST, 'mark_out-for-delivery' ) && 1 == filter_input( INPUT_REQUEST, 'changed' ) ) {
 				// Get order.
 				$order = new WC_Order( $post_id );
 				// Order note.
@@ -325,7 +325,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 			}
 
 			// Only run code if the bulk action is changing to Order Returned.
-			if ( isset( $_REQUEST['mark_order-returned'] ) && 1 == $_REQUEST['changed'] ) {
+			if ( null !== filter_input( INPUT_REQUEST, 'mark_order-returned' ) && 1 == filter_input( INPUT_REQUEST, 'changed' ) ) {
 				// Get order.
 				$order = new WC_Order( $post_id );
 				// Order note.
@@ -339,7 +339,7 @@ function ddwc_driver_edit_handle_bulk_action( $redirect_to, $action, $post_ids )
 			}
 
 			// Only run code if bulk action is assigning orders to a driver.
-			if ( strpos( $_GET['action'], 'driver_id_' ) !== false ) {
+			if ( strpos( filter_input( INPUT_GET, 'action' ), 'driver_id_' ) !== false ) {
 				// Get only the ID number from action string.
 				$driver_id = str_replace( 'driver_id_', '', filter_input( INPUT_GET, 'action' ) );
 
