@@ -104,67 +104,67 @@ class DDWC {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ddwc-loader.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ddwc-loader.php' );
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ddwc-i18n.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ddwc-i18n.php' );
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ddwc-admin.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ddwc-admin.php' );
 
 		/**
 		 * The file responsible for defining the DDWC helper functions
 		 *
 		 * @since 2.0
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-functions.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-functions.php' );
 
 		/**
 		 * The file responsible for defining the Delivery Driver Dashboard Shortcode.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-dashboard-shortcode.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-dashboard-shortcode.php' );
 
 		/**
 		 * The file responsible for defining the Delivery Driver Metaboxes.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-metaboxes.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-metaboxes.php' );
 
 		/**
 		 * The file responsible for defining the WooCommerce Orders functions.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-orders.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-orders.php' );
 
 		/**
 		 * The file responsible for defining the WooCommerce My Account Drivers tab.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-account-tab.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-account-tab.php' );
 
 		/**
 		 * The file responsible for defining the WooCommerce Settings page.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-settings.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-settings.php' );
 
 		/**
 		 * The file responsible for defining the functions that add Delivery Driver details
 		 * to WooCommerce orders.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-driver-ratings.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-woocommerce-driver-ratings.php' );
 
 		/**
 		 * The file responsible for defining the user profile settings.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-user-profile-settings.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/ddwc-user-profile-settings.php' );
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ddwc-public.php';
+		require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ddwc-public.php' );
 
 		$this->loader = new Delivery_Drivers_Loader();
 

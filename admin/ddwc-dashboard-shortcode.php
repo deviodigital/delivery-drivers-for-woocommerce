@@ -236,7 +236,8 @@ function ddwc_dashboard_shortcode() {
 							/**
 							 * @todo add thumbnail image next to the product name.
 							 */
-							echo wp_kses( '<tr><td>' . esc_html( $name ) . '</td><td>' . esc_html( $qtty ) . '</td>' . esc_html( $total_price ) . '</tr>', ddwc_allowed_tags() );
+							$product_row = '<tr><td>' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
+							echo wp_kses( $product_row, ddwc_allowed_tags() );
 						}
 					}
 

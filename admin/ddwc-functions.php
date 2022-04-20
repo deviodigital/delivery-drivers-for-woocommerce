@@ -300,7 +300,7 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
 			$error_message = $output->error_message;
 		}
 		// Display an error message.
-		echo '<p class="ddwc-map-api-error-msg">' . esc_html( $error_message ) . '</p>';
+		echo wp_kses( '<p class="ddwc-map-api-error-msg">' . esc_html( $error_message ) . '</p>', ddwc_allowed_tags() );
 	}
 
 	return $delivery_address;
