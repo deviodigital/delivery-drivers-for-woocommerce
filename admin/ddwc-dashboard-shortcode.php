@@ -457,11 +457,11 @@ function ddwc_dashboard_shortcode() {
 				<form class="ddwc-order-filters" method="post" action="<?php filter_input( INPUT_SERVER, 'REQUEST_URI' ); ?>">
 					<div class="form-group">
 						<label><?php esc_attresc_attr_e( 'From', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-from" value="<?php if ( ! empty( $_POST['filter-from'] ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) ); } ?>" />
+						<input type="date" name="filter-from" value="<?php if ( ! empty( filter_input( INPUT_POST, 'filter-from' ) ) ) { echo filter_input( INPUT_POST, 'filter-from' ); } else { echo esc_attr( date( 'Y-m-d', strtotime( '-7 days' ) ) ); } ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php esc_attr_e( 'To', 'delivery-drivers-for-woocommerce' ); ?></label>
-						<input type="date" name="filter-to" value="<?php if ( ! empty( $_POST['filter-to'] ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo esc_attr( date( 'Y-m-d' ) );  } ?>" />
+						<input type="date" name="filter-to" value="<?php if ( ! empty( filter_input( INPUT_POST, 'filter-to' ) ) ) { echo filter_input( INPUT_POST, 'filter-to' ); } else { echo esc_attr( date( 'Y-m-d' ) );  } ?>" />
 					</div>
 					<div class="form-group">
 						<label><?php esc_attr_e( 'Driver', 'delivery-drivers-for-woocommerce' ); ?></label>
@@ -471,7 +471,7 @@ function ddwc_dashboard_shortcode() {
 								$user_query = new WP_User_Query( array( 'role' => 'driver' ) );
 								if ( ! empty( $user_query->get_results() ) ) {
 									foreach ( $user_query->get_results() as $user ) {
-										if ( isset( $_POST['filter-name'] ) && $user->ID == filter_input( INPUT_POST, 'filter-name' ) ) {
+										if ( null !== filter_input( INPUT_POST, 'filter-name' ) && $user->ID == filter_input( INPUT_POST, 'filter-name' ) ) {
 											$selected = 'selected';
 										} else {
 											$selected = '';
@@ -492,7 +492,7 @@ function ddwc_dashboard_shortcode() {
 				// 	Filter variables.
 				if ( isset( $_SERVER ) && ! empty( $_SERVER ) && 'POST' == filter_input( INPUT_SERVER, 'REQUEST_METHOD' ) ) {
 					// Check if the filter-from field is set.
-					if ( isset( $_POST['filter-from'] ) ) {
+					if ( filter_input( INPUT_POST, 'filter-from' ) ) {
 						// Form field - from date.
 						$from_time  = date( 'Y-m-d', strtotime( filter_input( INPUT_POST, 'filter-from' ) ) );
 						$from_year  = date( 'Y', strtotime( $from_time ) );
@@ -500,7 +500,7 @@ function ddwc_dashboard_shortcode() {
 						$from_day   = date( 'j', strtotime( $from_time ) );
 					}
 					// Check if the filter-to field is set.
-					if ( isset( $_POST['filter-to'] ) ) {
+					if ( filter_input( INPUT_POST, 'filter-to' ) ) {
 						// Form field - to date.
 						$to_time  = date( 'Y-m-d', strtotime( filter_input( INPUT_POST, 'filter-to' ) ) );
 						$to_year  = date( 'Y', strtotime( $to_time ) );
