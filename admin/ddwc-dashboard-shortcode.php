@@ -228,7 +228,7 @@ function ddwc_dashboard_shortcode() {
 							$quantity = $item_product->get_quantity();
 							// Get the product details.
 							$name        = $product->get_name();
-							$price       = $product->get_price();
+							$price       = $item_product->get_total();
 							$qtty        = $quantity;
 							$qtty_price  = $qtty * $price;
 							$price       = '<td>' . $currency_symbol . number_format( $qtty_price, 2 ) . '</td>';
