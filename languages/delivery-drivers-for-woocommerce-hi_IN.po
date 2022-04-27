@@ -1,0 +1,514 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Delivery Drivers for WooCommerce\n"
+"POT-Creation-Date: 2022-04-26 11:48-0400\n"
+"PO-Revision-Date: 2022-04-26 12:28-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: delivery-drivers-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-ddwc-admin.php:96 admin/ddwc-metaboxes.php:24
+#: admin/ddwc-woocommerce-driver-ratings.php:45
+msgid "Delivery Driver"
+msgstr "वितरण चालक"
+
+#: admin/class-ddwc-admin.php:262
+msgid "Change status to driver assigned"
+msgstr "असाइन किए गए ड्राइवर की स्थिति बदलें"
+
+#: admin/class-ddwc-admin.php:263
+msgid "Change status to out for delivery"
+msgstr "डिलीवरी के लिए स्थिति को आउट में बदलें"
+
+#: admin/class-ddwc-admin.php:264
+msgid "Change status to order returned"
+msgstr "लौटाए गए ऑर्डर में स्थिति बदलें"
+
+#: admin/class-ddwc-admin.php:274
+#, php-format
+msgid "Set %1$s as driver"
+msgstr "%1$s को ड्राइवर के रूप में सेट करें"
+
+#: admin/class-ddwc-admin.php:304 admin/class-ddwc-admin.php:318
+#: admin/class-ddwc-admin.php:332
+msgid "That's what happened by bulk edit:"
+msgstr "बल्क एडिट से यही हुआ:"
+
+#: admin/ddwc-dashboard-shortcode.php:69
+msgid "Order #"
+msgstr "आदेश #"
+
+#: admin/ddwc-dashboard-shortcode.php:81
+msgid "Call Customer"
+msgstr "ग्राहक को कॉल करें"
+
+#: admin/ddwc-dashboard-shortcode.php:86
+msgid "Call Dispatch"
+msgstr "कॉल डिस्पैच"
+
+#: admin/ddwc-dashboard-shortcode.php:98
+msgid "Delivery Address"
+msgstr "डिलिवरी का पता"
+
+#: admin/ddwc-dashboard-shortcode.php:116
+msgid "Get Directions"
+msgstr "दिशा - निर्देश प्राप्त करें"
+
+#: admin/ddwc-dashboard-shortcode.php:148
+msgid "driving"
+msgstr "ड्राइविंग"
+
+#: admin/ddwc-dashboard-shortcode.php:162
+msgid "Order details"
+msgstr "ऑर्डर का विवरण"
+
+#: admin/ddwc-dashboard-shortcode.php:176
+msgid "Order date"
+msgstr "आर्डर की तारीख"
+
+#: admin/ddwc-dashboard-shortcode.php:181
+msgid "Payment method"
+msgstr "भुगतान का तरीका"
+
+#: admin/ddwc-dashboard-shortcode.php:187
+#: admin/ddwc-dashboard-shortcode.php:189
+msgid "Customer name"
+msgstr "ग्राहक का नाम"
+
+#: admin/ddwc-dashboard-shortcode.php:196
+msgid "Customer note"
+msgstr "ग्राहक नोट"
+
+#: admin/ddwc-dashboard-shortcode.php:209
+#: admin/ddwc-dashboard-shortcode.php:308
+#: admin/ddwc-dashboard-shortcode.php:389
+#: admin/ddwc-dashboard-shortcode.php:586
+msgid "Total"
+msgstr "कुल"
+
+#: admin/ddwc-dashboard-shortcode.php:212
+msgid "Product"
+msgstr "उत्पाद"
+
+#: admin/ddwc-dashboard-shortcode.php:212
+msgid "Qty"
+msgstr "मात्रा"
+
+#: admin/ddwc-dashboard-shortcode.php:247
+msgid "Delivery"
+msgstr "वितरण"
+
+#: admin/ddwc-dashboard-shortcode.php:254
+msgid "Order total"
+msgstr "कुल आर्डर"
+
+#: admin/ddwc-dashboard-shortcode.php:297
+#: admin/ddwc-dashboard-shortcode.php:441
+msgid "Assigned Orders"
+msgstr "असाइन किए गए आदेश"
+
+#: admin/ddwc-dashboard-shortcode.php:305
+#: admin/ddwc-dashboard-shortcode.php:392
+#: admin/ddwc-dashboard-shortcode.php:582
+msgid "ID"
+msgstr "आईडी"
+
+#: admin/ddwc-dashboard-shortcode.php:306
+#: admin/ddwc-dashboard-shortcode.php:392
+#: admin/ddwc-dashboard-shortcode.php:583
+msgid "Date"
+msgstr "दिनांक"
+
+#: admin/ddwc-dashboard-shortcode.php:307
+#: admin/ddwc-dashboard-shortcode.php:392
+#: admin/ddwc-dashboard-shortcode.php:585 admin/ddwc-functions.php:339
+msgid "Status"
+msgstr "ऑर्डर स्थिति"
+
+#: admin/ddwc-dashboard-shortcode.php:385
+msgid "Completed Orders"
+msgstr "पूर्ण आदेश"
+
+#: admin/ddwc-dashboard-shortcode.php:442
+msgid "You do not have any assigned orders."
+msgstr "आपके पास कोई असाइन किया गया आदेश नहीं है."
+
+#: admin/ddwc-dashboard-shortcode.php:478
+msgid "Delivery Orders"
+msgstr "वितरण आदेश"
+
+#: admin/ddwc-dashboard-shortcode.php:481
+msgid "From"
+msgstr "और से"
+
+#: admin/ddwc-dashboard-shortcode.php:485
+msgid "To"
+msgstr "Til"
+
+#: admin/ddwc-dashboard-shortcode.php:489
+msgid "Driver"
+msgstr "चालक"
+
+#: admin/ddwc-dashboard-shortcode.php:509
+msgid "SUBMIT"
+msgstr "SUBMIT"
+
+#: admin/ddwc-dashboard-shortcode.php:584
+msgid "Location"
+msgstr "स्थान"
+
+#: admin/ddwc-dashboard-shortcode.php:689
+msgid "Access Denied"
+msgstr "पहुंच अस्वीकृत"
+
+#: admin/ddwc-dashboard-shortcode.php:689
+msgid "Sorry, but you are not able to view this page."
+msgstr "क्षमा करें, लेकिन आप इस पृष्ठ को देखने में सक्षम नहीं हैं।"
+
+#: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
+#: admin/ddwc-functions.php:95
+msgid "Driver Note"
+msgstr "ड्राइवर नोट"
+
+#: admin/ddwc-functions.php:137 admin/ddwc-functions.php:148
+msgid "Change Status"
+msgstr "अवस्था बदलो"
+
+#: admin/ddwc-functions.php:139 admin/ddwc-functions.php:150
+msgid "Message for shop manager / administrator (optional)"
+msgstr "दुकान प्रबंधक / व्यवस्थापक के लिए संदेश (वैकल्पिक)"
+
+#: admin/ddwc-functions.php:140 admin/ddwc-functions.php:151
+msgid "Add a message to the order"
+msgstr "आदेश में एक संदेश जोड़ें"
+
+#: admin/ddwc-functions.php:142 admin/ddwc-woocommerce-orders.php:38
+#: admin/ddwc-woocommerce-orders.php:84
+msgid "Out for Delivery"
+msgstr "डिलिवरी के लिए रवाना"
+
+#: admin/ddwc-functions.php:152
+msgid "Returned"
+msgstr "लौटाया हुआ"
+
+#: admin/ddwc-functions.php:153
+msgid "Completed"
+msgstr "पुरा होना।"
+
+#: admin/ddwc-functions.php:296
+msgid "The delivery address is returning NULL."
+msgstr "वितरण पता NULL लौटा रहा है।"
+
+#: admin/ddwc-functions.php:338
+msgid "Name"
+msgstr "नाम"
+
+#: admin/ddwc-functions.php:340
+msgid "Rating"
+msgstr "रेटिंग"
+
+#: admin/ddwc-functions.php:341
+msgid "Contact"
+msgstr "संपर्क करें"
+
+#: admin/ddwc-functions.php:347 admin/ddwc-woocommerce-settings.php:37
+msgid "Delivery Drivers"
+msgstr "डिलीवरी ड्राइवर"
+
+#: admin/ddwc-functions.php:370
+msgid "Unavailable"
+msgstr "अनुपलब्ध"
+
+#: admin/ddwc-functions.php:374
+msgid "Available"
+msgstr "उपलब्ध है"
+
+#: admin/ddwc-functions.php:411
+msgid "edit"
+msgstr "संपादन करना"
+
+#: admin/ddwc-metaboxes.php:66 admin/ddwc-woocommerce-driver-ratings.php:66
+msgid "Call Driver"
+msgstr "कॉल ड्राइवर"
+
+#: admin/ddwc-metaboxes.php:68
+msgid "View Profile"
+msgstr "प्रोफ़ाइल देखें"
+
+#: admin/ddwc-metaboxes.php:75
+msgid "Customer rating"
+msgstr "ग्राहक रेटिंग"
+
+#: admin/ddwc-user-profile-settings.php:118
+#: admin/ddwc-user-profile-settings.php:264
+msgid "Driver Verification"
+msgstr "चालक सत्यापन"
+
+#: admin/ddwc-user-profile-settings.php:121
+msgid "Driver Photo"
+msgstr "ड्राइवर फोटो"
+
+#: admin/ddwc-user-profile-settings.php:136
+#: admin/ddwc-user-profile-settings.php:286
+msgid "x"
+msgstr "x"
+
+#: admin/ddwc-user-profile-settings.php:143
+msgid "Availability"
+msgstr "उपलब्धता"
+
+#: admin/ddwc-user-profile-settings.php:153
+msgid "Is the driver currently accepting deliveries?"
+msgstr "क्या ड्राइवर वर्तमान में डिलीवरी स्वीकार कर रहा है?"
+
+#: admin/ddwc-user-profile-settings.php:157
+#: admin/ddwc-user-profile-settings.php:292
+msgid "Transportation Type"
+msgstr "परिवहन प्रकार"
+
+#: admin/ddwc-user-profile-settings.php:161
+#: admin/ddwc-user-profile-settings.php:295
+msgid "Bicycle"
+msgstr "साइकिल"
+
+#: admin/ddwc-user-profile-settings.php:161
+#: admin/ddwc-user-profile-settings.php:295
+msgid "Motorcycle"
+msgstr "मोटरसाइकिल"
+
+#: admin/ddwc-user-profile-settings.php:161
+#: admin/ddwc-user-profile-settings.php:295
+msgid "Car"
+msgstr "कार"
+
+#: admin/ddwc-user-profile-settings.php:161
+#: admin/ddwc-user-profile-settings.php:295
+msgid "SUV"
+msgstr "एसयूवी"
+
+#: admin/ddwc-user-profile-settings.php:161
+#: admin/ddwc-user-profile-settings.php:295
+msgid "Truck"
+msgstr "ट्रक"
+
+#: admin/ddwc-user-profile-settings.php:183
+#: admin/ddwc-user-profile-settings.php:318
+msgid "Model"
+msgstr "आदर्श"
+
+#: admin/ddwc-user-profile-settings.php:186
+#: admin/ddwc-user-profile-settings.php:321
+#: admin/ddwc-woocommerce-driver-ratings.php:89
+msgid "Vehicle Model"
+msgstr "वाहन मॉडल"
+
+#: admin/ddwc-user-profile-settings.php:198
+#: admin/ddwc-user-profile-settings.php:331
+msgid "Color"
+msgstr "रंग"
+
+#: admin/ddwc-user-profile-settings.php:201
+#: admin/ddwc-user-profile-settings.php:334
+#: admin/ddwc-woocommerce-driver-ratings.php:80
+msgid "Vehicle Color"
+msgstr "वाहन का रंग"
+
+#: admin/ddwc-user-profile-settings.php:211
+#: admin/ddwc-user-profile-settings.php:342
+msgid "License Plate Number"
+msgstr "लाइसेंस प्लेट संख्या"
+
+#: admin/ddwc-user-profile-settings.php:266
+msgid "Driver Picture"
+msgstr "चालक चित्र"
+
+#: admin/ddwc-woocommerce-account-tab.php:62
+#: admin/ddwc-woocommerce-account-tab.php:88
+msgid "Driver Dashboard"
+msgstr "ड्राइवर डैशबोर्ड"
+
+#: admin/ddwc-woocommerce-driver-ratings.php:59
+msgid "Rate Delivery"
+msgstr "दर वितरण"
+
+#: admin/ddwc-woocommerce-driver-ratings.php:59
+msgid "Thanks for your rating!"
+msgstr "आपकी रेटिंग के लिए धन्यवाद!"
+
+#: admin/ddwc-woocommerce-driver-ratings.php:97
+msgid "License Plate"
+msgstr "लाइसेंस प्लेट"
+
+#: admin/ddwc-woocommerce-orders.php:21 admin/ddwc-woocommerce-orders.php:85
+msgid "Order Returned"
+msgstr "आदेश वापस आ गया"
+
+#: admin/ddwc-woocommerce-orders.php:26
+#, php-format
+msgid "Returned <span class=\"count\">(%s)</span>"
+msgid_plural "Returned <span class=\"count\">(%s)</span>"
+msgstr[0] "लौटा <span class=“count”>(%s)</span>"
+msgstr[1] "लौटा <span class=“count”>(%s)</span>"
+
+#: admin/ddwc-woocommerce-orders.php:43
+#, php-format
+msgid "Out for Delivery <span class=\"count\">(%s)</span>"
+msgid_plural "Out for Delivery <span class=\"count\">(%s)</span>"
+msgstr[0] "डिलिवरी के लिए रवाना <span class=\"count\">(%s)</span>"
+msgstr[1] "डिलिवरी के लिए रवाना <span class=\"count\">(%s)</span>"
+
+#: admin/ddwc-woocommerce-orders.php:55 admin/ddwc-woocommerce-orders.php:83
+msgid "Driver Assigned"
+msgstr "ड्राइवर असाइन किया गया"
+
+#: admin/ddwc-woocommerce-orders.php:60
+#, php-format
+msgid "Driver Assigned <span class=\"count\">(%s)</span>"
+msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"
+msgstr[0] "ड्राइवर असाइन किया गया <span class=\"count\">(%s)</span>"
+msgstr[1] "ड्राइवर असाइन किया गया <span class=\"count\">(%s)</span>"
+
+#: admin/ddwc-woocommerce-settings.php:89
+#: delivery-drivers-for-woocommerce.php:91
+msgid "Go Pro"
+msgstr "पेशेवर बनो"
+
+#. Plugin Name of the plugin/theme
+#: admin/ddwc-woocommerce-settings.php:95
+msgid "Delivery Drivers for WooCommerce"
+msgstr "WooCommerce के लिए डिलीवरी ड्राइवर"
+
+#: admin/ddwc-woocommerce-settings.php:97
+msgid "Brought to you by"
+msgstr "द्वारा आपको पेश किया हुआ"
+
+#: admin/ddwc-woocommerce-settings.php:97
+msgid "Documentation"
+msgstr "प्रलेखन"
+
+#: admin/ddwc-woocommerce-settings.php:102
+msgid "Dispatch phone number"
+msgstr "प्रेषण फोन नंबर"
+
+#: admin/ddwc-woocommerce-settings.php:104
+msgid "Allow your drivers to call if they have questions about an order."
+msgstr ""
+"अपने ड्राइवरों को कॉल करने की अनुमति दें यदि उनके पास किसी आदेश के बारे में प्रश्न हैं।"
+
+#: admin/ddwc-woocommerce-settings.php:109
+msgid "Google Maps API key"
+msgstr "गूगल मैप्स एपीआई कुंजी"
+
+#: admin/ddwc-woocommerce-settings.php:111
+msgid "Add a map to the order directions for your drivers."
+msgstr "गूगल मैप्स एपीआई कुंजी"
+
+#: admin/ddwc-woocommerce-settings.php:116
+msgid "Google Maps Geocode"
+msgstr "गूगल मैप्स जियोकोड"
+
+#: admin/ddwc-woocommerce-settings.php:117
+msgid ""
+"Update your drivers' order details page to use a customers latitutde and "
+"longitude for directions"
+msgstr ""
+"दिशाओं के लिए ग्राहक के अक्षांश और देशांतर का उपयोग करने के लिए अपने ड्राइवरों के आदेश "
+"विवरण पृष्ठ को अपडेट करें"
+
+#: admin/ddwc-woocommerce-settings.php:121
+msgid "Enable Google Maps geocode for latitude and longitude"
+msgstr "अक्षांश और देशांतर के लिए Google मानचित्र जियोकोड सक्षम करें"
+
+#: admin/ddwc-woocommerce-settings.php:125
+msgid "Google Maps Mode"
+msgstr "गूगल मैप्स मोड"
+
+#: admin/ddwc-woocommerce-settings.php:127
+msgid "Select the method of travel you would like used in your drivers map."
+msgstr "यात्रा का वह तरीका चुनें जिसे आप अपने ड्राइवर मैप में इस्तेमाल करना चाहते हैं।"
+
+#: admin/ddwc-woocommerce-settings.php:130
+msgid "Driving"
+msgstr "ड्राइविंग"
+
+#: admin/ddwc-woocommerce-settings.php:131
+msgid "Walking"
+msgstr "टहलना"
+
+#: admin/ddwc-woocommerce-settings.php:132
+msgid "Bicycling"
+msgstr "साइकिल से चलना"
+
+#: admin/ddwc-woocommerce-settings.php:137
+msgid "Driver ratings"
+msgstr "ड्राइवर रेटिंग"
+
+#: admin/ddwc-woocommerce-settings.php:139
+msgid "Add driver details with delivery star ratings to order details page."
+msgstr "विवरण पृष्ठ ऑर्डर करने के लिए डिलीवरी स्टार रेटिंग के साथ ड्राइवर विवरण जोड़ें।"
+
+#: admin/ddwc-woocommerce-settings.php:142
+#: admin/ddwc-woocommerce-settings.php:153
+msgid "Yes"
+msgstr "हाँ"
+
+#: admin/ddwc-woocommerce-settings.php:143
+#: admin/ddwc-woocommerce-settings.php:154
+msgid "No"
+msgstr "नहीं"
+
+#: admin/ddwc-woocommerce-settings.php:148
+msgid "Driver phone number"
+msgstr "ड्राइवर फोन नंबर"
+
+#: admin/ddwc-woocommerce-settings.php:150
+msgid "Add a button for customers to call driver in the driver details."
+msgstr "ड्राइवर विवरण में ड्राइवर को कॉल करने के लिए ग्राहकों के लिए एक बटन जोड़ें।"
+
+#: delivery-drivers-for-woocommerce.php:93
+msgid "Settings"
+msgstr "भाषा बदलें"
+
+#: delivery-drivers-for-woocommerce.php:135
+msgid "Orders"
+msgstr "आदेश"
+
+#: delivery-drivers-for-woocommerce.php:136
+#, php-format
+msgid ""
+"There is a new version of DDWC Pro available. Download your copy from the "
+"%1$s page on Devio Digital."
+msgstr ""
+"डीडीडब्ल्यूसी प्रो का एक नया संस्करण उपलब्ध है। अपनी कॉपी Devio Digital पर %1$s पेज "
+"से डाउनलोड करें।"
+
+#: public/class-ddwc-public.php:94
+msgid "Accepting deliveries"
+msgstr "प्रसव स्वीकार करना"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.deviodigital.com"
+msgstr "https://www.deviodigital.com"
+
+#. Description of the plugin/theme
+msgid "Streamline your mobile workforce and increase your bottom line."
+msgstr "अपने मोबाइल कार्यबल को सुव्यवस्थित करें और अपनी बॉटम लाइन बढ़ाएं।"
+
+#. Author of the plugin/theme
+msgid "Devio Digital"
+msgstr "Devio Digital"
