@@ -80,15 +80,13 @@ function ddwc_build() {
  * Save the Metabox Data
  */
 function ddwc_driver_save_order_details( $post ) {
-	// Filter the noncename input.
-	$ddwc_noncename = filter_input( INPUT_POST, 'ddwc_meta_noncename' );
 	/**
 	 * Verify this came from the our screen and with proper authorization,
 	 * because save_post can be triggered at other times
 	 */
 	if (
-		! isset( $ddwc_noncename ) ||
-		! wp_verify_nonce( $ddwc_noncename, plugin_basename( __FILE__ ) )
+		null == filter_input( INPUT_POST, 'ddwc_meta_noncename' ) ||
+		! wp_verify_nonce( filter_input( INPUT_POST, 'ddwc_meta_noncename' ), plugin_basename( __FILE__ ) )
 	) {
 		return $post->ID;
 	}
