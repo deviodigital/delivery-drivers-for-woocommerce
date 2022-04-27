@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 5.8.1
-Stable tag: 3.2.1
+Tested up to: 5.9.3
+Stable tag: 3.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,12 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.3.0 =
+*   Added `ddwc_allowed_tags` helper function in `admin/ddwc-functions.php`
+*   Added new Hindi translation in `languages/delivery-drivers-for-woocommerce-hi_IN.pot`
+*   Updated various security related issues found with [Codacy](https://codacy.com) throughout multiple files in the plugin
+*   General code cleanup throughout multiple files in the plugin
 
 = 3.2.1 =
 *   Added `ddwc_woocommerce_store_address` helper function in `admin/ddwc-functions.php`

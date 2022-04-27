@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.3.0
+*   Added `ddwc_allowed_tags` helper function in `admin/ddwc-functions.php`
+*   Added new Hindi translation in `languages/delivery-drivers-for-woocommerce-hi_IN.pot`
+*   Updated various security related issues found with [Codacy](https://codacy.com) throughout multiple files in the plugin
+*   General code cleanup throughout multiple files in the plugin
+
 ## 3.2.1
 *   Added `ddwc_woocommerce_store_address` helper function in `admin/ddwc-functions.php`
 *   Updated text strings for localization for translations found in the `languages` folder
