@@ -3,24 +3,23 @@
  * Custom functions for adding Delivery Driver
  * details to Wommerce Orders
  *
- * @link       https://www.deviodigital.com
- * @since      1.6
- *
  * @package    DDWC
  * @subpackage DDWC/admin
  * @author     Devio Digital <contact@deviodigital.com>
+ * @link       https://www.deviodigital.com
+ * @since      1.6
  */
 
- // If this file is called directly, abort.
+// If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	wp_die();
+    wp_die();
 }
 
 /**
  * Add Driver details to customer's order
  *
+ * @since  1.6
  * @return string
- * @since 1.6
  */
 function ddwc_order_driver_details( $order ) {
     // Get Order ID.
@@ -78,8 +77,8 @@ function ddwc_order_driver_details( $order ) {
             if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) ) {
                 // Color name.
                 $color_name = esc_attr__( 'Vehicle Color', 'delivery-drivers-for-woocommerce' );
-                if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
-                    $color_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Color';
+                if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', true ) ) {
+                    $color_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', true ) . ' Color';
                 }
                 $string .= '<td>' . $color_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_color', true ) . '</strong></td>';
             }
@@ -87,8 +86,8 @@ function ddwc_order_driver_details( $order ) {
             if ( get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) ) {
                 // Model name.
                 $model_name = esc_attr__( 'Vehicle Model', 'delivery-drivers-for-woocommerce' );
-                if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) ) {
-                    $model_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', TRUE ) . ' Model';
+                if ( '' != get_user_meta( $driver_id, 'ddwc_driver_transportation_type', true ) ) {
+                    $model_name = get_user_meta( $driver_id, 'ddwc_driver_transportation_type', true ) . ' Model';
                 }
                 $string .= '<td>' . $model_name . '<br /><strong>' . get_user_meta( $driver_id, 'ddwc_driver_vehicle_model', true ) . '</strong></td>';
             }
@@ -107,8 +106,8 @@ function ddwc_order_driver_details( $order ) {
          */
 
         // Get the ajax rating file.
-        $ddwc_delivery_rating = get_post_meta( $order_id, 'ddwc_delivery_rating', TRUE );
-    ?>
+        $ddwc_delivery_rating = get_post_meta( $order_id, 'ddwc_delivery_rating', true );
+        ?>
     <script type="text/javascript">
     $(function() {
         $('.driver-rating').barrating({
@@ -149,14 +148,13 @@ function ddwc_order_driver_details( $order ) {
 // Display Driver Ratings if WooCommerce setting isn't set to NO.
 if ( 'no' !== get_option( 'ddwc_settings_driver_ratings' ) ) {
     add_action( 'woocommerce_order_details_after_order_table', 'ddwc_order_driver_details' );
-} else {
-    // Do nothing.
 }
 
 /**
  * AJAX function to update the delivery driver's rating on an order.
  *
- * @since 1.6
+ * @since  1.6
+ * @return void
  */
 function ddwc_driver_rating_ajax() {
 

@@ -3,18 +3,18 @@
 /**
  * Custom functions for Wommerce Orders
  *
- * @link       https://www.deviodigital.com
- * @since      1.0.0
- *
  * @package    DDWC
  * @subpackage DDWC/admin
  * @author     Devio Digital <contact@deviodigital.com>
+ * @link       https://www.deviodigital.com
+ * @since      1.0.0
  */
 
 /**
  * Registering Returned post status
  *
- * @since 2.5
+ * @since  2.5
+ * @return void
  */
 function ddwc_register_order_returned_order_status() {
     register_post_status( 'wc-order-returned', array(
@@ -31,7 +31,8 @@ add_action( 'init', 'ddwc_register_order_returned_order_status' );
 /**
  * Registering Out for Delivery post status
  *
- * @since 1.0
+ * @since  1.0
+ * @return void
  */
 function ddwc_register_out_for_delivery_order_status() {
     register_post_status( 'wc-out-for-delivery', array(
@@ -48,7 +49,8 @@ add_action( 'init', 'ddwc_register_out_for_delivery_order_status' );
 /**
  * Registering Driver Assigned post status
  *
- * @since 1.0
+ * @since  1.0
+ * @return void
  */
 function ddwc_register_driver_assigned_order_status() {
     register_post_status( 'wc-driver-assigned', array(
@@ -65,11 +67,10 @@ add_action( 'init', 'ddwc_register_driver_assigned_order_status' );
 /**
  * Add Custom Statuses to the order status list.
  *
- * @param array $order_statuses
+ * @param array $order_statuses 
  *
+ * @since  1.0
  * @return array
- *
- * @since 1.0
  */
 function ddwc_add_custom_order_statuses( $order_statuses ) {
     // Create new status array.

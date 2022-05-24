@@ -210,7 +210,7 @@ msgid "Completed"
 msgstr ""
 
 #: admin/ddwc-functions.php:296
-msgid "The delivery address is returning NULL."
+msgid "The delivery address is returning null."
 msgstr ""
 
 #: admin/ddwc-functions.php:338

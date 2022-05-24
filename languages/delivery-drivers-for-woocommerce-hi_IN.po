@@ -210,8 +210,8 @@ msgid "Completed"
 msgstr "पुरा होना।"
 
 #: admin/ddwc-functions.php:296
-msgid "The delivery address is returning NULL."
-msgstr "वितरण पता NULL लौटा रहा है।"
+msgid "The delivery address is returning null."
+msgstr "वितरण पता null लौटा रहा है।"
 
 #: admin/ddwc-functions.php:338
 msgid "Name"

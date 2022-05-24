@@ -214,8 +214,8 @@ msgid "Completed"
 msgstr "مكتمل"
 
 #: admin/ddwc-functions.php:296
-msgid "The delivery address is returning NULL."
-msgstr "عنوان التسليم يعيد NULL."
+msgid "The delivery address is returning null."
+msgstr "عنوان التسليم يعيد null."
 
 #: admin/ddwc-functions.php:338
 msgid "Name"
