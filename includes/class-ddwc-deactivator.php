@@ -6,6 +6,7 @@
  * @package    DDWC
  * @subpackage DDWC/includes
  * @author     Devio Digital <contact@deviodigital.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  */
@@ -18,14 +19,14 @@
  * @package    DDWC
  * @subpackage DDWC/includes
  * @author     Devio Digital <contact@deviodigital.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link       https://www.deviodigital.com
  * @since      1.0.0
  */
 class Delivery_Drivers_Deactivator {
 
     /**
-     * Short Description. (use period)
-     *
-     * Long Description.
+     * Run on plugin deactivation
      *
      * @since  1.0.0
      * @return void

@@ -1,13 +1,20 @@
 <?php
 /**
- * The Delivery Driver Dashboard Shortcode.
- *
+ * Delivery driver dashboard shortcode
+ * 
  * @package    DDWC
  * @subpackage DDWC/admin
  * @author     Devio Digital <contact@deviodigital.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.deviodigital.com
  * @since      1.0.0
- * @return     string
+ */
+
+/**
+ * The Delivery Driver Dashboard Shortcode.
+ *
+ * @since  1.0.0
+ * @return string
  */
 function ddwc_dashboard_shortcode() {
 

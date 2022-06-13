@@ -6,8 +6,9 @@
  * @package    DDWC
  * @subpackage DDWC/admin
  * @author     Devio Digital <contact@deviodigital.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.deviodigital.com
- * @since      1.6
+ * @since      1.6.0
  */
 
 // If this file is called directly, abort.
@@ -17,6 +18,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Add Driver details to customer's order
+ * 
+ * @param object $order 
  *
  * @since  1.6
  * @return string

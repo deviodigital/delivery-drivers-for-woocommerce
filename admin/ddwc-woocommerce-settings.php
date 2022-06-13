@@ -6,6 +6,7 @@
  * @package    DDWC
  * @subpackage DDWC/admin
  * @author     Devio Digital <contact@deviodigital.com>
+ * @license    GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  */
@@ -40,7 +41,7 @@ class Delivery_Drivers_WooCommerce_Settings {
      *
      * @param array $settings_tabs Array of WooCommerce setting tabs & their labels, excluding the Delivery Drivers tab.
      * 
-     * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Delivery Drivers tab.
+     * @return array
      */
     public static function add_settings_tab( $settings_tabs ) {
         $settings_tabs['ddwc'] = esc_attr__( 'Delivery Drivers', 'delivery-drivers-for-woocommerce' );
