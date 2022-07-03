@@ -284,8 +284,11 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
     // Prepare the delivery address for Google Maps geocode.
     $delivery_address = str_replace( ' ', '+', $delivery_address );
 
+    $geocode_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $delivery_address . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' );
+    $geocode_url = apply_filters( 'ddwc_delivery_address_google_map_geocode_url', $geocode_url )
+
     // Get delivery address details from Google Maps.
-    $geocode = file_get_contents( 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $delivery_address . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' ) );
+    $geocode = file_get_contents( $geocode_url );
     $output  = json_decode( $geocode );
 
     // Get the delivery address latitude and longitude.
