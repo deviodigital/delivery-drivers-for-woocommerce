@@ -289,6 +289,9 @@ function ddwc_dashboard_shortcode() {
                         'meta_value'     => $user_id
                     );
 
+                    // Filter the args.
+                    $args = apply_filters( 'ddwc_driver_dadhboard_assigned_orders_args', $args );
+
                     /**
                      * Get Orders with Driver ID attached
                      */
