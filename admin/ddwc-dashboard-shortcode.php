@@ -251,7 +251,7 @@ function ddwc_dashboard_shortcode() {
                     do_action( 'ddwc_driver_dashboard_order_table_tbody_before_delivery' );
 
                     // Delivery Total.
-                    $delivery_total = '<tr class="delivery-charge"><td colspan="2"><strong>' . esc_attr__( 'Delivery', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td class="total">' . $currency_symbol . number_format((float)$order_shipping_total, 2, '.', ',' ) . '</td></tr>';
+                    $delivery_total = '<tr class="delivery-charge"><td colspan="2"><strong>' . esc_attr__( 'Delivery', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td class="total">' . $currency_symbol . number_format( (float)$order_shipping_total, 2, '.', ',' ) . '</td></tr>';
 
                     echo apply_filters( 'ddwc_driver_dashboard_delivery_total', $delivery_total );
 
@@ -622,14 +622,12 @@ function ddwc_dashboard_shortcode() {
                     $order_shipping_total = $order_data['shipping_total'];
                     $order_total          = $order_data['total'];
 
-                    ## BILLING INFORMATION:
-
+                    // Billing information.
                     $order_billing_city  = $order_data['billing']['city'];
                     $order_billing_state = $order_data['billing']['state'];
                     $order_billing_code  = $order_data['billing']['postcode'];
 
-                    ## SHIPPING INFORMATION:
-
+                    // Shipping information.
                     $order_shipping_city  = $order_data['shipping']['city'];
                     $order_shipping_state = $order_data['shipping']['state'];
                     $order_shipping_code  = $order_data['shipping']['postcode'];
