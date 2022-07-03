@@ -135,9 +135,9 @@ function ddwc_order_driver_details( $order ) {
                         console.log(response);
                     });
                 }
-                $('span.rating-tooltip').addClass('rated');
+                $("span.rating-tooltip").addClass("rated");
                 setTimeout(function() {
-                    $('span.rating-tooltip').removeClass('rated');
+                    $("span.rating-tooltip").removeClass("rated");
                 }, 1600 );
             } // end onSelect
         });

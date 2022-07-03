@@ -80,22 +80,6 @@ class Delivery_Drivers_WooCommerce_Settings {
      * @return array
      */
     public static function get_settings() {
-        // Get loop of all Pages.
-        $args = array(
-            'sort_column'  => 'post_title',
-            'hierarchical' => 1,
-            'post_type'    => 'page',
-            'post_status'  => 'publish'
-        );
-        $pages = get_pages( $args );
-
-        // Create data array.
-        $pages_array = array( 'none' => '' );
-
-        // Loop through pages.
-        foreach ( $pages as $page ) {
-            $pages_array[ $page->ID ] = $page->post_title;
-        }
 
         // Go Pro.
         $go_pro = '';

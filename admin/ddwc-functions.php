@@ -203,7 +203,7 @@ function ddwc_check_user_roles( $roles, $user_id = null ) {
  *
  * @param int $driver_id 
  * 
- * @since 2.5
+ * @since  2.5
  * @return void
  */
 function ddwc_driver_rating( $driver_id ) {
@@ -219,8 +219,8 @@ function ddwc_driver_rating( $driver_id ) {
     );
 
     /**
-    * Get Orders with Driver ID attached
-    */
+     * Get Orders with Driver ID attached
+     */
     $assigned_orders = get_posts( $args );
     $order_count     = 0;
     $driver_rating   = 0;
