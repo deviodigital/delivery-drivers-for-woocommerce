@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
 "POT-Creation-Date: 2022-04-26 11:48-0400\n"
-"PO-Revision-Date: 2022-04-26 12:28-0400\n"
+"PO-Revision-Date: 2022-07-03 00:15-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hi_IN\n"
@@ -10,14 +10,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: delivery-drivers-for-woocommerce.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;"
+"esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;"
+"__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -84,8 +84,7 @@ msgstr "आर्डर की तारीख"
 msgid "Payment method"
 msgstr "भुगतान का तरीका"
 
-#: admin/ddwc-dashboard-shortcode.php:187
-#: admin/ddwc-dashboard-shortcode.php:189
+#: admin/ddwc-dashboard-shortcode.php:187 admin/ddwc-dashboard-shortcode.php:189
 msgid "Customer name"
 msgstr "ग्राहक का नाम"
 
@@ -93,10 +92,8 @@ msgstr "ग्राहक का नाम"
 msgid "Customer note"
 msgstr "ग्राहक नोट"
 
-#: admin/ddwc-dashboard-shortcode.php:209
-#: admin/ddwc-dashboard-shortcode.php:308
-#: admin/ddwc-dashboard-shortcode.php:389
-#: admin/ddwc-dashboard-shortcode.php:586
+#: admin/ddwc-dashboard-shortcode.php:209 admin/ddwc-dashboard-shortcode.php:308
+#: admin/ddwc-dashboard-shortcode.php:389 admin/ddwc-dashboard-shortcode.php:586
 msgid "Total"
 msgstr "कुल"
 
@@ -116,25 +113,21 @@ msgstr "वितरण"
 msgid "Order total"
 msgstr "कुल आर्डर"
 
-#: admin/ddwc-dashboard-shortcode.php:297
-#: admin/ddwc-dashboard-shortcode.php:441
+#: admin/ddwc-dashboard-shortcode.php:297 admin/ddwc-dashboard-shortcode.php:441
 msgid "Assigned Orders"
 msgstr "असाइन किए गए आदेश"
 
-#: admin/ddwc-dashboard-shortcode.php:305
-#: admin/ddwc-dashboard-shortcode.php:392
+#: admin/ddwc-dashboard-shortcode.php:305 admin/ddwc-dashboard-shortcode.php:392
 #: admin/ddwc-dashboard-shortcode.php:582
 msgid "ID"
 msgstr "आईडी"
 
-#: admin/ddwc-dashboard-shortcode.php:306
-#: admin/ddwc-dashboard-shortcode.php:392
+#: admin/ddwc-dashboard-shortcode.php:306 admin/ddwc-dashboard-shortcode.php:392
 #: admin/ddwc-dashboard-shortcode.php:583
 msgid "Date"
 msgstr "दिनांक"
 
-#: admin/ddwc-dashboard-shortcode.php:307
-#: admin/ddwc-dashboard-shortcode.php:392
+#: admin/ddwc-dashboard-shortcode.php:307 admin/ddwc-dashboard-shortcode.php:392
 #: admin/ddwc-dashboard-shortcode.php:585 admin/ddwc-functions.php:339
 msgid "Status"
 msgstr "ऑर्डर स्थिति"
@@ -179,8 +172,7 @@ msgstr "पहुंच अस्वीकृत"
 msgid "Sorry, but you are not able to view this page."
 msgstr "क्षमा करें, लेकिन आप इस पृष्ठ को देखने में सक्षम नहीं हैं।"
 
-#: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
-#: admin/ddwc-functions.php:95
+#: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69 admin/ddwc-functions.php:95
 msgid "Driver Note"
 msgstr "ड्राइवर नोट"
 
@@ -207,7 +199,7 @@ msgstr "लौटाया हुआ"
 
 #: admin/ddwc-functions.php:153
 msgid "Completed"
-msgstr "पुरा होना।"
+msgstr "पुरा होना"
 
 #: admin/ddwc-functions.php:296
 msgid "The delivery address is returning null."
@@ -253,8 +245,7 @@ msgstr "प्रोफ़ाइल देखें"
 msgid "Customer rating"
 msgstr "ग्राहक रेटिंग"
 
-#: admin/ddwc-user-profile-settings.php:118
-#: admin/ddwc-user-profile-settings.php:264
+#: admin/ddwc-user-profile-settings.php:118 admin/ddwc-user-profile-settings.php:264
 msgid "Driver Verification"
 msgstr "चालक सत्यापन"
 
@@ -262,8 +253,7 @@ msgstr "चालक सत्यापन"
 msgid "Driver Photo"
 msgstr "ड्राइवर फोटो"
 
-#: admin/ddwc-user-profile-settings.php:136
-#: admin/ddwc-user-profile-settings.php:286
+#: admin/ddwc-user-profile-settings.php:136 admin/ddwc-user-profile-settings.php:286
 msgid "x"
 msgstr "x"
 
@@ -275,60 +265,49 @@ msgstr "उपलब्धता"
 msgid "Is the driver currently accepting deliveries?"
 msgstr "क्या ड्राइवर वर्तमान में डिलीवरी स्वीकार कर रहा है?"
 
-#: admin/ddwc-user-profile-settings.php:157
-#: admin/ddwc-user-profile-settings.php:292
+#: admin/ddwc-user-profile-settings.php:157 admin/ddwc-user-profile-settings.php:292
 msgid "Transportation Type"
 msgstr "परिवहन प्रकार"
 
-#: admin/ddwc-user-profile-settings.php:161
-#: admin/ddwc-user-profile-settings.php:295
+#: admin/ddwc-user-profile-settings.php:161 admin/ddwc-user-profile-settings.php:295
 msgid "Bicycle"
 msgstr "साइकिल"
 
-#: admin/ddwc-user-profile-settings.php:161
-#: admin/ddwc-user-profile-settings.php:295
+#: admin/ddwc-user-profile-settings.php:161 admin/ddwc-user-profile-settings.php:295
 msgid "Motorcycle"
 msgstr "मोटरसाइकिल"
 
-#: admin/ddwc-user-profile-settings.php:161
-#: admin/ddwc-user-profile-settings.php:295
+#: admin/ddwc-user-profile-settings.php:161 admin/ddwc-user-profile-settings.php:295
 msgid "Car"
 msgstr "कार"
 
-#: admin/ddwc-user-profile-settings.php:161
-#: admin/ddwc-user-profile-settings.php:295
+#: admin/ddwc-user-profile-settings.php:161 admin/ddwc-user-profile-settings.php:295
 msgid "SUV"
 msgstr "एसयूवी"
 
-#: admin/ddwc-user-profile-settings.php:161
-#: admin/ddwc-user-profile-settings.php:295
+#: admin/ddwc-user-profile-settings.php:161 admin/ddwc-user-profile-settings.php:295
 msgid "Truck"
 msgstr "ट्रक"
 
-#: admin/ddwc-user-profile-settings.php:183
-#: admin/ddwc-user-profile-settings.php:318
+#: admin/ddwc-user-profile-settings.php:183 admin/ddwc-user-profile-settings.php:318
 msgid "Model"
 msgstr "आदर्श"
 
-#: admin/ddwc-user-profile-settings.php:186
-#: admin/ddwc-user-profile-settings.php:321
+#: admin/ddwc-user-profile-settings.php:186 admin/ddwc-user-profile-settings.php:321
 #: admin/ddwc-woocommerce-driver-ratings.php:89
 msgid "Vehicle Model"
 msgstr "वाहन मॉडल"
 
-#: admin/ddwc-user-profile-settings.php:198
-#: admin/ddwc-user-profile-settings.php:331
+#: admin/ddwc-user-profile-settings.php:198 admin/ddwc-user-profile-settings.php:331
 msgid "Color"
 msgstr "रंग"
 
-#: admin/ddwc-user-profile-settings.php:201
-#: admin/ddwc-user-profile-settings.php:334
+#: admin/ddwc-user-profile-settings.php:201 admin/ddwc-user-profile-settings.php:334
 #: admin/ddwc-woocommerce-driver-ratings.php:80
 msgid "Vehicle Color"
 msgstr "वाहन का रंग"
 
-#: admin/ddwc-user-profile-settings.php:211
-#: admin/ddwc-user-profile-settings.php:342
+#: admin/ddwc-user-profile-settings.php:211 admin/ddwc-user-profile-settings.php:342
 msgid "License Plate Number"
 msgstr "लाइसेंस प्लेट संख्या"
 
@@ -336,8 +315,7 @@ msgstr "लाइसेंस प्लेट संख्या"
 msgid "Driver Picture"
 msgstr "चालक चित्र"
 
-#: admin/ddwc-woocommerce-account-tab.php:62
-#: admin/ddwc-woocommerce-account-tab.php:88
+#: admin/ddwc-woocommerce-account-tab.php:62 admin/ddwc-woocommerce-account-tab.php:88
 msgid "Driver Dashboard"
 msgstr "ड्राइवर डैशबोर्ड"
 
@@ -382,8 +360,7 @@ msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"
 msgstr[0] "ड्राइवर असाइन किया गया <span class=\"count\">(%s)</span>"
 msgstr[1] "ड्राइवर असाइन किया गया <span class=\"count\">(%s)</span>"
 
-#: admin/ddwc-woocommerce-settings.php:89
-#: delivery-drivers-for-woocommerce.php:91
+#: admin/ddwc-woocommerce-settings.php:89 delivery-drivers-for-woocommerce.php:91
 msgid "Go Pro"
 msgstr "पेशेवर बनो"
 
@@ -406,8 +383,7 @@ msgstr "प्रेषण फोन नंबर"
 
 #: admin/ddwc-woocommerce-settings.php:104
 msgid "Allow your drivers to call if they have questions about an order."
-msgstr ""
-"अपने ड्राइवरों को कॉल करने की अनुमति दें यदि उनके पास किसी आदेश के बारे में प्रश्न हैं।"
+msgstr "अपने ड्राइवरों को कॉल करने की अनुमति दें यदि उनके पास किसी आदेश के बारे में प्रश्न हैं।"
 
 #: admin/ddwc-woocommerce-settings.php:109
 msgid "Google Maps API key"
@@ -415,7 +391,7 @@ msgstr "गूगल मैप्स एपीआई कुंजी"
 
 #: admin/ddwc-woocommerce-settings.php:111
 msgid "Add a map to the order directions for your drivers."
-msgstr "गूगल मैप्स एपीआई कुंजी"
+msgstr "गूगल मैप्स एपीआई कुंजी."
 
 #: admin/ddwc-woocommerce-settings.php:116
 msgid "Google Maps Geocode"
@@ -423,11 +399,11 @@ msgstr "गूगल मैप्स जियोकोड"
 
 #: admin/ddwc-woocommerce-settings.php:117
 msgid ""
-"Update your drivers' order details page to use a customers latitutde and "
-"longitude for directions"
+"Update your drivers' order details page to use a customers latitutde and longitude for "
+"directions"
 msgstr ""
-"दिशाओं के लिए ग्राहक के अक्षांश और देशांतर का उपयोग करने के लिए अपने ड्राइवरों के आदेश "
-"विवरण पृष्ठ को अपडेट करें"
+"दिशाओं के लिए ग्राहक के अक्षांश और देशांतर का उपयोग करने के लिए अपने ड्राइवरों के आदेश विवरण पृष्ठ को "
+"अपडेट करें"
 
 #: admin/ddwc-woocommerce-settings.php:121
 msgid "Enable Google Maps geocode for latitude and longitude"
@@ -461,13 +437,11 @@ msgstr "ड्राइवर रेटिंग"
 msgid "Add driver details with delivery star ratings to order details page."
 msgstr "विवरण पृष्ठ ऑर्डर करने के लिए डिलीवरी स्टार रेटिंग के साथ ड्राइवर विवरण जोड़ें।"
 
-#: admin/ddwc-woocommerce-settings.php:142
-#: admin/ddwc-woocommerce-settings.php:153
+#: admin/ddwc-woocommerce-settings.php:142 admin/ddwc-woocommerce-settings.php:153
 msgid "Yes"
 msgstr "हाँ"
 
-#: admin/ddwc-woocommerce-settings.php:143
-#: admin/ddwc-woocommerce-settings.php:154
+#: admin/ddwc-woocommerce-settings.php:143 admin/ddwc-woocommerce-settings.php:154
 msgid "No"
 msgstr "नहीं"
 
@@ -490,11 +464,11 @@ msgstr "आदेश"
 #: delivery-drivers-for-woocommerce.php:136
 #, php-format
 msgid ""
-"There is a new version of DDWC Pro available. Download your copy from the "
-"%1$s page on Devio Digital."
+"There is a new version of DDWC Pro available. Download your copy from the %1$s page on "
+"Devio Digital."
 msgstr ""
-"डीडीडब्ल्यूसी प्रो का एक नया संस्करण उपलब्ध है। अपनी कॉपी Devio Digital पर %1$s पेज "
-"से डाउनलोड करें।"
+"डीडीडब्ल्यूसी प्रो का एक नया संस्करण उपलब्ध है। अपनी कॉपी Devio Digital पर %1$s पेज से डाउनलोड "
+"करें।"
 
 #: public/class-ddwc-public.php:94
 msgid "Accepting deliveries"
