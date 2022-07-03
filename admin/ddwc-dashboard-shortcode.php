@@ -243,7 +243,7 @@ function ddwc_dashboard_shortcode() {
                             /**
                              * @todo add thumbnail image next to the product name.
                              */
-                            $product_row = '<tr><td>' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
+                            $product_row = '<tr><td>' . get_the_post_thumbnail( $product->get_id(), array( 40, 40 ), array( 'class' => 'alignleft' ) ) . ' ' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
                             echo wp_kses( $product_row, ddwc_allowed_tags() );
                         }
                     }
@@ -290,7 +290,7 @@ function ddwc_dashboard_shortcode() {
                     );
 
                     // Filter the args.
-                    $args = apply_filters( 'ddwc_driver_dadhboard_assigned_orders_args', $args );
+                    $args = apply_filters( 'ddwc_driver_dashboard_assigned_orders_args', $args );
 
                     /**
                      * Get Orders with Driver ID attached
