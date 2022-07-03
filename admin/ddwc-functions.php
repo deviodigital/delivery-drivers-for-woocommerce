@@ -285,7 +285,7 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
     $delivery_address = str_replace( ' ', '+', $delivery_address );
 
     $geocode_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $delivery_address . '&key=' . get_option( 'ddwc_settings_google_maps_api_key' );
-    $geocode_url = apply_filters( 'ddwc_delivery_address_google_map_geocode_url', $geocode_url )
+    $geocode_url = apply_filters( 'ddwc_delivery_address_google_map_geocode_url', $geocode_url );
 
     // Get delivery address details from Google Maps.
     $geocode = file_get_contents( $geocode_url );
@@ -523,11 +523,11 @@ function ddwc_allowed_tags() {
     );
     // select
     $my_allowed['select'] = array(
-        'class'  => array(),
-        'id'     => array(),
-        'name'   => array(),
-        'value'  => array(),
-        'type'   => array(),
+        'class' => array(),
+        'id'    => array(),
+        'name'  => array(),
+        'value' => array(),
+        'type'  => array(),
     );
     // select options
     $my_allowed['option'] = array(
