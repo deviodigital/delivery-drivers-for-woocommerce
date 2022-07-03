@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.1
+*   Added `ddwc_driver_average_rating_args` filter in `admin/ddwc-functions.php`
+*   Added `ddwc_delivery_address_google_map_geocode_url` filter in `admin/ddwc-functions.php`
+*   Added `ddwc_driver_dashboard_assigned_orders_args` filter in `admin/ddwc-dashboard-shortcode.php`
+*   Updated drivers order table to include a product image in `admin/ddwc-dashboard-shortcode.php`
+*   Updated text strings for localization for translations found in the `languages` folder
+*   General code cleanup throughout multiple files in the plugin
+
 ## 3.3.0
 *   Added `ddwc_allowed_tags` helper function in `admin/ddwc-functions.php`
 *   Added new Hindi translation in `languages/delivery-drivers-for-woocommerce-hi_IN.pot`
