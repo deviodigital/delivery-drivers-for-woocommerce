@@ -218,6 +218,8 @@ function ddwc_driver_rating( $driver_id ) {
         'meta_value'     => $driver_id
     );
 
+    $args = apply_filters( 'ddwc_driver_average_rating_args', $args );
+
     /**
      * Get Orders with Driver ID attached
      */
