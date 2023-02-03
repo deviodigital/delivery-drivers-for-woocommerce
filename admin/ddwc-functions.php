@@ -20,7 +20,7 @@ function ddwc_driver_dashboard_change_statuses() {
 
     // Get the order.
     $order_id = filter_input( INPUT_GET, 'orderid' );
-    $order    = wc_get_order( $order_id );
+    $order    = new WC_Order( $order_id );
 
     // Out for delivery + note.
     $out_for_delivery = filter_input( INPUT_POST, 'outfordelivery' );
