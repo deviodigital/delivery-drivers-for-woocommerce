@@ -81,30 +81,62 @@ function ddwc_build() {
 
 /**
  * Save the Metabox Data
- * 
- * @param int $post_id 
- * 
+ *
+ * @param int $post_id
+ *
  * @return void
  */
 function ddwc_driver_save_order_details( $post_id ) {
-    // Verify nonce
-    if ( !isset( $_POST['ddwc_meta_noncename'] ) || !wp_verify_nonce( $_POST['ddwc_meta_noncename'], plugin_basename( __FILE__ ) ) ) {
+    // Verify nonce.
+    if ( ! isset( $_POST['ddwc_meta_noncename'] ) || ! wp_verify_nonce( $_POST['ddwc_meta_noncename'], plugin_basename( __FILE__ ) ) ) {
         return;
     }
 
-    // Check if user has permission to edit post
+    // Check if user has permission to edit post.
     if ( ! current_user_can( 'edit_post', $post_id ) ) {
         return;
     }
 
-    // Get driver ID
-    $ddwc_driver_id = isset( $_POST['ddwc_driver_id'] ) ? absint( $_POST['ddwc_driver_id'] ) : '';
+    // Get driver ID.
+    $ddwc_driver_id = isset( $_POST['ddwc_driver_id'] ) ? $_POST['ddwc_driver_id'] : '';
 
-    // Save driver ID
-    if ( $ddwc_driver_id ) {
+    // Get the current driver ID.
+    $current_driver_id = get_post_meta( $post_id, 'ddwc_driver_id', true );
+
+    // Save driver ID.
+    if ( -1 != $ddwc_driver_id ) {
         update_post_meta( $post_id, 'ddwc_driver_id', $ddwc_driver_id );
-    } else {
-        delete_post_meta( $post_id, 'ddwc_driver_id' );
+
+        // Get the driver name.
+        $driver_name = '';
+        if ( ! empty( $ddwc_driver_id ) && '-1' != $ddwc_driver_id ) {
+            $driver_name = get_the_author_meta( 'display_name', $ddwc_driver_id );
+        }
+
+        // If the driver data is different than the current driver, add a note to the order.
+        if ( $ddwc_driver_id != $current_driver_id ) {
+            $note  = sprintf( esc_html__( 'Delivery driver changed to %s', 'delivery-drivers-for-woocommerce' ), $driver_name );
+            $order = wc_get_order( $post_id );
+            $order->add_order_note( $note );
+
+            // If the driver ID goes from none to any driver, update order status to processing.
+            if ( empty( $current_driver_id ) && ! empty( $ddwc_driver_id ) ) {
+                $order->update_status( 'driver-assigned' );
+            }
+        }
+    } elseif ( -1 == $ddwc_driver_id ) {
+        // Only run if current driver ID isn't empty.
+        if ( '' != $current_driver_id ) {
+            // Delete driver ID and add note that driver was removed.
+            delete_post_meta( $post_id, 'ddwc_driver_id' );
+            // Create the order note.
+            $note  = esc_html__( 'Delivery driver removed', 'delivery-drivers-for-woocommerce' );
+            $order = wc_get_order( $post_id );
+            // Add the order note.
+            $order->add_order_note( $note );
+            // Update the order status.
+            $order->update_status( 'processing' );
+        }
     }
 }
-add_action( 'save_post_shop_order', 'ddwc_driver_save_order_details', 10, 1 );
+add_action( 'save_post', 'ddwc_driver_save_order_details', 10, 1 );
