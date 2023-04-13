@@ -27,7 +27,8 @@ function ddwc_driver_dashboard_change_statuses() {
     $driver_note      = filter_input( INPUT_POST, 'outfordeliverymessage' );
 
     // Redirect URL.
-    $redirect_url = apply_filters( 'ddwc_driver_dashboard_change_statuses_redirect_url', get_option( 'woocommerce_myaccount_page_id' ) . 'driver-dashboard/?orderid=' . $order_id );
+    $url          = get_permalink( wc_get_page_id( 'myaccount' ) );
+    $redirect_url = apply_filters( 'ddwc_driver_dashboard_change_statuses_redirect_url', $url . '/driver-dashboard/?orderid=' . $order_id );
 
     do_action( 'ddwc_driver_dashboard_change_statuses_top' );
 
