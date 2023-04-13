@@ -82,47 +82,29 @@ function ddwc_build() {
 /**
  * Save the Metabox Data
  * 
- * @param object $post 
+ * @param int $post_id 
  * 
- * @return int|void
+ * @return void
  */
-function ddwc_driver_save_order_details( $post ) {
-    /**
-     * Verify this came from the our screen and with proper authorization,
-     * because save_post can be triggered at other times
-     */
-    if (
-        null == filter_input( INPUT_POST, 'ddwc_meta_noncename' ) ||
-        ! wp_verify_nonce( filter_input( INPUT_POST, 'ddwc_meta_noncename' ), plugin_basename( __FILE__ ) )
-    ) {
-        return $post;
+function ddwc_driver_save_order_details( $post_id ) {
+    // Verify nonce
+    if ( !isset( $_POST['ddwc_meta_noncename'] ) || !wp_verify_nonce( $_POST['ddwc_meta_noncename'], plugin_basename( __FILE__ ) ) ) {
+        return;
     }
 
-    /* Is the user allowed to edit the post or page? */
-    if ( ! current_user_can( 'edit_post', $post->ID ) ) {
-        return $post->ID;
+    // Check if user has permission to edit post
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
     }
 
-    /**
-     * OK, we're authenticated: we need to find and save the data
-     * We'll put it into an array to make it easier to loop though.
-     */
-    $ddwc_driver_meta['ddwc_driver_id'] = filter_input( INPUT_POST, 'ddwc_driver_id' );
+    // Get driver ID
+    $ddwc_driver_id = isset( $_POST['ddwc_driver_id'] ) ? absint( $_POST['ddwc_driver_id'] ) : '';
 
-    /* Add values of $ddwc_driver_meta as custom fields */
-    foreach ( $ddwc_driver_meta as $key => $value ) {
-        if ( 'revision' === $post->post_type ) {
-            return;
-        }
-        $value = implode( ',', (array) $value );
-        if ( get_post_meta( $post->ID, $key, false ) ) {
-            update_post_meta( $post->ID, $key, $value );
-        } else {
-            add_post_meta( $post->ID, $key, $value );
-        }
-        if ( ! $value ) {
-            delete_post_meta( $post->ID, $key );
-        }
+    // Save driver ID
+    if ( $ddwc_driver_id ) {
+        update_post_meta( $post_id, 'ddwc_driver_id', $ddwc_driver_id );
+    } else {
+        delete_post_meta( $post_id, 'ddwc_driver_id' );
     }
 }
-add_action( 'save_post', 'ddwc_driver_save_order_details', 1, 1 );
+add_action( 'save_post_shop_order', 'ddwc_driver_save_order_details', 10, 1 );
