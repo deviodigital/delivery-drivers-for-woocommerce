@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.4.0
+*   Bugfix for driver metabox not saving when saving the order in `admin/ddwc-metaboxes.php`
+*   Bugfix for driver metabox order notes and status changes when saving in `admin/ddwc-metaboxes.php`
+*   Bugfix for broken redirect when driver changes order status in `admin/ddwc-functions.php`
+*   Bugfix for esc string outputting html instead of text in `delivery-drivers-for-woocommerce.php`
+*   Updated `wc_get_order()` to use `new WC_Order()` in `admin/ddwc-functions.php`
+*   Updated text strings for localization for translations found in the `languages` folder
+*   General code cleanup throughout multiple files in the plugin
+
 ## 3.3.1
 *   Added `ddwc_driver_average_rating_args` filter in `admin/ddwc-functions.php`
 *   Added `ddwc_delivery_address_google_map_geocode_url` filter in `admin/ddwc-functions.php`

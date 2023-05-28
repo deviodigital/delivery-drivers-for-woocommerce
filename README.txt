@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 6.0.0
-Stable tag: 3.3.1
+Tested up to: 6.2.2
+Stable tag: 3.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,15 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.4.0 =
+*   Bugfix for driver metabox not saving when saving the order in `admin/ddwc-metaboxes.php`
+*   Bugfix for driver metabox order notes and status changes when saving in `admin/ddwc-metaboxes.php`
+*   Bugfix for broken redirect when driver changes order status in `admin/ddwc-functions.php`
+*   Bugfix for esc string outputting html instead of text in `delivery-drivers-for-woocommerce.php`
+*   Updated `wc_get_order()` to use `new WC_Order()` in `admin/ddwc-functions.php`
+*   Updated text strings for localization for translations found in the `languages` folder
+*   General code cleanup throughout multiple files in the plugin
 
 = 3.3.1 =
 *   Added `ddwc_driver_average_rating_args` filter in `admin/ddwc-functions.php`
