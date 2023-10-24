@@ -343,7 +343,7 @@ function ddwc_add_to_edit_account_form() {
             </label>
             <input type="text" class="input-text" name="ddwc_driver_vehicle_color" id="reg_ddwc_driver_vehicle_color" value="<?php esc_html_e( get_user_meta( $user->ID, 'ddwc_driver_vehicle_color', true ) ); ?>" />
         </p>
-        <?php if ( esc_html_e( 'Bicycle', 'delivery-drivers-for-woocommerce' ) != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', true ) ) { ?>
+        <?php if ( esc_html( 'Bicycle' ) != get_user_meta( $user->ID, 'ddwc_driver_transportation_type', true ) ) { ?>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="reg_ddwc_driver_license_plate"><?php esc_html_e( 'License Plate Number', 'delivery-drivers-for-woocommerce' ); ?></label>
             <input type="text" class="input-text" name="ddwc_driver_license_plate" id="reg_ddwc_driver_license_plate" value="<?php esc_html_e( get_user_meta( $user->ID, 'ddwc_driver_license_plate', true ) ); ?>" />
