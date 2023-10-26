@@ -237,7 +237,6 @@ function ddwc_delivery_driver_settings() {
     wp_die();
 }
 add_action( 'wp_ajax_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings' );
-//add_action('wp_ajax_nopriv_ddwc_delivery_driver_settings', 'ddwc_delivery_driver_settings');
 
 /**
  * AJAX function to update driver availability
@@ -261,7 +260,6 @@ function ddwc_driver_availability_update() {
     update_user_meta( $user_id, 'ddwc_driver_availability', $new_value, $old_value );
 }
 add_action( 'wp_ajax_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
-add_action( 'wp_ajax_nopriv_ddwc_driver_availability_update', 'ddwc_driver_availability_update' );
 
 /**
  * Bulk actions edit
