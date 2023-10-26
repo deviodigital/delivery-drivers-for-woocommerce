@@ -136,8 +136,19 @@ class Delivery_Drivers_WooCommerce_Settings {
             'driver_ratings' => array(
                 'name'    => esc_attr__( 'Driver ratings', 'delivery-drivers-for-woocommerce' ),
                 'type'    => 'select',
-                'desc'    => esc_attr__( 'Add driver details with delivery star ratings to order details page.', 'delivery-drivers-for-woocommerce' ),
+                'desc'    => esc_attr__( 'Add driver star ratings to order details page.', 'delivery-drivers-for-woocommerce' ),
                 'id'      => 'ddwc_settings_driver_ratings',
+                'options' => array(
+                    'yes' => esc_attr__( 'Yes', 'delivery-drivers-for-woocommerce' ),
+                    'no'  => esc_attr__( 'No', 'delivery-drivers-for-woocommerce' )
+                ),
+            ),
+            // Driver vehicle details.
+            'driver_vehicle_details' => array(
+                'name'    => esc_attr__( 'Driver vehicle details', 'delivery-drivers-for-woocommerce' ),
+                'type'    => 'select',
+                'desc'    => esc_attr__( 'Add driver vehicle details to order details page.', 'delivery-drivers-for-woocommerce' ),
+                'id'      => 'ddwc_settings_driver_vehicle_details',
                 'options' => array(
                     'yes' => esc_attr__( 'Yes', 'delivery-drivers-for-woocommerce' ),
                     'no'  => esc_attr__( 'No', 'delivery-drivers-for-woocommerce' )
@@ -205,7 +216,7 @@ add_filter( 'woocommerce_login_redirect', 'ddwc_custom_user_redirect', 10, 2 );
  *
  * @access public
  * @since  2.3
- * @return string
+ * @return array
  */
 function ddwc_custom_order_formatted_address( $address ) {
     // Check if $address is array.
