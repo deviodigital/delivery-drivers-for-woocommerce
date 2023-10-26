@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 6.2.2
-Stable tag: 3.4.0
+Tested up to: 6.3.2
+Stable tag: 3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,12 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.4.1 =
+*   Added setting to optionally display vehicle details in order details in `admin/ddwc-woocommerce-settings.php`
+*   Bugfix to removed rogue 'Bicycle' text from outputting on user profile page in `admin/ddwc-user-profile-settings.php`
+*   Removed unnecessary `wp_ajax_nopriv_` usage in `admin/class-ddwc-admin.php`
+*   Updated driver display on order details to show/hide vehicle details in `admin/ddwc-woocommerce-driver-ratings.php`
 
 = 3.4.0 =
 *   Bugfix for driver metabox not saving when saving the order in `admin/ddwc-metaboxes.php`

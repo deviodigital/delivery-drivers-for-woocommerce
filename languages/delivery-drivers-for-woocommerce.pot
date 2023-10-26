@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Delivery Drivers for WooCommerce\n"
-"POT-Creation-Date: 2023-05-28 14:12-0400\n"
-"PO-Revision-Date: 2021-09-09 17:33-0400\n"
+"POT-Creation-Date: 2023-10-26 17:39-0400\n"
+"PO-Revision-Date: 2023-10-26 17:38-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,47 +16,48 @@ msgstr ""
 "X-Poedit-WPHeader: delivery-drivers-for-woocommerce.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: admin/class-ddwc-admin.php:96 admin/ddwc-metaboxes.php:24
-#: admin/ddwc-woocommerce-driver-ratings.php:45
+#: admin/class-ddwc-admin.php:102 admin/ddwc-metaboxes.php:25
+#: admin/ddwc-woocommerce-driver-ratings.php:49
+#: includes/class-ddwc-activator.php:40
 msgid "Delivery Driver"
 msgstr ""
 
-#: admin/class-ddwc-admin.php:263
+#: admin/class-ddwc-admin.php:276
 msgid "Change status to driver assigned"
 msgstr ""
 
-#: admin/class-ddwc-admin.php:264
+#: admin/class-ddwc-admin.php:277
 msgid "Change status to out for delivery"
 msgstr ""
 
-#: admin/class-ddwc-admin.php:265
+#: admin/class-ddwc-admin.php:278
 msgid "Change status to order returned"
 msgstr ""
 
-#: admin/class-ddwc-admin.php:275
+#: admin/class-ddwc-admin.php:288
 #, php-format
 msgid "Set %1$s as driver"
 msgstr ""
 
-#: admin/class-ddwc-admin.php:305 admin/class-ddwc-admin.php:319
-#: admin/class-ddwc-admin.php:333
+#: admin/class-ddwc-admin.php:322 admin/class-ddwc-admin.php:336
+#: admin/class-ddwc-admin.php:350
 msgid "That's what happened by bulk edit:"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:79
+#: admin/ddwc-dashboard-shortcode.php:76
 msgid "Order #"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:90
+#: admin/ddwc-dashboard-shortcode.php:88
 msgid "Call Customer"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:95
+#: admin/ddwc-dashboard-shortcode.php:93
 msgid "Call Dispatch"
 msgstr ""
 
@@ -64,434 +65,453 @@ msgstr ""
 msgid "Delivery Address"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:121
+#: admin/ddwc-dashboard-shortcode.php:123
 msgid "Get Directions"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:152
+#: admin/ddwc-dashboard-shortcode.php:155
 msgid "driving"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:165
+#: admin/ddwc-dashboard-shortcode.php:169
 msgid "Order details"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:179
+#: admin/ddwc-dashboard-shortcode.php:183
 msgid "Order date"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:184
+#: admin/ddwc-dashboard-shortcode.php:188
 msgid "Payment method"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:190
-#: admin/ddwc-dashboard-shortcode.php:192
+#: admin/ddwc-dashboard-shortcode.php:194
+#: admin/ddwc-dashboard-shortcode.php:196
 msgid "Customer name"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:198
+#: admin/ddwc-dashboard-shortcode.php:203
 msgid "Customer note"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:211
-#: admin/ddwc-dashboard-shortcode.php:311
-#: admin/ddwc-dashboard-shortcode.php:400
-#: admin/ddwc-dashboard-shortcode.php:594
+#: admin/ddwc-dashboard-shortcode.php:216
+#: admin/ddwc-dashboard-shortcode.php:318
+#: admin/ddwc-dashboard-shortcode.php:399
+#: admin/ddwc-dashboard-shortcode.php:595
 msgid "Total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:214
+#: admin/ddwc-dashboard-shortcode.php:219
 msgid "Product"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:214
+#: admin/ddwc-dashboard-shortcode.php:219
 msgid "Qty"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:250
+#: admin/ddwc-dashboard-shortcode.php:254
 msgid "Delivery"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:257
+#: admin/ddwc-dashboard-shortcode.php:261
 msgid "Order total"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:300
-#: admin/ddwc-dashboard-shortcode.php:462
+#: admin/ddwc-dashboard-shortcode.php:307
+#: admin/ddwc-dashboard-shortcode.php:451
 msgid "Assigned Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:308
-#: admin/ddwc-dashboard-shortcode.php:403
-#: admin/ddwc-dashboard-shortcode.php:590
+#: admin/ddwc-dashboard-shortcode.php:315
+#: admin/ddwc-dashboard-shortcode.php:402
+#: admin/ddwc-dashboard-shortcode.php:591
 msgid "ID"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:309
-#: admin/ddwc-dashboard-shortcode.php:403
-#: admin/ddwc-dashboard-shortcode.php:591
+#: admin/ddwc-dashboard-shortcode.php:316
+#: admin/ddwc-dashboard-shortcode.php:402
+#: admin/ddwc-dashboard-shortcode.php:592
 msgid "Date"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:310
-#: admin/ddwc-dashboard-shortcode.php:403
-#: admin/ddwc-dashboard-shortcode.php:593 admin/ddwc-functions.php:339
+#: admin/ddwc-dashboard-shortcode.php:317
+#: admin/ddwc-dashboard-shortcode.php:402
+#: admin/ddwc-dashboard-shortcode.php:594 admin/ddwc-functions.php:351
 msgid "Status"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:396
+#: admin/ddwc-dashboard-shortcode.php:395
 msgid "Completed Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:463
+#: admin/ddwc-dashboard-shortcode.php:452
 msgid "You do not have any assigned orders."
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:487
+#: admin/ddwc-dashboard-shortcode.php:488
 msgid "Delivery Orders"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:490
+#: admin/ddwc-dashboard-shortcode.php:491
 msgid "From"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:494
+#: admin/ddwc-dashboard-shortcode.php:495
 msgid "To"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:498
+#: admin/ddwc-dashboard-shortcode.php:499
 msgid "Driver"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:517
+#: admin/ddwc-dashboard-shortcode.php:518
 msgid "SUBMIT"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:592
+#: admin/ddwc-dashboard-shortcode.php:593
 msgid "Location"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:705
+#: admin/ddwc-dashboard-shortcode.php:696
 msgid "Access Denied"
 msgstr ""
 
-#: admin/ddwc-dashboard-shortcode.php:705
+#: admin/ddwc-dashboard-shortcode.php:696
 msgid "Sorry, but you are not able to view this page."
 msgstr ""
 
-#: admin/ddwc-functions.php:42 admin/ddwc-functions.php:69
-#: admin/ddwc-functions.php:95
+#: admin/ddwc-functions.php:44 admin/ddwc-functions.php:71
+#: admin/ddwc-functions.php:97
 msgid "Driver Note"
 msgstr ""
 
-#: admin/ddwc-functions.php:137 admin/ddwc-functions.php:148
+#: admin/ddwc-functions.php:140 admin/ddwc-functions.php:151
 msgid "Change Status"
 msgstr ""
 
-#: admin/ddwc-functions.php:139 admin/ddwc-functions.php:150
+#: admin/ddwc-functions.php:142 admin/ddwc-functions.php:153
 msgid "Message for shop manager / administrator (optional)"
 msgstr ""
 
-#: admin/ddwc-functions.php:140 admin/ddwc-functions.php:151
+#: admin/ddwc-functions.php:143 admin/ddwc-functions.php:154
 msgid "Add a message to the order"
 msgstr ""
 
-#: admin/ddwc-functions.php:142 admin/ddwc-woocommerce-orders.php:38
-#: admin/ddwc-woocommerce-orders.php:84
+#: admin/ddwc-functions.php:145 admin/ddwc-woocommerce-orders.php:40
+#: admin/ddwc-woocommerce-orders.php:86
 msgid "Out for Delivery"
 msgstr ""
 
-#: admin/ddwc-functions.php:152
+#: admin/ddwc-functions.php:155
 msgid "Returned"
 msgstr ""
 
-#: admin/ddwc-functions.php:153
+#: admin/ddwc-functions.php:156
 msgid "Completed"
 msgstr ""
 
-#: admin/ddwc-functions.php:296
+#: admin/ddwc-functions.php:308
 msgid "The delivery address is returning null."
 msgstr ""
 
-#: admin/ddwc-functions.php:338
+#: admin/ddwc-functions.php:350
 msgid "Name"
 msgstr ""
 
-#: admin/ddwc-functions.php:340
+#: admin/ddwc-functions.php:352
 msgid "Rating"
 msgstr ""
 
-#: admin/ddwc-functions.php:341
+#: admin/ddwc-functions.php:353
 msgid "Contact"
 msgstr ""
 
-#: admin/ddwc-functions.php:347 admin/ddwc-woocommerce-settings.php:37
+#: admin/ddwc-functions.php:359 admin/ddwc-woocommerce-settings.php:47
 msgid "Delivery Drivers"
 msgstr ""
 
-#: admin/ddwc-functions.php:370
+#: admin/ddwc-functions.php:382
 msgid "Unavailable"
 msgstr ""
 
-#: admin/ddwc-functions.php:374
+#: admin/ddwc-functions.php:386
 msgid "Available"
 msgstr ""
 
-#: admin/ddwc-functions.php:411
+#: admin/ddwc-functions.php:423
 msgid "edit"
 msgstr ""
 
-#: admin/ddwc-metaboxes.php:66 admin/ddwc-woocommerce-driver-ratings.php:68
+#: admin/ddwc-metaboxes.php:69 admin/ddwc-woocommerce-driver-ratings.php:73
 msgid "Call Driver"
 msgstr ""
 
-#: admin/ddwc-metaboxes.php:68
+#: admin/ddwc-metaboxes.php:71
 msgid "View Profile"
 msgstr ""
 
-#: admin/ddwc-metaboxes.php:75
+#: admin/ddwc-metaboxes.php:78
 msgid "Customer rating"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:118
-#: admin/ddwc-user-profile-settings.php:261
+#: admin/ddwc-metaboxes.php:118
+#, php-format
+msgid "Delivery driver changed to %s"
+msgstr ""
+
+#: admin/ddwc-metaboxes.php:133
+msgid "Delivery driver removed"
+msgstr ""
+
+#: admin/ddwc-user-profile-settings.php:124
+#: admin/ddwc-user-profile-settings.php:271
 msgid "Driver Verification"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:121
+#: admin/ddwc-user-profile-settings.php:127
 msgid "Driver Photo"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:136
-#: admin/ddwc-user-profile-settings.php:282
+#: admin/ddwc-user-profile-settings.php:142
+#: admin/ddwc-user-profile-settings.php:292
 msgid "x"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:143
+#: admin/ddwc-user-profile-settings.php:149
 msgid "Availability"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:152
+#: admin/ddwc-user-profile-settings.php:159
 msgid "Is the driver currently accepting deliveries?"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:156
-#: admin/ddwc-user-profile-settings.php:288
+#: admin/ddwc-user-profile-settings.php:163
+#: admin/ddwc-user-profile-settings.php:298
 msgid "Transportation Type"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:160
-#: admin/ddwc-user-profile-settings.php:291
+#: admin/ddwc-user-profile-settings.php:167
+#: admin/ddwc-user-profile-settings.php:301
 msgid "Bicycle"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:160
-#: admin/ddwc-user-profile-settings.php:291
+#: admin/ddwc-user-profile-settings.php:167
+#: admin/ddwc-user-profile-settings.php:301
 msgid "Motorcycle"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:160
-#: admin/ddwc-user-profile-settings.php:291
+#: admin/ddwc-user-profile-settings.php:167
+#: admin/ddwc-user-profile-settings.php:301
 msgid "Car"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:160
-#: admin/ddwc-user-profile-settings.php:291
+#: admin/ddwc-user-profile-settings.php:167
+#: admin/ddwc-user-profile-settings.php:301
 msgid "SUV"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:160
-#: admin/ddwc-user-profile-settings.php:291
+#: admin/ddwc-user-profile-settings.php:167
+#: admin/ddwc-user-profile-settings.php:301
 msgid "Truck"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:182
-#: admin/ddwc-user-profile-settings.php:314
+#: admin/ddwc-user-profile-settings.php:188
+#: admin/ddwc-user-profile-settings.php:324
 msgid "Model"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:184
-#: admin/ddwc-user-profile-settings.php:316
-#: admin/ddwc-woocommerce-driver-ratings.php:95
+#: admin/ddwc-user-profile-settings.php:191
+#: admin/ddwc-user-profile-settings.php:327
+#: admin/ddwc-woocommerce-driver-ratings.php:99
 msgid "Vehicle Model"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:196
-#: admin/ddwc-user-profile-settings.php:326
+#: admin/ddwc-user-profile-settings.php:203
+#: admin/ddwc-user-profile-settings.php:337
 msgid "Color"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:198
-#: admin/ddwc-user-profile-settings.php:328
-#: admin/ddwc-woocommerce-driver-ratings.php:84
+#: admin/ddwc-user-profile-settings.php:206
+#: admin/ddwc-user-profile-settings.php:340
+#: admin/ddwc-woocommerce-driver-ratings.php:90
 msgid "Vehicle Color"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:208
-#: admin/ddwc-user-profile-settings.php:336
+#: admin/ddwc-user-profile-settings.php:216
+#: admin/ddwc-user-profile-settings.php:348
 msgid "License Plate Number"
 msgstr ""
 
-#: admin/ddwc-user-profile-settings.php:263
+#: admin/ddwc-user-profile-settings.php:273
 msgid "Driver Picture"
 msgstr ""
 
-#: admin/ddwc-woocommerce-account-tab.php:62
-#: admin/ddwc-woocommerce-account-tab.php:88
+#: admin/ddwc-woocommerce-account-tab.php:68
+#: admin/ddwc-woocommerce-account-tab.php:97
 msgid "Driver Dashboard"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:61
+#: admin/ddwc-woocommerce-driver-ratings.php:65
 msgid "Rate Delivery"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:61
+#: admin/ddwc-woocommerce-driver-ratings.php:65
 msgid "Thanks for your rating!"
 msgstr ""
 
-#: admin/ddwc-woocommerce-driver-ratings.php:105
+#: admin/ddwc-woocommerce-driver-ratings.php:107
 msgid "License Plate"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:21 admin/ddwc-woocommerce-orders.php:85
+#: admin/ddwc-woocommerce-orders.php:22 admin/ddwc-woocommerce-orders.php:87
 msgid "Order Returned"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:26
+#: admin/ddwc-woocommerce-orders.php:27
 #, php-format
 msgid "Returned <span class=\"count\">(%s)</span>"
 msgid_plural "Returned <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/ddwc-woocommerce-orders.php:43
+#: admin/ddwc-woocommerce-orders.php:45
 #, php-format
 msgid "Out for Delivery <span class=\"count\">(%s)</span>"
 msgid_plural "Out for Delivery <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/ddwc-woocommerce-orders.php:55 admin/ddwc-woocommerce-orders.php:83
+#: admin/ddwc-woocommerce-orders.php:58 admin/ddwc-woocommerce-orders.php:85
 msgid "Driver Assigned"
 msgstr ""
 
-#: admin/ddwc-woocommerce-orders.php:60
+#: admin/ddwc-woocommerce-orders.php:63
 #, php-format
 msgid "Driver Assigned <span class=\"count\">(%s)</span>"
 msgid_plural "Driver Assigned <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/ddwc-woocommerce-settings.php:90
-#: delivery-drivers-for-woocommerce.php:91
+#: admin/ddwc-woocommerce-settings.php:89
+#: delivery-drivers-for-woocommerce.php:98
 msgid "Go Pro"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: admin/ddwc-woocommerce-settings.php:96
+#: admin/ddwc-woocommerce-settings.php:95
 msgid "Delivery Drivers for WooCommerce"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:98
+#: admin/ddwc-woocommerce-settings.php:97
 msgid "Brought to you by"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:98
+#: admin/ddwc-woocommerce-settings.php:97
 msgid "Documentation"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:103
+#: admin/ddwc-woocommerce-settings.php:102
 msgid "Dispatch phone number"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:105
+#: admin/ddwc-woocommerce-settings.php:104
 msgid "Allow your drivers to call if they have questions about an order."
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:110
+#: admin/ddwc-woocommerce-settings.php:109
 msgid "Google Maps API key"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:112
+#: admin/ddwc-woocommerce-settings.php:111
 msgid "Add a map to the order directions for your drivers."
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:117
+#: admin/ddwc-woocommerce-settings.php:116
 msgid "Google Maps Geocode"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:118
+#: admin/ddwc-woocommerce-settings.php:117
 msgid ""
 "Update your drivers' order details page to use a customers latitutde and "
 "longitude for directions"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:122
+#: admin/ddwc-woocommerce-settings.php:121
 msgid "Enable Google Maps geocode for latitude and longitude"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:126
+#: admin/ddwc-woocommerce-settings.php:125
 msgid "Google Maps Mode"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:128
+#: admin/ddwc-woocommerce-settings.php:127
 msgid "Select the method of travel you would like used in your drivers map."
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:131
+#: admin/ddwc-woocommerce-settings.php:130
 msgid "Driving"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:132
+#: admin/ddwc-woocommerce-settings.php:131
 msgid "Walking"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:133
+#: admin/ddwc-woocommerce-settings.php:132
 msgid "Bicycling"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:138
+#: admin/ddwc-woocommerce-settings.php:137
 msgid "Driver ratings"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:140
-msgid "Add driver details with delivery star ratings to order details page."
+#: admin/ddwc-woocommerce-settings.php:139
+msgid "Add driver star ratings to order details page."
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:142
+#: admin/ddwc-woocommerce-settings.php:153
+#: admin/ddwc-woocommerce-settings.php:164
+msgid "Yes"
 msgstr ""
 
 #: admin/ddwc-woocommerce-settings.php:143
 #: admin/ddwc-woocommerce-settings.php:154
-msgid "Yes"
-msgstr ""
-
-#: admin/ddwc-woocommerce-settings.php:144
-#: admin/ddwc-woocommerce-settings.php:155
+#: admin/ddwc-woocommerce-settings.php:165
 msgid "No"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:149
+#: admin/ddwc-woocommerce-settings.php:148
+msgid "Driver vehicle details"
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:150
+msgid "Add driver vehicle details to order details page."
+msgstr ""
+
+#: admin/ddwc-woocommerce-settings.php:159
 msgid "Driver phone number"
 msgstr ""
 
-#: admin/ddwc-woocommerce-settings.php:151
+#: admin/ddwc-woocommerce-settings.php:161
 msgid "Add a button for customers to call driver in the driver details."
 msgstr ""
 
-#: delivery-drivers-for-woocommerce.php:93
+#: delivery-drivers-for-woocommerce.php:100
 msgid "Settings"
 msgstr ""
 
-#: delivery-drivers-for-woocommerce.php:135
+#: delivery-drivers-for-woocommerce.php:144
 msgid "Orders"
 msgstr ""
 
-#: delivery-drivers-for-woocommerce.php:136
+#: delivery-drivers-for-woocommerce.php:145
 #, php-format
 msgid ""
 "There is a new version of DDWC Pro available. Download your copy from the "
 "%1$s page on Devio Digital."
 msgstr ""
 
-#: public/class-ddwc-public.php:94
+#: public/class-ddwc-public.php:109
 msgid "Accepting deliveries"
 msgstr ""
 
@@ -501,7 +521,7 @@ msgid "https://www.deviodigital.com"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Streamline your mobile workforce and increase your bottom line."
+msgid "Streamline your mobile workforce & increase your bottom line"
 msgstr ""
 
 #. Author of the plugin/theme

@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.4.1
+*   Added setting to optionally display vehicle details in order details in `admin/ddwc-woocommerce-settings.php`
+*   Bugfix to removed rogue 'Bicycle' text from outputting on user profile page in `admin/ddwc-user-profile-settings.php`
+*   Removed unnecessary `wp_ajax_nopriv_` usage in `admin/class-ddwc-admin.php`
+*   Updated driver display on order details to show/hide vehicle details in `admin/ddwc-woocommerce-driver-ratings.php`
+
 ## 3.4.0
 *   Bugfix for driver metabox not saving when saving the order in `admin/ddwc-metaboxes.php`
 *   Bugfix for driver metabox order notes and status changes when saving in `admin/ddwc-metaboxes.php`
