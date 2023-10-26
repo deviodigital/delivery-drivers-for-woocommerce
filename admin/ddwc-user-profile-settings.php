@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @param int $user_id 
  * 
  * @since  1.6
- * @return string
+ * @return string|void
  */
 function ddwc_save_custom_profile_fields( $user_id ) {
     // Get user.
