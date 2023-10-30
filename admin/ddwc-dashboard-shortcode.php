@@ -173,7 +173,7 @@ function ddwc_dashboard_shortcode() {
                     // Get payment gateway details.
                     $payment_gateway = wc_get_payment_gateway_by_order( $order_id );
 
-                    echo wp_kses( '<table class="ddwc-dashboard">', ddwc_allowed_tags() );
+                    echo wp_kses( '<table class="ddwc-dashboard order-details">', ddwc_allowed_tags() );
                     echo wp_kses( '<tbody>', ddwc_allowed_tags() );
 
                     do_action( 'ddwc_driver_dashboard_order_details_table_tbody_top' );
@@ -205,7 +205,7 @@ function ddwc_dashboard_shortcode() {
                         // Star icon.
                         $star = '<i class="fas fa-star"></i>';
                         // Delivery rating.
-                        echo '<tr><td><strong>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . str_repeat( $star, $ddwc_driver_rating ) . '</td></tr>';
+                        echo '<tr><td><strong>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td class="delivery-rating">' . str_repeat( $star, $ddwc_driver_rating ) . '</td></tr>';
                     }
 
                     // Display customer note.
