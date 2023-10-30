@@ -4,6 +4,7 @@
  */
 table.ddwc-dashboard {
   border: 1px solid #ddd;
+  width: 100%;
 }
 
 table.ddwc-dashboard thead {
@@ -392,7 +393,7 @@ table.ddwc-dashboard.delivery-drivers span.driver-status.available {
 table.ddwc-dashboard.delivery-drivers a.button.ddwc-button {
   background: #222;
   display: inline-block;
-  height: 36px;
+  min-height: 36px;
   padding: 0.75em;
 }
 
