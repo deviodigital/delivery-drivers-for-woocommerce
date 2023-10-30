@@ -198,6 +198,16 @@ function ddwc_dashboard_shortcode() {
                         // Do nothing.
                     }
 
+                    // Driver rating.
+                    $ddwc_driver_rating = get_post_meta( $order_id, 'ddwc_delivery_rating', true );
+                    // Display driver rating.
+                    if ( ! empty( $ddwc_driver_rating ) ) {
+                        // Star icon.
+                        $star = '<i class="fas fa-star"></i>';
+                        // Delivery rating.
+                        echo '<tr><td><strong>' . esc_attr__( 'Delivery rating', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . str_repeat( $star, $ddwc_driver_rating ) . '</td></tr>';
+                    }
+
                     // Display customer note.
                     if ( isset( $order_customer_note ) && '' != $order_customer_note ) {
                         echo wp_kses( '<tr><td><strong>' . esc_attr__( 'Customer note', 'delivery-drivers-for-woocommerce' ) . '</strong></td><td>' . esc_html( $order_customer_note ) . '</td></tr>', ddwc_allowed_tags() );
@@ -240,10 +250,10 @@ function ddwc_dashboard_shortcode() {
                             $qtty_price  = $qtty * $price;
                             $price       = '<td>' . $currency_symbol . number_format( $qtty_price, 2 ) . '</td>';
                             $total_price = apply_filters( 'ddwc_driver_dashboard_order_item_price', $price );
-                            /**
-                             * @todo add thumbnail image next to the product name.
-                             */
-                            $product_row = '<tr><td>' . get_the_post_thumbnail( $product->get_id(), array( 40, 40 ), array( 'class' => 'alignleft' ) ) . ' ' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
+                            $thumb_id    = get_post_thumbnail_id( $product->get_id() ); // Get the attachment ID of the featured image
+                            $permalink   = wp_get_attachment_image_url( $thumb_id, 'full' ); // Get the URL of the original image
+
+                            $product_row = '<tr><td><a target="_blank" href="' . esc_url( $permalink ) . '">' . get_the_post_thumbnail( $product->get_id(), array( 40, 40 ), array( 'class' => 'alignleft' ) ) . '</a> ' . $name . '</td><td>' . $qtty . '</td>' . $total_price . '</tr>';
                             echo wp_kses( $product_row, ddwc_allowed_tags() );
                         }
                     }
