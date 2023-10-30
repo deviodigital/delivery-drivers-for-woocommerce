@@ -7,6 +7,10 @@ table.ddwc-dashboard {
   width: 100%;
 }
 
+table.ddwc-dashboard.order-details {
+    margin-bottom: 24px;
+}
+
 table.ddwc-dashboard thead {
   background: #f1f1f1;
   font-weight: 700;
@@ -14,6 +18,10 @@ table.ddwc-dashboard thead {
 
 table.ddwc-dashboard td {
   padding: 10px;
+}
+
+table.ddwc-dashboard .delivery-rating {
+    color: #edb867;
 }
 
 table.ddwc-dashboard tr {
