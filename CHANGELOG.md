@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.5.0
+*   Bugfix PHP 8.0+ issue with bulk assign settings in `admin/class-ddwc-admin.php`
+*   Updated 'completed' order status display styles in `public/css/ddwc-public.css`
+*   Updated order details table class name in `admin/ddwc-dashboard-shortcode.php`
+*   Updated various styles throughout the plugin in `public/css/ddwc-public.css`
+
 ## 3.4.1
 *   Added setting to optionally display vehicle details in order details in `admin/ddwc-woocommerce-settings.php`
 *   Bugfix to removed rogue 'Bicycle' text from outputting on user profile page in `admin/ddwc-user-profile-settings.php`
