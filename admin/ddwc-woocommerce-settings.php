@@ -97,6 +97,17 @@ class Delivery_Drivers_WooCommerce_Settings {
                 'desc' => esc_attr__( 'Brought to you by', 'delivery-drivers-for-woocommerce' ) . ' <a href="https://www.deviodigital.com/" target="_blank">Devio Digital</a>' . $go_pro . ' | <a href="https://www.deviodigital.com/documentation/" target="_blank">' . esc_attr__( 'Documentation', 'delivery-drivers-for-woocommerce' ) . '</a>',
                 'id'   => 'ddwc_settings_section_title'
             ),
+            // Contact Type.
+            'contact_type' => array(
+                'name'    => esc_attr__( 'Contact type', 'delivery-drivers-for-woocommerce' ),
+                'type'    => 'select',
+                'desc'    => esc_attr__( 'Select which contact type is used for dispatch, driver and customer contact.', 'delivery-drivers-for-woocommerce' ),
+                'id'      => 'ddwc_settings_contact_type',
+                'options' => array(
+                    'telephone' => esc_attr__( 'Telephone', 'delivery-drivers-for-woocommerce' ),
+                    'whatsapp'  => esc_attr__( 'WhatsApp', 'delivery-drivers-for-woocommerce' )
+                ),
+            ),
             // Dispatch phone number.
             'dispatch_phone_number' => array(
                 'name' => esc_attr__( 'Dispatch phone number', 'delivery-drivers-for-woocommerce' ),
