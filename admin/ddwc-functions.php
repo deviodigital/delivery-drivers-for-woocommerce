@@ -554,3 +554,47 @@ function ddwc_allowed_tags() {
     );
     return $my_allowed;
 }
+
+/**
+ * Check if WooCommerce order has shipping options set
+ *
+ * @param int $order_id WooCommerce order ID
+ * @return bool True if shipping options are set, false otherwise
+ */
+function ddwc_has_shipping_options( $order_id ) {
+    // Get the order object.
+    $order = wc_get_order( $order_id );
+
+    // Check if the order has items.
+    if ( $order ) {
+        // Get shipping methods for the order.
+        $shipping_methods = $order->get_shipping_methods();
+
+        // Check if any shipping methods are set.
+        if ( ! empty( $shipping_methods ) ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * Contact type link
+ * 
+ * @since  x.x.x
+ * @return string
+ */
+function ddwc_contact_type_link() {
+    if ( false !== get_option( 'ddwc_settings_contact_type' ) && '' !== get_option( 'ddwc_settings_contact_type' ) ) {
+        if ( 'whatsapp' == get_option( 'ddwc_settings_contact_type' ) ) {
+            $contact_type = 'https://wa.me/';
+        } else {
+            $contact_type = 'tel:';
+        }
+    } else {
+        $contact_type = 'tel:';
+    }
+
+    return $contact_type;
+}
