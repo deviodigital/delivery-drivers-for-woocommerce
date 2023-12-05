@@ -66,7 +66,7 @@ function ddwc_build() {
     echo '<p>';
     // Display driver button.
     if ( ! empty( $ddwc_driver_number ) &&  '-1' != $ddwc_driver_id ) {
-        echo '<a href="tel:' . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a> ';
+        echo '<a href="' . ddwc_contact_type_link() . esc_html( $ddwc_driver_number ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a> ';
     }
     echo '<a href="/wp-admin/user-edit.php?user_id=' . esc_attr( $ddwc_driver_id ) . '" class="button ddwc-button customer">' . esc_attr__( 'View Profile', 'delivery-drivers-for-woocommerce' ) . '</a>';
     echo '</p>';

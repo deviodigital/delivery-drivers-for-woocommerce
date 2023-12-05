@@ -85,12 +85,12 @@ function ddwc_dashboard_shortcode() {
 
                         // Call Customer button.
                         if ( isset( $order_billing_phone ) ) {
-                            $phone_customer = '<a href="tel:' . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Customer', 'delivery-drivers-for-woocommerce' ) . '</a> ';
+                            $phone_customer = '<a href="' . ddwc_contact_type_link() . esc_html( $order_billing_phone ) . '" class="button ddwc-button customer">' . esc_attr__( 'Call Customer', 'delivery-drivers-for-woocommerce' ) . '</a> ';
                         }
 
                         // Call Dispatch button.
                         if ( false !== get_option( 'ddwc_settings_dispatch_phone_number' ) && '' !== get_option( 'ddwc_settings_dispatch_phone_number' ) ) {
-                            $phone_dispatch = '<a href="tel:' . get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . esc_attr__( 'Call Dispatch', 'delivery-drivers-for-woocommerce' ) . '</a> ';
+                            $phone_dispatch = '<a href="' . ddwc_contact_type_link(). get_option( 'ddwc_settings_dispatch_phone_number' ) . '" class="button ddwc-button dispatch">' . esc_attr__( 'Call Dispatch', 'delivery-drivers-for-woocommerce' ) . '</a> ';
                         }
 
                         // Call buttons.

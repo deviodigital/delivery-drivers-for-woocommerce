@@ -70,7 +70,7 @@ function ddwc_order_driver_details( $order ) {
                 $driver_number = get_user_meta( $driver_id, 'billing_phone', true );
                 // Display driver button.
                 if ( $driver_number ) {
-                    $string .= '<a href="tel:' . $driver_number . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a> ';
+                    $string .= '<a href="' . ddwc_contact_type_link() . $driver_number . '" class="button ddwc-button customer">' . esc_attr__( 'Call Driver', 'delivery-drivers-for-woocommerce' ) . '</a> ';
                 }
             }
         } else {
