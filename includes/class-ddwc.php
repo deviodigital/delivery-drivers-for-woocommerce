@@ -169,6 +169,11 @@ class DDWC {
          */
         require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ddwc-public.php' );
 
+        /**
+         * The file responsible for loading the customer signature script.
+         */
+        require_once( plugin_dir_path( dirname( __FILE__ ) ) . 'public/ddwc-customer-signature-script.php' );
+
         $this->loader = new Delivery_Drivers_Loader();
 
     }

@@ -87,6 +87,20 @@ class Delivery_Drivers_Public {
         }
         // Localize the ddwc-public.js file.
         wp_localize_script( $this->plugin_name, 'WPaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+        if ( is_wc_endpoint_url( 'view-order' ) ) {
+
+            $order_id = absint( get_query_var( 'view-order' ) );
+
+            // Enqueue SignaturePad library.
+            wp_enqueue_script( 'signature-pad', plugin_dir_url( __FILE__ ) . 'js/signature-pad.js', array( 'jquery' ), $this->version, true );
+
+            // Enqueue custom script for signature functionality.
+            wp_enqueue_script( 'customer-signature-script', plugin_dir_url( __FILE__ ) . '/js/customer-signature-script.js', array( 'jquery', 'signature-pad' ), $this->version, true );
+
+            // Localize script with order ID for custom script.
+            wp_localize_script( 'customer-signature-script', 'script', array( 'order_id' => $order_id, 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+        }
     }
 
 }
