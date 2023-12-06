@@ -559,6 +559,7 @@ function ddwc_allowed_tags() {
  * Check if WooCommerce order has shipping options set
  *
  * @param int $order_id WooCommerce order ID
+ *
  * @return bool True if shipping options are set, false otherwise
  */
 function ddwc_has_shipping_options( $order_id ) {
@@ -582,7 +583,7 @@ function ddwc_has_shipping_options( $order_id ) {
 /**
  * Contact type link
  * 
- * @since  x.x.x
+ * @since  3.6.0
  * @return string
  */
 function ddwc_contact_type_link() {
@@ -597,4 +598,24 @@ function ddwc_contact_type_link() {
     }
 
     return $contact_type;
+}
+
+/**
+ * Display customer signature image
+ * 
+ * @param int $order_id - the order ID.
+ * 
+ * @since  3.6.0
+ * @return string
+ */
+function ddwc_display_customer_signature_image( $order_id ) {
+    $signature = get_post_meta( $order_id, 'customer_signature', true );
+
+    if ( $signature ) {
+        $image_url = wp_get_attachment_image_url( $signature, 'full' );
+    
+        if ( $image_url ) {
+            echo '<img src="' . esc_url( $image_url ) . '" alt="' . __( 'Customer Signature', 'delivery-drivers-for-woocommerce' ) . '" />';
+        }
+    }
 }
