@@ -12,7 +12,7 @@
  * Plugin Name:          Delivery Drivers for WooCommerce
  * Plugin URI:           https://www.deviodigital.com
  * Description:          Streamline your mobile workforce & increase your bottom line
- * Version:              3.5.0
+ * Version:              3.6.0
  * Author:               Devio Digital
  * Author URI:           https://www.deviodigital.com
  * License:              GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Current plugin version.
  */
-define( 'DDWC_VERSION', '3.5.0' );
+define( 'DDWC_VERSION', '3.6.0' );
 
 /**
  * The code that runs during plugin activation.

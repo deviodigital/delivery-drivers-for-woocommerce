@@ -3,8 +3,8 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
-Tested up to: 6.4.1
-Stable tag: 3.5.0
+Tested up to: 6.4.2
+Stable tag: 3.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,21 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.6.0 =
+*   Added customer signature box when order is delivered in multiple files throughout the plugin
+*   Added contact type setting in `admin/ddwc-woocommerce-settings.php`
+*   Added `ddwc_contact_type_link` helper function in `admin/ddwc-functions.php`
+*   Added `ddwc_display_customer_signature_image` helper function in `admin/ddwc-functions.php`
+*   Added `ddwc_customer_signature_box_title` in `public/ddwc-customer-signature-script.php`
+*   Added `ddwc_customer_signature_box_description` in `public/ddwc-customer-signature-script.php`
+*   Added `ddwc_customer_signature_box_button_clear_text` in `public/ddwc-customer-signature-script.php`
+*   Added `ddwc_customer_signature_box_button_save_text` in `public/ddwc-customer-signature-script.php`
+*   Updated telephone links to switch based on contact type setting in `admin/ddwc-dashboard-shortcode.php`
+*   Updated telephone links to switch based on contact type setting in `admin/ddwc-metaboxes.php`
+*   Updated telephone links to switch based on contact type setting in `admin/ddwc-woocommerce-driver-ratings.php`
+*   Updated driver phone number button to use new contact type link in `admin/ddwc-functions.php`
+*   Updated various styles throughout multiple areas of the plugin in `public/css/ddwc-public.css`
 
 = 3.5.0 =
 *   Bugfix PHP 8.0+ issue with bulk assign settings in `admin/class-ddwc-admin.php`
