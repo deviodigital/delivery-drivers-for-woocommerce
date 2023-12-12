@@ -452,11 +452,13 @@ form.ddwc-order-filters .form-group:last-child {
   align-self: flex-end;
 }
 
-form.ddwc-order-filters .form-group input[type="date"], form.ddwc-order-filters .form-group select {
+form.ddwc-order-filters .form-group input[type="date"], 
+form.ddwc-order-filters .form-group select {
   padding: 0.75em;
   border: 1px solid #ddd;
   border-radius: 0;
   box-shadow: none;
+  height: 48px;
 }
 
 form.ddwc-order-filters input[type="submit"] {
