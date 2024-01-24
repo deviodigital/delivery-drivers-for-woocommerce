@@ -28,7 +28,7 @@ function add_signature_box_to_order_page( $order ) {
     // Get the current order.
     $order_status = $order_data['status'];
     // Check if the order status is "out-for-delivery".
-    if ( $order && $order_status === apply_filters( 'ddwc_customer_signature_box_order_status', 'out-for-delivery' ) ) {
+    if ( $order && in_array( $order_status, apply_filters( 'ddwc_customer_signature_box_order_status', array( 'out-for-delivery', 'completed' ) ) ) ) {
         echo '<div id="signature-box">
             <h3>' . apply_filters( 'ddwc_customer_signature_box_title', __( 'Signature box', 'delivery-drivers-for-woocommerce' ) ) . '</h3>
             <p>' . apply_filters( 'ddwc_customer_signature_box_description', __( 'Please sign below to acknowledge you received the order via delivery', 'delivery-drivers-for-woocommerce' ) ) . ':</p>
