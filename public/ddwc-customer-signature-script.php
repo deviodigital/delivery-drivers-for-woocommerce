@@ -27,16 +27,19 @@ function add_signature_box_to_order_page( $order ) {
     $order_data = $order->get_data();
     // Get the current order.
     $order_status = $order_data['status'];
-    // Check if the order status is "out-for-delivery".
+    // Check if the order status is "out-for-delivery" or "completed".
     if ( $order && in_array( $order_status, apply_filters( 'ddwc_customer_signature_box_order_status', array( 'out-for-delivery', 'completed' ) ) ) ) {
-        echo '<div id="signature-box">
-            <h3>' . apply_filters( 'ddwc_customer_signature_box_title', __( 'Signature box', 'delivery-drivers-for-woocommerce' ) ) . '</h3>
-            <p>' . apply_filters( 'ddwc_customer_signature_box_description', __( 'Please sign below to acknowledge you received the order via delivery', 'delivery-drivers-for-woocommerce' ) ) . ':</p>
-            <canvas id="signature-canvas" width="400" height="200"></canvas><br />
-            <button id="clear-signature">' . apply_filters( 'ddwc_customer_signature_box_button_clear_text', __( 'Clear Signature', 'delivery-drivers-for-woocommerce' ) ) . '</button>
-            <button id="save-signature-button" class="btn">' . apply_filters( 'ddwc_customer_signature_box_button_save_text', __( 'Save Signature', 'delivery-drivers-for-woocommerce' ) ) . '</button>
-            <input type="hidden" name="customer_signature" id="customer-signature" />
-        </div>';
+        $signature = get_post_meta( $order->get_id(), 'customer_signature', true );
+        if ( ! $signature ) {
+            echo '<div id="signature-box">
+                <h3>' . apply_filters( 'ddwc_customer_signature_box_title', __( 'Signature box', 'delivery-drivers-for-woocommerce' ) ) . '</h3>
+                <p>' . apply_filters( 'ddwc_customer_signature_box_description', __( 'Please sign below to acknowledge you received the order via delivery', 'delivery-drivers-for-woocommerce' ) ) . ':</p>
+                <canvas id="signature-canvas" width="400" height="200"></canvas><br />
+                <button id="clear-signature">' . apply_filters( 'ddwc_customer_signature_box_button_clear_text', __( 'Clear Signature', 'delivery-drivers-for-woocommerce' ) ) . '</button>
+                <button id="save-signature-button" class="btn">' . apply_filters( 'ddwc_customer_signature_box_button_save_text', __( 'Save Signature', 'delivery-drivers-for-woocommerce' ) ) . '</button>
+                <input type="hidden" name="customer_signature" id="customer-signature" />
+            </div>';
+        }
     }
 }
 add_action( 'woocommerce_order_details_after_order_table', 'add_signature_box_to_order_page' );

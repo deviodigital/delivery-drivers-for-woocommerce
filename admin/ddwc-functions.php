@@ -292,12 +292,13 @@ function ddwc_delivery_address_google_map_geocode( $delivery_address ) {
     $geocode = file_get_contents( $geocode_url );
     $output  = json_decode( $geocode );
 
-    // Get the delivery address latitude and longitude.
-    $latitude  = $output->results[0]->geometry->location->lat;
-    $longitude = $output->results[0]->geometry->location->lng;
-
-    // Delivery address (lat/lng).
-    $delivery_address = $latitude . ',' . $longitude;
+    if ( isset( $output->results[0] ) ) {
+        // Get the delivery address latitude and longitude.
+        $latitude  = $output->results[0]->geometry->location->lat;
+        $longitude = $output->results[0]->geometry->location->lng;
+        // Delivery address (lat/lng).
+        $delivery_address = $latitude . ',' . $longitude;
+    }
 
     // Error messages.
     if ( 'OK' != $output->status ) {
