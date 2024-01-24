@@ -1,34 +1,33 @@
 (function( $ ) {
 	"use strict";
 
-	/**
-	 * All of the code for your public-facing JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note: It has been assumed you will write jQuery code here, so the
-	 * $ function reference has been prepared for usage within the scope
-	 * of this function.
-	 *
-	 * This enables you to define handlers, for when the DOM is ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * When the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and/or other possibilities.
-	 *
-	 * Ideally, it is not considered best practise to attach more than a
-	 * single DOM-ready or window-load handler for a particular page.
-	 * Although scripts in the WordPress core, Plugins and Themes may be
-	 * practising this, we should strive to set a better example in our own work.
-	 */
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the "Save Signature" button element.
+        var saveSignatureButton = document.getElementById("save-signature-button");
 
+        // Get the signature box element.
+        var signatureBox = document.getElementById("signature-box");
+
+        // Get the message element.
+        var messageElement = document.createElement("div");
+        messageElement.innerText = "Thank you. Your signature has been saved.";
+        messageElement.style.color = "green";
+
+        // Add a click event listener to the "Save Signature" button.
+        saveSignatureButton.addEventListener("click", function() {
+            // Set the content of the signature box to an empty string.
+            signatureBox.innerHTML = "";
+
+            // Append the message element to the signature box.
+            signatureBox.appendChild(messageElement);
+
+            // Remove the message after a certain duration.
+            setTimeout(function() {
+                signatureBox.removeChild(messageElement);
+            }, 5000);
+        });
+    });
+        
 })( jQuery );
 
 /**
