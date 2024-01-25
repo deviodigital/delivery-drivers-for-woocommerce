@@ -4,7 +4,7 @@ Donate link: https://www.deviodigital.com
 Tags: delivery, ecommerce, woocommerce, courier, delivery-drivers, marijuana, dispensary, cannabis, weed
 Requires at least: 3.0.1
 Tested up to: 6.4.2
-Stable tag: 3.6.0
+Stable tag: 3.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,14 @@ Learn more at [Delivery Fees for WooCommerce](https://www.wordpress.org/plugins/
 7. Drivery dashboard for admins, showing delivery drivers details
 
 == Changelog ==
+
+= 3.6.1 =
+*   Added fontawesome in adin dashboard for driver details rating stars in `admin/class-ddwc-admin.php`
+*   Bugfix for warnings that displayed if google map API call doesn't get a lat/long in `admin/ddwc-functions.php`
+*   Updated `ddwc_customer_signature_box_order_status` filter to an array instead of a string in `public/ddwc-customer-signature-script.php`
+*   Updated customer signature box to hide after saved in `public/ddwc-customer-signature-script.php`
+*   Updated customer signature box to hide after saved in `public/js/ddwc-public.js`
+*   General code cleanup throughout multiple files in the plugin
 
 = 3.6.0 =
 *   Added customer signature box when order is delivered in multiple files throughout the plugin
